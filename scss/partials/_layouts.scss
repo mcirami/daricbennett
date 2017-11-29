@@ -1,0 +1,12 @@
+// general wrapper class
+.container {
+	@extend %post;
+	max-width: 80.2em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 20px;
+	
+	&.profile {
+		max-width: 65em;
+	}
+}

@@ -1,0 +1,188 @@
+.standard {
+	@include span-columns(12);
+	padding: 40px;
+	margin: 80px 0;
+	background: $lightGray;
+	-webkit-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+	-moz-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+	box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+	border: 1px solid $borderGray;
+	color: $black;
+	
+	@include media($mobile){
+		margin: 40px 0;
+		padding: 20px;
+	}
+	
+	h3 {
+		@include span-columns(12);
+		font-size: 18px;
+		text-decoration: underline;
+		text-transform: none;
+		font-weight: lighter;
+		
+		@include media($tablet){
+			font-size: 16px;
+		}
+		
+		@include media($mobile){
+			font-size: 14px;
+		}
+	}
+	
+	p {
+		@include span-columns(12);
+		margin: 5px 0;
+		
+		@include media($tablet){
+			font-size: 14px;
+		}
+		
+		@include media($mobile){
+			font-size: 12px;
+		}
+		
+		.span {
+			font-family: 'robotobold';
+		}
+	}
+	
+	ul {
+		@include span-columns(12);
+		list-style-type: lower-roman;
+		padding-left: 40px;
+		
+		@include media($mobile){
+			padding-left: 20px;
+		}
+		
+		li {
+			margin-bottom: 20px;
+			
+			@include media($tablet){
+				font-size: 14px;
+			}
+			
+			@include media($mobile){
+				font-size: 12px;
+			}
+		}
+	}
+	
+	.address {
+		@include span-columns(12);
+		font-family: 'robotoregular';
+		padding-left: 40px;
+		margin-bottom: 20px;
+		
+		@include media($mobile){
+			padding-left: 20px;
+		}
+		
+		.row {
+			@include span-columns(12);
+			text-align: left;
+			
+			&:last-child {
+				padding-left: 15%;
+				
+				@include media($mobile){
+					padding-left: 24%;
+				}
+			}
+			
+			.label {
+				width: 15%;
+				float: left;
+				
+				@include media($mobile){
+					width: 24%;
+				}
+			}
+			
+			h4 {
+				text-align: left;
+				font-size: 16px;
+				margin: 0;
+				font-weight: normal;
+				
+				@include media($tablet){
+					font-size: 14px;
+				}
+				
+				@include media($mobile){
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}
+
+.error {
+	text-align: center;
+	margin: 20% 0;
+	color: $black;
+	
+	p {
+		margin-bottom: 40px;
+	}
+}
+
+.not_member {
+	padding: 10% 0;
+	text-align: center;
+	color: $black;
+	
+	h2 {
+		font-size: 30px;
+		
+		@include media($tablet){
+			font-size: 28px;
+		}
+		
+		@include media($mobile){
+			font-size: 18px;
+		}
+	}
+	
+	h3 {
+		color: $red;
+		text-transform: none;
+		font-size: 24px;
+		
+		@include media($tablet){
+			font-size: 22px;
+		}
+		
+		@include media($mobile){
+			font-size: 15px;
+		}
+	}
+	
+	.button_wrap {
+		display: inline-block;
+		margin-top: 20px;
+		
+		a {
+			display: inline-block;
+			
+			@include media($mobile){
+				padding-top: 3px;
+			}
+		}
+	}
+	
+	p {
+		font-size: 20px;
+		display: inline-block;
+		margin: 0 20px;
+		
+		@include media($tablet){
+			font-size: 18px;
+		}
+		
+		@include media($mobile){
+			font-size: 14px;
+		}
+	}
+}

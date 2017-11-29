@@ -1,0 +1,147 @@
+.sidebar {
+	@include span-columns(3);
+	padding-top: 90px;
+	
+	@include media($tablet){
+		padding-top: 85px;
+	}
+	
+	@include media($mobile){
+		@include span-columns(4);
+		padding-top: 0;
+	}
+	
+	.widget-title {
+		font-family: 'robotomedium';
+		color: $white;
+		padding: 8px 10px;
+		background: $orange;
+		font-size: 16px;
+		border-top-right-radius: 4px;
+		border-top-left-radius: 4px;
+		-webkit-border-top-right-radius: 4px;
+		-webkit-border-top-left-radius: 4px;
+		-moz-border-radius-topleft: 4px;
+		-moz-border-radius-topright: 4px;
+		margin: 0;
+		
+		@include media($tablet){
+			font-size: 14px;
+		}
+	}
+	
+	.widget {
+		background: $lightYellow;
+		border-top-right-radius: 4px;
+		border-top-left-radius: 4px;
+		-webkit-border-top-right-radius: 4px;
+		-webkit-border-top-left-radius: 4px;
+		-moz-border-radius-topleft: 4px;
+		-moz-border-radius-topright: 4px;
+		margin-bottom: 25px;
+	}
+	
+	#bbp-search-form {
+		padding: 20px 10px;
+		
+		@include media($tablet){
+			padding: 10px;
+		}
+		
+		input {
+			height: 30px;
+			
+			@include media($tablet){
+				height: 25px;
+			}
+		}
+		
+		input[type="text"] {
+			width: 70%;
+			float: left;
+			border-top-left-radius: 4px;
+			border-bottom-left-radius: 4px;
+			-moz-border-radius-bottomleft: 4px;
+			-moz-border-radius-topleft: 4px;
+			-webkit-border-top-left-radius: 4px;
+			-webkit-border-bottom-left-radius: 4px;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+			-moz-border-radius-bottomright: 0;
+			-moz-border-radius-topright: 0;
+			-webkit-border-top-right-radius: 0;
+			-webkit-border-bottom-right-radius: 0;
+			border: 2px solid $pink;
+		}
+		
+		.button {
+			font-family: 'robotoregular';
+			border: none;
+			width: 30%;
+			padding: 4px 0 5px;
+			font-size: 14px;
+			color: $black;
+			background: $pink;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			border-top-right-radius: 4px;
+			border-bottom-right-radius: 4px;
+			-moz-border-radius-bottomright: 4px;
+			-moz-border-radius-topright: 4px;
+			-moz-border-radius-bottomleft: 0;
+			-moz-border-radius-topleft: 0;
+			-webkit-border-top-right-radius: 4px;
+			-webkit-border-bottom-right-radius: 4px;
+			-webkit-border-top-left-radius: 0;
+			-webkit-border-bottom-left-radius: 0;
+			
+			@include media($tablet){
+				font-size: 12px;
+				padding: 5px 2px 5px 0px;
+			}
+		}
+	}
+	
+	a {
+		color: $black;
+	}
+	
+	label.screen-reader-text.hidden {
+		display: none;
+	}
+	
+	ul {
+		padding: 10px 0;
+		
+		@include media($tablet){
+			padding: 5px 0;
+		}
+		
+		li {
+			padding: 10px 10px 10px 30px;
+			border-bottom: 1px ridge $orange;
+			
+			a {
+				
+				@include media($tablet){
+					font-size: 14px;
+				}
+				
+				&:before {
+					content: '';
+					background: url('../images/right-arrow-orange.png')no-repeat;
+					position: absolute;
+					left: -15px;
+					width: 10px;
+					height: 10px;
+					top: 7px;
+				}
+				
+			}
+			
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+}

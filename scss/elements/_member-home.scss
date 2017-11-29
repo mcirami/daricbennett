@@ -1,0 +1,232 @@
+.member_home {
+	font-family: 'robotoregular';
+	text-align: center;
+	padding: 100px 0;
+	
+	@include media($mobile){
+		padding: 40px 0;
+	}
+	
+	h2 {
+		font-size: 30px;
+		font-family: 'robotoregular';
+		
+		@include media($tablet){
+			font-size: 28px;
+		}
+		
+		@include media($mobile){
+			font-size: 22px;
+			line-height: 1.2;
+		}
+	}
+	
+	.content_wrap {
+		background: $lightGray;
+		padding: 30px;
+		margin: 40px 0;
+		-webkit-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+		-moz-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+		box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+		border: 1px solid $borderGray;
+		border-radius: 4px;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		
+		@include media($tablet){
+			margin: 30px 0;
+			padding: 20px;
+		}
+		
+		@include media($mobile){
+			padding: 10px;
+		}
+		
+		.column {
+			@include span-columns(6);
+			
+			@include media($mobile){
+				@include span-columns(4);
+			}
+			
+			&:first-child {
+				@include media($mobile){
+					display: none;
+				}
+			}
+			
+			&:nth-child(2) {
+				
+				.heading {
+					padding-left: 18%;
+					
+					@include media($mobile){
+						padding-left: 0;
+					}
+				}
+			}
+		}
+		
+		.heading {
+			padding-bottom: 20px;
+			
+			h3 {
+				font-family: 'robotoregular';
+				float: left;
+				font-size: 22px;
+				margin: 0 5px 0 0;
+				text-transform: none;
+				
+				@include media($tablet){
+					font-size: 20px;
+				}
+				
+				@include media($mobile){
+					float: none;
+				}
+			}
+			
+			a {
+				float: left;
+				font-size: 18px;
+				color: $black;
+				top: 2px;
+			}
+		}
+		
+		.row {
+			margin-bottom: 40px;
+			
+			@include media($tablet){
+				margin-bottom: 20px;
+			}
+			
+			.icon_wrap {
+				@include span-columns(2);
+				padding: 5% 10px 0;
+				text-align: right;
+				
+				@include media($tablet){
+					padding: 33px 7px 0 0;
+				}
+				
+				@include media($mobile){
+					padding: 35px 12px 0 0;
+				}
+				
+				img {
+					@include media($tablet){
+						width: 36px;
+					}
+					
+					@include media($mobile){
+						width: 25px;
+					}
+				}
+				
+				&.forums {
+					padding: 4% 10px 0;
+					
+					@include media($tablet){
+						padding: 30px 6px 0 0;
+					}
+					
+					@include media($mobile){
+						padding: 30px 12px 0 0;
+					}
+				}
+			}
+
+			.info_wrap {
+				@include span-columns(10);
+				padding: 10px 15px 20px;
+				text-align: left;
+				background: $white;
+				border: 1px solid $borderGray;
+				border-radius: 4px;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				
+				@include media($mobile){
+					padding: 10px 10px 20px;
+				}
+				/*
+				@include media($mobile){
+					@include span-columns(4);
+				}
+				*/
+				&:before {
+	                content: '';
+	                position: absolute;
+	                width: 20px;
+	                height: 20px;
+	                left: -11px;
+	                top: 40%;
+	                background: $white;
+	                border-radius: 4px;
+	                -webkit-border-radius: 4px;
+	                -moz-border-radius: 4px;	                
+	                transform: rotate(-44deg);
+					-webkit-transform: rotate(-44deg);
+					-moz-transform: rotate(-44deg);
+					-ms-transform: rotate(-44deg);
+					-o-transform: rotate(-44deg);
+	                border-left: 1px solid $borderGray;
+	                border-top: 1px solid $borderGray;
+	                
+	                @include media($mobile){
+	                	left: -10px;
+						width: 18px;
+						height: 18px;
+	                	-webkit-transform: rotate(-46deg);
+						-moz-transform: rotate(-46deg);
+						-ms-transform: rotate(-46deg);
+						-o-transform: rotate(-46deg);
+	                }
+	            }
+				
+				.button {
+					text-align: center;
+					display: inline-block;
+					padding: 7px 0;
+					
+					@include media($mobile){
+						padding: 5px 0;
+						line-height: 1.6;
+					}
+				}
+				
+				.red {
+					width: 42%;
+					float: left;
+					
+					@include media($smallMobile){
+						font-size: 11px;
+					}
+				}
+				
+				.yellow {
+					width: 48%;
+					float: right;
+					
+					@include media($tablet){
+						width: 54%;
+					}
+					
+					@include media($smallMobile){
+						font-size: 11px;
+					}
+				}
+				
+				h4 {
+					margin: 0 0 15px;
+					font-size: 18px;
+					
+					@include media($tablet){
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,323 @@
+#global_footer {
+	@include span-columns(12);
+	padding: 40px 0 20px;
+	background: url('../images/footer-background.jpg') no-repeat;
+	background-size: cover;
+	
+	@include media($mobile){
+		background: url('../images/footer-background-mobile.jpg') no-repeat;
+		background-size: cover;
+		background-position: top;
+	}
+	
+	.content_wrap {
+		@include span-columns(12);
+		
+		.logo {
+			@include span-columns(5);
+			padding-top: 38px;
+			
+			@include media($tablet){
+				@include span-columns(3.3);
+				margin-right: 15px;
+			}
+			
+			@include media($mobile){
+				@include span-columns(4);
+				padding-top: 0;
+				text-align: center;
+			}
+			
+			img {
+				width: auto;
+				
+				@include media($tablet){
+					width: 280px;
+				}
+				
+				@include media($mobile){
+					float: none;
+					margin: 0 auto;
+				}
+			}
+		}
+		
+		.columns_wrap {
+			@include span-columns(7);
+			
+			@include media($tablet){
+				@include span-columns(4.7);
+			}
+			
+			@include media($mobile){
+				@include span-columns(4);
+				text-align: center;
+				padding-top: 20px;
+			}
+			
+			h3 {
+				font-family: 'robotoregular';
+				font-weight: lighter;
+				margin-top: 0;
+				text-transform: uppercase;
+				font-size: 18px;
+				
+				@include media($tablet){
+					font-size: 16px;
+				}
+				
+				@include media($mobile){
+					margin-bottom: 5px;
+				}
+			}
+			
+			.column {
+				@include span-columns(4);
+				
+				@include media($mobile){
+					@include span-columns(4);
+					margin-bottom: 20px;
+				}
+				
+				a {
+					font-family: 'robotolight';
+					color: $grayText;
+					font-size: 14px;
+					
+					&:hover {
+						color: $white;
+					}
+					
+					@include media($tablet){
+						font-size: 12px;
+					}
+				}
+				
+				p {
+					color: $grayText;
+					
+					@include media($tablet){
+						font-size: 12px;
+					}
+					
+					@include media($mobile){
+						display: inline-block;
+						float: none;
+					}
+					
+					&.white {
+						color: $white;
+					}
+					 
+					 a {
+						 margin-left: 5px;
+						 color: $white;
+					 }
+				}
+				
+				li {
+					font-family: 'robotolight';
+					color: $grayText;
+					font-size: 14px;
+					
+					@include media($mobile){
+						display: inline-block;
+						margin-right: 15px;
+					}
+				}
+
+					
+				
+				.icon_wrap {
+					@include span-columns(12);
+					
+					.row {
+						@include span-columns(12);
+						
+						@include media($mobile){
+							width: auto;
+							display: inline-block;
+							float: none;
+						}
+						
+						a {
+							font-family: 'robotolight';
+							float: left;
+							color: $white;
+							
+							&:hover {
+								color: $grayText;
+								
+								&:before {
+									content: '';
+									width: 40px;
+									height: 40px;
+									left: 0;
+									position: absolute;
+									z-index: 1;
+								}
+							}
+							
+							&.facebook {
+								
+								&:hover {
+									
+									&:before {										
+										background: url('../images/icon-facebook-gray.png') no-repeat;
+										
+										@include media($tablet){
+											background-size: 60%;
+										}
+										
+										@include media($mobile){
+											background-size: 45%;
+										}
+									}
+								}	
+							}
+							
+							&.instagram {
+								
+								&:hover {
+									
+									&:before {
+										background: url('../images/icon-instagram-gray.png') no-repeat;
+										
+										@include media($tablet){
+											background-size: 60%;
+										}
+										
+										@include media($mobile){
+											background-size: 45%;
+										}
+									}
+								}
+							}
+							
+							&.youtube {
+								
+								&:hover {
+									
+									&:before {
+										background: url('../images/icon-youtube-gray.png') no-repeat;
+										
+										@include media($tablet){
+											background-size: 60%;
+										}
+										
+										@include media($mobile){
+											background-size: 45%;
+										}
+									}
+								}
+							}
+							
+							img {
+								float: left;
+							}
+							
+							h3 {
+								float: left;
+								font-size: 16px;
+								text-transform: none;
+								margin-left: 5px;
+								
+								@include media($tablet){
+									font-size: 14px;
+								}
+								
+								@include media($mobile){
+									float: none;
+									display: inline-block;
+									vertical-align: top;
+									margin-bottom: 0;
+									font-size: 12px;
+									padding-bottom: 6px;
+								}
+							}
+						}
+					}
+					
+					
+					
+					img {
+						width: auto;
+						margin-right: 5px;
+						
+						@include media($tablet){
+							width: 24px;
+						}
+						
+						@include media($mobile){
+							display: inline-block;
+							float: none;
+							width: 18px;
+							margin-right: 0;
+						}
+					}
+				}
+				
+			}
+		}
+	}
+	
+	.copy {
+		@include span-columns(12);
+		text-align: center;
+		color: $grayText;
+		padding: 30px 0 0;
+		font-size: 14px;
+		
+		@include media($tablet){
+			font-size: 12px;
+		}
+		
+		p {
+			margin-bottom: 0;
+		}
+		
+		ul {
+			text-align: center;
+			
+			li {
+				display: inline-block;
+				padding: 5px;
+				
+				@include media($mobile){
+					line-height: 1;
+					padding: 5px;
+				}
+				
+				&:after {
+					font-family: 'robotolight';
+					content: '|';
+					position: absolute;
+					right: -4px;
+					top: 4px;
+					font-size: 15px;
+					color: $grayText;
+					
+					@include media($tablet){
+						font-size: 13px;
+					}
+					
+					@include media($mobile){
+						top: 5px;
+					}
+				}
+				
+				&:last-child {
+					&:after {
+						content: none;
+					}
+				}
+				
+				a {
+					font-family: 'robotolight';
+					color: $grayText;
+				}
+			}
+		}
+	}
+
+}

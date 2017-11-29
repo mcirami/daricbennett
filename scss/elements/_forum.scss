@@ -1,0 +1,1752 @@
+.forum_wrapper {
+	padding: 40px 0;
+	color: $black;
+	font-family: 'robotoregular';
+	
+	.forums_home {
+		background: $white;
+		z-index: 1;
+		
+		a {
+			padding-left: 0 !important;
+			color: $grayText;
+			padding-top: 8px;
+			padding-bottom: 5px;
+			display: block;
+			float: left;
+		}
+	}
+
+	h1 {
+		font-size: 22px;
+	}
+	
+	img {
+		width: auto;
+	}
+	
+	.bbp-topic-revision-log {
+		display: none;
+	}
+	
+	.forum_content {
+		@include span-columns(9);
+		
+		@include media($mobile){
+			@include span-columns(4);
+			padding-bottom: 0;
+		}
+	}
+	
+	.entry-title {
+		font-size: 30px;
+		display: inline-block;
+		
+		@include media($tablet){
+			font-size: 25px;
+		}
+		
+		@include media($mobile){
+			font-size: 20px;
+		}
+	}
+	
+	.edit_link {
+		display: inline-block;
+		color: $black;
+		margin-left: 5px;
+		font-size: 14px;
+	}
+	
+	#new-post {
+		.bbp-the-content-wrapper {
+			@include span-columns(12);
+		}
+		
+		p.adjust {
+			@include span-columns(12);
+		}
+		
+		h4 {
+			@include span-columns(12);
+		}
+	}
+	
+	#rtmedia_uploader_filelist {
+		@include span-columns(12);
+	}
+	
+	.bbp-breadcrumb {
+		
+		@include media($smallMobile){
+			@include span-columns(4);
+		}
+		
+		
+		a {
+			font-family: 'robotomedium';
+			color: $darkGray;
+			font-size: 13px;
+			
+			@include media($mobile){
+				font-size: 12px;
+			}
+			
+			
+			&.bbp-breadcrumb-home {
+				display: none;
+				
+				 + .bbp-breadcrumb-sep {
+					display: none;
+				}
+			}
+		}
+		
+		.bbp-breadcrumb-sep {
+			color: $darkGray;
+			font-size: 14px;
+		}
+		
+		.bbp-breadcrumb-current {
+			color: $red;
+			font-size: 13px;
+		}
+	}
+	
+	#bbpress-forums	{
+        padding-top: 15px;
+		
+		.bbp-reply-header {
+			border-bottom-right-radius: 4px;
+			border-bottom-left-radius: 4px;
+			-webkit-border-bottom-left-radius: 4px;
+			-webkit-border-bottom-right-radius: 4px;
+			-moz-border-radius-bottomleft: 4px;
+			-moz-border-radius-bottomright: 4px;
+			background: $lightGray;
+			padding: 4px 15px;
+			
+			a {
+				font-size: 12px;
+				color: $black;
+			}
+		}
+		
+		#subscription-toggle {
+			float: right;
+			font-family: 'robotoregular';
+
+			a {
+				color: $red;
+				font-size: 16px;
+				
+				@include media($mobile){
+					font-size: 14px;
+				}
+				
+				&:hover {
+					color: #c30b21;
+				}
+			}
+		}
+		
+		.bbp-row-actions {
+			#subscription-toggle {
+			 	padding: 0 5px 2px;
+			 	float: none;
+			 	
+			 	span.is-subscribed {
+					
+					a {
+						background-color: transparent;
+						border: none;
+						font-size: 20px;
+						color: $black;
+					}
+				}
+			}
+			
+			#favorite-toggle {
+				a {
+					font-size: 20px;
+					background: transparent;
+					color: $black;
+					border: none;
+					padding: 0 5px 2px;
+					border-radius: 4px;
+					-webkit-border-radius: 4px;
+					-moz-border-radius: 4px;
+				}
+					
+			}
+		}
+		
+		ul.bbp-forums {
+			border: none;
+		}
+		
+		div.bbp-search-form {
+			display: none;
+		}
+		
+		li.bbp-header {
+			line-height: 1;
+			background: $red;
+			color: $white;
+			padding: 12px 0 12px 12px;
+			font-family: 'robotomedium';
+			font-size: 16px;
+			border-radius: 4px;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			
+			@include media($tablet){
+				font-size: 14px;
+				padding: 10px 0 10px 10px;
+			}
+			
+			@include media($mobile){
+				font-size: 12px;
+			}
+			
+			li.bbp-forum-info {
+				width: 30%;
+				text-transform: none;
+				text-align: left;
+			}
+			
+			li.bbp-forum-freshness {
+				width: 30%;
+				text-align: left;
+				
+				@include media($tablet){
+					text-align: center;
+					font-size: 16px;
+				}
+				
+				@include media($mobile){
+					font-size: 12px;
+				}
+			}
+			
+			li.bbp-forum-topic-count {
+				width: 20%;
+			}
+			
+			li.bbp-forum-reply-count {
+				width: 14%;
+			}
+			
+			li.bbp-topic-title {
+				width: 30%;
+				text-align: left;
+				text-transform: none;
+				
+				a {
+					font-size: 16px;
+					color: $black;
+					
+					@include media($tablet){
+						font-size: 14px;
+					}
+					
+					@include media($mobile){
+						font-size: 12px;
+					}
+				}
+				
+				p.bbp-topic-meta {
+					display: none;
+				}
+			}
+			
+			li.bbp-topic-voice-count {
+				width: 20%;
+			}
+			
+			li.bbp-topic-reply-count {
+				width: 14%;
+			}
+			
+			li.bbp-topic-freshness {
+				width: 30%;
+				text-align: left;
+				
+				@include media($tablet){
+					text-align: center;
+					font-size: 16px;
+				}
+				
+				@include media($mobile){
+					font-size: 12px;
+				}
+			}
+			
+			#subscription-toggle {
+				padding: 0;
+				margin: 0;
+				background: transparent;
+				font-size: 16px;
+				padding-right: 15px;
+				color: $lightYellow;
+				
+				@include media($tablet){
+					font-size: 14px;
+				}
+				
+				@include media($mobile){
+					font-size: 11px;
+				}
+				
+				a {
+					color: $lightYellow;
+					
+					@include media($tablet){
+						font-size: 14px;
+					}
+					
+					@include media($mobile){
+						font-size: 11px;
+					}
+					
+					&:hover {
+						background: transparent;
+					}
+				}
+				
+			}
+			
+			#favorite-toggle {
+				
+				@include media($mobile){
+					padding-right: 0;
+					font-size: 11px;
+				}
+				
+				a {
+					color: $lightYellow;
+				}
+			}
+		}
+		
+		li.bbp-body {
+		
+			ul.forum {
+				font-size: 16px;
+				border-top: 1px solid $borderGray;
+				padding: 10px 0;
+				
+				@include media($tablet){
+					font-size: 14px;
+				}
+				
+				@include media($mobile){
+					font-size: 12px;
+				}
+			}
+			
+			ul.topic {
+				padding-left: 0;
+				padding-right: 0;
+				border: none;
+			}
+			
+			li.bbp-forum-info {
+				font-family: 'robotoregular';
+				width: 35%;
+				text-transform: none;
+
+				.title_wrap {
+                    a {
+                        float: left;
+
+                        @include media($tablet) {
+                            width: 100%;
+                        }
+                    }
+
+                    p {
+                        font-family: 'robotobold';
+                        float: left;
+                        width: auto;
+                        display: inline-block;
+                        padding: 0 6px;
+                        background: $red;
+                        color: $white;
+                        font-size: 12px;
+                        margin-bottom: 0;
+                        margin-left: 10px;
+                        border-radius: 4px;
+                        -webkit-border-radius: 4px;
+                        -moz-border-radius: 4px;
+
+                        @include media($tablet) {
+                            margin-left: 0;
+                            font-size: 11px;
+                        }
+
+                        @include media($mobile) {
+                            font-size: 10px;
+                            line-height: 1.8;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+                
+                .bbp-forum-content {
+                    float: left;
+                }
+				
+				.bbp-forum-title {
+					font-family: 'robotobold';
+					
+					@include media($mobile){
+						line-height: 1;
+					}
+				}
+				
+				a {
+					color: $black;
+					font-size: 16px;
+					
+					@include media($tablet){
+						font-size: 14px;
+					}
+					
+					@include media($mobile){
+						font-size: 12px;
+					}
+				}
+				
+				li.bbp-forum-content {
+					font-size: 14px;
+					color: $darkGray;
+					
+					@include media($tablet){
+						font-size: 12px;
+					}
+					
+					@include media($mobile){
+						line-height: 1;
+					}
+				}
+				
+			}
+			
+			li.bbp-forum-topic-count, li.bbp-forum-reply-count {
+				width: 15%;
+				
+				@include media($tablet){
+					font-size: 14px;
+				}
+				
+				@include media($mobile){
+					font-size: 12px;
+				}
+			}
+			
+			li.bbp-forum-freshness {
+				width: 35%;
+				
+				a {
+					font-family: 'robotoregular';
+					float: left;
+					width: 60%;
+					text-align: left;
+					color: $black;
+					font-size: 12px;
+					padding-left: 8px;
+					
+					@include media($tablet){
+						width: 100%;
+						text-align: center;
+						padding-left: 0;
+						font-size: 10px;
+					}
+					
+					&:first-child {
+						width: 40%;
+						padding-left: 0;
+						
+						@include media($tablet){
+							width: 100%;
+							text-align: center;
+						}
+					}
+					
+					&:nth-child(2) {
+						font-family: 'robotomedium';
+						font-size: 14px;
+						color: $red;
+						padding-top: 8%;
+						
+						@include media($tablet){
+							padding-top: 0;
+							font-size: 12px;
+						}
+					}
+					
+					img {
+						width: 100%;
+						border: none;
+						border-radius: 4px;
+						-webkit-border-radius: 4px;
+						-moz-border-radius: 4px;
+						
+						@include media($tablet){
+							width: 40%;
+							margin: 0 auto;
+						}
+					}
+				}
+			}
+			
+			li.bbp-topic-title {
+				width: 35%;
+				
+				a {
+					font-size: 16px;
+					color: $black;
+
+                    &.float {
+                        float: left;
+                    }
+					
+					@include media($tablet){
+						font-size: 14px;
+                        width: 100%;
+					}
+					
+					@include media($mobile){
+						font-size: 12px;
+					}
+				}
+
+                p {
+                    font-family: 'robotobold';
+                    float: left;
+                    width: auto;
+                    display: inline-block;
+                    padding: 0 6px;
+                    background: $red;
+                    color: $white;
+                    font-size: 12px;
+                    margin-bottom: 0;
+                    margin-left: 10px;
+                    border-radius: 4px;
+                    -webkit-border-radius: 4px;
+                    -moz-border-radius: 4px;
+
+                    @include media($tablet) {
+                        margin-left: 0;
+                        font-size: 11px;
+                    }
+
+                    @include media($mobile) {
+                        font-size: 10px;
+                        line-height: 1.8;
+
+                    }
+                }
+
+				p.bbp-topic-meta {
+					display: none;
+				}
+			}
+			
+			li.bbp-topic-voice-count, li.bbp-topic-reply-count {
+				width: 15%;
+			}
+			
+			li.bbp-topic-freshness {
+				width: 33%;
+				
+				.bbp-topic-freshness-author {
+					@include media($tablet){
+						@include span-columns(8);
+					}
+					
+					img {
+						width: 100%;
+					}
+				}
+				
+				a {
+					font-family: 'robotoregular';
+					float: left;
+					width: 60%;
+					text-align: left;
+					color: $black;
+					font-size: 12px;
+					padding-left: 8px;
+					
+					@include media($tablet){
+						padding-left: 0;
+					}
+					
+					&:first-child {
+						width: 40%;
+						padding-left: 0;
+						
+						@include media($tablet){
+							@include span-columns(8);
+							text-align: center;
+						}
+					}
+					
+					&:nth-child(2) {
+						font-family: 'robotomedium';
+						font-size: 14px;
+						color: $red;
+						padding-top: 25px;
+						
+						@include media($tablet){
+							@include span-columns(8);
+							text-align: center;
+							padding-top: 0;
+						}
+						
+						@include media($mobile){
+							font-size: 12px;
+						}
+					}
+					
+					&:last-child {
+						@include media($tablet){
+							@include span-columns(8);
+							text-align: center;
+						}
+						
+						@include media($mobile){
+							font-size: 10px;
+							line-height: 1.2;
+						}
+					}
+					
+					img {
+						width: 100%;
+						border: none;
+						border-radius: 4px;
+						-webkit-border-radius: 4px;
+						-moz-border-radius: 4px;
+						margin: 0 auto;
+						
+						@include media($tablet){
+							width: 40% !important;
+						}
+						
+						@include media($mobile){
+							width: 60% !important;
+						}
+					}
+				}
+			}
+		}
+		
+		li.bbp-footer {
+			display: none;
+		}
+
+		div.odd, ul.odd {
+			background: $white;
+			padding-left: 0;
+		}
+		
+		div.even, ul.even {
+			padding-left: 0;
+		}
+		
+		p.bbp-topic-meta {
+			float: left;
+			
+			@include media($tablet){
+				text-align: center;
+				width: 100%;
+			}
+			
+			span {
+				white-space: normal;
+			}
+		}
+		
+		div.bbp-template-notice.info {
+			display: none;
+		}
+		
+		.bbp-forum-description, .bbp-topic-description  {
+			padding: 5% 0 8% 20%;
+			font-size: 15px;
+			line-height: 1.1;
+			
+			@include media($tablet){
+				font-size: 1.5vw;
+				padding-left: 18%;
+			}
+			
+			@include media($mobile){
+				padding: 3% 0 8% 19%;
+				font-size: 2vw;
+				line-height: 1.2;
+			}
+			
+			@include media($smallMobile){
+				padding: 3% 0 6% 24%;
+				font-size: 12px;
+			}
+			
+			a {
+				font-family: 'robotomedium';
+				
+				&:first-child {
+					position: absolute;
+					left: 5px;
+					top: -5px;
+					width: 16%;
+					
+					@include media($mobile){
+						width: 15%;
+					}
+					
+					@include media($smallMobile){
+						width: 20%;
+						top: -6%;
+					}
+					
+					 img {
+						 width: 100%;
+						 border: none;
+						 border-radius: 4px;
+						-webkit-border-radius: 4px;
+						-moz-border-radius: 4px;
+					 }
+				}
+				
+				&:nth-child(2) {
+					color: $red !important;
+				}
+				
+				&:last-child {
+					width: 100%;
+					float: left;
+					color: $grayText;
+					font-size: 13px;
+					margin-top: 5px;
+					
+					@include media($tablet){
+						font-size: 11px;
+					}
+				}
+			}
+		}
+		
+		.forum-titles .bbp-topic-freshness {
+			text-align: left;
+			
+			@include media($tablet){
+				text-align: center;
+			}
+		}
+		
+		.bbp-topics {
+			border: none;
+			
+			.bbp-body {
+				
+				ul {
+					border-bottom: 1px solid $borderGray;
+				}
+			}
+		}
+		
+		.bbp-pagination-count {
+			background: $lightYellow;
+			padding: 3px 5px;
+			font-size: 14px;
+			
+			@include media($mobile){
+				font-size: 10px;
+				padding: 0 5px;
+			}
+		}
+		
+		li.bbp-header .bbp-reply-author {
+			width: 50%;
+			text-align: left;
+			
+			@include media($mobile){
+				width: 33%;
+				font-size: 12px;
+			}
+		}
+		
+		.bbp-replies {
+			border: none;
+			
+			hr {
+				width: 100%;
+			}
+			
+			li.bbp-header {
+				border-bottom-right-radius: 0;
+				border-bottom-left-radius: 0;
+				-webkit-border-bottom-left-radius: 0;
+				-webkit-border-bottom-right-radius: 0;
+				-moz-border-radius-bottomleft: 0;
+				-moz-border-radius-bottomright: 0;
+				
+				.bbp-reply-content {
+					margin-left: 0;
+					
+					@include media($mobile){
+						width: 100%;
+					}
+				}
+			}
+		}
+		
+		.bbp-body {
+		
+			div.bbp-reply-author {
+				float: left;
+				width: 50%;
+				text-align: left;
+				
+				@include media($mobile){
+					font-size: 12px;
+					width: 37%;
+					margin: 0;
+					padding-left: 0;
+				}
+				
+				> p {
+					position: absolute;
+					width: auto;
+					top: 100%;
+					left: 0;
+					margin-top: 20px;
+					
+					@include media($mobile){
+						margin-top: 5px;
+					}
+					
+					a {
+						background: $red;
+						color: $white;
+						padding: 7px 12px;
+						border-radius: 4px;
+						-webkit-border-radius: 4px;
+						-moz-border-radius: 4px;
+						font-size: 16px;
+						
+						
+						@include media($tablet){
+							padding: 6px 12px;
+							font-size: 14px;
+						}
+						
+						@include media($mobile){
+							font-size: 12px;
+							padding: 4px 6px;
+						/*	padding: 0;
+							background: none;
+							color: $red;
+							*/
+						}
+						
+						&:hover {
+							background: #c30b21;
+							
+							@include media($mobile){
+								//background: transparent;
+								//color: #c30b21;
+							}
+						}
+					}
+				}
+				
+				.bbp-author-avatar {
+					float: left;
+					
+					@include media($tablet){
+						width: 100%;
+					}
+					
+					img {
+						margin: 0;
+						width: 100%;
+						float: left;
+						border: none;
+						border-radius: 4px;
+						-webkit-border-radius: 4px;
+						-moz-border-radius: 4px;
+						
+						@include media($mobile){
+							float: none;
+							position: relative;
+							top: 0;
+						}
+					}
+				}
+				
+				.bbp-author-name {
+					float: left;
+					clear: none;
+					font-size: 16px;
+					color: $red;
+					margin: 12px 5px 0;
+					
+					@include media($tablet){
+						width: 100%;
+						margin: 0;
+						font-size: 14px;
+					}
+					
+					@include media($mobile){
+						margin: 0;
+					}
+				}
+				
+				.bbp-author-role {
+					float: left;
+					font-size: 12px;
+					background: #ddb72e;
+					padding: 2px 8px 4px;
+					line-height: 1.2;
+					border-radius: 4px;
+					-webkit-border-radius: 4px;
+					-moz-border-radius: 4px;
+					margin-top: 15px;
+					
+					@include media($tablet){
+						font-size: 11px;
+					}
+					
+					@include media($mobile){
+						font-size: 10px;
+						margin-top: 0;
+					}
+				}
+				
+				.bbp-reply-post-date {
+					float: left;
+					width: 65%;
+					margin-left: 5px;
+					color: $grayText;
+					
+					@include media($tablet){
+						font-size: 11px;
+						width: 100%;
+					}
+					
+					@include media($mobile){
+						font-size: 9px;
+						margin-left: 0;
+						line-height: 1.6;
+						margin-top: 5px;
+					}
+				}
+			}
+			
+			div.bbp-reply-content {
+				width: 50%;
+				display: inline-block;
+				margin-left: 0 !important;
+				padding: 0;
+				
+				@include media($mobile){
+					width: 63%;
+					margin: 0;
+					float: none;
+				}
+				
+				img {
+					margin: 0 auto;
+				}
+	
+				p {
+					color: $grayText;
+					font-size: 14px;
+				}
+			}
+			
+			.topic {
+				
+				.bbp-reply-content {
+					margin-left: 0;
+					width: 50%;
+					float: left;
+					text-align: left;
+					
+					@include media($mobile){
+						float: none;
+						width: 63%;
+					}
+				}
+			}
+		}
+		
+		div.even, div.odd {
+			width: 100%;
+			float: left;
+			padding: 20px 20px 60px 0;
+			
+			@include media($smallMobile){
+				padding: 20px 5px 60px 0;
+			}
+			
+			&.attach {
+				padding-bottom: 0;
+			}
+		}
+		
+		
+		.bbp-topics {
+			float: left;
+			width: 100%;
+		}
+		
+		#bbp-user-wrapper {
+			//margin-top: 36px;
+			
+			@include media($mobile){
+				//margin-top: 20px;
+			}
+			
+			.topic_button {
+				display: none;
+			}
+			
+		/*	
+			.reply .bbp-reply-content {
+				width: 50%;
+				display: inline-block;
+				margin-left: 0 !important;
+			}
+		*/	
+			h2.entry-title {
+				@include span-columns(12);
+				
+				@include media($tablet){
+					font-size: 16px;
+				}
+			}
+			
+			#bbp-single-user-details {
+				@include span-columns(12);
+				
+				#bbp-user-profile {
+					@include span-columns(12);
+					padding-left: 20px;
+					
+					@include media($mobile){
+						padding-left: 10px;
+					}
+					
+					h2 {
+						float: left;
+					}
+				}
+				
+				#bbp-user-navigation {
+					@include span-columns(12);
+					margin-bottom: 30px;
+					
+					@include media($mobile){
+						border: 1px solid $borderGray;
+						border-radius: 4px;
+						-webkit-border-radius: 4px;
+						-moz-border-radius: 4px;
+					}
+					
+					.user_mobile_nav {
+						display: none;
+						cursor: pointer;
+						z-index: 1;
+						
+						&.open {
+							border-bottom: 1px solid $white;
+						}
+						
+						@include media($mobile){
+							@include span-columns(4);
+						}
+						
+						p {
+							font-size: 16px;
+							background: $black;
+							padding: 6px 10px;
+							color: $white;
+							margin-bottom: 0;
+							
+							span {
+								float: right;
+								font-size: 20px;
+								
+								&.open {
+									font-size: 40px;
+									top: -2px;
+								}
+							}
+						}
+					}
+					
+					.nav_wrap {
+						@include span-columns(12);
+						
+						&.current_user {
+							
+							li {
+								width: 16.66%;
+								
+								@include media($mobile){
+									@include span-columns(4);
+								}
+							}
+						}
+					}
+					
+					ul {
+						@include span-columns(12);
+						border: 1px solid $borderGray;
+						-webkit-transition: .5s ease-in-out;
+						-moz-transition: .5s ease-in-out;
+						-o-transition: .5s ease-in-out;
+						transition:  .5s ease-in-out;
+						
+						@include media($mobile){
+							border: none;
+							margin-top: -222px;
+						}
+						
+						&.open {
+							margin-top: 0;
+						}
+						
+						li {
+							width: 20%;
+							float: left;
+							border-right: 1px solid $borderGray;
+							text-align: center;
+							
+							@include media($mobile){
+								@include span-columns(4);
+								border-right: none;
+								border-bottom: 1px solid $borderGray;
+							}
+							
+							&:last-child {
+								border-right: none;
+								
+								@include media($mobile){
+									border-bottom: none;
+								}
+							}
+							
+							a {
+								color: $black;
+								font-size: 14px;
+								
+								&:hover {
+									color: $white;
+									background: $black;
+								}
+								
+								@include media($tablet){
+									font-size: 1.6vw;
+								}
+								
+								@include media($mobile){
+									font-size: 14px;
+								}
+							}
+							
+							&.current {
+								background: $black;
+								
+								a {
+									background: transparent;
+									color: $white;
+								}
+							}
+						}
+					}
+				}
+				
+				#bbp-user-avatar {
+					width: 19%;
+					float: left;
+					
+					img.avatar {
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+			
+			#bbp-user-body, .profile_content {
+				float: left;
+				margin-left: 0;
+				width: 100%;
+				clear: none !important;
+				
+				&.profile_body {
+					width: 81%;
+					
+					@include media($mobile){
+						line-height: 1;
+					}
+					
+					> p {
+						padding-left: 20px;
+						float: left;
+						margin-top: 10px;
+						
+						@include media($mobile){
+							padding-left: 10px;
+						}
+						
+						a {
+							font-family: 'robotoregular';
+							font-size: 16px;
+							padding: 7px 15px;
+							border-radius: 4px;
+							-webkit-border-radius: 4px;
+							-moz-border-radius: 4px;
+							background: $red;
+							color: $white;
+							
+							&:hover {
+								background: #c30b21;
+							}
+							
+							@include media($tablet){
+								padding: 6px 12px;
+								font-size: 14px;
+							}
+							
+							@include media($mobile){
+								padding: 7px 10px;
+								font-size: 12px;
+							}
+						}
+					}
+					
+					h2 {
+						font-size: 14px;
+					}
+					
+					p {
+						font-size: 10px;
+						margin-right: 10px;
+					}
+					
+					&.mailbox {
+						width: 100%;
+						
+						.bbp-user-profile {
+							display: none !important;
+						}
+					}
+				}
+				
+				.bbp-user-section {
+					@include span-columns(12);
+					line-height: 1.4;
+					
+					
+					.bbp-pagination:first-of-type {
+						display: none;
+					}
+					
+					p {
+						float: left;
+						margin-right: 20px;
+						font-size: 14px;
+						color: $grayText;
+						
+						@include media($tablet){
+							font-size: 12px;
+						}
+						
+						&:last-child {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+			
+		}
+
+	}
+		
+	button {
+		font-family: 'robotoregular';
+		color: $white;
+		background: $red;
+		padding: 5px 20px 7px;
+		border-radius: 4px;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		font-size: 18px;
+		border: none;
+		
+		&:hover {
+			background: #c30b21;
+		}
+		
+		@include media($tablet){
+			font-size: 14px;
+		}
+		
+		@include media($mobile){
+			font-size: 16px;
+			padding: 4px 18px 6px;
+		}
+	}
+	
+	.topic_button {
+		line-height: 1;
+		float: right;
+		margin-right: 10px;
+		font-size: 14px;
+		
+		@include media($smallMobile){
+			font-size: 12px;
+			padding: 6px;
+			margin-bottom: 10px;
+			float: left;
+		}
+	}
+}
+
+.navigation-paging {
+	@include span-columns(12);
+	
+	h1 {
+		display: none;
+	}
+}
+
+.bbp-topic-form {
+	
+	input[type="text"] {
+		width: 100%;
+		float: left;
+	}
+}
+
+.bbp-reply-form {
+	
+	input[type="text"] {
+		width: 100%;
+		float: left;
+	}
+}
+
+.bbp-submit-wrapper {
+	width: 100%;
+	//margin-top: 0 !important;
+	
+	@include media($mobile){
+		//margin-top: 20px;
+	}
+	
+	button {
+		float: right;
+	}
+}
+
+.rec_text {
+	@include span-columns(12);
+	font-family: 'robotoitalic';
+	text-align: left;
+	font-size: 12px;
+	margin: 0;
+	line-height: 1.4;
+}
+
+#bbp_topic_subscription {
+	
+	@include media($mobile){
+		height: 13px;
+	}
+}
+
+label[for="bbp_topic_subscription"] {
+	@include media($mobile){
+		font-size: 12px;
+	}
+}
+
+.rtm-bbp-container {
+	@include span-columns(12);
+	margin: 0 !important;
+	
+	.rtm-bbp-thumb-view {
+		width: 100% !important;
+		
+		a {
+			display: block !important;
+		}
+	}
+}
+
+.rtm-file-input-container {
+	width: 100%;
+	float: left;
+	
+	input[type="file"] {
+		width: 100%;
+		float: left;
+	}
+}
+
+.rtm-tabs {
+	border-bottom: 1px solid $borderGray !important;
+	
+	li {
+		color: $black;
+		border: 1px solid $borderGray !important;
+		border-bottom: none !important;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		-webkit-border-top-left-radius: 4px;
+		-webkit-border-top-right-radius: 4px;
+		-moz-border-radius-topleft: 4px;
+		-moz-border-radius-topright: 4px;
+		
+		&:first-child {
+			margin-left: 0;
+		}
+		
+		a {
+			font-family: 'robotoregular';
+			color: $black;
+			
+			@include media($mobile){
+				font-size: 14px;
+			}
+			
+			.dashicons {
+				font-size: 14px;
+				line-height: 24px;
+			}
+		}
+		
+		&.active {
+			background: $black;
+			
+			a {
+				color: $white;
+			}
+		}
+	}
+}
+
+.rtm-tabs-content {
+	@include span-columns(12);
+	background: $white;
+	text-align: center;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+	-moz-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+	box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+	border: 1px solid $borderGray;
+	
+	.content {
+		padding: 40px;
+		margin: 20px 0 40px;
+		float: none;
+		display: inline-block;
+		width: auto;
+		border-radius: 4px;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		
+		@include media($mobile){
+			padding: 20px;
+			margin: 0;
+		}
+		
+		&.hide {
+			display: none;
+		}
+		
+		h3 {
+			font-size: 24px;
+			margin-top: 0;
+			
+			@include media($mobile){
+				font-size: 20px;
+			}
+		}
+		
+		label {
+			width: 100%;
+			float: left;
+			text-align: left;
+			
+			@include media($mobile){
+				font-size: 14px;
+			}
+		}
+		
+		textarea {
+			width: 100%;
+			float: left;
+			border: 1px solid $borderGray;
+			padding: 10px;
+			height: 200px;
+			
+			@include media($mobile){
+				font-size: 14px;
+			}
+		}
+		
+		.rtmedia-edit-title {
+			@include span-columns(12);
+			margin-bottom: 20px;
+			
+			input {
+				height: 35px;
+				width: 100%;
+				float: left;
+				border: 1px solid $borderGray;
+				border-radius: 4px;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				padding: 0 10px;
+			}
+		}
+		
+		.rtmedia-editor-description {
+			@include span-columns(12);
+		}
+	}
+}
+
+.rtmedia-editor-buttons {
+	@include span-columns(12);
+	margin-top: 40px;
+	
+	.button {
+		border: none;
+		padding: 8px 40px;
+		
+		&.rtm-button-save {
+			color: $white;
+		}
+	}
+}
+
+.d4p-attachment-addfile {
+	display: none;
+}
+
+.bbp-attachments-form {
+	@include span-columns(12);
+}
+
+.mejs-inner {
+	height: 100%;
+}
+
+.mejs-layers {
+	height: 100%;
+}
+
+#media_upload_wait {
+	float: left;
+    display: none;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    min-height: 100%;
+    background: rgba(0, 0, 0, .8);
+    z-index: 999;
+	
+	
+	&.show {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	    -webkit-box-orient: horizontal;
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	}
+	
+	.text_wrap {
+		 width: 100%;
+	    -webkit-box-orient: vertical;
+	    -ms-flex-direction: column;
+	    flex-direction: column;
+	    -ms-flex-wrap: nowrap;
+	    flex-wrap: nowrap;
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-direction: normal;
+	}
+
+	h2 {
+		font-size: 38px;
+	    text-transform: uppercase;
+	    width: 100%;
+	    display: inline-block;
+		
+		@include media($tablet){
+			font-size: 30px;
+		}
+		
+		@include media($mobile){
+			font-size: 22px;
+		}
+		
+		@include media($smallMobile){
+			font-size: 20px;
+		}
+	}
+	
+	h3 {
+		font-size: 28px;
+	    width: 100%;
+	    display: inline-block;
+		
+		@include media($tablet){
+			font-size: 20px;
+		}
+		
+		@include media($mobile){
+			font-size: 13px;
+		}
+		
+		@include media($smallMobile){
+			font-size: 11px;
+		}
+	}
+}
+
+.fancybox-opened {
+	
+	.fancybox-skin {
+		background: transparent;
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+		-moz-box-shadow: none !important;
+	}
+}
+
+#link-selector {
+	color: $black;
+}
+
+.subscribe_all {
+    float: right;
+    margin-top: -10px;
+
+    input {
+        font-family:'robotoblack', sans-serif;
+        background: #ddb72e;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 14px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        text-transform: uppercase;
+
+        &:hover {
+            background: #e1bf44;
+        }
+    }
+}
+
+/*
+.lightbox_pop {
+	display: none;
+	text-align: center;
+	z-index: 9999;
+	top: 0;
+	height: 100%;
+	min-height: 100%;
+	width: 100%;
+	min-width: 100%;
+	
+	&.show {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+		position: fixed;
+		background: rgba(0,0,0,.8);
+	}
+	
+	.image_wrap {
+		max-width: 800px;
+		margin: 0 auto;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+		align-self: center;
+		
+		@include media($tablet){
+			max-width: 600px;
+		}
+		
+		@include media($mobile){
+			max-width: 65%;
+		}
+		
+		@include media($smallMobile){
+			max-width: 75%;
+		}
+	}
+}
+
+.close_button {
+	cursor: pointer;
+	position: absolute;
+	top: -12px;
+	right: -12px;
+	
+	@include media($mobile){
+		top: -8px;
+		right: -8px;
+	}
+	
+	img {
+		width: auto;
+		
+		@include media($tablet){
+			width: 25px;
+		}
+		
+		@include media($mobile){
+			width: 20px;
+			
+		}
+	}
+}
+*/

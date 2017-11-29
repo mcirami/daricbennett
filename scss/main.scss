@@ -1,0 +1,38 @@
+// frameworks
+@import "libs/bourbon/bourbon"; 
+@import "partials/grid";  // custom grid params have to go here to override neat
+@import "libs/neat/neat"; 
+@import "libs/normalize"; 
+@import "libs/fa/font-awesome";
+
+// partials
+// @import "libs/animate"; // big lib add if needed
+@import "partials/colors";
+@import "partials/extends";  
+@import "partials/mixins"; 
+@import "partials/base";
+@import "partials/typography";
+@import "partials/layouts";
+@import "partials/construction";
+
+// site elements add more as site grows in complexity
+@import "elements/header";
+@import "elements/sidebar";
+@import "elements/footer";
+@import "elements/home";
+@import "elements/premember";
+@import "elements/free-lessons";
+@import "elements/passions";
+@import "elements/contact-us";
+@import "elements/member";
+@import "elements/forum";
+@import "elements/forms";
+@import "elements/member-home";
+@import "elements/tml";
+@import "elements/standard";
+@import "elements/mailbox";
+@import "elements/single-lesson";
+@import "elements/testimonials";
+
+// Import shame last. For quick fixes that will be worked into proper elements later.
+@import "elements/shame";

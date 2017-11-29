@@ -1,0 +1,632 @@
+.single_lesson {
+	text-align: center;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+
+
+	.social_buttons {
+        margin-bottom: 40px;
+        border-top: 1px solid #f1f1f1;
+        border-bottom: 1px solid #f1f1f1;
+        padding: 20px 0;
+
+        a {
+            font-family: 'robotoregular';
+            display: inline-block;
+            color: $white;
+            padding: 12px 75px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
+            margin-right: 1%;
+            -webkit-transition: all 1s linear 1s;
+            -moz-transition: all 1s linear 1s;
+            -o-transition: all 1s linear 1s;
+            transition: all 1s linear 1s;
+
+            @include media($tablet) {
+                padding: 10px 30px 10px 55px;
+            }
+
+            @include media($mobile) {
+                padding:8px 0;
+                font-size: 14px;
+                margin-right: 0;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            span:before {
+                content: '';
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: -3px;
+                left: -36px;
+
+                @include media($mobile) {
+                    width: 25px;
+                    top: -1px;
+                    left: -28px;
+                }
+            }
+
+            &.instagram {
+                border-bottom: 4px solid #1e5c5d;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3e9193+0,259093+31,218183+32,218183+100 */
+                background: rgb(62,145,147); /* Old browsers */
+                background: -moz-linear-gradient(-66deg,  rgba(62,145,147,1) 0%, rgba(37,144,147,1) 31%, rgba(33,129,131,1) 32%, rgba(33,129,131,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(-66deg,  rgba(62,145,147,1) 0%,rgba(37,144,147,1) 31%,rgba(33,129,131,1) 32%,rgba(33,129,131,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(156deg, rgba(62,145,147,1) 0%,rgba(37,144,147,1) 31%,rgba(33,129,131,1) 32%,rgba(33,129,131,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e9193', endColorstr='#218183',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+                &:hover {
+                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3e9193+98,3e9193+98,259093+99,259093+100,218183+100,218183+100 */
+                    background: rgb(62,145,147); /* Old browsers */
+                    background: -moz-linear-gradient(-45deg,  rgba(62,145,147,1) 98%, rgba(62,145,147,1) 98%, rgba(37,144,147,1) 99%, rgba(37,144,147,1) 100%, rgba(33,129,131,1) 100%, rgba(33,129,131,1) 100%); /* FF3.6-15 */
+                    background: -webkit-linear-gradient(-45deg,  rgba(62,145,147,1) 98%,rgba(62,145,147,1) 98%,rgba(37,144,147,1) 99%,rgba(37,144,147,1) 100%,rgba(33,129,131,1) 100%,rgba(33,129,131,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(135deg,  rgba(62,145,147,1) 98%,rgba(62,145,147,1) 98%,rgba(37,144,147,1) 99%,rgba(37,144,147,1) 100%,rgba(33,129,131,1) 100%,rgba(33,129,131,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e9193', endColorstr='#218183',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+                }
+
+                span:before {
+                    background: url('../images/button-icon-instagram.png')no-repeat;
+                    background-size: 100%;
+                }
+            }
+
+            &.youtube {
+                border-bottom: 4px solid #cd2118;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e22a20+0,e22a20+31,d3251b+32,d3251b+32,e6463d+100 */
+                background: #e22a20; /* Old browsers */
+                background: -moz-linear-gradient(-66deg,  #e22a20 0%, #e22a20 31%, #d3251b 32%, #d3251b 32%, #e6463d 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(-66deg,  #e22a20 0%,#e22a20 31%,#d3251b 32%,#d3251b 32%,#e6463d 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(156deg,  #e22a20 0%,#e22a20 31%,#d3251b 32%,#d3251b 32%,#e6463d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e22a20', endColorstr='#e6463d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+                &:hover {
+                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e22a20+0,e22a20+100,d3251b+100,d3251b+100,e6463d+100,d3251b+100,d3251b+101 */
+                    background: #e22a20; /* Old browsers */
+                    background: -moz-linear-gradient(-45deg,  #e22a20 0%, #e22a20 100%, #d3251b 100%, #d3251b 100%, #e6463d 100%, #d3251b 100%, #d3251b 101%); /* FF3.6-15 */
+                    background: -webkit-linear-gradient(-45deg,  #e22a20 0%,#e22a20 100%,#d3251b 100%,#d3251b 100%,#e6463d 100%,#d3251b 100%,#d3251b 101%); /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(135deg,  #e22a20 0%,#e22a20 100%,#d3251b 100%,#d3251b 100%,#e6463d 100%,#d3251b 100%,#d3251b 101%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e22a20', endColorstr='#d3251b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+                }
+
+                span:before {
+                    background: url('../images/button-icon-youtube.png')no-repeat;
+                    top: 0;
+                    height: 21px;
+                    background-size: 100%;
+
+                    @include media($mobile) {
+                        top: 2px;
+                    }
+
+                }
+            }
+
+            &.facebook {
+                border-bottom: 4px solid #314979;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#546ea3+0,3b5995+32,355187+33,3b5995+100 */
+                background: #546ea3; /* Old browsers */
+                background: -moz-linear-gradient(-66deg,  #546ea3 0%, #3b5995 32%, #355187 33%, #3b5995 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(-66deg,  #546ea3 0%,#3b5995 32%,#355187 33%,#3b5995 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(156deg,  #546ea3 0%,#3b5995 32%,#355187 33%,#3b5995 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#546ea3', endColorstr='#3b5995',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+                &:hover {
+                    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#546ea3+0,3b5995+100,355187+100,3b5995+100 */
+                    background: #546ea3; /* Old browsers */
+                    background: -moz-linear-gradient(-45deg,  #546ea3 0%, #3b5995 100%, #355187 100%, #3b5995 100%); /* FF3.6-15 */
+                    background: -webkit-linear-gradient(-45deg,  #546ea3 0%,#3b5995 100%,#355187 100%,#3b5995 100%); /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(135deg,  #546ea3 0%,#3b5995 100%,#355187 100%,#3b5995 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#546ea3', endColorstr='#3b5995',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+                }
+
+                span:before {
+                    background: url('../images/button-icon-facebook.png')no-repeat;
+                    background-size: 100%;
+                }
+            }
+        }
+    }
+
+	.video_section {
+		 padding: 60px 0;
+		 color: $black;
+		 
+		 @include media($mobile){
+		 	padding: 40px 0;
+		 }
+		 
+		 h2 {
+			 font-family: 'robotobold';
+			 font-size: 36px;
+			 text-transform: uppercase;
+			 margin: 0 0 40px;
+			 line-height: 1.2;
+			 
+			 @include media($tablet){
+			 	font-size: 32px;
+			 }
+			 
+			 @include media($mobile){
+			 	font-size: 26px;
+			 }
+		 }
+	}
+
+	.quote_section {
+		background: $lightGray;
+		margin: 40px 0 0;
+		padding: 20px;
+		
+		img {
+			width: 35px;
+			float: left;
+			padding-top: 8px;
+			
+			@include media($tablet){
+				width: 24px;
+			}
+			
+			@include media($mobile){
+				width: 18px;
+			}
+		}
+		
+		p {
+			font-family: 'robotomedium';
+			width: 95%;
+			float: left;
+			padding-left: 1%;
+			font-size: 20px;
+			line-height: 1.6;
+			text-align: left;
+			
+			@include media($tablet){
+				font-size: 18px;
+			}
+			
+			@include media($mobile){
+				width: 92%;
+				font-size: 14px;
+			}
+		}
+	}
+	
+	.form_section {
+		background: $black;
+		padding: 20px 0;
+		color: $white;
+		
+		#email_join_single_lesson {
+			@include span-columns(12);
+			
+			h4 {
+				display: block;
+				width: 50%;
+				float: left;
+				font-family: 'robotobold';
+				font-size: 26px;
+				float: left;
+				margin-top: 15px;
+				margin-bottom: 0;
+				text-align: left;
+				
+				@include media($tablet){
+					font-size: 20px;
+					margin-top: 10px;
+				}
+				
+				@include media($mobile){
+					font-size: 16px;
+					width: 100%;
+					text-align: center;
+					margin-bottom: 10px;
+					margin-top: 0;
+				}
+			}
+			
+			.email {
+				margin: 0;
+				width: 68%;
+			}
+			
+			.submit {
+				margin: 0;
+				width: 30%;
+			}
+			
+			.mc4wp-form {
+				display: block;
+				width: 50%;
+				float: left;
+				
+				@include media($mobile){
+					width: 100%;
+				}
+			}
+			
+			.mc4wp-form input[type=email] {
+				height: 52px;
+				
+				@include media($tablet){
+					height: 46px;
+				}
+				
+				@include media($mobile){
+					height: 38px;
+				}
+			}
+			
+			.mc4wp-form input[type=submit] {
+				height: 52px;
+				
+				@include media($tablet){
+					height: 46px;
+					font-size: 18px;
+					top: 0;
+				}
+				
+				@include media($mobile){
+					height: 38px;
+					font-size: 14px;
+					top: -1px;
+				}
+			}
+		}
+	}
+	
+	.social_media_section {
+		color: $black;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+		
+		@include media($tablet){
+			@include span-columns(8);
+		}
+		
+		.image_wrap {
+			@include span-columns(4.5);
+			background: url('../images/daric-single-lesson.jpg') no-repeat;
+			background-size: cover;
+			padding: 14% 0;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-ms-flex-wrap: nowrap;
+			flex-wrap: nowrap;
+			
+			@include media($tablet){
+				display: none;
+			}
+		}
+		
+		.text_wrap {
+			@include span-columns(7.5);
+			text-align: center;
+			padding: 0 5% 20px 0;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-ms-flex-wrap: nowrap;
+			flex-wrap: nowrap;
+			align-self: center;
+			
+			@include media($tablet){
+				@include span-columns(8);
+				padding: 20px;
+			}
+			
+			h3 {
+				@include span-columns(12);
+				font-family: 'robotolight';
+				font-size: 30px;
+				text-transform: uppercase;
+				line-height: 1.4;
+				margin-bottom: 25px;
+				
+				@include media($tablet){
+					margin-bottom: 15px;
+				}
+				
+				@include media($mobile){
+					font-size: 22px;
+				}
+				
+				span {
+					color: $red;
+				}
+			}
+			
+			.button_wrap {
+				display: block;
+				width: 100%;
+				float: left;
+				margin-top: 20px;
+				
+				@include media($tablet){
+					margin-top: 0;
+				}
+			}
+			
+			.button {
+				font-family: 'robotobold';
+				text-transform: uppercase;
+				padding: 14px 30px;
+				font-size: 30px;
+				margin: 0 auto;
+				
+				@include media($desktop){
+					padding: 14px 0;
+					width: 100%;
+					display: block;
+					margin: 0 auto;
+					font-size: 28px;
+				}
+				
+				@include media($tablet){
+					font-size: 24px;
+					width: 86%;
+				}
+				
+				@include media($mobile){
+					width: 100%;
+				}
+				
+				@include media($smallMobile){
+					padding: 8px 0;
+					font-size: 4vw;
+				}
+			}
+		}
+	}
+	
+	.bottom_section {
+		padding: 50px 0 80px;
+		color: $white;
+		background: url('../images/single-lesson-red-background.jpg') no-repeat;
+		background-position: top left;
+		background-size: cover;
+		
+		@include media($tablet){
+			background-position: top;
+		}
+		
+		@include media($mobile){
+			padding: 30px 0 60px;
+		}
+		
+		.button_wrap {
+			display: block;
+			width: 100%;
+			float: left;
+			margin-top: 20px;
+			
+			@include media($smallMobile){
+				margin-top: 10px;
+			}
+		}
+		
+		.button {
+			font-family: 'robotobold';
+			text-transform: uppercase;
+			display: block;
+			width: 75%;
+			padding: 18px 0;
+			font-size: 30px;
+			margin: 0 auto;
+			
+			@include media($tablet){
+				font-size: 24px;
+			}
+			
+			@include media($mobile){
+				width: 100%;
+				padding: 10px 0;
+				font-size: 18px;
+			}
+			
+			@include media($smallMobile){
+				font-size: 4vw;
+				padding: 8px 0;
+			}
+		}
+		
+		h2 {
+			font-size: 36px;
+			text-transform: uppercase;
+			
+			@include media($tablet){
+				font-size: 34px;
+			}
+			
+			@include media($mobile){
+				font-size: 28px;
+				line-height: 1.2;
+			}
+			
+			@include media($smallMobile){
+				font-size: 25px;
+			}
+		}
+		
+		h3 {
+			font-family: 'robotoitalic';
+			font-size: 24px;
+			margin-top: 15px;
+			
+			@include media($tablet){
+				font-size: 22px;
+			}
+			
+			@include media($mobile){
+				font-size: 18px;
+				margin-top: 5px;
+			}
+		}
+		
+		h4 {
+			font-family: 'robotomedium';
+			font-size: 40px;
+			margin: 20px 0;
+			
+			@include media($tablet){
+				margin-top: 10px;
+				font-size: 36px;
+			}
+			
+			@include media($mobile){
+				font-size: 20px;
+				margin-bottom: 0;
+			}
+			
+			@include media($smallMobile){
+				font-size: 17px;
+			}
+		}
+		
+		.columns {
+			padding: 20px 0;
+			margin: 20px 0;
+			
+			@include media($mobile){
+				padding: 0;
+				margin: 0 0 20px;
+			}
+		}
+		
+		.column {
+			
+			&:first-child {
+				@include span-columns(5.5);
+				text-align: left;
+				
+				@include media($mobile){
+					@include span-columns(4);
+					text-align: center;
+				}
+			}
+			
+			&:last-child {
+				@include span-columns(6.5);
+				
+				@include media($mobile){
+					@include span-columns(4);
+				}
+			}
+			
+			p {
+				font-family: 'robotoregular';
+				font-size: 18px;
+				margin: 0;
+				
+				@include media($tablet){
+					font-size: 16px;
+				}
+				
+				@include media($mobile){
+					font-size: 14px;
+				}
+			}
+			
+			ul {
+				padding-right: 20%;
+				
+				@include media($tablet){
+					padding-right: 8%;
+				}
+				
+				@include media($mobile){
+					padding-right: 0;
+					width: 60%;
+					display: inline-block;
+					margin: 0 auto;
+					text-align: left;
+					margin-bottom: 20px;
+				}
+				
+				@include media($smallMobile){
+					width: 100%;
+				}
+				
+				li {
+					background: rgba(255,255,255,.2);
+					padding: 5px 0 5px 45px;
+					margin-bottom: 10px;
+					
+					@include media($tablet){
+						padding-left: 40px;
+					}
+					
+					@include media($mobile){
+						padding-left: 36px;
+					}
+					
+					&:before {
+						content: '';
+						background: url('../images/icon-checkmark.png') no-repeat;
+						width: 18px;
+						height: 18px;
+						position: absolute;
+						left: 16px;
+						top: 10px;
+						
+						@include media($tablet){
+							background-size: 80%;
+							left: 13px;
+						}
+						
+						@include media($mobile){
+							background-size: 75%;
+							left: 11px;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	#nav-below {
+		display: none;
+		
+		h1 {
+			display: none;
+		}
+		
+		.nav-previous {
+			float: left;
+		}
+		
+		.nav-next {
+			float: right;
+		}
+	}
+}
+
+.must-log-in a {
+	font-family: 'robotobold';
+	color: $red;
+}

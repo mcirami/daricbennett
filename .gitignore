@@ -1,0 +1,6 @@
+.idea/
+node_modules/
+.sass-cache/
+Gruntfile.js
+bower.json
+package.json

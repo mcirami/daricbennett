@@ -1,0 +1,14 @@
+// all base component placeholders 
+
+%clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+%post {
+	@include outer-container;
+	@include clearfix;
+}

@@ -1,0 +1,172 @@
+.testimonials {
+	
+	.top_section {
+		background: url('../images/testimonials-background.jpg') no-repeat;
+		background-size: cover;
+		background-position: center center;
+		text-align: center;
+		padding: 7% 0 13%;
+		
+		@include media($tablet){
+			padding: 7% 0 18%;
+		}
+
+		p {
+			font-family: 'robotolight';
+			font-size: 22px;
+			line-height: 2;
+			color: $black;
+			padding: 0 2%;
+			
+			@include media($mobile){
+				font-size: 18px;
+				line-height: 1.4;
+				padding: 0;
+			}
+		}
+	}
+
+	.testimonials_content {
+		padding: 40px 0 12%;
+		margin-top: -164px;
+		
+		@include media($mobile){
+			margin-top: -90px;
+		}
+	}
+
+	.row {
+		background: $white;
+		border-top: 1px solid #e1e1e1;
+		border-left: 1px solid #e1e1e1;
+		border-right: 1px solid #e1e1e1;
+		border-bottom: 4px solid #e1e1e1;
+		padding: 20px;
+		margin-bottom: 20px;
+		
+		@include media($mobile){
+			display: table;
+		}
+
+		.column_one {
+			width: 3.17215%;
+			float: left;
+			margin-right: 1.35765%;
+			padding-top: 6px;
+			
+			@include media($mobile){
+				width: 7.17215%;
+				margin-right: 2.35765%;
+				padding-top: 6px;
+				max-width: 34px;
+			}
+		}
+
+		.column_two {
+			width: 81.88078%;
+			float: left;
+			margin-right: 1.2%;
+			
+			@include media($mobile){
+				width: 89.88078%;
+				margin-right: 0;
+			}
+			
+			.quote_info {
+				@include media($mobile){
+					text-align: center;
+				}
+			}
+			
+			.text_wrap {
+				@include span-columns(12);
+				
+				@include media($mobile){
+					display: inline-block;
+					float: none;
+				}
+			}
+
+			p {
+				font-family: 'robotoregular';
+				color: $grayText;
+				line-height: 2;
+
+				span {
+					font-family: 'robotoregular';
+					padding: 0 5px;
+				}
+
+				&.name {
+					font-family: 'robotoitalic';
+					color: $black;
+					float: left;
+					line-height: 1;
+					
+					@include media($mobile){
+						float: none;
+						display: inline-block;
+					}
+				}
+
+				&.date {
+					font-family: 'robotoitalic';
+					float: left;
+					color: $red;
+					line-height: 1;
+					
+					@include media($mobile){
+						float: none;
+						display: inline-block;
+					}
+				}
+			}
+			
+			.image_wrap {
+				display: none;
+				
+				@include media($mobile){
+					display: inline-block;
+				}
+			}
+		}
+
+		.column_three {
+			width: 12.23176%;
+			float: left;
+			
+			@include media($mobile){
+				display: none;
+			}
+		}
+	}
+
+	.button_wrap {
+		@include span-columns(12);
+		text-align: center;
+		margin: 30px 0 50px;
+		
+		.button {
+			font-family: 'robotobold';
+			font-size: 30px;
+			padding: 7px 5%;
+			text-transform: uppercase;
+			color: $white;
+			text-shadow: 2px 1px 1px rgba(155,155,155,1);
+			
+			@include media($tablet){
+				padding: 14px 5%;
+				display: block;
+				line-height: 1;
+			}
+			
+			@include media($mobile){
+				font-size: 22px;
+			}
+			
+			@include media($smallMobile){
+				font-size: 5.5vw;
+			}
+		}
+	}
+}

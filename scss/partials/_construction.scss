@@ -1,0 +1,64 @@
+.under_construction {
+	background: darken($white, 5%);
+	color: $black;
+	
+	.container {
+		text-align: center;
+		margin-top: 50px;
+		
+		h1 {
+			color: $black;
+		}
+		
+		img {
+			display: inline-block;
+		}
+		
+		form {
+			background: $white;
+			display: inline-block;
+			padding: 20px 30px;
+			border: 1px solid darken($white, 10%);
+			text-align: left;
+			width: 320px;
+			
+			label {
+				display: block;
+				margin: 10px 0px 0px;
+				color: darken($white, 60%);
+			}
+			
+			input[type="text"], input[type="password"] {
+				width: 100%;
+				padding: 10px 10px;
+				background: darken($white, 5%);
+				border: 1px solid darken($white, 10%);
+				border-radius: 4px;
+				box-shadow: -1px -1px 1px rgba(0,0,0,.25);
+			}
+			
+			.login-remember {
+				float: left;
+			}
+			
+			.login-submit {
+				float: right;
+				
+				input {
+					padding: 10px 20px;
+					@include linear-gradient(#2989d8, #1e5799);
+					border: 0px;
+					border-radius: 4px;
+					color: $white;
+					margin-top: 10px;
+					font-size: 14px;
+					
+					&:hover {
+						@include transition (all 1.0s ease-in-out);
+						background: #2989d8;
+					}
+				}
+			}
+		}
+	}
+}

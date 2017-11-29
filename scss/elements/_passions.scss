@@ -1,0 +1,199 @@
+.passions {
+	
+	h2 {
+		font-family: 'robotomedium';
+	}
+	
+	.top_section {
+		padding: 40px 0;
+		text-align: center;
+		
+		@include media($mobile){
+			padding: 30px 0;
+		}
+		
+		h2 {
+			font-size: 30px;
+			color: $black;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+			border-bottom: 1px solid $black;
+			padding-bottom: 15px;
+			display: inline-block;
+			line-height: 1.2;
+			
+			@include media($tablet){
+				font-size: 28px;
+				margin-bottom: 15px;
+			}
+			
+			@include media($mobile){
+				font-size: 22px;
+				margin-bottom: 10px;
+			}
+		}
+		
+		p {
+			color: $black;
+			font-size: 20px;
+			line-height: 2;
+			padding: 0 6%;
+			
+			@include media($tablet){
+				font-size: 18px;
+			}
+			
+			@include media($mobile){
+				font-size: 14px;
+				line-height: 1.6;
+			}
+		}
+	}
+	
+	.photo_section {
+		padding: 40px;
+		text-align: center;
+		
+		@include media($tablet){
+			padding: 30px 0;
+		}
+		
+		&.gray {
+			background: $lightGray;
+		}
+		
+		h2 {
+			display: inline-block;
+			color: $red;
+			border-bottom: 1px solid $red;
+			padding-bottom: 15px;
+			font-size: 30px;
+			margin-bottom: 40px;
+			
+			@include media($tablet){
+				font-size: 28px;
+			}
+			
+			@include media($mobile){
+				font-size: 24px;
+				margin-bottom: 30px;
+			}
+		}
+		
+		.row {
+			margin-bottom: 40px;
+			
+			@include media($mobile){
+				margin-bottom: 20px;
+			}
+		}
+		
+		.image_wrap {
+			width: 24.7%;
+			display: inline-block;
+			text-align: center;
+			border-radius: 50%;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			
+			@include media($mobile){
+				width: 32.5%;
+			}
+			
+			@include media($smallMobile){
+				width: 31%;
+			}
+
+			&:before {
+				
+				width: 78%;
+				height: 100%;
+				background: rgba(270,15,43,.7);
+				position: absolute;
+				top: 0;
+				left: 11%;
+				border-radius: 100%;
+				z-index: 1;
+				
+				@include media($mobile){
+					width: 90%;
+					height: 95%;
+				}
+			}
+			
+			img {
+				border-radius: 50%;
+				width: 78%;
+				margin: 0 auto;
+				
+				@include media($mobile){
+					width: 90%;
+				}
+			}
+			
+			.text {
+				font-family: 'robotolight';
+				display: none;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				top: 0;
+				padding: 34% 0;
+				border-radius: 50%;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				color: $white;
+				
+				@include media($tablet){
+					padding: 34% 0;
+				}
+				
+				@include media($mobile){
+					position: relative;
+					padding: 0;
+					display: block;
+					color: $black;
+				}
+				
+				h3 {
+					font-size: 20px;
+					margin: 0;
+					
+					@include media($tablet){
+						font-size: 1.8vw;
+					}
+					
+					@include media($mobile){
+						font-size: 3.2vw;
+						margin-top: 10px;
+					}
+					
+					@include media($smallMobile){
+						font-size: 2.8vw;
+					}
+				}	
+			}
+			
+			&:hover {
+				cursor: pointer;
+				
+				.text {
+					display: block;
+					z-index: 1;
+				}
+				
+				&:before {
+					content:'';
+					
+					@include media($mobile){
+						content: none;
+					}
+					
+				}
+			}
+			
+		}
+		
+	}
+}

@@ -1,0 +1,284 @@
+.tml-profile {
+	@include span-columns(12);
+	padding: 30px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	
+	@include media($mobile){
+		padding: 20px;
+	}
+	
+	input {
+		border-radius: 4px;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+	}
+	
+	#your-profile {
+		> h3 {
+			display: none;
+		}
+	}
+	
+	table.form-table {
+		display: none;
+	}
+	
+	.image_wrap {
+		@include span-columns(6);
+		background: $white;
+		padding: 20px;
+		-webkit-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+		-moz-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+		box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+		border: 1px solid $borderGray;
+		border-radius: 4px;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		
+		@include media($mobile){
+			@include span-columns(4);
+			line-height: 1.4;
+		}
+		
+		label {
+			font-family: 'robotoregular';
+			color: #000;
+			width: auto;
+			float: left;
+			font-size: 16px;
+			margin-right: 10px;
+			
+			@include media($mobile){
+				font-size: 14px;
+			}
+		}
+		
+		input {
+			border: none;
+			float: left;
+			width: auto;
+			padding: 1px 0 0 0;
+			height: auto;
+			margin: 0;
+			font-size: 16px;
+			background: $white;
+		}
+		
+		.description {
+			@include span-columns(12);
+			font-size: 13px;
+			
+			@include media($mobile){
+				font-size: 11px;
+			}
+		}
+	}
+	
+	.user_info {
+		@include span-columns(6);
+		
+		@include media($mobile){
+			@include span-columns(4);
+			margin-top: 20px;
+		}
+		
+		tbody {
+			@include span-columns(12);
+			
+			tr {
+				@include span-columns(12);
+			}
+		}
+		
+		label {
+			@include media($mobile){
+				font-size: 13px;
+			}
+		}
+		
+		input {
+			height: 40px;
+			margin-bottom: 20px;
+			
+			@include media($tablet){
+				margin-bottom: 10px;
+			}
+			
+			@include media($mobile){
+				height: 35px;
+				margin-top: 5px;
+			}
+		}
+		
+		select {
+			background: $white;
+			height: 40px;
+			border: 1px solid $borderGray;
+			
+			@include media($mobile){
+				font-size: 13px;
+				height: 35px;
+			}
+		}
+	}
+	
+	.wpua-edit-container {
+		@include span-columns(12);
+		margin: 20px 0;
+		
+		h3 {
+			margin: 0 0  6px 0;
+			text-transform: none;
+			font-size: 16px;
+			font-family: 'robotolight';
+		}
+		
+		p {
+			margin-bottom: 0;
+		}
+		
+		input {
+			background: $white;
+			height: 45px;
+			width: 85%;
+			margin-right: 1%;
+			
+			@include media($mobile){
+				@include span-columns(4);
+			}
+		}
+		
+		button {
+			background: #aeabab;
+			padding: 8px 5px;
+			height: 45px;
+			width: 13%;
+			
+			@include media($mobile){
+				height: 35px;
+				padding: 8px 12px;
+				width: auto;
+			}
+		}
+		
+		#wpua-upload-messages-existing {
+			
+			@include media($mobile){
+				font-size: 12px;
+				line-height: 1.4;
+				margin-top: 5px;
+			}
+		}
+		
+		@-moz-document url-prefix() {
+			
+			#wpua-upload-button-existing {
+				input {
+					padding: 0;
+				}
+			}
+		}
+		
+		#wpua-images-existing {
+			display: none;
+		}
+	}
+	
+	.tml-form-table.description {
+		@include span-columns(12);
+		
+		tbody {
+			@include span-columns(12);
+			
+			tr {
+				@include span-columns(12);
+				
+				&.half_width {
+					width: 48%;
+					float: left;
+					
+					@include media($mobile){
+						@include span-columns(4);
+					}
+					
+					&.right {
+						float: right;
+						margin-right: 0;
+					}
+				}
+				
+				th {
+					font-family: 'robotolight';
+					font-size: 16px;
+				}
+				
+				textarea {
+					height: 175px;
+					border: 1px solid $borderGray;
+					border-radius: 4px;
+					-webkit-border-radius: 4px;
+					-moz-border-radius: 4px;
+					padding: 10px;
+				}
+			}
+		}
+		
+		.description {
+			@include media($mobile){
+				font-size: 13px;
+				line-height: 1.4;
+			}
+		}
+	}
+	
+	.password {
+		@include span-columns(12);
+		margin-bottom: 20px;
+		
+		tbody {
+			@include span-columns(12);
+			
+			tr {
+				@include span-columns(12);
+				
+				label {
+					margin-bottom: 10px;
+				}
+				
+				button {
+					background: #ddb72e;
+				}
+			}
+		}
+	}
+	
+	.tml-submit-wrap {
+		@include span-columns(12);
+		
+		input {
+			background: $black;
+			color: $white;
+		}
+	}
+
+}
+#update-password {
+	.pw-weak {
+		text-align: left;
+		float: left;
+		
+		input {
+			height: auto;
+		}
+	}
+	.button_wrap {
+		float: right;
+	}
+
+}
+
+.entry-meta {
+	@include span-columns(12);
+}

@@ -1,0 +1,224 @@
+.contact_us {
+	
+	.top_section {
+		padding: 60px 0;
+		text-align: center;
+		
+		@include media($mobile){
+			padding: 40px 0 100px;
+		}
+		
+		h2 {
+			font-family: 'robotomedium';
+			font-size: 30px;
+			color: $black;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+			border-bottom: 1px solid $black;
+			padding-bottom: 15px;
+			display: inline-block;
+			
+			@include media($tablet){
+				font-size: 28px;
+			}
+			
+			@include media($mobile){
+				font-size: 20px;
+				line-height: 1.2;
+			}
+		}
+		
+		p {
+			color: $black;
+			font-size: 20px;
+			line-height: 2;
+			padding: 0 7%;
+			
+			@include media($tablet){
+				font-size: 18px;
+				line-height: 1.6;
+				margin-bottom: 25px;
+			}
+			
+			@include media($mobile){
+				font-size: 14px;
+				line-height: 1.4;
+			}
+		}
+		
+		form {
+			background: $lightGray;
+			width: 54%;
+			margin: 0 auto;
+			padding: 30px;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+			display: inline-block;
+			-webkit-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+			-moz-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+			box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+			border: 1px solid $borderGray;
+			
+			@include media($tablet){
+				width: 60%;
+			}
+			
+			@include media($mobile){
+				width: 100%;
+				padding: 15px;
+				height: 600px;
+			}
+			
+			.wpcf7-response-output {
+				color: $red;
+				margin-top: 40px;
+				position: absolute;
+				width: 100%;
+				left: -8px;
+				
+				@include media($mobile){
+					font-size: 14px;
+				}
+			}
+			
+			div.wpcf7-validation-errors {
+				color: $red;
+				border-color: $red;
+			}
+			
+			.your-question {
+				select {
+					width: 100%;
+					border: 1px solid $borderGray;
+					background: $white;
+				}
+			}
+			
+			img {
+				width: auto;
+				float: right;
+			}
+		
+			p {	
+				padding: 0;
+				text-align: left;
+				
+				label {
+					color: $black;
+					font-size: 16px;
+				}
+			}
+			
+			input {
+				height: 40px;
+				width: 100%;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				border: none;
+				border: 1px solid $borderGray;
+				padding: 10px;
+				
+				@include media($mobile){
+					height: 35px;
+				}
+			}
+			
+			textarea {
+				width: 100%;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				padding: 10px;
+				border: 1px solid $borderGray;
+			}
+			
+			input[type="submit"] {
+				width: auto;
+				color: $white;
+				background: $red;
+				padding: 0 35px;
+				border-radius: 4px;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				font-size: 18px;
+				text-transform: uppercase;
+				border: none;
+				
+				@include media($mobile){
+					padding: 0 25px;
+					font-size: 16px;
+				}
+				
+				&:hover {
+					background: #c30b21;
+				}
+			}
+			
+			.submit_button {
+				
+				&:after {
+					content: '';
+					background: url('..images/arrow_white.png') no-repeat;
+					width: 20px;
+					height: 20px;
+					position: absolute;
+					right: 0;
+					top: 20px;
+				}
+			}
+		}
+	}
+	
+	.bottom_section {
+		background: $yellow;
+		padding: 60px 0;
+		
+		@include media($mobile){
+			padding: 30px 0;
+		}
+		
+		.column {
+			@include span-columns(4);
+			text-align: center;
+			
+			@include media($mobile){
+				@include span-columns(4);
+				margin-bottom: 20px;
+			}
+			
+			.icon_wrap {
+				@include span-columns(12);
+				margin-bottom: 20px;
+				
+				img {
+					margin: 0 auto;
+					width: 73px;			
+				}
+			}
+			
+			.content_wrap {
+				@include span-columns(12);
+				padding-left: 10px;
+				
+				h3 {
+					font-family: 'robotomediumitalic';
+					color: $black;
+					margin: 0 0 10px;
+					font-size: 24px;
+				}
+				
+				p {
+					font-size: 16px;
+					color: $black;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+#loginform {
+	background: $lightGray;
+}
