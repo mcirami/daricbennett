@@ -662,62 +662,97 @@ var loadReload = function() {
 
     });
 
-    $('.replace_video').click(function(e) {
-        e.preventDefault();
 
-        var vimeoLink = $(this).attr('data');
-
-        $(this).parent().parent().next('.video_wrapper').find('iframe').attr('src', vimeoLink);
-
-    });
-
-
-/*    $('.subscribe_all').click(function(e){
-        e.preventDefault();
-
-        var userID = currentUser.userID;
-
-        $.ajax({
-            url:currentUser.ajaxurl, //the page containing php script
-            type: "POST", //request type,
-            data: {action: 'subscribe_all', user: userID},
-            success:function(result){
-                console.log("yes");
-            }, failure:function(result) {
-                console.log("no");
-            }
+    if ($('.filtr-container')) {
+        $('.filtr-container').filterizr({
+            layout: 'sameSize'
         });
-    });*/
-
-
-/*
-
-    function encode_utf8(s) {
-        return unescape(encodeURIComponent(s));
     }
 
-*/
 
-/*
-	$('.d4p-bbp-attachment a').removeAttr("download");
-	//$('.bbp-atticon-video a:first-of-type').addClass("lightbox");
-	
-	$('.lightbox').click(function(e){
-		e.preventDefault();
-		var lightboxLink = $(this).attr('href');
-		$('.lightbox_pop').addClass('show');
-		$('.lightbox_img').attr('src', lightboxLink);
-		$('body, html').css('overflow-y', 'hidden');
-	});
-	
-	$('.close_button').click(function(e){
-		$('.lightbox_pop').removeClass('show');
-		$('body, html').css('overflow-y', 'auto');
-	});
-	
-	if (!$('.d4p-bbp-attachment a').hasClass('lightbox')) {
-		$('.d4p-bbp-attachment a').addClass('lightbox');
-	}
-*/	
-	
+
+    $('.filter_list li').click(function() {
+        if (!$(this).hasClass('all')) {
+            $(this).toggleClass('active');
+            $('.filter_list li.all').removeClass('active');
+
+            var allFilters = document.querySelectorAll(".filter_list li");
+
+            var active = false;
+            for (var i = 0; i < allFilters.length; i++) {
+                if (allFilters[i].classList.contains('active')) {
+                    active = true;
+                }
+            }
+
+            if (active === false) {
+                $('.filter_list li.all').addClass('active');
+            }
+
+        } else {
+            $('.filter_list li').removeClass('active');
+            $(this).addClass('active');
+        }
+    });
+
+    $('.play_video').click(function(e){
+        e.preventDefault();
+        $("html, body").animate({ scrollTop: 100 }, "slow");
+
+        var videoSrc = $(this).data('src');
+        var videoType =  $(this).data('type');
+        var replaceVideoLink = $(this).data('replace');
+        var commentContent = $(this).nextAll('.comment_wrap').html();
+        var videoPlayer = $('#video_player').empty();
+
+        /*var iframe = document.createElement( "iframe" );
+
+        //iframe.setAttribute( "id", "ssembed" );
+        iframe.setAttribute( "frameborder", "0" );
+        iframe.setAttribute( "allowfullscreen", "" );
+        iframe.setAttribute( "src", videoSrc);*/
+
+        if ($(this).prev('.video_files')) {
+            var files = $(this).prevAll('.video_files');
+            var fileElements = "";
+
+            for (var i = 0; i < files.length; i++) {
+                fileElements += '<a target="_blank" download href="' + files[i].dataset.file + '">' + files[i].dataset.text +'</a>';
+            }
+        } else {
+            fileElements = "";
+        }
+
+
+        if (videoType === "soundslice_video") {
+
+            var replaceVideo =
+                '<p class="replace_link">Video trouble? <a class="replace_video" href="#" data-replace="' + replaceVideoLink + '">Use this LINK!</a></p>';
+
+        } else {
+            replaceVideo = "";
+        }
+
+        videoPlayer.append(
+            '<div class="video_iframe_wrap">' +
+                replaceVideo +
+                '<div class="files_wrap">' +
+                    fileElements +
+                '</div>' +
+                '<div class="video_wrapper '+ videoType + '">' +
+                    '<iframe frameborder="0" allowfullscreen src="' + videoSrc +'"></iframe>' +
+                '</div>' +
+            '</div>' +
+            '<div class="video_content_wrap">' +
+                commentContent +
+            '</div>'
+        );
+
+        $('.replace_video').bind( "click", function(e){
+            e.preventDefault();
+            $('.video_wrapper').removeClass('soundslice_video');
+            var vimeoLink = $(this).data('replace');
+            $(this).parent().nextAll('.video_wrapper').find('iframe').attr('src', vimeoLink);
+        });
+    });
 });

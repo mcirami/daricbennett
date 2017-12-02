@@ -546,7 +546,7 @@
 													
 														<div class="link_wrap <?php if ($count == 2) { echo "two_files"; } ?>">
 		
-															<a  target="_blank" download href="<?php the_sub_field('file'); ?>"><?php the_sub_field('file_text'); ?></a>
+															<a target="_blank" download href="<?php the_sub_field('file'); ?>"><?php the_sub_field('file_text'); ?></a>
 														</div>
 		
 													<?php endwhile; ?>

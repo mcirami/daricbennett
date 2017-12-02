@@ -2,7 +2,6 @@
 /*
 	This shortcode will display the members list and additional content based on the defined attributes.
 */
-
 function pmpromd_shortcode($atts, $content=null, $code="")
 {
 	// $atts    ::= array of attributes
@@ -25,7 +24,7 @@ function pmpromd_shortcode($atts, $content=null, $code="")
 		'show_level' => NULL,
 		'show_search' => NULL,
 		'show_startdate' => NULL,
-	), $atts));
+	), $atts, "pmpro_member_directory"));
 
 	global $wpdb, $post, $pmpro_pages, $pmprorh_registration_fields;
 
@@ -110,7 +109,7 @@ function pmpromd_shortcode($atts, $content=null, $code="")
 	}
 
 	$sqlQuery .= " LIMIT $start, $limit";
-	
+
 	$sqlQuery = apply_filters("pmpro_member_directory_sql", $sqlQuery, $levels, $s, $pn, $limit, $start, $end, $order_by, $order);
 
 	$theusers = $wpdb->get_results($sqlQuery);
@@ -129,17 +128,16 @@ function pmpromd_shortcode($atts, $content=null, $code="")
 	ob_start();
 
 	?>
-	<div class="container">
-		<div class="directory_wrapper">
-	
+    <div class="container">
+        <div class="directory_wrapper">
 	<?php if(!empty($show_search)) { ?>
 	<form role="search" class="pmpro_member_directory_search search-form">
 		<label>
-			<span class="screen-reader-text"><?php _e('Search for:','label'); ?></span>
-			<input type="search" class="search-field" placeholder="Enter Username To Search" name="ps" value="<?php if(!empty($_REQUEST['ps'])) echo esc_attr($_REQUEST['ps']);?>" title="Search Members" />
+			<span class="screen-reader-text"><?php _e('Search for:','pmpromd'); ?></span>
+			<input type="search" class="search-field" placeholder="<?php _e('Search Members','pmpromd'); ?>" name="ps" value="<?php if(!empty($_REQUEST['ps'])) echo esc_attr($_REQUEST['ps']);?>" title="<?php _e('Search Members','pmpromd'); ?>" />
 			<input type="hidden" name="limit" value="<?php echo esc_attr($limit);?>" />
 		</label>
-		<input type="submit" class="search-submit" value="Search">
+		<input type="submit" class="search-submit" value="<?php _e('Search','pmpromd'); ?>">
 	</form>
 <?php } ?>
 
@@ -147,7 +145,7 @@ function pmpromd_shortcode($atts, $content=null, $code="")
 		<?php if(!empty($s)) { ?>
 			<?php printf(__('Profiles Within <em>%s</em>.','pmpromd'), ucwords(esc_html($s))); ?>
 		<?php } else { ?>
-			<?php _e('Viewing All Profiles.','pmpromd'); ?>
+			<?php _e('Viewing All Profiles','pmpromd'); ?>
 		<?php } ?>
 		<?php if($totalrows > 0) { ?>
 			<small class="muted">
@@ -188,7 +186,7 @@ function pmpromd_shortcode($atts, $content=null, $code="")
 		?>
 		<div class="pmpro_member_directory">
 			<hr class="clear" />
-			<h3>Members</h3>
+            <h3>Members</h3>
 			<?php
 			if($layout == "table")
 			{
@@ -197,30 +195,30 @@ function pmpromd_shortcode($atts, $content=null, $code="")
 					<thead>
 					<?php if(!empty($show_avatar)) { ?>
 						<th class="pmpro_member_directory_avatar">
-							<?php _e('Avatar', 'pmpro'); ?>
+							<?php _e('Avatar', 'pmpromd'); ?>
 						</th>
 					<?php } ?>
 					<th class="pmpro_member_directory_display-name">
-						<?php _e('Member', 'pmpro'); ?>
+						<?php _e('Member', 'pmpromd'); ?>
 					</th>
 					<?php if(!empty($show_email)) { ?>
 						<th class="pmpro_member_directory_email">
-							<?php _e('Email Address', 'pmpro'); ?>
+							<?php _e('Email Address', 'pmpromd'); ?>
 						</th>
 					<?php } ?>
 					<?php if(!empty($fields_array)) { ?>
 						<th class="pmpro_member_directory_additional">
-							<?php _e('More Information', 'pmpro'); ?>
+							<?php _e('More Information', 'pmpromd'); ?>
 						</th>
 					<?php } ?>
 					<?php if(!empty($show_level)) { ?>
 						<th class="pmpro_member_directory_level">
-							<?php _e('Level', 'pmpro'); ?>
+							<?php _e('Level', 'pmpromd'); ?>
 						</th>
 					<?php } ?>
 					<?php if(!empty($show_startdate)) { ?>
 						<th class="pmpro_member_directory_date">
-							<?php _e('Start Date', 'pmpro'); ?>
+							<?php _e('Start Date', 'pmpromd'); ?>
 						</th>
 					<?php } ?>
 					<?php if(!empty($link) && !empty($profile_url)) { ?>
@@ -268,7 +266,11 @@ function pmpromd_shortcode($atts, $content=null, $code="")
 									<?php
 									foreach($fields_array as $field)
 									{
-										$meta_field = $auser->$field[1];
+									    if ( WP_DEBUG ) {
+									        error_log("Content of field data: " . print_r( $field, true));
+                                        }
+
+										$meta_field = $auser->{$field[1]};
 										if(!empty($meta_field))
 										{
 											?>
@@ -390,28 +392,28 @@ function pmpromd_shortcode($atts, $content=null, $code="")
 									<?php if(!empty($show_avatar)) { ?>
 										<div class="pmpro_member_directory_avatar">
 											<?php if(!empty($link) && !empty($profile_url)) { ?>
-												<a class="<?php echo $avatar_align; ?>" href="<?php echo add_query_arg('pu', $auser->user_nicename, $profile_url); ?>"><?php echo get_avatar($auser->ID, $avatar_size, NULL, $auser->display_name); ?> </a>
+												<a class="<?php echo $avatar_align; ?>" href="<?php echo add_query_arg('pu', $auser->user_nicename, $profile_url); ?>"><?php echo get_avatar($auser->ID, $avatar_size, NULL, $auser->display_name); ?></a>
 											<?php } else { ?>
 												<span class="<?php echo $avatar_align; ?>"><?php echo get_avatar($auser->ID, $avatar_size, NULL, $auser->display_name); ?></span>
 											<?php } ?>
 										</div>
 									<?php } ?>
-									<div class="content_wrap">
-										<div class="column_wrap">
-											<div class="label"><p><strong>Username: </strong></p></div>
-											<p class="profile_link"> <a href="<?php echo add_query_arg('pu', $auser->user_nicename, $profile_url); ?>"><?php echo $auser->user_nicename; ?></a></p>
-										</div>
-										
-                                    <!--	<h3 class="pmpro_member_directory_display-name">
-                                            <?php if(!empty($link) && !empty($profile_url)) { ?>
-                                                <a href="<?php echo add_query_arg('pu', $auser->user_nicename, $profile_url); ?>"><?php echo $auser->display_name; ?></a>
-                                            <?php } else { ?>
-                                                <?php echo $auser->display_name; ?>
-                                            <?php } ?>
+                                    <div class="content_wrap">
+                                        <div class="column_wrap">
+                                            <div class="label"><p><strong>Username: </strong></p></div>
+                                            <p class="profile_link"> <a href="<?php echo add_query_arg('pu', $auser->user_nicename, $profile_url); ?>"><?php echo $auser->user_nicename; ?></a></p>
+                                        </div>
+
+                                        <!--<h3 class="pmpro_member_directory_display-name">
+                                            <?php /*if(!empty($link) && !empty($profile_url)) { */?>
+                                                <a href="<?php /*echo add_query_arg('pu', $auser->user_nicename, $profile_url); */?>"><?php /*echo $auser->display_name; */?></a>
+                                            <?php /*} else { */?>
+                                                <?php /*echo $auser->display_name; */?>
+                                            <?php /*} */?>
                                         </h3>-->
                                         <?php if(!empty($show_email)) { ?>
                                             <p class="pmpro_member_directory_email">
-                                                <strong><?php _e('Email Address', 'pmpro'); ?></strong>
+                                                <strong><?php _e('Email Address', 'pmpromd'); ?></strong>
                                                 <?php echo $auser->user_email; ?>
                                             </p>
                                         <?php } ?>
@@ -420,7 +422,6 @@ function pmpromd_shortcode($atts, $content=null, $code="")
                                                 <div class="label"><p><strong><?php _e('Level', 'pmpro'); ?>:</strong></p></div>
                                                 <p class="pmpro_member_directory_level"><!--<?php echo $auser->membership_level->name; ?>-->Bass Nation Member</p>
                                             </div>
-
                                         <?php } ?>
                                         <?php if(!empty($show_startdate)) { ?>
                                             <div class="column_wrap">
@@ -433,7 +434,7 @@ function pmpromd_shortcode($atts, $content=null, $code="")
                                         {
                                             foreach($fields_array as $field)
                                             {
-                                                $meta_field = $auser->$field[1];
+                                                $meta_field = $auser->{$field[1]};
                                                 if(!empty($meta_field))
                                                 {
                                                     ?>
@@ -462,14 +463,14 @@ function pmpromd_shortcode($atts, $content=null, $code="")
                                                         elseif($field[1] == 'user_url')
                                                         {
                                                             ?>
-                                                            <a href="<?php echo $auser->$field[1]; ?>" target="_blank"><?php echo $field[0]; ?></a>
+                                                            <a href="<?php echo $auser->{$field[1]}; ?>" target="_blank"><?php echo $field[0]; ?></a>
                                                             <?php
                                                         }
                                                         else
                                                         {
                                                             ?>
                                                             <strong><?php echo $field[0]; ?>:</strong>
-                                                            <?php echo make_clickable($auser->$field[1]); ?>
+                                                            <?php echo make_clickable($auser->{$field[1]}); ?>
                                                             <?php
                                                         }
                                                         ?>
@@ -480,25 +481,26 @@ function pmpromd_shortcode($atts, $content=null, $code="")
                                         }
                                         ?>
                                         <?php if(!empty($link) && !empty($profile_url)) { ?>
-                                        <div class="column_wrap">
-                                            <p class="pmpro_member_directory_link">
-                                                <a class="more-link button black" href="<?php echo add_query_arg('pu', $auser->user_nicename, $profile_url); ?>"><?php _e('View Profile','pmpromd'); ?></a>
-                                            </p>
+                                            <div class="column_wrap">
+                                                <p class="pmpro_member_directory_link">
+                                                    <a class="more-link button black" href="<?php echo add_query_arg('pu', $auser->user_nicename, $profile_url); ?>"><?php _e('View Profile','pmpromd'); ?></a>
+                                                </p>
 
-                                            <?php
+                                                <?php
                                                 $current_user = wp_get_current_user();
                                                 $username = $current_user->user_login;
                                                 $mailbox = $username . "/mailbox/" . $auser->user_nicename;
 
                                                 if ($auser->user_nicename != $username) :
-                                            ?>
+                                                    ?>
                                                     <div class="send_message">
                                                         <a class="button red" href="/forums/users/<?php echo $mailbox; ?>">Send Message</a>
                                                     </div>
                                                 <?php endif; ?>
-                                        </div>
+
+                                            </div>
                                         <?php } ?>
-									</div><!-- content_wrap -->
+                                    </div><!-- content_wrap -->
 								</div> <!-- end pmpro_addon_package-->
 							</div>
 							<?php
@@ -546,26 +548,25 @@ function pmpromd_shortcode($atts, $content=null, $code="")
 		if($pn > 1)
 		{
 			?>
-			<span class="pmpro_prev"><a class="button red" href="<?php echo esc_url(add_query_arg(array("ps"=>$s, "pn"=>$pn-1, "limit"=>$limit), get_permalink($post->ID)));?>">&laquo; Previous</a></span>
+			<span class="pmpro_prev"><a class="button red" href="<?php echo esc_url(add_query_arg(array("ps"=>$s, "pn"=>$pn-1, "limit"=>$limit), get_permalink($post->ID)));?>">&laquo; <?php _e('Previous','pmpromd'); ?></a></span>
 			<?php
 		}
 		//next
 		if($totalrows > $end)
 		{
 			?>
-			<span class="pmpro_next"><a class="button red" href="<?php echo esc_url(add_query_arg(array("ps"=>$s, "pn"=>$pn+1, "limit"=>$limit), get_permalink($post->ID)));?>">Next &raquo;</a></span>
+			<span class="pmpro_next"><a class="button red" href="<?php echo esc_url( add_query_arg( array( "ps"=>$s, "pn"=>$pn+1, "limit"=>$limit ), get_permalink( $post->ID ) ) );?>"><?php _e( 'Next', 'pmpromd' ); ?> &raquo;</a></span>
 			<?php
 		}
 		?>
 	</div>
-	</div><!-- directory_wrapper -->
-	</div><!-- .container -->
+        </div><!-- directory_wrapper -->
+    </div><!-- .container -->
 	<?php
 	?>
 	<?php
 	$temp_content = ob_get_contents();
 	ob_end_clean();
 	return $temp_content;
-	
 }
 add_shortcode("pmpro_member_directory", "pmpromd_shortcode");

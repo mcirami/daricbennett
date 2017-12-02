@@ -141,14 +141,15 @@ src="https://www.facebook.com/tr?id=1092024584249788&ev=PageView&noscript=1"
 	<?php if (is_user_logged_in()) : ?>
 		<?php //wp_nav_menu( array( 'theme_location' => 'members', 'container' => false, 'menu_class' => 'member_menu' ) ); // remember to assign a menu in the admin to remove the container div ?>
 			<ul class="member_menu">
-				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent-item menu-item-187"><a>Lessons</a>
-					<ul class="sub-menu" style="display: none;">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="<?php $url ;?>/lessons-by-date/">By Date</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218"><a href="<?php $url; ?>/lessons-by-level/">By Level</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="<?php $url ;?>/lessons-by-category/">By Category</a></li>
-					</ul>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187">
+                    <a href="<?php $url; ?>/lessons/">Lessons</a>
+					<!--<ul class="sub-menu" style="display: none;">
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="<?php /*$url ;*/?>/lessons-by-date/">By Date</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218"><a href="<?php /*$url; */?>/lessons-by-level/">By Level</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="<?php /*$url ;*/?>/lessons-by-category/">By Category</a></li>
+					</ul>-->
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-321"><a href="<?php $url; ?>/live-sessions/">Live Sessions</a></li>
+				<!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-321"><a href="<?php /*$url; */?>/live-sessions/">Live Sessions</a></li>-->
 				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent-item menu-item-188"><a>Community</a>
 					<ul class="sub-menu" style="display: none;">
 						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-219"><a href="<?php $url; ?>/forums/">Bass Nation Forums</a></li>
@@ -267,14 +268,14 @@ src="https://www.facebook.com/tr?id=1092024584249788&ev=PageView&noscript=1"
 									<?php //wp_nav_menu( array( 'theme_location' => 'members', 'container' => false, 'menu_class' => 'member_menu' ) ); // remember to assign a menu in the admin to remove the container div ?>
 									
 									<ul class="member_menu">
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent-item menu-item-187"><a>Lessons</a>
-											<ul class="sub-menu" style="display: none;">
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="<?php $url ;?>/lessons-by-date/">By Date</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218"><a href="<?php $url; ?>/lessons-by-level/">By Level</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="<?php $url ;?>/lessons-by-category/">By Category</a></li>
-											</ul>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187"><a href="<?php $url; ?>/lessons/">Lessons</a>
+											<!--<ul class="sub-menu" style="display: none;">
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="<?php /*$url ;*/?>/lessons-by-date/">By Date</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218"><a href="<?php /*$url; */?>/lessons-by-level/">By Level</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="<?php /*$url ;*/?>/lessons-by-category/">By Category</a></li>
+											</ul>-->
 										</li>
-										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-321"><a href="<?php $url; ?>/live-sessions/">Live Sessions</a></li>
+										<!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-321"><a href="<?php /*$url; */?>/live-sessions/">Live Sessions</a></li>-->
 										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent-item menu-item-188"><a>Community</a>
 											<ul class="sub-menu" style="display: none;">
 												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-219"><a href="<?php $url; ?>/forums/">Bass Nation Forums</a></li>

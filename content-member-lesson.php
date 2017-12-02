@@ -38,9 +38,40 @@
 
         $type = "soundslice";
     }
+
+    $count = 0;
+    $taxonomies = [];
+    $index = 0;
+
+    $categories = get_the_category();
+
+    foreach ($categories as $category) {
+        $taxonomies[$index] = intval($category->term_id);
+        $index++;
+    }
+
+    $levels = get_the_terms($post->ID, 'level');
+
+    if (is_array($levels) || is_object($levels)) {
+        foreach ($levels as $level) {
+            $taxonomies[$index] = intval($level->term_id);
+            $index++;
+        }
+    }
+
+    $totalCount = count($taxonomies);
+
     ?>
 
-        <div class="column">
+        <div class="column filtr-item" data-sort="value" data-category="<?php
+            foreach ($taxonomies as $taxonomy) {
+                echo $taxonomy;
+                $count++;
+                if ($count < $totalCount) {
+                    echo ", ";
+                }
+
+            } ?>" >
 
             <?php /*if ($type == "soundslice" && $displayKeyboard) : */?><!--
                                     <div class="keyboard_popup">
@@ -48,17 +79,30 @@
                                     </div>
                                 --><?php /*endif; */?>
 
+            <?php
+                $addFile = get_field('add_file');
+
+                if (have_rows('files')) : ?>
+
+                    <?php while (have_rows('files')) : the_row();?>
+
+                        <a class="video_files" hidden href="#" data-file="<?php the_sub_field('file'); ?>" data-text="<?php the_sub_field('file_text'); ?>"></a>
+
+                    <?php endwhile; ?>
+
+                <?php endif; ?>
+
             <?php if ($type == 'youtube') : ?>
 
-                    <a data-fancybox data-src="<?php echo $videoLink; ?>/?rel=0&showinfo=0&autoplay=1" href="javascript:;">
+                    <a class="play_video" data-type="<?php echo "youtube";?>" data-src="<?php echo $videoLink; ?>/?rel=0&showinfo=0&autoplay=1" href="#video_player">
 
             <?php elseif ($type == 'vimeo') : ?>
 
-                    <a data-fancybox data-src="<?php echo $videoLink; ?>/?autoplay=1" href="javascript:;">
+                    <a class="play_video" data-type="<?php echo "vimeo";?>" data-src="<?php echo $videoLink; ?>/?autoplay=1" href="#video_player">
 
             <?php elseif ($type == 'soundslice') : ?>
 
-                    <a data-fancybox data-src="<?php echo $embedCode; ?>" href="javascript:;">
+                    <a class="play_video" data-replace="<?php the_field('vimeo_link'); ?>" data-type="<?php echo "soundslice_video";?>" data-src="<?php echo $embedCode; ?>" href="#video_player">
 
             <?php endif; ?><!-- type -->
 
@@ -86,52 +130,16 @@
                         <?php endif; ?><!-- video thumbnail -->
 
                     </a>
-        </div><!-- column -->
 
-    <?php if(is_page(7)) :
-            $videoOnly = get_field('no_video');
-    ?>
-
-
-            <div class="video_wrapper <?php if ($type == 'youtube' && $videoOnly == false) { echo "youtube_video";} elseif ($type == 'vimeo' && $videoOnly == false) {echo "vimeo_video"; } elseif ($type == 'soundslice' && $videoOnly == false) {echo "soundslice_video";}?> full_width" data-embed="<?php echo $embedCode;?>">
-                <?php if ($videoOnly) { ?>
-                    <a class="fancybox3" href="#fancybox3">
-                <?php } ?>
-
-                    <?php
-
-                        if ( ( $video_thumbnail = get_video_thumbnail() ) !=null ) :
-
-                            echo '<img src="' . $video_thumbnail . '" />';
-
-                        elseif ( ($video_thumbnail = get_the_post_thumbnail()) != null ) :
-
-                            echo $video_thumbnail;
-
-                        else : ?>
-
-                            <?php if ($type == 'youtube') { ?>
-
-                                <img src="https://img.youtube.com/vi/<?php echo $embedCode; ?>/mqdefault.jpg" />
-
-                            <?php } else  { ?>
-
-                                    <img class="vimeo_image" src="<?php echo bloginfo('template_url'); ?>/images/lessons-screenshot.jpg" />
-
-                            <?php } ?>
-
-                        <?php endif; ?>
-
-                    <div class="button_wrap full_width">
-                        <img class="play_button" src="<?php echo bloginfo('template_url'); ?>/images/play-button.png" />
+                    <div class="lesson_content full_width">
+                        <h4><?php the_title(); ?></h4>
+                        <p>Date Added <?php echo get_the_date('n/j/Y'); ?></p>
                     </div>
 
-                <?php if ($videoOnly) { ?>
-                    </a>
-                <?php } ?>
-
-            </div><!-- video_wrapper -->
+                        <div class="comment_wrap">
+                            <?php if ((is_single() || is_page()) && is_user_logged_in()) { comments_template(); }?>
+                        </div>
 
 
-    <?php endif; ?><!-- page 7 -->
 
+        </div><!-- column -->

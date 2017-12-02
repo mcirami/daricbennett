@@ -30,6 +30,7 @@ body {
 }
 
 .video_wrapper {
+    @include span-columns(12);
 	padding-bottom: 56.25%;
 	height: 0;
 	position: relative;
