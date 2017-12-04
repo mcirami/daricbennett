@@ -60,7 +60,7 @@
     }
 
     $totalCount = count($taxonomies);
-
+    $hash = $post->post_name;
     ?>
 
         <div class="column filtr-item" data-sort="value" data-category="<?php
@@ -73,11 +73,11 @@
 
             } ?>" >
 
-            <?php /*if ($type == "soundslice" && $displayKeyboard) : */?><!--
-                                    <div class="keyboard_popup">
-                                        <a href="#">Want to watch this bass line played on a keyboard?</a>
-                                    </div>
-                                --><?php /*endif; */?>
+            <?php if ($type == "soundslice" && $displayKeyboard) : ?>
+
+                    <input class="keyboard_embed" hidden data-embed="<?php echo $embedKeyboard;?>">
+
+            <?php endif; ?>
 
             <?php
                 $addFile = get_field('add_file');
@@ -94,15 +94,15 @@
 
             <?php if ($type == 'youtube') : ?>
 
-                    <a class="play_video" data-type="<?php echo "youtube";?>" data-src="<?php echo $videoLink; ?>/?rel=0&showinfo=0&autoplay=1" href="#video_player">
+                    <a id="<?php echo $hash; ?>" class="play_video" data-type="<?php echo "youtube";?>" data-src="<?php echo $videoLink; ?>/?rel=0&showinfo=0&autoplay=1" data-title="<?php echo the_title();?>" href="#<?php echo $hash;?>">
 
             <?php elseif ($type == 'vimeo') : ?>
 
-                    <a class="play_video" data-type="<?php echo "vimeo";?>" data-src="<?php echo $videoLink; ?>/?autoplay=1" href="#video_player">
+                    <a id="<?php echo $hash; ?>" class="play_video" data-type="<?php echo "vimeo";?>" data-src="<?php echo $videoLink; ?>/?autoplay=1" data-title="<?php echo the_title();?>" href="#<?php echo $hash;?>">
 
             <?php elseif ($type == 'soundslice') : ?>
 
-                    <a class="play_video" data-replace="<?php the_field('vimeo_link'); ?>" data-type="<?php echo "soundslice_video";?>" data-src="<?php echo $embedCode; ?>" href="#video_player">
+                    <a id="<?php echo $hash; ?>" class="play_video" data-replace="<?php the_field('vimeo_link'); ?>" data-type="<?php echo "soundslice_video";?>" data-src="<?php echo $embedCode; ?>" data-title="<?php echo the_title();?>" href="#<?php echo $hash;?>">
 
             <?php endif; ?><!-- type -->
 

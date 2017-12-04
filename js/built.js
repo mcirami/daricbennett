@@ -244,7 +244,7 @@ var loadReload = function() {
         var email = $form.find("input[type='email']").val();
         if (!email || !email.length) {
             return false;
-        } else if (email.indexOf("@") == -1) {
+        } else if (email.indexOf("@") === -1) {
             return false;
         }
         return true;
@@ -266,7 +266,7 @@ var loadReload = function() {
                 // According to jquery docs, this is never called for cross-domain JSONP requests
             },
             success: function(data){
-                if (data.result != "success") {
+                if (data.result !== "success") {
                     var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
                     $resultElement.css("color", "red");
                     if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
@@ -317,7 +317,7 @@ var loadReload = function() {
 		
 		if (previousPanel.length > 0) {
 			panelHeight = $('.panel.show').height();
-			rowHeight = $('.free_lessons .video_list .row').height();
+			rowHeight = $('.lessons_page .video_list .row').height();
 		}
 		
 		$('.accordion').not(this).removeClass('active');
@@ -343,20 +343,22 @@ var loadReload = function() {
 
 	if (window.location.hash) {
 		var id = '';
-		
+
 		var hashTitle = window.location.hash;
 		
 		if (hashTitle.indexOf('&') !== -1) {
 			id = hashTitle.replace(/&/g,'and');
 			$(id).click();
-		} else if (hashTitle == "#update-password") {
+		} else if (hashTitle === "#update-password") {
 			//hashID = hashTitle.replace('#','');
 			$('html,body').animate({scrollTop: $(hashTitle).offset().top - headerHeight},1000);
 		} else if (hashTitle.indexOf('/') !== -1) {
 			id = hashTitle.replace(/\//g, "-");
 			$(id).click();
 		} else {
-			$(window.location.hash).click();
+            setTimeout(function() {
+                $(window.location.hash).click();
+            },10);
 		}
 	}
 	
@@ -695,13 +697,15 @@ var loadReload = function() {
         }
     });
 
-    $('.play_video').click(function(e){
-        e.preventDefault();
+    $('.play_video').on('click', function(){
+
         $("html, body").animate({ scrollTop: 100 }, "slow");
 
         var videoSrc = $(this).data('src');
         var videoType =  $(this).data('type');
         var replaceVideoLink = $(this).data('replace');
+        var videoTitle = $(this).data('title');
+        var keyboardVideo = $('.keyboard_embed').data('embed');
         var commentContent = $(this).nextAll('.comment_wrap').html();
         var videoPlayer = $('#video_player').empty();
 
@@ -717,7 +721,7 @@ var loadReload = function() {
             var fileElements = "";
 
             for (var i = 0; i < files.length; i++) {
-                fileElements += '<a target="_blank" download href="' + files[i].dataset.file + '">' + files[i].dataset.text +'</a>';
+                fileElements += '<div class="files_wrap"><a target="_blank" download href="' + files[i].dataset.file + '">' + files[i].dataset.text +'</a></div>';
             }
         } else {
             fileElements = "";
@@ -729,16 +733,25 @@ var loadReload = function() {
             var replaceVideo =
                 '<p class="replace_link">Video trouble? <a class="replace_video" href="#" data-replace="' + replaceVideoLink + '">Use this LINK!</a></p>';
 
+            if (keyboardVideo) {
+                var keyboardLink =
+                    '<div class="files_wrap"><a  class="keyboard_link" href="#" data-embed="' + keyboardVideo + '">Want to watch this bass line played on a keyboard?</a></div>';
+            } else {
+                keyboardLink = "";
+            }
+
+
+
         } else {
             replaceVideo = "";
         }
 
         videoPlayer.append(
+            '<div class="full_width lesson_title">' +
+                '<h3>' + videoTitle + '</h3>' +
+            '</div>' +
             '<div class="video_iframe_wrap">' +
-                replaceVideo +
-                '<div class="files_wrap">' +
-                    fileElements +
-                '</div>' +
+                replaceVideo + keyboardLink + fileElements +
                 '<div class="video_wrapper '+ videoType + '">' +
                     '<iframe frameborder="0" allowfullscreen src="' + videoSrc +'"></iframe>' +
                 '</div>' +
