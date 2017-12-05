@@ -84,7 +84,7 @@
 
             <div class="video_wrapper <?php if ($type == 'youtube' && $videoOnly == false) { echo "youtube_video";} elseif ($type == 'vimeo' && $videoOnly == false) {echo "vimeo_video"; } elseif ($type == 'soundslice' && $videoOnly == false) {echo "soundslice_video";}?> full_width" data-embed="<?php echo $embedCode;?>">
                 <?php if ($videoOnly) { ?>
-                <a class="fancybox3" href="#fancybox3">
+                <a class="members_only_video_pop" href="#members_only_video_pop">
                     <?php } ?>
 
                     <?php if ($type == 'youtube') :

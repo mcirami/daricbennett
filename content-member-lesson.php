@@ -32,7 +32,7 @@
         $str = explode("/embed", $str[1]);
         $embedCode = $videoLink . "?api=1&branding=2&fretboard=1&force_top_video=1&top_controls=" . $controls . "&scroll_type=2&narrow_video_height=48p&enable_waveform=0&synth_display_name=Keyboard";
 
-        if ($displayKeyboard) {
+        if (get_field('display_keyboard_video')) {
             $embedKeyboard = $embedCode . "&recording_idx=0&keyboard=1";
         }
 
@@ -73,7 +73,7 @@
 
             } ?>" >
 
-            <?php if ($type == "soundslice" && $displayKeyboard) : ?>
+            <?php if ($type == "soundslice" && get_field('display_keyboard_video')) : ?>
 
                     <input class="keyboard_embed" hidden data-embed="<?php echo $embedKeyboard;?>">
 
@@ -102,7 +102,13 @@
 
             <?php elseif ($type == 'soundslice') : ?>
 
-                    <a id="<?php echo $hash; ?>" class="play_video" data-replace="<?php the_field('vimeo_link'); ?>" data-type="<?php echo "soundslice_video";?>" data-src="<?php echo $embedCode; ?>" data-title="<?php echo the_title();?>" href="#<?php echo $hash;?>">
+                    <a id="<?php echo $hash; ?>" class="play_video"
+                       data-replace="<?php the_field('vimeo_link'); ?>"
+                       data-type="<?php echo "soundslice_video";?>"
+                       data-src="<?php echo $embedCode; ?>"
+                       data-title="<?php echo the_title();?>"
+                       data-notation="<?php echo $controls; ?>"
+                       href="#<?php echo $hash;?>">
 
             <?php endif; ?><!-- type -->
 

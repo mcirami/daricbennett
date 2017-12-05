@@ -44,17 +44,13 @@ body {
 		height: 100%;
 	}
 
-	&.soundslice_video {
-        padding-bottom: 0;
-        height: auto;
+	&.video_notation {
+        padding-bottom: 124.25%;
 
-        iframe {
-            position: relative;
-            top: auto;
-            left: auto;
-            height: 768px;
+        @include media($mobile) {
+            padding-bottom: 175.25%;
         }
-    }
+	}
 }
 
 .wrapper {

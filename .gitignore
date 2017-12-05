@@ -4,3 +4,4 @@ node_modules/
 Gruntfile.js
 bower.json
 package.json
+.DS_Store

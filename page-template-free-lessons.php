@@ -241,7 +241,7 @@ global $post;
         endif; */?>
     </div>
 
-    <div id="fancybox3">
+    <div id="members_only_video_pop">
         <img src="<?php echo bloginfo('template_url'); ?>/images/logo.png"/>
         <h2>This Lesson Is For Members Only</h2>
         <div class="button_wrap">
