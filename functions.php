@@ -95,7 +95,10 @@ add_filter('gallery_style', 'boiler_gallery_style');
 // Thumbnail image sizes
 // add_image_size( 'thumb-400', 400, 400, true );
 
-add_image_size('avatar-size', 300, 300, true);
+if ( function_exists( 'add_image_size' ) ) {
+    add_image_size('avatar-size', 300, 300, true);
+    add_image_size( 'video-thumb', 640, 360, true );
+}
 
 // remove injected CSS for recent comments widget
 /*

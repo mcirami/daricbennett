@@ -52,6 +52,7 @@ if (is_user_logged_in()) :
                     </div>
                     <div class="filters">
                         <h3>Filter Lessons By<span>:</span></h3>
+                        <p>(select as many as you like)</p>
 
                         <?php if($_SERVER['REMOTE_ADDR'] == '127.0.0.1') : ?>
 
@@ -61,14 +62,9 @@ if (is_user_logged_in()) :
                                 <li data-multifilter="12">Beginner</li>
                                 <li data-multifilter="13">Intermediate</li>
                                 <li data-multifilter="14">Advanced</li>
-                            </ul>
-                            <ul class="filter_list full_width">
                                 <li data-multifilter="7">Exercises</li>
                                 <li data-multifilter="9">Grooves</li>
                                 <li data-multifilter="39">Modes</li>
-                                <li data-multifilter="11">Navigation, Scales & Intervals</li>
-                            </ul>
-                            <ul class="filter_list full_width">
                                 <li data-multifilter="40">Slap Series</li>
                                 <li data-multifilter="38">Funk Challenges</li>
                                 <li data-multifilter="10">Live Sessions</li>
@@ -84,14 +80,10 @@ if (is_user_logged_in()) :
                                 <li data-multifilter="12">Beginner</li>
                                 <li data-multifilter="13">Intermediate</li>
                                 <li data-multifilter="14">Advanced</li>
-                            </ul>
-                            <ul class="filter_list full_width">
                                 <li data-multifilter="7">Exercises</li>
                                 <li data-multifilter="9">Grooves</li>
                                 <li data-multifilter="37">Modes</li>
                                 <li data-multifilter="11">Navigation, Scales & Intervals</li>
-                            </ul>
-                            <ul class="filter_list full_width">
                                 <li data-multifilter="40">Slap Series</li>
                                 <li data-multifilter="39">Funk Challenges</li>
                                 <li data-multifilter="10">Live Sessions</li>
@@ -107,14 +99,10 @@ if (is_user_logged_in()) :
                                 <li data-multifilter="12">Beginner</li>
                                 <li data-multifilter="13">Intermediate</li>
                                 <li data-multifilter="14">Advanced</li>
-                            </ul>
-                            <ul class="filter_list full_width">
                                 <li data-multifilter="7">Exercises</li>
                                 <li data-multifilter="9">Grooves</li>
                                 <li data-multifilter="17">Modes</li>
                                 <li data-multifilter="11">Navigation, Scales & Intervals</li>
-                            </ul>
-                            <ul class="filter_list full_width">
                                 <li data-multifilter="29">Slap Series</li>
                                 <li data-multifilter="16">Funk Challenges</li>
                                 <li data-multifilter="10">Live Sessions</li>

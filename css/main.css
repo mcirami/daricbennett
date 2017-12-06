@@ -4633,9 +4633,12 @@ ul.member_menu > li {
       @media screen and (max-width: 1023px) {
         .lessons_page .filter_controls .filters:before {
           content: none; } }
+    .lessons_page .filter_controls .filters p {
+      font-size: 10px;
+      margin: 0; }
     .lessons_page .filter_controls .filters h3 {
       font-size: 18px;
-      margin: 0 0 5px;
+      margin: 0;
       text-transform: none; }
       @media screen and (max-width: 1023px) {
         .lessons_page .filter_controls .filters h3 {
@@ -4657,6 +4660,10 @@ ul.member_menu > li {
     .lessons_page .filter_controls .filter_list li:hover {
       color: #ddb72e;
       border-bottom: 1px solid #ddb72e; }
+      @media screen and (max-width: 1023px) {
+        .lessons_page .filter_controls .filter_list li:hover {
+          color: #f1f1f1;
+          border-bottom: 1px solid #f1f1f1; } }
     .lessons_page .filter_controls .filter_list li.active {
       color: #ddb72e;
       border-bottom: 1px solid #ddb72e; }

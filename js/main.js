@@ -705,7 +705,6 @@ jQuery(document).ready(function($) {
             fileElements = "";
         }
 
-
         if (videoType === "soundslice_video") {
 
             var replaceVideo =
@@ -738,7 +737,7 @@ jQuery(document).ready(function($) {
                     '</div>';
         }
 
-        if (notation === 1) {
+        if (notation == true) {
             html += '<div class="video_wrapper video_notation">';
         } else {
             html += '<div class="video_wrapper">';

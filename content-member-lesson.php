@@ -24,8 +24,10 @@
 
         if($notation) {
             $controls = '1';
+            $display = true;
         } else {
             $controls = '0';
+            $display = false;
         }
 
         $str = explode("scores/", $videoLink);
@@ -107,12 +109,21 @@
                        data-type="<?php echo "soundslice_video";?>"
                        data-src="<?php echo $embedCode; ?>"
                        data-title="<?php echo the_title();?>"
-                       data-notation="<?php echo $controls; ?>"
+                       data-notation="<?php echo $display; ?>"
                        href="#<?php echo $hash;?>">
 
             <?php endif; ?><!-- type -->
 
-                        <?php  if ( ( $video_thumbnail = get_video_thumbnail() ) != null ) : ?>
+                        <?php
+                                $attachment_id = get_field('og_image');
+                                $size = "video-thumb";
+                                $ogImage = wp_get_attachment_image_src( $attachment_id, $size );
+
+                               if (!empty($ogImage)) :
+                        ?>
+                            <img class="og_image" src="<?php echo $ogImage[0]; ?>" alt="">
+
+                        <?php  elseif ( ( $video_thumbnail = get_video_thumbnail() ) != null ) : ?>
 
                             <img class="get_video_thumbnail" src="<?php echo $video_thumbnail; ?>" alt="">
 

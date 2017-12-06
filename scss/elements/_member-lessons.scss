@@ -225,9 +225,14 @@
 
             }
 
+            p {
+                font-size: 10px;
+                margin: 0;
+            }
+
             h3 {
                 font-size: 18px;
-                margin: 0 0 5px;
+                margin: 0;
                 text-transform: none;
 
                 @include media($tablet) {
@@ -258,6 +263,11 @@
                 &:hover {
                     color: $yellow;
                     border-bottom: 1px solid $yellow;
+
+                    @include media($tablet) {
+                        color: $lightGray;
+                        border-bottom: 1px solid $lightGray;
+                    }
                 }
 
                 &.active {
