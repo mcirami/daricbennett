@@ -69,8 +69,7 @@
 							 		</div>
 							 		<div class="info_wrap">
 								 		<h4>Lessons</h4>
-								 		<a class="button red" href="/lessons-by-date">By Date</a>
-								 		<a class="button yellow" href="/lessons-by-level">By Level</a>
+								 		<a class="button red" href="/lessons">Member Lessons</a>
 							 		</div>
 						 		</div>
 						 		<div class="row full_width">
