@@ -178,31 +178,6 @@
 	# End Abuse HTTP Referrer Blocking
 	RewriteRule ^.* - [F,L]
 	# End HackRepair.com Blacklist, http://pastebin.com/u/hackrepair
-
-	# Ban Hosts - Security > Settings > Banned Users
-	SetEnvIF REMOTE_ADDR "^91\.210\.147\.254$" DenyAccess
-	SetEnvIF X-FORWARDED-FOR "^91\.210\.147\.254$" DenyAccess
-	SetEnvIF X-CLUSTER-CLIENT-IP "^91\.210\.147\.254$" DenyAccess
-
-	SetEnvIF REMOTE_ADDR "^143\.176\.233\.188$" DenyAccess
-	SetEnvIF X-FORWARDED-FOR "^143\.176\.233\.188$" DenyAccess
-	SetEnvIF X-CLUSTER-CLIENT-IP "^143\.176\.233\.188$" DenyAccess
-
-	<IfModule mod_authz_core.c>
-		<RequireAll>
-			Require all granted
-			Require not env DenyAccess
-			Require not ip 91.210.147.254
-			Require not ip 143.176.233.188
-		</RequireAll>
-	</IfModule>
-	<IfModule !mod_authz_core.c>
-		Order allow,deny
-		Allow from all
-		Deny from env=DenyAccess
-		Deny from 91.210.147.254
-		Deny from 143.176.233.188
-	</IfModule>
 # END iThemes Security - Do not modify or remove this line
 
 # BEGIN WordPress
@@ -222,15 +197,28 @@ php_value max_execution_time 300
 php_value max_input_time 300
 
 # redirects
-Redirect 301 /community https://staging.daricbennett.com/forums/
-Redirect 301 /freetrial https://staging.daricbennett.com/membership-account/membership-levels/
-Redirect 301 /joinfree https://staging.daricbennett.com/membership-account/membership-levels/
-Redirect 301 /getstarted https://staging.daricbennett.com/membership-account/membership-levels/
-Redirect 301 /annual https://staging.daricbennett.com/membership-account/membership-checkout/?level=4
-Redirect 301 /6mo https://staging.daricbennett.com/membership-account/membership-checkout/?level=3
-Redirect 301 /3mo https://staging.daricbennett.com/membership-account/membership-checkout/?level=2
-Redirect 301 /monthly https://staging.daricbennett.com/membership-account/membership-checkout/?level=1
-Redirect 301 /free-lessons https://staging.daricbennett.com/free-online-bass-lessons/
-Redirect 301 /lessons-by-date https://staging.daricbennett.com/lessons/
-Redirect 301 /lessons-by-category https://staging.daricbennett.com/lessons/
-Redirect 301 /lessons-by-level https://staging.daricbennett.com/lessons/
+Redirect 301 /community https://www.daricbennett.com/forums/
+Redirect 301 /freetrial https://www.daricbennett.com/membership-account/membership-levels/
+Redirect 301 /joinfree https://www.daricbennett.com/membership-account/membership-levels/
+Redirect 301 /getstarted https://www.daricbennett.com/membership-account/membership-levels/
+Redirect 301 /annual https://www.daricbennett.com/membership-account/membership-checkout/?level=4
+Redirect 301 /6mo https://www.daricbennett.com/membership-account/membership-checkout/?level=3
+Redirect 301 /3mo https://www.daricbennett.com/membership-account/membership-checkout/?level=2
+Redirect 301 /monthly https://www.daricbennett.com/membership-account/membership-checkout/?level=1
+Redirect 301 /free-lessons https://www.daricbennett.com/free-online-bass-lessons/
+Redirect 301 /lessons-by-date https://www.daricbennett.com/lessons/
+Redirect 301 /lessons-by-category https://www.daricbennett.com/lessons/
+Redirect 301 /lessons-by-level https://www.daricbennett.com/lessons/
+
+# Wordfence WAF
+<Files ".user.ini">
+<IfModule mod_authz_core.c>
+	Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+	Order deny,allow
+	Deny from all
+</IfModule>
+</Files>
+
+# END Wordfence WAF

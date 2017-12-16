@@ -4587,7 +4587,7 @@ ul.member_menu > li {
       width: 100%;
       border: none;
       height: 45px;
-      padding: 20px 10px;
+      padding: 0 10px;
       font-size: 16px;
       -webkit-border-radius: 4px;
       -moz-border-radius: 4px;

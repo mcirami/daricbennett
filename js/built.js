@@ -679,14 +679,13 @@ var loadReload = function() {
         });
     }
 
+    var filterizr = $('.filtr-container');
 
-    if ($('.filtr-container')) {
-        $('.filtr-container').filterizr({
+    if (currentPage.pageName === 'Lessons') {
+        filterizr.filterizr({
             layout: 'sameSize'
         });
     }
-
-
 
     $('.filter_list li').click(function() {
         if (!$(this).hasClass('all')) {

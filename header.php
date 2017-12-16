@@ -43,11 +43,15 @@ src="https://www.facebook.com/tr?id=1092024584249788&ev=PageView&noscript=1"
 
     <?php
 
-        $ogImage = get_field('og_image');
+        //$ogImage = get_field('og_image');
+
+        $attachment_id = get_field('og_image');
+        $size = "video-thumb";
+        $ogImage = wp_get_attachment_image_src( $attachment_id, $size );
 
         if(!empty($ogImage)) : ?>
-            <meta property="og:image" content="<?php echo $ogImage['url'];?>" />
-            <meta property="og:image:secure_url" content="<?php echo $ogImage['url'];?>" />
+            <meta property="og:image" content="<?php echo $ogImage[0];?>" />
+            <meta property="og:image:secure_url" content="<?php echo $ogImage[0];?>" />
             <meta property="og:image:type" content="image/jpeg" />
 
         <?php else :

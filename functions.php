@@ -180,10 +180,11 @@ function boiler_scripts_styles() {
 	wp_enqueue_script( 'main_js', get_template_directory_uri() . '/js/built.min.js', array('jquery'), '', true );
 	wp_enqueue_script( 'vimeo', get_template_directory_uri() . '/js/vendor/vimeothumb/jquery-vimeothumb.min.js', array('jquery'), '', true );
 
-    wp_enqueue_script( 'emoji', get_template_directory_uri() . '/js/vendor/emoji.min.js', array('jquery'), '', true );
+    //wp_enqueue_script( 'emoji', get_template_directory_uri() . '/js/vendor/emoji.min.js', array('jquery'), '', true );
+    if (is_page('lessons')){
 
-    wp_enqueue_script( 'filterizr', get_template_directory_uri() . '/js/vendor/jquery.filterizr.min.js', array('jquery'), '', true );
-
+        wp_enqueue_script('filterizr', get_template_directory_uri() . '/js/vendor/jquery.filterizr.min.js', array('jquery'), '', true);
+    }
     //wp_enqueue_script( 'images_loaded', get_template_directory_uri() . '/js/vendor/images-loaded/imagesloaded.pkgd.min.js', array('jquery'), '', true );
 
     wp_localize_script('main_js', 'currentUser', array(
@@ -194,6 +195,10 @@ function boiler_scripts_styles() {
         'userEmail' => wp_get_current_user()->user_email,
         'userRole' => wp_get_current_user()->roles,
         'ajaxurl' => admin_url( 'admin-ajax.php' )
+    ));
+
+    wp_localize_script('main_js', 'currentPage', array(
+       'pageName' =>  get_the_title()
     ));
 
 }
@@ -590,6 +595,8 @@ function subscribe_all() {
 
 
 }
+
+define('PMPRO_FAILED_PAYMENT_LIMIT', 5);
 
 /*function my_subscribe_all() {
     bbp_add_user_forum_subscription();

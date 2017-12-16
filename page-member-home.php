@@ -68,8 +68,9 @@
 								 		<img src="<?php echo bloginfo('template_url'); ?>/images/icon-lessons.png" />
 							 		</div>
 							 		<div class="info_wrap">
-								 		<h4>Lessons</h4>
+								 		<h4>Access</h4>
 								 		<a class="button red" href="/lessons">Member Lessons</a>
+                                        <a class="button yellow" href="/membership-account/directory/">Member Directory</a>
 							 		</div>
 						 		</div>
 						 		<div class="row full_width">

@@ -446,7 +446,7 @@
                             <input id="baddress1" name="baddress1" type="text" class="input <?php echo pmpro_getClassForField("baddress1");?>" size="30" value="<?php echo esc_attr($baddress1); ?>" />
                         </div> <!-- end pmpro_checkout-field-baddress1 -->
                         <div class="pmpro_checkout-field pmpro_checkout-field-baddress2">
-                            <label for="baddress2"><?php _e('Address 2', 'paid-memberships-pro' );?><span>*</span></label>
+                            <label for="baddress2"><?php _e('Address 2', 'paid-memberships-pro' );?></label>
                             <input id="baddress2" name="baddress2" type="text" class="input <?php echo pmpro_getClassForField("baddress2");?>" size="30" value="<?php echo esc_attr($baddress2); ?>" />
                         </div> <!-- end pmpro_checkout-field-baddress2 -->
                         <?php
