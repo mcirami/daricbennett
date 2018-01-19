@@ -26,10 +26,10 @@ define( 'WPCACHEHOME', '/home/vhosts/daricbennett.com/httpdocs/wp-content/plugin
 define('DB_NAME', 'jeffimec_a02');
 
 /** MySQL database username */
-define('DB_USER',       'jeffimec_a02');
+define('DB_USER', 'jeffimec_a02');
 
 /** MySQL database password */
-define('DB_PASSWORD',       'g3X4y9v_SE');
+define('DB_PASSWORD', 'g3X4y9v_SE');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost:3306');
@@ -81,12 +81,6 @@ $table_prefix  = 'a02_';
  */
 define('WP_DEBUG', false);
 
-
-define('WP_HOME', 'https://' . $_SERVER['HTTP_HOST']);
-define('WP_SITEURL', 'https://' . $_SERVER['HTTP_HOST']);
-define('WP_CONTENT_URL', '/wp-content');
-define('DOMAIN_CURRENT_SITE', $_SERVER['HTTP_HOST']);
-
 /* That's all, stop editing! Happy blogging. */
 
 
@@ -97,7 +91,7 @@ if ( !defined('ABSPATH') )
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
 
-
+define( 'WP_ALLOW_MULTISITE', true );
 
 define ('FS_METHOD', 'direct');
 

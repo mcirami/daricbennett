@@ -1,6 +1,4 @@
-
 <?php
-
 	/**
 	 * Template Name: Member Home Page
 	 *
@@ -60,7 +58,7 @@
 							 		<div class="info_wrap account">
 								 		<h4>Account</h4>
 								 		<a class="button red" href="/your-profile">Edit Profile</a>
-								 		<a class="button yellow" href="<?php echo do_shortcode('[bbpm-messages-link]'); ?>">My Inbox</a>
+								 		<a class="button yellow" href="/my-inbox/?fepaction=messagebox&fep-filter=inbox">My Inbox</a>
 							 		</div>
 						 		</div>
 						 		<div class="row full_width">
@@ -68,9 +66,9 @@
 								 		<img src="<?php echo bloginfo('template_url'); ?>/images/icon-lessons.png" />
 							 		</div>
 							 		<div class="info_wrap">
-								 		<h4>Access</h4>
+								 		<h4>Instruction</h4>
 								 		<a class="button red" href="/lessons">Member Lessons</a>
-                                        <a class="button yellow" href="/membership-account/directory/">Member Directory</a>
+                                        <a class="button yellow" href="/video-q-and-a">Video Q & A</a>
 							 		</div>
 						 		</div>
 						 		<div class="row full_width">

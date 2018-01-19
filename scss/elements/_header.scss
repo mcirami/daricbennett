@@ -741,16 +741,28 @@ ul.member_menu {
 	}
 }
 
+.fancybox-slide {
+    padding: 0 20px !important;
+}
+
 #email_join {
-	@include span-columns(12);
+	width:40%;
 	display: none;
 	text-align: center;
 	background: $yellow;
 	padding: 20px 5px 150px;
 	color: $black;
+	max-width: 900px;
+    min-width: 700px;
+
+    @include media($tablet) {
+        min-width: 650px;
+    }
 	
 	@include media($mobile){
 		padding: 8px 5px 20%;
+        width: 100%;
+        min-width: unset;
 	}
 	
 	a {

@@ -489,12 +489,12 @@ function pmpromd_shortcode($atts, $content=null, $code="")
                                                 <?php
                                                 $current_user = wp_get_current_user();
                                                 $username = $current_user->user_login;
-                                                $mailbox = $username . "/mailbox/" . $auser->user_nicename;
+                                                $sendToUser = $auser->user_nicename;
 
                                                 if ($auser->user_nicename != $username) :
                                                     ?>
                                                     <div class="send_message">
-                                                        <a class="button red" href="/forums/users/<?php echo $mailbox; ?>">Send Message</a>
+                                                        <a class="button red" href="/my-inbox/?fepaction=newmessage&fep_to=<?php echo $sendToUser; ?>">Send Message</a>
                                                     </div>
                                                 <?php endif; ?>
 

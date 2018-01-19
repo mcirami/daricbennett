@@ -24,10 +24,10 @@
 
         if($notation) {
             $controls = '1';
-            $display = true;
+            $display = 'yes';
         } else {
             $controls = '0';
-            $display = false;
+            $display = 'no';
         }
 
         $str = explode("scores/", $videoLink);
@@ -118,12 +118,13 @@
                                 $attachment_id = get_field('og_image');
                                 $size = "video-thumb";
                                 $ogImage = wp_get_attachment_image_src( $attachment_id, $size );
+                                $video_thumbnail = get_video_thumbnail();
 
                                if (!empty($ogImage)) :
                         ?>
                             <img class="og_image" src="<?php echo $ogImage[0]; ?>" alt="">
 
-                        <?php  elseif ( ( $video_thumbnail = get_video_thumbnail() ) != null ) : ?>
+                        <?php  elseif ( !is_wp_error($video_thumbnail) ) : ?>
 
                             <img class="get_video_thumbnail" src="<?php echo $video_thumbnail; ?>" alt="">
 

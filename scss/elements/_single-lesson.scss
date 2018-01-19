@@ -3,6 +3,26 @@
     border-top: 1px solid #f1f1f1;
     border-bottom: 1px solid #f1f1f1;
 
+	.video_wrapper .button_wrap {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 0;
+        padding-top: 20%;
+
+        img {
+            width: auto;
+            margin: 0 auto;
+
+            @include media($mobile){
+                width: 70px;
+            }
+
+            @include media($smallMobile){
+                width: 50px;
+            }
+        }
+    }
 
 	.social_buttons {
         margin-bottom: 40px;
@@ -10,8 +30,13 @@
         border-bottom: 1px solid #f1f1f1;
         padding: 20px 0;
 
+        @include media($mobile) {
+            padding: 10px 0 0;
+            margin-bottom: 20px;
+        }
+
         a {
-            font-family: 'robotoregular';
+            font-family: 'robotoregular', sans-serif;
             display: inline-block;
             color: $white;
             padding: 12px 75px;
@@ -20,20 +45,20 @@
             border-radius: 4px;
             text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
             margin-right: 1%;
-            -webkit-transition: all 1s linear 1s;
-            -moz-transition: all 1s linear 1s;
-            -o-transition: all 1s linear 1s;
-            transition: all 1s linear 1s;
+            -webkit-transition: all .5s linear .5s;
+            -moz-transition: all .5s linear .5s;
+            -o-transition: all .5s linear .5s;
+            transition: all .5s linear .5s;
 
             @include media($tablet) {
                 padding: 10px 30px 10px 55px;
             }
 
             @include media($mobile) {
-                padding:8px 0;
+                padding:16px 0;
                 font-size: 14px;
                 margin-right: 0;
-                width: 100%;
+                width: 60px;
                 margin-bottom: 5px;
             }
 
@@ -41,7 +66,7 @@
                 margin-right: 0;
             }
 
-            span:before {
+            span.icon:before {
                 content: '';
                 width: 30px;
                 height: 30px;
@@ -51,8 +76,14 @@
 
                 @include media($mobile) {
                     width: 25px;
-                    top: -1px;
-                    left: -28px;
+                    top: -10px;
+                    left: -14px;
+                }
+            }
+
+			span.text {
+                @include media($mobile) {
+                    display: none;
                 }
             }
 
@@ -74,7 +105,7 @@
                     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e9193', endColorstr='#218183',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
                 }
 
-                span:before {
+                span.icon:before {
                     background: url('../images/button-icon-instagram.png')no-repeat;
                     background-size: 100%;
                 }
@@ -98,14 +129,14 @@
                     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e22a20', endColorstr='#d3251b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
                 }
 
-                span:before {
+                span.icon:before {
                     background: url('../images/button-icon-youtube.png')no-repeat;
                     top: 0;
                     height: 21px;
                     background-size: 100%;
 
                     @include media($mobile) {
-                        top: 2px;
+                        top: -6px;
                     }
 
                 }
@@ -129,7 +160,7 @@
                     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#546ea3', endColorstr='#3b5995',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
                 }
 
-                span:before {
+                span.icon:before {
                     background: url('../images/button-icon-facebook.png')no-repeat;
                     background-size: 100%;
                 }
@@ -142,11 +173,11 @@
 		 color: $black;
 		 
 		 @include media($mobile){
-		 	padding: 40px 0;
+		 	padding: 20px 0;
 		 }
 		 
 		 h2 {
-			 font-family: 'robotobold';
+			 font-family: 'robotobold', sans-serif;
 			 font-size: 36px;
 			 text-transform: uppercase;
 			 margin: 0 0 40px;
@@ -158,6 +189,7 @@
 			 
 			 @include media($mobile){
 			 	font-size: 26px;
+                 margin: 0 0 20px;
 			 }
 		 }
 	}
@@ -182,7 +214,7 @@
 		}
 		
 		p {
-			font-family: 'robotomedium';
+			font-family: 'robotomedium', sans-serif;
 			width: 95%;
 			float: left;
 			padding-left: 1%;
@@ -213,9 +245,8 @@
 				display: block;
 				width: 50%;
 				float: left;
-				font-family: 'robotobold';
+				font-family: 'robotobold', sans-serif;
 				font-size: 26px;
-				float: left;
 				margin-top: 15px;
 				margin-bottom: 0;
 				text-align: left;
@@ -627,6 +658,6 @@
 }
 
 .must-log-in a {
-	font-family: 'robotobold';
+	font-family: 'robotobold', sans-serif;
 	color: $red;
 }

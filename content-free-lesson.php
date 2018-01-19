@@ -84,49 +84,49 @@
 
             <div class="video_wrapper <?php if ($type == 'youtube' && $videoOnly == false) { echo "youtube_video";} elseif ($type == 'vimeo' && $videoOnly == false) {echo "vimeo_video"; } elseif ($type == 'soundslice' && $videoOnly == false) {echo "soundslice_video";}?> full_width" data-embed="<?php echo $embedCode;?>">
                 <?php if ($videoOnly) { ?>
-                <a class="members_only_video_pop" href="#members_only_video_pop">
-                    <?php } ?>
+                    <a class="members_only_video_pop" href="#members_only_video_pop">
+                <?php } ?>
 
-                    <?php if ($type == 'youtube') :
+                    <?php
+                        $attachment_id = get_field('og_image');
+                        $size = "video-thumb";
+                        $ogImage = wp_get_attachment_image_src( $attachment_id, $size );
+                        $video_thumbnail = get_video_thumbnail();
 
-                        if ( ( $video_thumbnail = get_video_thumbnail() ) !=null ) {
-                            echo '<img class="youtube_image" src="' . $video_thumbnail . '" />';
-                        } elseif ( ($video_thumbnail = get_the_post_thumbnail()) != null ) {
+                        if (!empty($ogImage)) : ?>
+
+                            <img class="og_image" src="<?php echo $ogImage[0]; ?>" alt="">
+
+                    <?php elseif ( !is_wp_error($video_thumbnail)) : ?>
+
+                            <img class="get_video_thumbnail" src="<?php echo $video_thumbnail; ?>" alt="">
+
+                    <?php elseif ($video_thumbnail = get_the_post_thumbnail() != null ) :
+
                             echo $video_thumbnail;
-                        } else { ?>
-                            <img class="youtube_image"  src="https://img.youtube.com/vi/<?php echo $embedCode; ?>/mqdefault.jpg" />
-                        <?php } ?>
+
+                        else : ?>
+
+                            <?php if ($type == 'youtube') { ?>
+
+                                <img class="youtube_img" src="https://img.youtube.com/vi/<?php echo $embedCode; ?>/mqdefault.jpg" />
+
+                            <?php } else { ?>
+
+                                <img class="screenshot" src="<?php echo bloginfo('template_url'); ?>/images/lessons-screenshot.jpg" />
+
+                            <?php } ?>
 
 
-                    <?php elseif ($type == 'vimeo') : ?>
-
-                        <?php if( ( $video_thumbnail = get_video_thumbnail() ) != null ) {
-                            echo '<img class="vimeo_image" src="' . $video_thumbnail . '" />';
-                        } elseif ( ($video_thumbnail = get_the_post_thumbnail()) != null ) {
-                            echo $video_thumbnail;
-                        } else { ?>
-                            <img class="vimeo_image" src="<?php echo bloginfo('template_url'); ?>/images/lessons-screenshot.jpg" />
-                        <?php } ?>
-
-                    <?php elseif ($type == 'soundslice') :
-
-                        if ( ( $video_thumbnail = get_video_thumbnail() ) !=null ) {
-                            echo '<img class="soundslice_image" src="' . $video_thumbnail . '" />';
-                        } elseif ( ($video_thumbnail = get_the_post_thumbnail()) != null ) {
-                            echo $video_thumbnail;
-                        } else { ?>
-                            <img class="soundslice_image" src="<?php echo bloginfo('template_url'); ?>/images/lessons-screenshot.jpg" />
-                        <?php } ?>
-
-                    <?php endif; ?>
+                    <?php endif; ?><!-- video thumbnail -->
 
                     <div class="button_wrap full_width">
                         <img class="play_button" src="<?php echo bloginfo('template_url'); ?>/images/play-button.png" />
                     </div>
 
-                    <?php if ($videoOnly) { ?>
-                </a>
-            <?php } ?>
+                <?php if ($videoOnly) { ?>
+                    </a>
+                <?php } ?>
 
             </div><!-- video_wrapper -->
 
@@ -136,11 +136,7 @@
 
                 $lessonLink = get_post_permalink();
                 ?>
-                <!--<div class="share_button full_width">
-                                                        <p class="share">Share</p>
-                                                    </div>
-                                                    <p class="link"><?php the_field('share_link'); ?></p>
-                                                -->
+
                 <div class="share_buttons full_width">
                     <div class="social_button_wrap">
                         <a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo the_field('share_link'); ?>"><img src="<?php echo bloginfo('template_url'); ?>/images/icon-facebook-f.png" />Share</a>

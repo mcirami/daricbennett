@@ -180,6 +180,8 @@ function boiler_scripts_styles() {
 	wp_enqueue_script( 'main_js', get_template_directory_uri() . '/js/built.min.js', array('jquery'), '', true );
 	wp_enqueue_script( 'vimeo', get_template_directory_uri() . '/js/vendor/vimeothumb/jquery-vimeothumb.min.js', array('jquery'), '', true );
 
+    wp_enqueue_script( 'jquery_ui', get_template_directory_uri() . '/js/vendor/jquery-ui.min.js', array('jquery'), '', true );
+
     //wp_enqueue_script( 'emoji', get_template_directory_uri() . '/js/vendor/emoji.min.js', array('jquery'), '', true );
     if (is_page('lessons')){
 
@@ -198,7 +200,8 @@ function boiler_scripts_styles() {
     ));
 
     wp_localize_script('main_js', 'currentPage', array(
-       'pageName' =>  get_the_title()
+       'pageName' =>  get_the_title(),
+        'postType' => get_post_type(),
     ));
 
 }
@@ -286,36 +289,6 @@ function extra_profile_fields($user_id) {
 	
 }
 
-add_filter( "bbpm_get_conversation_array", function( $args ){
-    if ( !bbpm_is_search_messages() ) {
-        global $wpdb;
-        $table = $wpdb->prefix . BBPM_TABLE;
-        global $current_user;
-        $pm_id = $args->last_message->PM_ID;
-        $query = $wpdb->get_results(
-            $wpdb->prepare(
-                "SELECT ID FROM $table WHERE PM_ID = %d AND recipient = %d AND NOT FIND_IN_SET(%d, deleted) ORDER BY ID DESC LIMIT 1",
-                $pm_id,
-                $current_user->ID,
-                $current_user->ID
-            )
-        );
-        if( !empty( $query[0] ) ) {
-            $args->last_message = BBP_messages_message::instance()->get_message( $query[0]->ID );
-        }
-    }
-    return $args;
-}, 10);
-
-function replace_bbpress_replies_username_filter($author_name,$reply_id ){
-	$author_id = bbp_get_reply_author_id($reply_id);
-	$author_object = get_userdata( $author_id );
-	$author_name  = ucfirst($author_object->user_login);
-	
-	return $author_name;
-}
-add_filter( 'bbp_get_reply_author_display_name','replace_bbpress_replies_username_filter',10, 2);
-
 function allowed_types_init() {  
     global $rtmedia;  
     $rtmedia->allowed_types['video']['extn'] = array('avi','mp4', 'mov','wmv');  
@@ -345,7 +318,7 @@ wp_redirect( 'http://www.daricbennett.com/', 301 );
 
 add_action( 'template_redirect', 'redirect_wp_admin' );
 
-function create_post_type() {
+function create_lesson_post_type() {
     register_post_type( 'lessons',
         array(
             'labels' => array(
@@ -377,7 +350,7 @@ function create_post_type() {
         )
     );
 }
-add_action( 'init', 'create_post_type' );
+add_action( 'init', 'create_lesson_post_type' );
 
 
 function lessons_cat_taxonomy() {  
@@ -420,6 +393,41 @@ function lessons_level_taxonomy() {
     );  
 }  
 add_action( 'init', 'lessons_level_taxonomy');
+
+
+function create_video_post_type() {
+    register_post_type( 'videos',
+        array(
+            'labels' => array(
+                'name' => __( 'Video Submit' ),
+                'singular_name' => __( 'Video Submit' ),
+                'add_new' => ('Add New Video'),
+                'add_new_item' => ('Add New Video'),
+                'edit_item' => ('Edit Video Submit'),
+                'new_item' => ('New Video'),
+                'view_item' => ('View Videos'),
+                'search_items' => ('Search Videos'),
+                'not_found' => ('No Video Submit found'),
+                'not_found_in_trash' => ('No Video￼Submit found in Trash'),
+                'parent_item_colon' => ('Parent Video:'),
+                'menu_name' => ('Submitted Videos'),
+            ),
+            'public' => true,
+            'has_archive' => false,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'query_var'          => true,
+            'capability_type'    => 'post',
+            'hierarchical'       => false,
+            'menu_icon' => get_template_directory_uri() . '/images/videos-icon.png',
+            'supports' => array( 'title', 'editor', 'thumbnail', 'comments', 'author' ),
+            'rewrite' => array( 'slug' => 'video-q-and-a' ),
+            'show_in_rest' => true
+        )
+    );
+}
+add_action( 'init', 'create_video_post_type' );
 
 add_filter( 'the_content', 'make_clickable');
 
@@ -469,23 +477,38 @@ function filter_comment_form_submit_button( $submit_button, $args ) {
 add_filter( 'comment_form_submit_button', 'filter_comment_form_submit_button', 10, 2 );
 
 
-function my_comment_form_title($title_reply) {
+function my_comment_form_edits($edit_fields) {
 
-    $title_reply['title_reply'] = __('Questions? Comments...get in touch!');
+    if (get_post_type() == "videos") {
+        $title_reply = 'REPLY TO THIS THREAD' /*. "<br><span>" . '(you can also embed a video response in your reply, ex: https://www.youtube.com/embed/YTvideoCode )' . "</span>"*/;
+        $label_submit = 'Post Reply';
+        $title_reply_after = '<span>(you can also embed a video response in your reply, ex: https://www.youtube.com/embed/YTvideoCode )</span>';
+    } else {
+        $title_reply = 'Questions? Comments...get in touch!';
+        $label_submit = 'Post Comment';
+        $title_reply_after =  '';
+    }
 
-    return $title_reply;
+    $edit_fields = array(
+        'title_reply' => $title_reply,
+        'title_reply_after' => $title_reply_after,
+        'label_submit' => $label_submit
+    );
+
+
+    return $edit_fields;
 }
 
-add_filter('comment_form_defaults', 'my_comment_form_title', 10, 2);
+add_filter('comment_form_defaults', 'my_comment_form_edits', 10, 2);
 
 function send_comment_notify_email() {
 
     $url = site_url();
 
-    if (strpos($url,'dev') !== false || strpos($url,'staging') !== false ) {
+    if (strpos($url,'test') !== false || strpos($url,'staging') !== false ) {
         $mailTo = "matteo@mscwebservices.net";
     } else {
-        $mailTo = "daric@daricbennett.com";
+        $mailTo = "daric@daricbennett.com, admin@daricbennett.com";
     }
 
     $editLink = $url . '/wp-admin/edit-comments.php';
@@ -523,10 +546,10 @@ function send_reply_to_user_email() {
 
     if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
 
-        sleep(20);
+        sleep(30);
 
         if (wp_mail($to, $subject, $message, $headers)) {
-            echo json_encode(array('status' => 'success', 'message' => 'Comment reply notification message sent.'));
+            echo json_encode(array('status' => 'success', 'message' => 'Comment reply notification message sent'));
             exit;
         } else {
             echo json_encode(error_get_last());
@@ -536,6 +559,39 @@ function send_reply_to_user_email() {
 }
 
 add_action("wp_ajax_send_reply_to_user_email", "send_reply_to_user_email");
+
+
+function comment_notif_subject_edit($subject) {
+
+    $subject = "A Reply has been made to your Video q & A Submission";
+
+    return $subject;
+
+}
+
+add_filter('comment_notification_subject', 'comment_notif_subject_edit');
+
+function comment_notif_text_edit($message, $comment_id) {
+
+    $comment = get_comment( $comment_id);
+    $postId = $comment->comment_post_ID;
+    $postTitle = get_the_title($postId);
+    $postURL = get_the_permalink($postId);
+
+    $comment_author =  $comment->comment_author;
+
+    /*$message = 'You received a reply to your' . $this->get_post_title( $comment_id ) . 'thread you posted in the Video Q & A section from' .  $comment->comment_author_login. '<br>
+               Follow this link to login and view the reply: <br><br>' . $this->the_permalink($comment_id);*/
+
+    $message = 'You received a reply to your "' .  $postTitle . '" thread you posted in the Video Q & A section from ' . $comment_author . '<br> 
+               Follow this link to login and view the reply: <br><br>' . $postURL;
+
+    return $message;
+
+}
+
+add_filter( 'comment_notification_text', 'comment_notif_text_edit', 1, 2 );
+
 
 function subscribe_all() {
 
@@ -598,28 +654,108 @@ function subscribe_all() {
 
 define('PMPRO_FAILED_PAYMENT_LIMIT', 5);
 
-/*function my_subscribe_all() {
-    bbp_add_user_forum_subscription();
+
+add_filter( 'fep_menu_buttons', 'fep_cus_fep_menu_buttons', 99 );
+
+function fep_cus_fep_menu_buttons( $menu )
+{
+    unset( $menu['announcements'] );
+    $menu['message_box']['title'] = "Inbox";
+    $menu['message_box']['action'] = "messagebox&fep-filter=inbox";
+
+    return $menu;
 }
 
-add_filter('user_row_actions', 'my_user_subscribe_all', 10, 2);
+
+add_action('acf/save_post', 'my_save_post', 1);
+
+function my_save_post( $post_id )
+{
+
+    // bail early if not a models post
+    if (get_post_type($post_id) !== 'videos') {
+        return;
+    }
+
+
+    // bail early if editing in admin
+    if (is_admin()) {
+        return;
+    }
+
+    // vars
+    //$post = get_post($post_id);
+
+    //$actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+
+    // get custom fields (field group exists for content_form)
+    //$title = $post->post_title;
+
+    $url = site_url();
+
+    if (strpos($url,'test') !== false || strpos($url,'staging') !== false ) {
+        $mailTo = "matteo@mscwebservices.net";
+    } else {
+        $mailTo = 'admin@daricbennett.com, daric@daricbennett.com';
+    }
+
+    $link = get_permalink($post_id);
+
+    $to = $mailTo;
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $subject = 'New Video Submission';
+    $body = 'A new video was submitted! <br><br>To view it click here:<br>' . $link;
+
+    wp_mail( $to, $subject, $body, $headers );
+}
+
+/** BBPress messages **/
+/*
+add_filter('BBP_MESSAGES_getChatAvatar', function($avatar, $chat){
+    if ( isset( $chat['recipients'] ) && count($chat['recipients']) < 3 ) {
+        foreach ( $chat['recipients'] as $user_id ) {
+            if ( $user_id !== bbpm_messages()->current_user ) {
+                $html = get_avatar($user_id);
+
+                preg_match('/src=["\']?(.*?)["\']?(\s|\z|>)/si', $html, $src);
+
+                if ( !empty($src[1]) )
+                    $avatar = $src[1];
+            }
+        }
+    }
+
+    return $avatar;
+}, 10, 2);
 */
 
 /*
+add_filter( "bbpm_get_conversation_array", function( $args ){
+    if ( !bbpm_is_search_messages() ) {
+        global $wpdb;
+        $table = $wpdb->prefix . BBPM_TABLE;
+        global $current_user;
+        $pm_id = $args->last_message->PM_ID;
+        $query = $wpdb->get_results(
+            $wpdb->prepare(
+                "SELECT ID FROM $table WHERE PM_ID = %d AND recipient = %d AND NOT FIND_IN_SET(%d, deleted) ORDER BY ID DESC LIMIT 1",
+                $pm_id,
+                $current_user->ID,
+                $current_user->ID
+            )
+        );
+        if( !empty( $query[0] ) ) {
+            $args->last_message = BBP_messages_message::instance()->get_message( $query[0]->ID );
+        }
+    }
+    return $args;
+}, 10);*/
+/*
+function replace_bbpress_replies_username_filter($author_name,$reply_id ){
+	$author_id = bbp_get_reply_author_id($reply_id);
+	$author_object = get_userdata( $author_id );
+	$author_name  = ucfirst($author_object->user_login);
 
-add_filter( 'wp_nav_menu_items', 'custom_mailbox_link', 10, 2 );
-
-function custom_mailbox_link ( $items, $args ) {
-
-    $user = wp_get_current_user();
-    
-    if ($items[href] == )
-    
-    $newLink = str_replace("--username--", $user->user_login, $atts[href]);
-	$atts[href] = $newLink;
-
-    return $atts;
-
+	return $author_name;
 }
-
-*/
+add_filter( 'bbp_get_reply_author_display_name','replace_bbpress_replies_username_filter',10, 2);*/

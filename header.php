@@ -7,7 +7,8 @@
 
 $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
@@ -143,34 +144,28 @@ src="https://www.facebook.com/tr?id=1092024584249788&ev=PageView&noscript=1"
 	</div>-->
 
 	<?php if (is_user_logged_in()) : ?>
-		<?php //wp_nav_menu( array( 'theme_location' => 'members', 'container' => false, 'menu_class' => 'member_menu' ) ); // remember to assign a menu in the admin to remove the container div ?>
-			<ul class="member_menu">
+		<?php wp_nav_menu( array( 'theme_location' => 'members', 'container' => false, 'menu_class' => 'member_menu' ) ); // remember to assign a menu in the admin to remove the container div ?>
+			<!--<ul class="member_menu">
 				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187">
-                    <a href="<?php $url; ?>/lessons/">Lessons</a>
-					<!--<ul class="sub-menu" style="display: none;">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="<?php /*$url ;*/?>/lessons-by-date/">By Date</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218"><a href="<?php /*$url; */?>/lessons-by-level/">By Level</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="<?php /*$url ;*/?>/lessons-by-category/">By Category</a></li>
-					</ul>-->
+                    <a href="<?php /*$url; */?>/lessons/">Lessons</a>
 				</li>
-				<!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-321"><a href="<?php /*$url; */?>/live-sessions/">Live Sessions</a></li>-->
 				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent-item menu-item-188"><a>Community</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-219"><a href="<?php $url; ?>/forums/">Bass Nation Forums</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-395"><a href="<?php $url; ?>/membership-account/directory/">Bass Nation Members</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-228"><a href="<?php $url; ?>/passions/">Passions</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-219"><a href="<?php /*$url; */?>/forums/">Bass Nation Forums</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-395"><a href="<?php /*$url; */?>/membership-account/directory/">Bass Nation Members</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-228"><a href="<?php /*$url; */?>/passions/">Passions</a></li>
 					</ul>
 				</li>
 				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent-item menu-item-189"><a>Account</a>
 					<ul class="sub-menu" style="display: none;">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-230"><a href="<?php $url; ?>/your-profile/">My Profile</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="<?php $url; ?>/membership-account/">My Account</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="<?php do_shortcode('[bbpm-messages-link]'); ?>">My Inbox</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="<?php $url; ?>/contact-us/">Contact Us</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196"><a href="<?php echo wp_logout_url(); ?>">Log Out</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-230"><a href="<?php /*$url; */?>/your-profile/">My Profile</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="<?php /*$url; */?>/membership-account/">My Account</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="<?php /*do_shortcode('[bbpm-messages-link]'); */?>">My Inbox</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="<?php /*$url; */?>/contact-us/">Contact Us</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196"><a href="<?php /*echo wp_logout_url(); */?>">Log Out</a></li>
 					</ul>
 				</li>
-			</ul>
+			</ul>-->
 
 		
 	<?php else : ?>
@@ -254,7 +249,7 @@ src="https://www.facebook.com/tr?id=1092024584249788&ev=PageView&noscript=1"
 			
 		<?php endif; ?>
 		
-		<div class="header_bottom <?php if(!is_front_page() && !is_home() && !is_page(5)){ echo "background"; } ?>">
+		<div class="header_bottom <?php if(!is_front_page() && !is_page(5)){ echo "background"; } ?>">
 			<?php wp_reset_query(); ?>
 			<div class="container">
 				<a href="/"><h1 class="logo"><img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" /></h1></a>
@@ -264,39 +259,34 @@ src="https://www.facebook.com/tr?id=1092024584249788&ev=PageView&noscript=1"
 					<span></span>
 				</a>
 				<div class="menu">
-					
+
 						<nav role="navigation">
 
 							<?php if (is_user_logged_in()): ?>
 							
-									<?php //wp_nav_menu( array( 'theme_location' => 'members', 'container' => false, 'menu_class' => 'member_menu' ) ); // remember to assign a menu in the admin to remove the container div ?>
+									<?php wp_nav_menu( array( 'theme_location' => 'members', 'container' => false, 'menu_class' => 'member_menu' ) ); // remember to assign a menu in the admin to remove the container div ?>
 									
-									<ul class="member_menu">
-										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187"><a href="<?php $url; ?>/lessons/">Lessons</a>
-											<!--<ul class="sub-menu" style="display: none;">
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="<?php /*$url ;*/?>/lessons-by-date/">By Date</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218"><a href="<?php /*$url; */?>/lessons-by-level/">By Level</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="<?php /*$url ;*/?>/lessons-by-category/">By Category</a></li>
-											</ul>-->
+									<!--<ul class="member_menu">
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187">
+                                            <a href="<?php /*$url; */?>/lessons/">Lessons</a>
 										</li>
-										<!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-321"><a href="<?php /*$url; */?>/live-sessions/">Live Sessions</a></li>-->
 										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent-item menu-item-188"><a>Community</a>
 											<ul class="sub-menu" style="display: none;">
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-219"><a href="<?php $url; ?>/forums/">Bass Nation Forums</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-395"><a href="<?php $url; ?>/membership-account/directory/">Bass Nation Members</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-228"><a href="<?php $url; ?>/passions/">Passions</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-219"><a href="<?php /*$url; */?>/forums/">Bass Nation Forums</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-395"><a href="<?php /*$url; */?>/membership-account/directory/">Bass Nation Members</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-228"><a href="<?php /*$url; */?>/passions/">Passions</a></li>
 											</ul>
 										</li>
 										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent-item menu-item-189"><a>Account</a>
 											<ul class="sub-menu" style="display: none;">
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-230"><a href="<?php $url; ?>/your-profile/">My Profile</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="<?php $url; ?>/membership-account/">My Account</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="<?php echo do_shortcode('[bbpm-messages-link]'); ?>">My Inbox</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="<?php $url; ?>/contact-us/">Contact Us</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196"><a href="<?php echo wp_logout_url(); ?>">Log Out</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-230"><a href="<?php /*$url; */?>/your-profile/">My Profile</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="<?php /*$url; */?>/membership-account/">My Account</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="<?php /*echo do_shortcode('[bbpm-messages-link]'); */?>">My Inbox</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="<?php /*$url; */?>/contact-us/">Contact Us</a></li>
+												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196"><a href="<?php /*echo wp_logout_url(); */?>">Log Out</a></li>
 											</ul>
 										</li>
-									</ul>
+									</ul>-->
 									
 							<?php else : ?>
 							

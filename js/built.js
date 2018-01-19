@@ -312,7 +312,7 @@ var loadReload = function() {
     $('.accordion').on('click', function () {
 
         var panelHeight = 0;
-        var rowHeight = 0;
+        var rowHeight = 60;
         var headerHeight = $('#global_header').height();
         var accordion = $(this);
         var arrow = $(this).children('.arrow');
@@ -332,11 +332,14 @@ var loadReload = function() {
             accordion.removeClass('active');
             arrow.removeClass('active');
             panel.removeClass('show');
+            $('html,body').animate({scrollTop: $(this).offset().top - headerHeight}, 1000);
         } else {
             accordion.addClass('active');
             arrow.addClass('active');
             panel.addClass('show');
-            $('html,body').animate({scrollTop: $(this).offset().top - (headerHeight + panelHeight + rowHeight)}, 1000);
+
+            $('html,body').animate({scrollTop: $(this).offset().top - (headerHeight + panelHeight + rowHeight)}, 800);
+
         }
     });
 
@@ -415,79 +418,89 @@ var loadReload = function() {
         }
     });
 
-    if ($('.mejs-overlay')) {
+    if ($('.mejs-overlay').length) {
 
         $('.mejs-overlay').html('<p>Your file is converting, please be patient!<p>');
     }
 
-    if ($.browser.msie && $.browser.version == 10) {
+    if ($.browser.msie && $.browser.version === 10) {
         $('.home_section .hero input[type=submit]').addClass('ie10');
     }
 
-    if ($('.rtm-bbp-container')) {
+    if ($('.rtm-bbp-container').length) {
         $('.rtm-bbp-container').parentsUntil('.odd').addClass('attach');
         $('.rtm-bbp-container').parentsUntil('.even').addClass('attach');
     }
 
     var youtube = document.querySelectorAll(".youtube_video");
 
-    for (var i = 0; i < youtube.length; i++) {
-        /*
-        var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed + "/mqdefault.jpg";
+    if (youtube.length) {
 
-        var image = new Image();
-        image.src = source;
-        image.addEventListener( "load", function() {
-            youtube[ i ].appendChild( image );
-        }( i ) );
-        */
-        youtube[i].addEventListener("click", function () {
+        for (var i = 0; i < youtube.length; i++) {
+            /*
+            var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed + "/mqdefault.jpg";
 
-            var iframe = document.createElement("iframe");
+            var image = new Image();
+            image.src = source;
+            image.addEventListener( "load", function() {
+                youtube[ i ].appendChild( image );
+            }( i ) );
+            */
 
-            iframe.setAttribute("frameborder", "0");
-            iframe.setAttribute("allowfullscreen", "");
-            iframe.setAttribute("src", "https://www.youtube.com/embed/" + this.dataset.embed + "?rel=0&showinfo=0&autoplay=1");
+            youtube[i].addEventListener("click", function () {
 
-            this.innerHTML = "";
-            this.appendChild(iframe);
-        });
+                var iframe = document.createElement("iframe");
 
+                iframe.setAttribute("frameborder", "0");
+                iframe.setAttribute("allowfullscreen", "");
+                iframe.setAttribute("src", "https://www.youtube.com/embed/" + this.dataset.embed + "?rel=0&showinfo=0&autoplay=1");
+
+                this.innerHTML = "";
+                this.appendChild(iframe);
+            });
+
+        }
     }
 
     var vimeo = document.querySelectorAll(".vimeo_video");
 
-    for (var i = 0; i < vimeo.length; i++) {
+    if (vimeo.length) {
 
-        vimeo[i].addEventListener("click", function () {
+        for (var i = 0; i < vimeo.length; i++) {
 
-            var iframe = document.createElement("iframe");
+            vimeo[i].addEventListener("click", function () {
 
-            iframe.setAttribute("frameborder", "0");
-            iframe.setAttribute("allowfullscreen", "");
-            iframe.setAttribute("src", "https://player.vimeo.com/video/" + this.dataset.embed + "?autoplay=1");
+                var iframe = document.createElement("iframe");
 
-            this.innerHTML = "";
-            this.appendChild(iframe);
-        });
+                iframe.setAttribute("frameborder", "0");
+                iframe.setAttribute("allowfullscreen", "");
+                iframe.setAttribute("src", "https://player.vimeo.com/video/" + this.dataset.embed + "?autoplay=1");
+
+                this.innerHTML = "";
+                this.appendChild(iframe);
+            });
+        }
     }
 
     var soundslice = document.querySelectorAll(".soundslice_video");
 
-    for (var i = 0; i < soundslice.length; i++) {
+    if (soundslice.length) {
 
-        soundslice[i].addEventListener("click", function () {
+        for (var i = 0; i < soundslice.length; i++) {
 
-            var iframe = document.createElement("iframe");
+            soundslice[i].addEventListener("click", function () {
 
-            iframe.setAttribute("id", "ssembed");
-            iframe.setAttribute("frameborder", "0");
-            iframe.setAttribute("allowfullscreen", "");
-            iframe.setAttribute("src", "https://www.soundslice.com/scores/" + this.dataset.embed);
+                var iframe = document.createElement("iframe");
 
-            this.innerHTML = "";
-            this.appendChild(iframe);
-        });
+                iframe.setAttribute("id", "ssembed");
+                iframe.setAttribute("frameborder", "0");
+                iframe.setAttribute("allowfullscreen", "");
+                iframe.setAttribute("src", "https://www.soundslice.com/scores/" + this.dataset.embed);
+
+                this.innerHTML = "";
+                this.appendChild(iframe);
+            });
+        }
     }
 
     /*$('.soundslice_video img').on('click', function(){
@@ -515,6 +528,37 @@ var loadReload = function() {
         $("body, html").css('overflow-y', 'scroll');
     });
 
+    var postCommentURL = window.location.href;
+
+    if ((currentPage.pageName !== "Video Q & A") && (currentPage.postType === "videos")) {
+
+        if ($('.comment-content > p a').length ) {
+
+            var links = document.querySelectorAll(".comment-content > p a");
+
+            for (x = 0; x < links.length; x++) {
+
+                var videoLink = $(links[x]).attr('href');
+
+                if (videoLink.includes("embed")) {
+                    embedLink = videoLink;
+                } else if (videoLink.includes("v=")) {
+                    str = videoLink.split("v=");
+                    embedLink = "https://www.youtube.com/embed/" + str[1];
+                } else if (videoLink.includes("youtu.be")) {
+                    str = videoLink.split(".be/");
+                    embedLink = "https://www.youtube.com/embed/" + str[1];
+                }
+
+                $("<div class='video_embed'><div class='video_wrapper'><iframe frameborder='0' allowfullscreen src='" + embedLink + "/?rel=0&showinfo=0'></iframe></div></div>").insertAfter($(links[x]).parent());
+
+                links[x].replaceWith("");
+
+            }
+
+        }
+    }
+
 
     var ajaxComments = null;
     var commentReply = $('a.comment-reply-link');
@@ -522,7 +566,7 @@ var loadReload = function() {
     var replyToUser = null;
     var commentReplyURL = null;
 
-    if (commentReply) {
+    if (commentReply.length) {
         replyToComment(commentReply);
     }
 
@@ -550,17 +594,18 @@ var loadReload = function() {
         });
     }
 
-	var commentSubmitButton = $('.comment_submit .submit');
+    var commentSubmitButton = $('.comment_submit .submit');
 
     var protocol = window.location.protocol;
     var domain = window.location.hostname;
+    var ajaxURL = currentUser.ajaxurl;
 
     //var emoji = new EmojiConvertor();
 
-
-    if (commentSubmitButton) {
+    if (commentSubmitButton.length) {
         submitComment(commentSubmitButton);
     }
+
     function submitComment(commentSubmitButton) {
         commentSubmitButton.click(function (e) {
             e.preventDefault();
@@ -572,6 +617,13 @@ var loadReload = function() {
             var postID = $(this).parent().next('input#comment_post_ID').attr('value');
             var commentContent = $(this).parent().prevAll('p.comment-form-comment:first').children();
             var comment = commentContent[1].value;
+
+            //var commentContent = $(this).parent().prevAll('#wp-comment-wrap:first').children();
+            //var comment = commentContent[1]['lastChild'].value;
+
+            //var comment = $(this).parent().prevAll('#wp-comment-wrap').next('iframe #tinymce p');
+
+            console.log(comment);
 
             var userLogin = currentUser.userLogin;
             var userID = currentUser.userID;
@@ -601,8 +653,9 @@ var loadReload = function() {
             var url = protocol + "//" + domain + "/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
             ajaxComments = $.ajax({
-                type: "POST",
                 url: url,
+                type: "POST",
+                async: true,
                 dataType: 'json',
                 data: data,
                 beforeSend: function (xhr) {
@@ -618,15 +671,15 @@ var loadReload = function() {
                         commentsEmail = $.ajax({
                             type: "POST",
                             dataType: "json",
-                            url: currentUser.ajaxurl,
+                            url: ajaxURL,
                             data: {action: 'send_comment_notify_email'},
                             success: function (data) {
                                 //alert ("Email Sent");
                                 console.log("Comment Posted, Email Sent");
                             },
-                            error: function (errorThrown) {
-                                //alert("Error sending email");
+                            error: function (xhRequest, errorThrown, resp) {
                                 console.log(errorThrown);
+                                console.log(JSON.stringify(resp));
                             }
                         });
                     }
@@ -637,6 +690,7 @@ var loadReload = function() {
                 failure: function (xhr) {
                     //alert(xhr.send(data));
                     xhr.send(data);
+                    console.log(JSON.stringify(resp));
                 }
             });
 
@@ -645,26 +699,29 @@ var loadReload = function() {
                 commentsReplyEmail = $.ajax({
                     type: "POST",
                     dataType: "json",
-                    url: currentUser.ajaxurl,
+                    url: ajaxURL,
                     data: {action: 'send_reply_to_user_email', user: replyToUser, url: commentReplyURL},
                     success: function (data) {
                         //alert ("Email Sent");
                         console.log(data);
                     },
-                    error: function (errorThrown) {
+                    error: function (xhRequest, errorThrown, resp) {
                         //alert("Error sending email");
                         console.log(errorThrown);
+                        console.log(JSON.stringify(resp));
                     }
                 });
             }
 
         });
-
     }
 
-    commentCancel();
 
-    function commentCancel () {
+    if ($('.cancel_comment').length) {
+        commentCancel();
+    }
+
+    function commentCancel() {
 
         $('.cancel_comment a').click(function (e) {
             e.preventDefault();
@@ -679,15 +736,15 @@ var loadReload = function() {
         });
     }
 
-    var filterizr = $('.filtr-container');
-
     if (currentPage.pageName === 'Lessons') {
+        var filterizr = $('.filtr-container');
+
         filterizr.filterizr({
             layout: 'sameSize'
         });
     }
 
-    $('.filter_list li').click(function() {
+    $('.filter_list li').click(function () {
         if (!$(this).hasClass('all')) {
             $(this).toggleClass('active');
             $('.filter_list li.all').removeClass('active');
@@ -711,12 +768,12 @@ var loadReload = function() {
         }
     });
 
-    $('.play_video').on('click', function(){
+    $('.play_video').on('click', function () {
 
-        $("html, body").animate({ scrollTop: 100 }, "slow");
+        $("html, body").animate({scrollTop: 100}, "slow");
 
         var videoSrc = $(this).data('src');
-        var videoType =  $(this).data('type');
+        var videoType = $(this).data('type');
         var replaceVideoLink = $(this).data('replace');
         var videoTitle = $(this).data('title');
         var notation = $(this).data('notation');
@@ -737,7 +794,7 @@ var loadReload = function() {
             var fileElements = "";
 
             for (var i = 0; i < files.length; i++) {
-                fileElements += '<a target="_blank" download href="' + files[i].dataset.file + '">' + files[i].dataset.text +'</a>';
+                fileElements += '<a target="_blank" download href="' + files[i].dataset.file + '">' + files[i].dataset.text + '</a>';
             }
         } else {
             fileElements = "";
@@ -755,43 +812,41 @@ var loadReload = function() {
                 keyboardLink = "";
             }*/
 
-
-
         } else {
             replaceVideo = "";
             //keyboardLink = "";
         }
 
         var html = '<div class="full_width lesson_title">' +
-                        '<h3>' + videoTitle + '</h3>' +
-                    '</div>' +
-                    '<div class="content_wrap full_width">' +
-                        '<div class="video_iframe_wrap">' +
-                            replaceVideo; //keyboardLink +
+            '<h3>' + videoTitle + '</h3>' +
+            '</div>' +
+            '<div class="content_wrap full_width">' +
+            '<div class="video_iframe_wrap">' +
+            replaceVideo; //keyboardLink +
 
         if (fileElements) {
             html += '<div class="links_wrap">' +
-                        fileElements +
-                    '</div>';
+                fileElements +
+                '</div>';
         }
 
-        if (notation == true) {
+        if (notation === 'yes') {
             html += '<div class="video_wrapper video_notation">';
         } else {
             html += '<div class="video_wrapper">';
         }
 
-        html += '<iframe frameborder="0" allowfullscreen src="' + videoSrc +'"></iframe>' +
-                '</div>' +
-                '</div>' +
-                '<div class="video_content_wrap">' +
-                commentContent +
-                '</div>' +
-                '</div>';
+        html += '<iframe frameborder="0" allowfullscreen src="' + videoSrc + '"></iframe>' +
+            '</div>' +
+            '</div>' +
+            '<div class="video_content_wrap">' +
+            commentContent +
+            '</div>' +
+            '</div>';
 
         $(html).hide().appendTo(videoPlayer).slideDown(2000);
 
-        $('.replace_video').bind( "click", function(e){
+        $('.replace_video').bind("click", function (e) {
             e.preventDefault();
             $('.video_wrapper').removeClass('soundslice_video');
             var vimeoLink = $(this).data('replace');
@@ -802,4 +857,43 @@ var loadReload = function() {
         submitComment($('.comment_submit .submit'));
         commentCancel();
     });
+
+    var fullURL = window.location.href;
+
+    if (fullURL.includes("filter=inbox")) {
+        $('#fep-menu-message_box').addClass('fep-button-active');
+    } else {
+        $('#fep-menu-message_box').removeClass('fep-button-active');
+    }
+
+    var postVideoBtn = document.getElementById("post_video_btn");
+    var cancelPost = $('.cancel_post');
+
+    if (postVideoBtn) {
+
+        $('#post_video_btn').click(function (e) {
+            e.preventDefault();
+            var headerHeight = $('#global_header').height();
+
+            $('#post_submit_form').addClass('show');
+            $('html,body').animate({scrollTop: $(this).offset().top - headerHeight}, 1000);
+
+            $('#post_video_btn').css('opacity', '0');
+
+        });
+    }
+
+    if (cancelPost) {
+
+        cancelPost.click(function (e) {
+            e.preventDefault();
+            $('#post_submit_form').removeClass('show');
+            $("html, body").animate({scrollTop: 100}, "slow");
+
+            setTimeout(function () {
+                $('#post_video_btn').css('opacity', '1');
+            }, 800);
+        })
+    }
+
 });

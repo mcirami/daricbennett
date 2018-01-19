@@ -262,8 +262,9 @@ function pmpromd_profile_shortcode($atts, $content=null, $code="")
                     <?php } ?>
                     <?php if(!empty($show_level)) { ?>
                         <p class="pmpro_member_directory_level">
-                            <span><?php _e('Level', 'pmpromd'); ?></span>
-                            <?php echo $pu->membership_level->name; ?>
+                            <span><?php _e('Level:', 'pmpromd'); ?></span>
+                            <?php //echo $pu->membership_level->name; ?>
+                            Bass Nation Member
                         </p>
                     <?php } ?>
                     <?php if(!empty($show_bio) && !empty($pu->description) ) { ?>
@@ -315,6 +316,14 @@ function pmpromd_profile_shortcode($atts, $content=null, $code="")
                             <span><?php _e('Phone Number','pmpromd'); ?></span>
                             <?php echo formatPhone($pu->pmpro_bphone); ?>
                         </p>
+                    <?php } ?>
+                    <?php if(!empty($_REQUEST['pu'])) {
+                            $user_nicename = $_REQUEST['pu'];?>
+
+                            <div class="send_message">
+                                <a class="button red" href="/my-inbox/?fepaction=newmessage&fep_to=<?php echo $user_nicename; ?>">Send Message</a>
+                            </div>
+
                     <?php } ?>
                     <?php
                         //filter the fields

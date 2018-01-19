@@ -350,6 +350,7 @@
         @include span-columns(11.2);
         background: $white;
         border: 1px solid $darkGray;
+        text-align: center;
 
         @include media($mobile) {
             @include span-columns(4);
@@ -359,6 +360,7 @@
             padding: 20px 20px 10px 20px;
             background: $lightGray;
             color: $red;
+            text-align: left;
 
             @include media($mobile) {
                 padding: 5px 10px 5px 5px;
@@ -368,6 +370,22 @@
         > p {
             @include span-columns(12);
             padding: 10px 20px;
+            text-align: left;
+        }
+
+        .video_embed {
+            width: 50%;
+            display: inline-block;
+            margin: 20px auto 0;
+            padding: 0 20px;
+
+            @include media($tablet) {
+                width: 75%;
+            }
+
+            @include media($mobile) {
+                width: 100%;
+            }
         }
 
         .comment-metadata {
@@ -660,4 +678,12 @@
             display: block;
         }
     }
+}
+
+#respond #comment-form-identity {
+    display: none !important;
+}
+
+#commentform iframe {
+    height: 230px !important;
 }

@@ -1,98 +1,47 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The template for displaying all single posts
  *
- * @package boiler
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
+ * @version 1.0
  */
 
 get_header(); ?>
+<section class="page_content full_width<?php if (is_user_logged_in()){ echo " member";} ?>">
+    <div class="container">
 
-		<article class="single_lesson full_width page_content <?php if (is_user_logged_in()){ echo "member";} ?>">
-			
-			<header class="sub_header full_width">
-				<div class="container">
-					<h1>Free Online Bass Lessons</h1>
-				</div><!-- .container -->
-			 </header>
-			 
-			<div class="video_section full_width">
-				<section class="container">
-					
-					<?php while ( have_posts() ) : the_post(); ?>
-			
-						<?php get_template_part( 'content', 'single' ); ?>
-			
-						<?php boiler_content_nav( 'nav-below' ); ?>
-			
-						<?php
-							// If comments are open or we have at least one comment, load up the comment template
-							if ( comments_open() || '0' != get_comments_number() )
-								comments_template();
-						?>
-			
-					<?php endwhile; // end of the loop. ?>
-				
-				</section>
-			</div>
-			
-			<div class="form_section full_width">
-				<div class="container">
-					<div id="email_join_single_lesson">
-						<h4>Enter Your Email for FREE Bass Lessons</h4>
-						<?php echo do_shortcode('[mc4wp_form id="49"]'); ?>
-					</div>
-				</div>
-			</div>
-			
-			<div class="social_media_section full_width">
-				<div class="image_wrap">
-					<!--<img src="<?php echo bloginfo('template_url'); ?>/images/daric-single-lesson.jpg" />-->
-				</div>
-				<div class="text_wrap">
-					<h3>Are You Ready for Full Access to Every <span>Complete lesson?</span></h3>
-					<div class="button_wrap">
-						<a class="button yellow" href="/membership-account/membership-levels/">Start My Full Access Free Trial Now!</a>
-					</div>
-					
-					<?php get_template_part( 'content', 'social-media' ); ?>
-					
-				</div>
-				
-			</div>
-			
-			<div class="bottom_section full_width">
-				<div class="container">
-					<h2 class="full_width">Become A Bass Nation Member Today!</h2>
-					<h3 class="full_width">Remember, with your Bass Nation Membership you will have access to:</h3>
-					<div class="columns full_width">
-						<div class="column">
-							<ul>
-								<li><p>Every Complete Lesson</p></li>
-								<li><p>Full Modes Series</p></li>
-								<li><p>Bass Nation Forums</p></li>
-								<li><p>Bass Nation Member Directory</p></li>
-								<li><p>Messaging System</p></li>
-								<li><p>Live Library</p></li>
-								<li><p>and so much more!</p></li>
-							</ul>
-						</div>
-						<div class="column">
-							<div class="video_wrapper full_width">
-								<iframe src="https://www.youtube.com/embed/PiVqp3ZIJWs" frameborder="0" allowfullscreen></iframe>
-							</div>
-						</div>
-					</div><!-- columns -->
-					<h4 class="full_width">Don't Delay, Start Your Free Trial Now!</h4>
-					<div class="button_wrap">
-						<a class="button yellow" href="/membership-account/membership-levels/">Start My Full Access Free Trial Now!</a>
-					</div>
-				</div><!-- container -->
-			</div><!-- bottom_section -->
-			
-		</article>
-		
-		<?php //get_sidebar(); ?>
+        <div class="wrap">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main" role="main">
 
-	
+                    <?php
+                    /* Start the Loop */
+                    while ( have_posts() ) : the_post();
 
-<?php get_footer(); ?>
+                        get_template_part( 'content', get_post_format() );
+
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if ( comments_open() || get_comments_number() ) :
+                            comments_template();
+                        endif;
+
+                        the_post_navigation( array(
+                            'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'boiler' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'boiler' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' /*. twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) )*/ . '</span>%title</span>',
+                            'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'boiler' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'boiler' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' /*. twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) )*/ . '</span></span>',
+                        ) );
+
+                    endwhile; // End of the loop.
+                    ?>
+
+                </main><!-- #main -->
+            </div><!-- #primary -->
+            <?php //get_sidebar(); ?>
+        </div><!-- .wrap -->
+    </div>
+</section>
+
+<?php get_footer();

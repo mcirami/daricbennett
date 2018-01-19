@@ -1,3 +1,4 @@
+/*
 .bbpm-top-header {
 	@include span-columns(12);
 	padding: 10px;
@@ -328,4 +329,245 @@
 
 .bbpm-archive .content-cont:before {
 	content: none;
+}*/
+
+#fep-wrapper {
+    padding: 40px 0;
+
+    #fep-header {
+        font-family: 'robotomedium', sans-serif;
+        display: block;
+        padding: 20px;
+
+        img {
+            display: none;
+        }
+
+        div > div {
+            color: $grayText;
+        }
+
+    }
+
+    #fep-menu {
+        font-family: 'robotoregular', sans-serif;
+        padding: 10px 0;
+
+        #fep-menu-message_box, #fep-menu-newmessage, #fep-menu-settings, #fep-menu-announcements, #fep-menu-directory {
+            background: $black;
+            font-size: 14px;
+            color: $white !important;
+            padding: 8px 20px;
+
+            @include media($smallMobile) {
+                width: 100%;
+            }
+        }
+
+        #fep-menu-message_box:hover, #fep-menu-newmessage:hover, #fep-menu-settings:hover, #fep-menu-announcements:hover, #fep-menu-directory:hover, #fep-menu-message_box.fep-button-active, #fep-menu-newmessage.fep-button-active, #fep-menu-settings.fep-button-active, #fep-menu-announcements.fep-button-active, #fep-menu-directory.fep-button-active {
+            background: #4d4d4d;
+        }
+    }
+
+    .fep-field input {
+        height: 40px;
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+
+    .fep-field label input {
+        height: 15px;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    #fep-result {
+        z-index: 1;
+        bottom: -18px;
+        background: $lightGray;
+    }
+
+    form .fep-button {
+        background: $red;
+        color: $white !important;
+        font-size: 14px;
+    }
+
+    form .fep-button:hover {
+        background: #c30b21;
+    }
+
+    #fep_upload {
+        @include span-columns(12);
+
+        input {
+            margin-top: 10px;
+            margin-bottom: 0;
+            height: 30px;
+            padding: 0;
+        }
+
+        a.fep-attachment-field {
+            display: inline-block;
+            color: $black;
+            margin-bottom: 5px;
+        }
+    }
+
+    #fep-attachment-note {
+        @include span-columns(12);
+    }
+
+    .fep-success {
+        background: $yellow;
+    }
+
+    #fep-content {
+        padding: 20px;
+    }
+
+    .fep-message .fep-message-title-heading, .fep-per-message .fep-message-title {
+        background-color: $lightGray;
+    }
+
+    #fep-content input[type="search"] {
+        height: 40px;
+        padding: 0 10px;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .fep-bulk-action {
+        width: 50%;
+
+        @include media($smallMobile) {
+            @include span-columns(4);
+        }
+    }
+
+    .fep-bulk-action select {
+        float: left;
+    }
+
+    .fep-bulk-action > div {
+        float: left;
+    }
+
+    .fep-bulk-action .fep-button {
+        padding: 6px 16px;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+
+    .fep-loading-gif-div {
+        @include media($smallMobile) {
+            @include span-columns(4);
+        }
+    }
+
+    .fep-filter {
+        @include media($smallMobile) {
+            @include span-columns(4);
+        }
+    }
+
+    .fep-filter select {
+        float: right;
+
+        @include media($smallMobile) {
+            float: left;
+            margin-bottom: 10px;
+        }
+    }
+
+    .fep-odd-even > div:nth-child(odd) {
+        background-color: $lightGray;
+    }
+
+    .fep-column.fep-column-fep-cb {
+        width: 4%;
+        padding-left: 10px;
+    }
+
+    .fep-column.fep-column-avatar {
+        width: 10%;
+        text-align: center;
+
+        @include media($smallMobile) {
+            display: none;
+        }
+    }
+
+    .fep-column.fep-column-avatar img {
+        width: 50px;
+        height: auto;
+        padding: 12px 0;
+        margin: 0 auto;
+    }
+
+    .fep-column.fep-column-name {
+        width: 49%;
+        vertical-align: middle;
+
+        @include media($smallMobile) {
+            width: 41%;
+            font-size: 15px;
+        }
+    }
+
+    .fep-column.fep-column-block_unblock {
+        display: none;
+    }
+
+    .fep-column.fep-column-send_message {
+        width: 37%;
+        vertical-align: middle;
+        text-align: right;
+        padding-right: 20px;
+
+        @include media($smallMobile) {
+            width: 45%;
+            padding: 10px 10px 10px 0;
+        }
+
+        a {
+            background: $red;
+            color: $white !important;
+            padding: 6px 10px;
+            display: inline-block;
+            font-size: 16px;
+            text-decoration: none;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+
+            &:hover {
+                background: #c30b21;
+            }
+
+            @include media($mobile) {
+                font-size: 14px;
+                padding: 4px 10px;
+            }
+        }
+    }
+
+    .fep-column.fep-column-block_unblock a, .fep-column.fep-column-send_message a {
+        color: $black;
+    }
+
+    .fep-pagination a {
+        color: $red;
+    }
+
+    .fep-pagination li.active a {
+        background-color: $lightGray;
+        border-color: $red;
+    }
+
+    .fep-avatar-p .fep-avatar-1 img, .fep-avatar-p .fep-avatar-2 img {
+        width: 30px;
+    }
 }
