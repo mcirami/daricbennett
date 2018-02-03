@@ -1,5 +1,63 @@
 .lessons_page {
 
+    .simplefavorite-button {
+        font-family: 'robotoregular', sans-serif;
+        border: none;
+        opacity: 1 !important;
+        padding: 5px 10px;
+        font-size: 13px;
+
+        @include media($mobile) {
+            font-size: 11px;
+            padding: 4px 5px;
+        }
+
+        &:hover {
+            background: #c4a020;
+        }
+
+        &.active:hover {
+            background: $black;
+        }
+    }
+
+    .top_content {
+        padding: 20px;
+
+        h3 {
+            font-size: 18px;
+            float: left;
+        }
+
+        .simplefavorites-clear {
+            font-family: 'robotoregular', sans-serif;
+            font-size: 14px;
+            color: $red;
+            border: none;
+            text-decoration: underline;
+            float: right;
+            margin-top: 20px;
+            background: none;
+
+            @include media($mobile) {
+                margin-top: 10px;
+            }
+
+            &:hover {
+                color: #c30b21;
+            }
+        }
+
+        button[disabled="disabled"] {
+            color: $lightGray;
+            text-decoration: none;
+
+            &:hover {
+                color: $lightGray;
+            }
+        }
+    }
+
     #video_player {
         background: $darkerGray;
         //max-height: 900px;
@@ -8,6 +66,17 @@
         .content_wrap {
             @include media($mobile) {
                 padding: 0 25px;
+            }
+
+            .simplefavorite-button {
+                float: left;
+                margin-top: 10px;
+                z-index: 1;
+                position: absolute;
+
+                @include media($smallMobile) {
+                    position: relative;
+                }
             }
         }
 
@@ -31,6 +100,10 @@
             text-align: center;
             margin: 0;
             color: $white;
+
+            @include media($smallMobile) {
+                text-align: right;
+            }
 
             a {
                 font-family: 'robotobold', sans-serif;
@@ -88,6 +161,7 @@
             padding-right: 2.5%;
             max-height: 800px;
             overflow-y: scroll;
+            margin-top: 15px;
 
             @include media($tablet) {
                 @include span-columns(8);
@@ -111,6 +185,12 @@
             @include media($mobile) {
                 width: 50%;
                 padding: 10px;
+            }
+
+            .vid_image_wrap .simplefavorite-button {
+                position: absolute !important;
+                right: 0;
+                bottom: 0;
             }
 
             a {
@@ -288,6 +368,45 @@
             -moz-box-sizing: border-box;
             box-sizing: border-box;
         }
+
+        .text_wrap {
+            text-align: center;
+            margin: 10% 0 15%;
+
+            @include media($mobile) {
+                margin: 5% 0 15%;
+            }
+
+            h2 {
+                width: 100%;
+                float: left;
+                border:none;
+                text-transform: uppercase;
+            }
+
+            .button {
+                padding: 10px 50px 10px 20px;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    background: url(../images/white-arrow.png) no-repeat;
+                    width: 28px;
+                    height: 12px;
+                    right: 12px;
+                    z-index: 1;
+                    top: 16px;
+                    background-size: 100%;
+
+                    @include media($mobile) {
+                        top: 14px;
+                        width: 25px;
+                        right: 13px;
+                    }
+                }
+            }
+        }
+
     }
 }
 
@@ -644,7 +763,7 @@
 }
 
 .video_content_wrap #comments {
-    padding: 75px 0 20px;
+    padding-bottom: 20px;
 
     .comment-content {
         width: 100%;

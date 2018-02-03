@@ -22,6 +22,7 @@
         </div>
 		
 		<div class="videos full_width">
+            <?php echo do_shortcode('[favorite_button]');?>
 			
 			<?php
 				
@@ -45,6 +46,7 @@
                     ?>
 
 					<div class="video_wrapper full_width">
+
                         <?php if ($videoOnly) : ?>
 
                             <a class="members_only_video_pop" href="#members_only_video_pop">

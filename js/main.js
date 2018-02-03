@@ -516,7 +516,6 @@ jQuery(document).ready(function($) {
                 links[x].replaceWith("");
 
             }
-
         }
     }
 
@@ -535,6 +534,7 @@ jQuery(document).ready(function($) {
         commentReply.prop('onclick', null).off('click');
 
         commentReply.click(function (e) {
+
             e.preventDefault();
 
             replyToUser = $(this).attr('aria-label').split("to");
@@ -559,7 +559,6 @@ jQuery(document).ready(function($) {
 
     var protocol = window.location.protocol;
     var domain = window.location.hostname;
-    var ajaxURL = currentUser.ajaxurl;
 
     //var emoji = new EmojiConvertor();
 
@@ -569,109 +568,131 @@ jQuery(document).ready(function($) {
 
     function submitComment(commentSubmitButton) {
         commentSubmitButton.click(function (e) {
-            e.preventDefault();
 
-            $(this).next('.loading_gif').html('<img src ="https://www.daricbennett.com/images/loading-gif.gif"/>');
+            if(currentPage.postType === "videos" && replyToUser == null) {
+                console.log('videos');
+            } else {
+                e.preventDefault();
 
-            var today = new Date();
+                $(this).next('.loading_gif').html('<img src ="https://www.daricbennett.com/images/loading-gif.gif"/>');
 
-            var postID = $(this).parent().next('input#comment_post_ID').attr('value');
-            var commentContent = $(this).parent().prevAll('p.comment-form-comment:first').children();
-            var comment = commentContent[1].value;
+                var today = new Date();
+                //var ajaxURL = currentUser.ajaxurl;
+                var ajaxURL = myAjaxurl.ajaxurl;
+                var postID = $(this).parent().next('input#comment_post_ID').attr('value');
+                var commentContent = $(this).parent().prevAll('p.comment-form-comment:first').children();
+                var comment = commentContent[1].value;
 
-            //var commentContent = $(this).parent().prevAll('#wp-comment-wrap:first').children();
-            //var comment = commentContent[1]['lastChild'].value;
+                //var commentContent = $(this).parent().prevAll('#wp-comment-wrap:first').children();
+                //var comment = commentContent[1]['lastChild'].value;
 
-            //var comment = $(this).parent().prevAll('#wp-comment-wrap').next('iframe #tinymce p');
+                //var comment = $(this).parent().prevAll('#wp-comment-wrap').next('iframe #tinymce p');
 
-            console.log(comment);
+                var userLogin = currentUser.userLogin;
+                var userID = currentUser.userID;
+                var userEmail = currentUser.userEmail;
+                var userRole = currentUser.userRole;
 
-            var userLogin = currentUser.userLogin;
-            var userID = currentUser.userID;
-            var userEmail = currentUser.userEmail;
-            var userRole = currentUser.userRole;
+                var JSONObj = {
+                    "post": postID,
+                    "content": comment,
+                    "author": userID,
+                    "author_name": userLogin,
+                    "author_email": userEmail,
+                    "date": today,
+                    "parent": parent
+                };
 
-            var JSONObj = {
-                "post": postID,
-                "content": comment,
-                "author": userID,
-                "author_name": userLogin,
-                "author_email": userEmail,
-                "date": today,
-                "parent": parent
-            };
+                var data = JSON.stringify(JSONObj);
 
-            var data = JSON.stringify(JSONObj);
+                //var url = "http://darben.dev/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
-            //var url = "http://darben.dev/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
+                //var url = "https://www.daricbennett.com/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
-            //var url = "https://www.daricbennett.com/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
+                //var url = "https://staging.daricbennett.com/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
-            //var url = "https://staging.daricbennett.com/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
+                //var url = "http://staging-daric.mscwebservices.net/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
-            //var url = "http://staging-daric.mscwebservices.net/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
+                var url = protocol + "//" + domain + "/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
-            var url = protocol + "//" + domain + "/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
-
-            ajaxComments = $.ajax({
-                url: url,
-                type: "POST",
-                async: true,
-                dataType: 'json',
-                data: data,
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader("X-WP-Nonce", currentUser.nonce);
-                    xhr.setRequestHeader("authorization", "OAuth oauth_consumer_key='IWmItGndx8oY',oauth_token='x3pmlsoef6ayQEdkasPgG01h',oauth_signature_method='HMAC-SHA1',oauth_timestamp='1497396491',oauth_nonce='Lqz1LK',oauth_version='1.0',oauth_signature='EnWnLRtpkruPc1bTtKVhMgECFWg%253D'");
-                    xhr.setRequestHeader("cache-control", "no-cache");
-                    xhr.setRequestHeader("postman-token", "25dc514c-3ad3-0c17-95e8-9dcc960c9ca0");
-                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                },
-                success: function (data, xhr) {
-
-                    if (userRole[0] !== 'administrator') {
-                        commentsEmail = $.ajax({
-                            type: "POST",
-                            dataType: "json",
-                            url: ajaxURL,
-                            data: {action: 'send_comment_notify_email'},
-                            success: function (data) {
-                                //alert ("Email Sent");
-                                console.log("Comment Posted, Email Sent");
-                            },
-                            error: function (xhRequest, errorThrown, resp) {
-                                console.log(errorThrown);
-                                console.log(JSON.stringify(resp));
-                            }
-                        });
-                    }
-
-                    commentContent[1].value = "";
-                    location.reload();
-                },
-                failure: function (xhr) {
-                    //alert(xhr.send(data));
-                    xhr.send(data);
-                    console.log(JSON.stringify(resp));
-                }
-            });
-
-            if (replyToUser !== null && commentReplyURL !== null) {
-
-                commentsReplyEmail = $.ajax({
+                ajaxComments = $.ajax({
+                    url: url,
                     type: "POST",
-                    dataType: "json",
-                    url: ajaxURL,
-                    data: {action: 'send_reply_to_user_email', user: replyToUser, url: commentReplyURL},
-                    success: function (data) {
-                        //alert ("Email Sent");
-                        console.log(data);
+                    async: true,
+                    dataType: 'json',
+                    data: data,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("X-WP-Nonce", currentUser.nonce);
+                        xhr.setRequestHeader("authorization", "OAuth oauth_consumer_key='IWmItGndx8oY',oauth_token='x3pmlsoef6ayQEdkasPgG01h',oauth_signature_method='HMAC-SHA1',oauth_timestamp='1497396491',oauth_nonce='Lqz1LK',oauth_version='1.0',oauth_signature='EnWnLRtpkruPc1bTtKVhMgECFWg%253D'");
+                        xhr.setRequestHeader("cache-control", "no-cache");
+                        xhr.setRequestHeader("postman-token", "25dc514c-3ad3-0c17-95e8-9dcc960c9ca0");
+                        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     },
-                    error: function (xhRequest, errorThrown, resp) {
-                        //alert("Error sending email");
-                        console.log(errorThrown);
+                    success: function (data, xhr) {
+
+                        if (userRole[0] !== 'administrator') {
+                            commentsEmail = $.ajax({
+                                type: "POST",
+                                dataType: "json",
+                                url: ajaxURL,
+                                data: {action: 'send_comment_notify_email'},
+                                success: function (data) {
+                                    //alert ("Email Sent");
+                                    console.log("Comment Posted, Email Sent");
+                                },
+                                error: function (xhRequest, errorThrown, resp) {
+                                    console.log(errorThrown);
+                                    console.log(JSON.stringify(resp));
+                                }
+                            });
+
+                        } else {
+
+                            commentsEmailAdmin = $.ajax({
+                                type: "post",
+                                async: true,
+                                //dataType: "json",
+                                url: ajaxURL,
+                                data: {action: 'rv_admin_comments_to_author_comments'},
+                                success: function (data) {
+                                    //alert ("Email Sent");
+                                    console.log("Comment Posted, Email Sent");
+                                },
+                                error: function (xhRequest, errorThrown, resp) {
+                                    console.log(errorThrown);
+                                    console.log(JSON.stringify(xhRequest));
+                                }
+                            });
+                        }
+
+                        commentContent[1].value = "";
+                        location.reload();
+                    },
+                    failure: function (xhr) {
+                        //alert(xhr.send(data));
+                        xhr.send(data);
                         console.log(JSON.stringify(resp));
                     }
                 });
+
+                if (replyToUser !== null && commentReplyURL !== null) {
+
+                    commentsReplyEmail = $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        url: ajaxURL,
+                        data: {action: 'send_reply_to_user_email', user: replyToUser, url: commentReplyURL},
+                        success: function (data) {
+                            //alert ("Email Sent");
+                            console.log(data);
+                        },
+                        error: function (xhRequest, errorThrown, resp) {
+                            //alert("Error sending email");
+                            console.log(errorThrown);
+                            console.log(JSON.stringify(resp));
+                        }
+                    });
+                }
             }
 
         });
@@ -740,8 +761,14 @@ jQuery(document).ready(function($) {
         var notation = $(this).data('notation');
 
         //var keyboardVideo = $('.keyboard_embed').data('embed');
-        var commentContent = $(this).nextAll('.comment_wrap').html();
+        var commentContent = $(this).parent().nextAll('.comment_wrap').html();
         var videoPlayer = $('#video_player').empty();
+
+        //if (currentPage.pageName === 'Lessons') {
+            var favoriteButton = $(this).parent().children('.button_wrap').html();
+        //} else {
+             //favoriteButton = "";
+        //}
 
         /*var iframe = document.createElement( "iframe" );
 
@@ -782,11 +809,10 @@ jQuery(document).ready(function($) {
             '<h3>' + videoTitle + '</h3>' +
             '</div>' +
             '<div class="content_wrap full_width">' +
-            '<div class="video_iframe_wrap">' +
-            replaceVideo; //keyboardLink +
+            '<div class="video_iframe_wrap">' + favoriteButton + replaceVideo;
 
         if (fileElements) {
-            html += '<div class="links_wrap">' +
+            html +=  '<div class="links_wrap">' +
                 fileElements +
                 '</div>';
         }

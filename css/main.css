@@ -1499,7 +1499,7 @@ img {
     font-size: 16px !important; } }
 
 .button {
-  font-family: 'robotoregular';
+  font-family: 'robotoregular', sans-serif;
   font-size: 16px;
   padding: 7px 15px;
   border-radius: 4px;
@@ -4433,11 +4433,57 @@ ul.member_menu > li {
           display: block;
           font-size: 4vw; } }
 
+.lessons_page .simplefavorite-button {
+  font-family: 'robotoregular', sans-serif;
+  border: none;
+  opacity: 1 !important;
+  padding: 5px 10px;
+  font-size: 13px; }
+  @media screen and (max-width: 768px) {
+    .lessons_page .simplefavorite-button {
+      font-size: 11px;
+      padding: 4px 5px; } }
+  .lessons_page .simplefavorite-button:hover {
+    background: #c4a020; }
+  .lessons_page .simplefavorite-button.active:hover {
+    background: #131313; }
+.lessons_page .top_content {
+  padding: 20px; }
+  .lessons_page .top_content h3 {
+    font-size: 18px;
+    float: left; }
+  .lessons_page .top_content .simplefavorites-clear {
+    font-family: 'robotoregular', sans-serif;
+    font-size: 14px;
+    color: #f20f2b;
+    border: none;
+    text-decoration: underline;
+    float: right;
+    margin-top: 20px;
+    background: none; }
+    @media screen and (max-width: 768px) {
+      .lessons_page .top_content .simplefavorites-clear {
+        margin-top: 10px; } }
+    .lessons_page .top_content .simplefavorites-clear:hover {
+      color: #c30b21; }
+  .lessons_page .top_content button[disabled="disabled"] {
+    color: #f1f1f1;
+    text-decoration: none; }
+    .lessons_page .top_content button[disabled="disabled"]:hover {
+      color: #f1f1f1; }
 .lessons_page #video_player {
   background: #454647; }
   @media screen and (max-width: 768px) {
     .lessons_page #video_player .content_wrap {
       padding: 0 25px; } }
+  .lessons_page #video_player .content_wrap .simplefavorite-button {
+    float: left;
+    margin-top: 10px;
+    z-index: 1;
+    position: absolute; }
+    @media screen and (max-width: 550px) {
+      .lessons_page #video_player .content_wrap .simplefavorite-button {
+        position: relative; } }
   .lessons_page #video_player .lesson_title {
     text-align: center;
     color: #fff;
@@ -4453,6 +4499,9 @@ ul.member_menu > li {
     text-align: center;
     margin: 0;
     color: #fff; }
+    @media screen and (max-width: 550px) {
+      .lessons_page #video_player .replace_link {
+        text-align: right; } }
     .lessons_page #video_player .replace_link a {
       font-family: 'robotobold', sans-serif;
       font-size: 16px;
@@ -4508,7 +4557,8 @@ ul.member_menu > li {
     width: 40.2913699012%;
     padding-right: 2.5%;
     max-height: 800px;
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    margin-top: 15px; }
     .lessons_page #video_player .video_content_wrap:last-child {
       margin-right: 0; }
     @media screen and (max-width: 1023px) {
@@ -4532,6 +4582,10 @@ ul.member_menu > li {
     .lessons_page .video_list .column {
       width: 50%;
       padding: 10px; } }
+  .lessons_page .video_list .column .vid_image_wrap .simplefavorite-button {
+    position: absolute !important;
+    right: 0;
+    bottom: 0; }
   .lessons_page .video_list .column a {
     display: block; }
   .lessons_page .video_list .column .comment_wrap {
@@ -4684,6 +4738,34 @@ ul.member_menu > li {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
+  .lessons_page .filtr-container .text_wrap {
+    text-align: center;
+    margin: 10% 0 15%; }
+    @media screen and (max-width: 768px) {
+      .lessons_page .filtr-container .text_wrap {
+        margin: 5% 0 15%; } }
+    .lessons_page .filtr-container .text_wrap h2 {
+      width: 100%;
+      float: left;
+      border: none;
+      text-transform: uppercase; }
+    .lessons_page .filtr-container .text_wrap .button {
+      padding: 10px 50px 10px 20px; }
+      .lessons_page .filtr-container .text_wrap .button:before {
+        content: '';
+        position: absolute;
+        background: url(../images/white-arrow.png) no-repeat;
+        width: 28px;
+        height: 12px;
+        right: 12px;
+        z-index: 1;
+        top: 16px;
+        background-size: 100%; }
+        @media screen and (max-width: 768px) {
+          .lessons_page .filtr-container .text_wrap .button:before {
+            top: 14px;
+            width: 25px;
+            right: 13px; } }
 
 #comments {
   float: left;
@@ -5011,7 +5093,7 @@ ul.member_menu > li {
       width: 100%; }
 
 .video_content_wrap #comments {
-  padding: 75px 0 20px; }
+  padding-bottom: 20px; }
   .video_content_wrap #comments .comment-content {
     width: 100%; }
     .video_content_wrap #comments .comment-content .comment_heading {

@@ -6,6 +6,8 @@
  * Time: 9:31 AM
  */
 
+//$title = get_query_var('pagename');
+
     $type = null;
     $videoLink = get_field('member_lesson_link');
 
@@ -93,6 +95,7 @@
                     <?php endwhile; ?>
 
                 <?php endif; ?>
+            <div class="vid_image_wrap">
 
             <?php if ($type == 'youtube') : ?>
 
@@ -149,14 +152,19 @@
 
                     </a>
 
-                    <div class="lesson_content full_width">
-                        <h4><?php the_title(); ?></h4>
-                        <p>Date Added <?php echo get_the_date('n/j/Y'); ?></p>
+                    <div class="button_wrap full_width">
+                        <?php the_favorites_button();?>
                     </div>
+            </div>
 
-                        <div class="comment_wrap">
-                            <?php if ((is_single() || is_page()) && is_user_logged_in()) { comments_template(); }?>
-                        </div>
+            <div class="lesson_content full_width">
+                <h4><?php the_title(); ?></h4>
+                <p>Date Added <?php echo get_the_date('n/j/Y'); ?></p>
+            </div>
+
+            <div class="comment_wrap">
+                <?php if ((is_single() || is_page()) && is_user_logged_in()) { comments_template(); }?>
+            </div>
 
 
 

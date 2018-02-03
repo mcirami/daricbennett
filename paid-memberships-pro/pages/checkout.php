@@ -21,20 +21,17 @@
         <div class="top_section full_width">
             <h2>Ready to join Bass Nation?</h2>
             <div class="list full_width">
+                <p><span>1</span>Join RISK FREE with our 3-Day Free Trial Offer!</p>
                 <?php if ($checkoutLevel == 1) : ?>
-                    <p><span>1</span>Join RISK FREE with our 3-Day Free Trial Offer!</p>
                     <p><span>2</span>Then Only $9.99/mo to keep your Membership!</p>
                     <p><span>3</span>Skyrocket your bass playing for less than $0.35/day!</p>
                 <?php elseif ($checkoutLevel == 2) : ?>
-                    <p><span>1</span>Join RISK FREE with our 5-Day Free Trial Offer!</p>
                     <p><span>2</span>Then Only $28.99/3 months to keep your Membership!</p>
                     <p><span>3</span>Skyrocket your bass playing for less than $0.33/day!</p>
                 <?php elseif ($checkoutLevel == 3) : ?>
-                    <p><span>1</span>Join RISK FREE with our 7-Day Free Trial Offer!</p>
                     <p><span>2</span>Then Only $54.99/6 months to keep your Membership!</p>
                     <p><span>3</span>Skyrocket your bass playing for less than $0.31/day!</p>
                 <?php elseif ($checkoutLevel == 4) : ?>
-                    <p><span>1</span>Join RISK FREE with our 14-Day Free Trial Offer!</p>
                     <p><span>2</span>Then Only $99.99/yr to keep your Membership!</p>
                     <p><span>3</span>Skyrocket your bass playing for less than $0.28/day!</p>
                 <?php endif; ?>
@@ -145,11 +142,11 @@
             <?php if ($checkoutLevel == 1) : ?>
                 <h2>Free for 3 days - then only $9.99/mo!</h2>
             <?php elseif ($checkoutLevel == 2) : ?>
-                <h2>Free for 5 days - then only $28.99/3 months!</h2>
+                <h2>Free for 3 days - then only $28.99/3 months!</h2>
             <?php elseif ($checkoutLevel == 3) : ?>
-                <h2>Free for 7 days - then only $54.99/6 months!</h2>
+                <h2>Free for 3 days - then only $54.99/6 months!</h2>
             <?php elseif ($checkoutLevel == 4) : ?>
-                <h2>Free for 14 days - then only $99.99/yr!</h2>
+                <h2>Free for 3 days - then only $99.99/yr!</h2>
             <?php endif; ?>
 
             <div class="white_box full_width">

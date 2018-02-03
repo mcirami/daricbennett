@@ -196,8 +196,11 @@ function boiler_scripts_styles() {
         'userID' => wp_get_current_user()->ID,
         'userEmail' => wp_get_current_user()->user_email,
         'userRole' => wp_get_current_user()->roles,
-        'ajaxurl' => admin_url( 'admin-ajax.php' )
+        //'ajaxurl' => admin_url( 'admin-ajax.php' )
     ));
+
+    wp_localize_script( 'main_js', 'myAjaxurl', array('ajaxurl' => admin_url( 'admin-ajax.php' )));
+
 
     wp_localize_script('main_js', 'currentPage', array(
        'pageName' =>  get_the_title(),
@@ -309,10 +312,10 @@ add_action("pmpro_after_change_membership_level", "my_pmpro_after_change_members
 
 function redirect_wp_admin() {
 
-if ( is_page('wp-admin') && !is_user_logged_in() ) {
+    if ( is_page('wp-admin') && !is_user_logged_in() ) {
 
-wp_redirect( 'http://www.daricbennett.com/', 301 ); 
-  exit;
+    wp_redirect( 'http://www.daricbennett.com/', 301 );
+        exit;
     }
 }
 
@@ -495,7 +498,6 @@ function my_comment_form_edits($edit_fields) {
         'label_submit' => $label_submit
     );
 
-
     return $edit_fields;
 }
 
@@ -560,7 +562,6 @@ function send_reply_to_user_email() {
 
 add_action("wp_ajax_send_reply_to_user_email", "send_reply_to_user_email");
 
-
 function comment_notif_subject_edit($subject) {
 
     $subject = "A Reply has been made to your Video q & A Submission";
@@ -572,6 +573,8 @@ function comment_notif_subject_edit($subject) {
 add_filter('comment_notification_subject', 'comment_notif_subject_edit');
 
 function comment_notif_text_edit($message, $comment_id) {
+
+    $userRole = wp_get_current_user()->roles;
 
     $comment = get_comment( $comment_id);
     $postId = $comment->comment_post_ID;
@@ -652,7 +655,7 @@ function subscribe_all() {
 
 }
 
-define('PMPRO_FAILED_PAYMENT_LIMIT', 5);
+define('PMPRO_FAILED_PAYMENT_LIMIT', 3);
 
 
 add_filter( 'fep_menu_buttons', 'fep_cus_fep_menu_buttons', 99 );
@@ -709,53 +712,16 @@ function my_save_post( $post_id )
     wp_mail( $to, $subject, $body, $headers );
 }
 
-/** BBPress messages **/
 /*
-add_filter('BBP_MESSAGES_getChatAvatar', function($avatar, $chat){
-    if ( isset( $chat['recipients'] ) && count($chat['recipients']) < 3 ) {
-        foreach ( $chat['recipients'] as $user_id ) {
-            if ( $user_id !== bbpm_messages()->current_user ) {
-                $html = get_avatar($user_id);
+function rewrite_braintree_hook(){
 
-                preg_match('/src=["\']?(.*?)["\']?(\s|\z|>)/si', $html, $src);
+    global $wp_rewrite;
 
-                if ( !empty($src[1]) )
-                    $avatar = $src[1];
-            }
-        }
-    }
+    $plugin_url = plugins_url( 'brainhook.php', __FILE__ );
+    $plugin_url = substr( $plugin_url, strlen( home_url() ) + 1 );
 
-    return $avatar;
-}, 10, 2);
-*/
+    add_rewrite_rule('brainhook', $plugin_url ,'top');
 
-/*
-add_filter( "bbpm_get_conversation_array", function( $args ){
-    if ( !bbpm_is_search_messages() ) {
-        global $wpdb;
-        $table = $wpdb->prefix . BBPM_TABLE;
-        global $current_user;
-        $pm_id = $args->last_message->PM_ID;
-        $query = $wpdb->get_results(
-            $wpdb->prepare(
-                "SELECT ID FROM $table WHERE PM_ID = %d AND recipient = %d AND NOT FIND_IN_SET(%d, deleted) ORDER BY ID DESC LIMIT 1",
-                $pm_id,
-                $current_user->ID,
-                $current_user->ID
-            )
-        );
-        if( !empty( $query[0] ) ) {
-            $args->last_message = BBP_messages_message::instance()->get_message( $query[0]->ID );
-        }
-    }
-    return $args;
-}, 10);*/
-/*
-function replace_bbpress_replies_username_filter($author_name,$reply_id ){
-	$author_id = bbp_get_reply_author_id($reply_id);
-	$author_object = get_userdata( $author_id );
-	$author_name  = ucfirst($author_object->user_login);
 
-	return $author_name;
-}
-add_filter( 'bbp_get_reply_author_display_name','replace_bbpress_replies_username_filter',10, 2);*/
+    $wp_rewrite->flush_rules(true);
+}*/

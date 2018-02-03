@@ -41,7 +41,7 @@ if($pmpro_msg)
 -->
 	<?php	
 	$count = 0;
-	$days = NULL;
+	//$days = NULL;
 	foreach($pmpro_levels as $level)
 	{
 	  if(isset($current_user->membership_level->ID))
@@ -59,28 +59,28 @@ if($pmpro_msg)
 			<div class="column_heading full_width">
 				<!--<h2><?php /*echo $current_level ? "<strong>{$level->name}</strong>" : $level->name*/?></h2>-->
 				<?php if ($level->id == 1) :
-					$days = 3;
+					//$days = 3;
 				?>
 					<!--<p>With FREE 3-Day Trial</p>-->
                     <h2>FREE 3 Day Trial</h2>
                     <p>then only $9.99/month</p>
 				<?php elseif ($level->id == 2 ) :
-					$days = 5;
+					//$days = 5;
 				?>
 					<!--<p>With FREE 5-Day Trial</p>-->
-                    <h2>FREE 5 Day Trial</h2>
+                    <h2>FREE 3 Day Trial</h2>
                     <p>then only $28.99/3 months</p>
 				<?php elseif ($level->id == 3) :
-					$days = 7;
+					//$days = 7;
 				?>
 					<!--<p>With FREE 7-Day Trial</p>-->
-                    <h2>FREE 7 Day Trial</h2>
+                    <h2>FREE 3 Day Trial</h2>
                     <p>then only $54.99/6 months</p>
 				<?php elseif ($level->id == 4) :
-					$days = 14;
+					//$days = 14;
 				?>
 					<!--<p>14 Day Free Trial!</p>-->
-                    <h2>FREE 14 Day Trial</h2>
+                    <h2>FREE 3 Day Trial</h2>
                     <p>then only $99.99/year</p>
 				<?php endif; ?>
 			</div>
@@ -140,7 +140,7 @@ if($pmpro_msg)
 		</div> <!-- cost -->
 		<div class="description full_width">
 			<ul>
-				<li><p>FREE for <?php echo $days; ?> days</p></li>
+				<li><p>FREE for 3 days</p></li>
 				<li><p>ALL Complete Lessons</p></li>
 				<li><p>Lesson Commenting</p></li>
 				<li><p>Bass Nation Forum Access</p></li>
