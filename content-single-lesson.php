@@ -54,15 +54,15 @@
                                 $attachment_id = get_field('og_image');
                                 $size = "video-thumb";
                                 $ogImage = wp_get_attachment_image_src( $attachment_id, $size );
-                                $video_thumbnail = get_video_thumbnail();
+                                //$video_thumbnail = get_video_thumbnail();
 
                                 if (!empty($ogImage)) : ?>
 
                                     <img class="og_image" src="<?php echo $ogImage[0]; ?>" alt="">
 
-                                <?php elseif ( !is_wp_error($video_thumbnail)) : ?>
+                                <?php //elseif ( !is_wp_error($video_thumbnail)) : ?>
 
-                                    <img class="get_video_thumbnail" src="<?php echo $video_thumbnail; ?>" alt="">
+                                   <!-- <img class="get_video_thumbnail" src="<?php /*echo $video_thumbnail; */?>" alt="">-->
 
                                 <?php elseif ($video_thumbnail = get_the_post_thumbnail() != null ) :
 

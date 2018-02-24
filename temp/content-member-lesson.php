@@ -90,7 +90,7 @@
 
                     <?php while (have_rows('files')) : the_row();?>
 
-                        <a class="video_files" href="#" data-file="<?php the_sub_field('file'); ?>" data-text="<?php the_sub_field('file_text'); ?>"></a>
+                        <a class="video_files" hidden href="#" data-file="<?php the_sub_field('file'); ?>" data-text="<?php the_sub_field('file_text'); ?>"></a>
 
                     <?php endwhile; ?>
 
@@ -121,27 +121,19 @@
                                 $attachment_id = get_field('og_image');
                                 $size = "video-thumb";
                                 $ogImage = wp_get_attachment_image_src( $attachment_id, $size );
-
-                                /*if (!is_wp_error(video_thumbnail())) {
-                                    $video_thumbnail = get_video_thumbnail();
-                                }*/
-
-                                if (!empty(get_the_post_thumbnail())) {
-                                    $postThumbnail = get_the_post_thumbnail();
-                                }
-
+                                $video_thumbnail = get_video_thumbnail();
 
                                if (!empty($ogImage)) :
                         ?>
                             <img class="og_image" src="<?php echo $ogImage[0]; ?>" alt="">
 
-                        <?php  //elseif ( !empty($video_thumbnail) ) : ?>
+                        <?php  elseif ( !is_wp_error($video_thumbnail) ) : ?>
 
-                            <!--<img class="get_video_thumbnail" src="<?php /*echo $video_thumbnail; */?>" alt="">-->
+                            <img class="get_video_thumbnail" src="<?php echo $video_thumbnail; ?>" alt="">
 
-                        <?php elseif (!empty($postThumbnail)) :
+                        <?php elseif (($video_thumbnail = get_the_post_thumbnail()) != null ) :
 
-                                    echo $postThumbnail;
+                            echo $video_thumbnail;
 
                         else : ?>
 

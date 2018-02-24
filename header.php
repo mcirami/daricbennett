@@ -61,15 +61,15 @@ src="https://www.facebook.com/tr?id=1092024584249788&ev=PageView&noscript=1"
 
                 $str = get_field('free_lesson_link');
 
-                if( ( $video_thumbnail = get_video_thumbnail() ) != null ) :
+                //if( ( $video_thumbnail = get_video_thumbnail() ) != null ) :
     ?>
-                    <meta property="og:image" content="<?php echo $video_thumbnail;?>" />
-                    <meta property="og:image:secure_url" content="<?php echo $video_thumbnail;?>" />
+                    <!--<meta property="og:image" content="<?php /*echo $video_thumbnail;*/?>" />
+                    <meta property="og:image:secure_url" content="<?php /*echo $video_thumbnail;*/?>" />
                     <meta property="og:image:type" content="image/jpeg" />
                     <meta property="og:image:width" content="1200" />
-                    <meta property="og:image:height" content="630" />
+                    <meta property="og:image:height" content="630" />-->
 
-                <?php elseif (strpos($str, "youtube") !== false) :
+                <?php if (strpos($str, "youtube") !== false) :
 
                             $str = explode("embed/", $str);
                             $embedCode = preg_replace('/\s+/', '',$str[1]);
