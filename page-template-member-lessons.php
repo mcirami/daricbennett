@@ -13,9 +13,10 @@ get_header();
 
 $title = get_the_title();
 
-$favorites = get_user_favorites();
-
 if (pmpro_hasMembershipLevel()) {
+
+    $favorites = get_user_favorites();
+
     global $post;
 
     if ($title == "Lessons") {
@@ -128,6 +129,7 @@ if (pmpro_hasMembershipLevel()) {
                                         <li data-multifilter="29">Slap Series</li>
                                         <li data-multifilter="16">Funk Challenges</li>
                                         <li data-multifilter="10">Live Sessions</li>
+                                        <li data-multifilter="43">Quick Lick</li>
                                         <li data-multifilter="6">Covers</li>
                                         <li data-multifilter="15">Ask Daric</li>
                                     </ul>

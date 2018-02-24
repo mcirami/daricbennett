@@ -712,6 +712,72 @@ function my_save_post( $post_id )
     wp_mail( $to, $subject, $body, $headers );
 }
 
+function send_payment_notification($order) {
+
+    $orderArray = json_encode($order);
+
+    //level id 1,2,3,4
+    $levelID = $order->membership_id;
+
+    //gateway paypalexpress or braintree
+    $gateway = $order->gateway;
+
+
+    //$subscr_id = pmpro_getParam( "subscr_id", "POST" );
+    //$recurring_payment_id = pmpro_getParam( "recurring_payment_id", "POST" );
+
+    /*if ( empty( $subscr_id ) ) {
+        $subscr_id = $recurring_payment_id;
+    }*/
+
+    $subscriptionID = $order->subscription_transaction_id;
+
+    /*if($gateway == "braintree") {
+        $subscriptionID = $order->subscription_transaction_id;
+    } elseif ($gateway = "paypalexpress") {
+        $subscriptionID = $order->id;
+    }*/
+
+    if ($subscriptionID != "") {
+        $transactionCount = sub_id_count($subscriptionID);
+    } else {
+        $transactionCount = 0;
+    }
+
+    if ($gateway == "braintree" && $transactionCount == 2) {
+
+        $to = "mcirami@gmail.com";
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+        $subject = "Triggered function from functions.php";
+        $body = "This is from functions.php.<br> The whole array is: <br>" . $orderArray . "<br><br>The member level is: " . $levelID . " <br><br>" . $gateway . " sub ID is: " . $subscriptionID . " <br><br>gateway is: " . $gateway;
+
+        wp_mail( $to, $subject, $body, $headers );
+    }
+
+
+    $to = "mcirami@gmail.com";
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $subject = "Triggered function from functions.php";
+    $body = "This is from functions.php.<br> The whole array is: <br>" . $orderArray . "<br><br>The member level is: " . $levelID . " <br><br>" . $gateway . " sub ID is: " . $subscriptionID . " <br><br>gateway is: " . $gateway;
+
+    wp_mail( $to, $subject, $body, $headers );
+
+}
+
+add_action( 'pmpro_added_order', 'send_payment_notification', 10, 1);
+
+
+function sub_id_count($subID) {
+
+    global $wpdb;
+
+    $orders = $wpdb->get_results("SELECT subscription_transaction_id FROM a02_pmpro_membership_orders WHERE subscription_transaction_id = '" . $subID . "'");
+
+    $count = count($orders);
+    return $count;
+
+}
+
 /*
 function rewrite_braintree_hook(){
 

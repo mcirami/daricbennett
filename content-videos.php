@@ -14,6 +14,8 @@
     } elseif (strpos($videoLink, "youtu.be") !== false) {
         $str = explode(".be/", $videoLink);
         $embedCode = preg_replace('/\s+/', '', $str[1]);
+    } else {
+        $embedCode = null;
     }
 
 ?>
@@ -23,13 +25,13 @@
 
     <div class="column">
 
-        <?php if ($embedCode !== '') : ?>
+        <?php if ($embedCode !== null) : ?>
             <a href="<?php the_permalink(); ?>">
                 <img class="youtube_img" src="https://img.youtube.com/vi/<?php echo $embedCode; ?>/mqdefault.jpg" />
             </a>
         <?php else:  ?>
             <a href="<?php the_permalink(); ?>">
-                <img class="default" src="<?php echo bloginfo('template_url'); ?>/images/lessons-screenshot.jpg" />
+                <img class="default" src="<?php echo bloginfo('template_url'); ?>/images/no-video-placeholder.jpg" />
             </a>
         <?php endif; ?>
 

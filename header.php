@@ -327,9 +327,11 @@ src="https://www.facebook.com/tr?id=1092024584249788&ev=PageView&noscript=1"
 			    </div>
 			</form>
 			<div id="subscribe-result">
-				
+
 			</div>
 		</div>
+
+        <?php //echo the_field('email_form_shortcode', 'options'); ?>
 		
 		<!--End mc_embed_signup-->
 		<!-- 

@@ -20,7 +20,7 @@ get_header(); ?>
 					
 					<?php while ( have_posts() ) : the_post(); ?>
 			
-						<?php get_template_part( 'content', 'single-lessons' ); ?>
+						<?php get_template_part( 'content', 'single-lesson' ); ?>
 			
 						<?php boiler_content_nav( 'nav-below' ); ?>
 			

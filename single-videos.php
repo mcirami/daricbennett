@@ -30,7 +30,7 @@ get_header(); ?>
                                 'next_text' => '<span class="screen-reader-text button black">' . __( 'Next Submission', 'boiler' ) . '</span>'
                             ) );
 
-                            get_template_part( 'content', 'single-videos' );
+                            get_template_part( 'content', 'single-video' );
 
                             // If comments are open or we have at least one comment, load up the comment template.
                             if ( comments_open() || get_comments_number() ) :

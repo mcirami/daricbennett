@@ -279,10 +279,12 @@ var loadReload = function() {
                     }
                     $resultElement.html(message);
                 } else {
-                    $resultElement.css("color", "white");
-                    $resultElement.html("Thanks for subscribing to DaricBennett.com!<br>Check your inbox to confirm your email ~ Daric");
+                    /*$resultElement.css("color", "white");
+                    $resultElement.html("Thanks for subscribing to DaricBennett.com!<br>Check your inbox to confirm your email ~ Daric");*/
 
                     createCookie("subscribed", "success", 5000);
+
+                    window.location.href = "https://www.daricbennett.com/thank-you/";
 
                 }
             }
@@ -556,6 +558,37 @@ var loadReload = function() {
 
             }
         }
+
+        if ($('.comment-content > p').length) {
+            var commentContent = document.querySelectorAll(".comment-content > p");
+
+            for (y = 0; y < commentContent.length; y++) {
+
+                var commentText = commentContent[y].innerHTML;
+
+                if (commentText.includes("http")) {
+                    var string = commentText.split("http");
+                    string = string[1].replace(/\s/g,'');
+
+                    var newVideoLink = "http"+string;
+
+                    if (newVideoLink.includes("embed")) {
+                        newEmbedLink = newVideoLink;
+                    } else if (newVideoLink.includes("v=")) {
+                        str = newVideoLink.split("v=");
+                        newEmbedLink = "https://www.youtube.com/embed/" + str[1];
+                    } else if (newVideoLink.includes("youtu.be")) {
+                        str = newVideoLink.split(".be/");
+                        newEmbedLink = "https://www.youtube.com/embed/" + str[1];
+                    }
+
+                    $("<div class='video_embed'><div class='video_wrapper'><iframe frameborder='0' allowfullscreen src='" + newEmbedLink + "/?rel=0&showinfo=0'></iframe></div></div>").insertAfter($(commentContent[y]));
+                    console.log(newEmbedLink);
+                }
+
+            }
+
+        }
     }
 
 
@@ -816,8 +849,9 @@ var loadReload = function() {
         iframe.setAttribute( "allowfullscreen", "" );
         iframe.setAttribute( "src", videoSrc);*/
 
-        if ($(this).prev('.video_files')) {
-            var files = $(this).prevAll('.video_files');
+        if ($(this).parent().parent().children('.video_files').length) {
+
+            var files = $(this).parent().parent().children('.video_files');
             var fileElements = "";
 
             for (var i = 0; i < files.length; i++) {

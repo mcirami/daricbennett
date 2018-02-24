@@ -90,7 +90,7 @@
 
                     <?php while (have_rows('files')) : the_row();?>
 
-                        <a class="video_files" hidden href="#" data-file="<?php the_sub_field('file'); ?>" data-text="<?php the_sub_field('file_text'); ?>"></a>
+                        <a class="video_files" href="#" data-file="<?php the_sub_field('file'); ?>" data-text="<?php the_sub_field('file_text'); ?>"></a>
 
                     <?php endwhile; ?>
 

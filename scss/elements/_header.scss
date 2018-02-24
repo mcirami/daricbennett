@@ -821,11 +821,11 @@ ul.member_menu {
 		form {
 			margin: 0 auto;
 			width: 90%;
-			
+
 			@include media($mobile){
 				width: 100%;
 			}
-				
+
 			&:before {
 				content: '';
 				width: 101%;
@@ -837,29 +837,29 @@ ul.member_menu {
 				border-radius: 4px;
 				-webkit-border-radius: 4px;
 				-moz-border-radius: 4px;
-				 
+
 				 @include media($mobile){
 				 	width: 98%;
 				 	bottom: -8px;
-				 	left: 6px;				 	
+				 	left: 6px;
 				 }
-				 
+
 				 @include media($smallMobile){
 				 	width: 99%;
 				 	left: 2px;
 				 }
 			}
 		}
-		
+
 		#subscribe-result {
 			margin-top: 2%;
 			font-size: 18px;
-			
+
 			@include media($mobile){
 				font-size: 14px;
 			}
 		}
-	
+
 		input[type="email"] {
 			width: 77%;
 			background-color: $white;
@@ -880,7 +880,7 @@ ul.member_menu {
 			-moz-border-radius-bottomright: 0;
 			-moz-border-radius-topleft: 4px;
 			-moz-border-radius-topright: 0;
-			
+
 			@include media($mobile){
 				font-size: 16px;
 				padding: 10px;
@@ -888,7 +888,7 @@ ul.member_menu {
 				width: 64%;
 			}
 		}
-		
+
 		input[type="submit"] {
 			font-family: 'robotomedium';
 			font-size: 20px;
@@ -912,11 +912,11 @@ ul.member_menu {
 			-moz-border-radius-bottomright: 4px;
 			-moz-border-radius-topleft: 0;
 			-moz-border-radius-topright: 4px;
-			
+
 			&:hover {
 				background: #c30b21;
 			}
-			
+
 			@include media($mobile){
 				font-size: 14px;
 				height: 41px;
