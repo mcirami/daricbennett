@@ -4,31 +4,31 @@ If you would like to edit this file, copy it to your current theme's directory a
 Theme My Login will always look in your theme's directory first, before using this default template.
 */
 ?>
-
-	<div class="tml tml-profile" id="theme-my-login<?php $template->the_instance(); ?>">
+<div class="tml tml-profile" id="theme-my-login<?php $template->the_instance(); ?>">
 		<?php $template->the_action_template_message( 'profile' ); ?>
 		<?php $template->the_errors(); ?>
-	
 		<form id="your-profile" class="full_width" action="<?php $template->the_action_url( 'profile', 'login_post' ); ?>" method="post">
-			
 			<?php wp_nonce_field( 'update-user_' . $current_user->ID ); ?>
 
 			<input type="hidden" name="from" value="profile" />
 			<input type="hidden" name="checkuser_id" value="<?php echo $current_user->ID; ?>" />
 
+            <?php if ( apply_filters( 'show_admin_bar', true ) || has_action( 'personal_options' ) ) : ?>
+			    <h3><?php _e( 'Personal Options', 'theme-my-login' ); ?></h3>
 	
-			<h3><?php _e( 'Personal Options', 'theme-my-login' ); ?></h3>
-	
-		<!--	<table class="tml-form-table">
-			<tr class="tml-user-admin-bar-front-wrap">
-				<th><label for="admin_bar_front"><?php _e( 'Toolbar', 'theme-my-login' )?></label></th>
-				<td>
-					<label for="admin_bar_front"><input type="checkbox" name="admin_bar_front" id="admin_bar_front" value="1"<?php checked( _get_admin_bar_pref( 'front', $profileuser->ID ) ); ?> />
-					<?php _e( 'Show Toolbar when viewing site', 'theme-my-login' ); ?></label>
-				</td>
-			</tr>
-			<?php do_action( 'personal_options', $profileuser ); ?>
-			</table>-->
+            <!--	<table class="tml-form-table">
+                <?php //if ( apply_filters( 'show_admin_bar', true ) ) : ?>
+                    <tr class="tml-user-admin-bar-front-wrap">
+                        <th><label for="admin_bar_front"><?php _e( 'Toolbar', 'theme-my-login' )?></label></th>
+                        <td>
+                            <label for="admin_bar_front"><input type="checkbox" name="admin_bar_front" id="admin_bar_front" value="1"<?php checked( _get_admin_bar_pref( 'front', $profileuser->ID ) ); ?> />
+                            <?php //_e( 'Show Toolbar when viewing site', 'theme-my-login' ); ?></label>
+                        </td>
+                    </tr>
+                <?php //endif; ?>
+                <?php do_action( 'personal_options', $profileuser ); ?>
+                </table>-->
+            <?php endif; ?>
 	
 			<?php do_action( 'profile_personal_options', $profileuser ); ?>
 	
@@ -87,11 +87,12 @@ Theme My Login will always look in your theme's directory first, before using th
 						<th><label for="experience">Experience</label></th>
 						<td>
 							<select name="experience" id="experience">
-								<option <?php if ($profileuser->experience == "0-2 years") {echo selected;} ?>>0-2 years</option>
-								<option <?php if ($profileuser->experience == "3-5 years") {echo selected;} ?>>3-5 years</option>
-								<option <?php if ($profileuser->experience == "6-10 years") {echo selected;} ?>>6-10 years</option>
-								<option <?php if ($profileuser->experience == "10+ years") {echo selected;} ?>>10+ years</option>
+								<option <?php if ($profileuser->experience == "0-2 years") {echo "selected";} ?> >0-2 years</option>
+								<option <?php if ($profileuser->experience == "3-5 years") {echo "selected";} ?> >3-5 years</option>
+								<option <?php if ($profileuser->experience == "6-10 years") {echo "selected";} ?> >6-10 years</option>
+								<option <?php if ($profileuser->experience == "10+ years") {echo "selected";} ?> >10+ years</option>
 							</select>
+						</td>
 						</td>
 					<tr>
 					
