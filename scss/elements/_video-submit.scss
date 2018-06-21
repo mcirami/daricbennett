@@ -210,6 +210,10 @@
                     color: $black;
                     text-decoration: underline;
                 }
+
+                &.sub_title {
+                    font-size: 18px;
+                }
             }
 
             p {
@@ -234,6 +238,7 @@
 }
 
 .single_video {
+    color: $black;
 
     .wrap {
         padding: 40px 0;
@@ -364,8 +369,10 @@
         }
 
         h3 {
+            font-family: 'robotomedium', sans-serif;
+            font-size: 30px;
             margin-top: 0;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
 
             @include media($tablet) {
                 font-size: 26px;
@@ -380,9 +387,26 @@
                 color: $black;
                 text-decoration: underline;
             }
+
+            &.sub_title {
+                font-size: 18px;
+            }
         }
 
+        h5 {
+            font-size: 20px;
+            color: $red;
+            margin-bottom: 10px;
+        }
+
+        .members_only_video_pop {
+            display: inline-block;
+        }
+
+
         p {
+            font-family: 'robotoregular', sans-serif;
+
             @include media($tablet) {
                 font-size: 14px;
             }

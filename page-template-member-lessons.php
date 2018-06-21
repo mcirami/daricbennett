@@ -21,12 +21,20 @@ if (pmpro_hasMembershipLevel()) {
 
     if ($title == "Lessons") {
 
+    	//$ourCurrentPage = get_query_var('pages');
+
         $args = array(
             'post_type' => 'lessons',
             'order_by' => 'post_date',
             'order' => 'DESC',
-            'posts_per_page' => -1,
+            'posts_per_page' => -1
+	        //'paged' => $ourCurrentPage
         );
+
+	    $catTerms = get_terms('category');
+	    $levelTerms = get_terms('level', array(
+	    		'orderby' => 'description'
+	    ));
 
     } else {
         $args = array(
@@ -73,68 +81,31 @@ if (pmpro_hasMembershipLevel()) {
                             <div class="search_box">
                                 <input type="text" name="search" placeholder="Search Lesson By Keyword" data-search>
                             </div>
+
                             <div class="filters">
                                 <h3>Filter Lessons By<span>:</span></h3>
                                 <p>(select as many as you like)</p>
 
-                                <?php if($_SERVER['REMOTE_ADDR'] == '127.0.0.1') : ?>
+                                <ul class="filter_list full_width">
+                                    <li data-multifilter="all" class="active all">All</li>
 
-                                    <ul class="filter_list full_width">
-                                        <li data-multifilter="all" class="active all">All</li>
-                                        <li data-multifilter="42">Ultra Beginner</li>
-                                        <li data-multifilter="12">Beginner</li>
-                                        <li data-multifilter="13">Intermediate</li>
-                                        <li data-multifilter="14">Advanced</li>
-                                        <li data-multifilter="7">Exercises</li>
-                                        <li data-multifilter="9">Grooves</li>
-                                        <li data-multifilter="39">Modes</li>
-                                        <li data-multifilter="40">Slap Series</li>
-                                        <li data-multifilter="38">Funk Challenges</li>
-                                        <li data-multifilter="10">Live Sessions</li>
-                                        <li data-multifilter="6">Covers</li>
-                                        <li data-multifilter="37">Ask Daric</li>
-                                    </ul>
+	                                <?php foreach ($levelTerms as $levelTerm) : ?>
 
-                                <?php elseif (strpos($actual_link, "staging") != false) : ?>
+			                               <li data-multifilter="<?php echo $levelTerm->term_id;?>"><?php echo $levelTerm->name;?></li>
 
-                                    <ul class="filter_list full_width">
-                                        <li data-multifilter="all" class="active all">All</li>
-                                        <li data-multifilter="41">Ultra Beginner</li>
-                                        <li data-multifilter="12">Beginner</li>
-                                        <li data-multifilter="13">Intermediate</li>
-                                        <li data-multifilter="14">Advanced</li>
-                                        <li data-multifilter="7">Exercises</li>
-                                        <li data-multifilter="9">Grooves</li>
-                                        <li data-multifilter="37">Modes</li>
-                                        <li data-multifilter="11">Navigation, Scales & Intervals</li>
-                                        <li data-multifilter="40">Slap Series</li>
-                                        <li data-multifilter="39">Funk Challenges</li>
-                                        <li data-multifilter="10">Live Sessions</li>
-                                        <li data-multifilter="6">Covers</li>
-                                        <li data-multifilter="38">Ask Daric</li>
-                                    </ul>
+	                                <?php endforeach; ?>
 
-                                <?php else : ?>
+                                    <?php foreach ($catTerms as $catTerm) :
 
-                                    <ul class="filter_list full_width">
-                                        <li data-multifilter="all" class="active all">All</li>
-                                        <li data-multifilter="34">Ultra Beginner</li>
-                                        <li data-multifilter="12">Beginner</li>
-                                        <li data-multifilter="13">Intermediate</li>
-                                        <li data-multifilter="14">Advanced</li>
-                                        <li data-multifilter="7">Exercises</li>
-                                        <li data-multifilter="9">Grooves</li>
-                                        <li data-multifilter="17">Modes</li>
-                                        <li data-multifilter="11">Navigation, Scales & Intervals</li>
-                                        <li data-multifilter="29">Slap Series</li>
-                                        <li data-multifilter="16">Funk Challenges</li>
-                                        <li data-multifilter="10">Live Sessions</li>
-                                        <li data-multifilter="43">Quick Lick</li>
-                                        <li data-multifilter="6">Covers</li>
-                                        <li data-multifilter="15">Ask Daric</li>
-                                    </ul>
-                                <?php endif; ?>
+	                                        if($catTerm->slug !== "members-only" && $catTerm->slug !== "uncategorized" && $catTerm->slug !== "free-lessons" && $catTerm->slug !== "ultra-beginner-series") :
+	                                    ?>
+                                                    <li data-multifilter="<?php echo $catTerm->term_id;?>"><?php echo $catTerm->name;?></li>
 
+	                                        <?php endif; ?>
+
+                                    <?php endforeach; ?>
+
+                                </ul>
                             </div>
                         </div><!-- filter_controls -->
                     <?php else : ?>
@@ -178,6 +149,9 @@ if (pmpro_hasMembershipLevel()) {
 
                                 <?php endwhile; //query loop
 
+
+					                /*previous_posts_link();
+					                next_posts_link('Next Page', $lessons->max_num_pages);*/
                                 else :
 
                                     echo 'no posts found';
@@ -192,6 +166,7 @@ if (pmpro_hasMembershipLevel()) {
                     </div><!-- filtr-container -->
 
                 </div><!-- video_list -->
+
 
 
             </div><!-- container -->

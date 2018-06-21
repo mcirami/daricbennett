@@ -670,11 +670,11 @@
         line-height: 1.1;
 
         @include media($mobile) {
-            font-size: 28px;
+            font-size: 24px;
         }
 
         @include media($smallMobile) {
-            font-size: 24px;
+            font-size: 18px;
         }
     }
 

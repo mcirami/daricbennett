@@ -432,6 +432,42 @@ function create_video_post_type() {
 }
 add_action( 'init', 'create_video_post_type' );
 
+
+
+function create_tv_video_post_type() {
+	register_post_type( 'tv-videos',
+		array(
+			'labels' => array(
+				'name' => __( 'TV Videos' ),
+				'singular_name' => __( 'TV Video' ),
+				'add_new' => ('Add New Video'),
+				'add_new_item' => ('Add New Video'),
+				'edit_item' => ('Edit Video'),
+				'new_item' => ('New Video'),
+				'view_item' => ('View Videos'),
+				'search_items' => ('Search TV Videos'),
+				'not_found' => ('No TV Video found'),
+				'not_found_in_trash' => ('No TV Video found in Trash'),
+				'parent_item_colon' => ('Parent Video:'),
+				'menu_name' => ('TV Videos'),
+			),
+			'public' => true,
+			'has_archive' => false,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'capability_type'    => 'post',
+			'hierarchical'       => false,
+			'menu_icon' => get_template_directory_uri() . '/images/videos-icon.png',
+			'supports' => array( 'title', 'editor', 'thumbnail', 'comments', 'author' ),
+			'rewrite' => array( 'slug' => 'bass-nation-tv' ),
+			'show_in_rest' => true
+		)
+	);
+}
+add_action( 'init', 'create_tv_video_post_type' );
+
 add_filter( 'the_content', 'make_clickable');
 
 function autoblank($text) {
@@ -712,71 +748,212 @@ function my_save_post( $post_id )
     wp_mail( $to, $subject, $body, $headers );
 }
 
-function send_payment_notification($order) {
+function httpPost($url, $params) {
 
-    $orderArray = json_encode($order);
+	$fields_string = array();
 
-    //level id 1,2,3,4
-    $levelID = $order->membership_id;
+	foreach($params as $key => $value) {
+		$fields_string .= $key . '=' . urlencode($value) . '&';
+	}
 
-    //gateway paypalexpress or braintree
-    $gateway = $order->gateway;
+	rtrim($fields_string, '&');
 
+	//open connection
+	$ch = curl_init();
 
-    //$subscr_id = pmpro_getParam( "subscr_id", "POST" );
-    //$recurring_payment_id = pmpro_getParam( "recurring_payment_id", "POST" );
+	//set the url, number of POST vars, POST data
+	curl_setopt($ch,CURLOPT_URL, $url);
+	//curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+	//curl_setopt($ch,CURLOPT_HEADER, false);
+	curl_setopt($ch,CURLOPT_POST, count($fields_string));
+	curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
 
-    /*if ( empty( $subscr_id ) ) {
-        $subscr_id = $recurring_payment_id;
-    }*/
+	//execute post
+	$result = curl_exec($ch);
 
-    $subscriptionID = $order->subscription_transaction_id;
-
-    /*if($gateway == "braintree") {
-        $subscriptionID = $order->subscription_transaction_id;
-    } elseif ($gateway = "paypalexpress") {
-        $subscriptionID = $order->id;
-    }*/
-
-    if ($subscriptionID != "") {
-        $transactionCount = sub_id_count($subscriptionID);
-    } else {
-        $transactionCount = 0;
-    }
-
-    if ($gateway == "braintree" && $transactionCount == 2) {
-
-        $to = "mcirami@gmail.com";
-        $headers = array('Content-Type: text/html; charset=UTF-8');
-        $subject = "Triggered function from functions.php";
-        $body = "This is from functions.php.<br> The whole array is: <br>" . $orderArray . "<br><br>The member level is: " . $levelID . " <br><br>" . $gateway . " sub ID is: " . $subscriptionID . " <br><br>gateway is: " . $gateway;
-
-        wp_mail( $to, $subject, $body, $headers );
-    }
-
-
-    $to = "mcirami@gmail.com";
-    $headers = array('Content-Type: text/html; charset=UTF-8');
-    $subject = "Triggered function from functions.php";
-    $body = "This is from functions.php.<br> The whole array is: <br>" . $orderArray . "<br><br>The member level is: " . $levelID . " <br><br>" . $gateway . " sub ID is: " . $subscriptionID . " <br><br>gateway is: " . $gateway;
-
-    wp_mail( $to, $subject, $body, $headers );
-
+	//close connection
+	curl_close($ch);
 }
 
-add_action( 'pmpro_added_order', 'send_payment_notification', 10, 1);
+/*
+ * Fire Braintree Postback on free trial signup and every payment after.
+ * Save click id, transaction id, and order email into db table a02_click_id
+ */
+function fire_braintree_postback( $MemberOrder ) {
 
+	$orderArray = json_encode($MemberOrder);
 
-function sub_id_count($subID) {
+	$transactionID = $MemberOrder->subscription_transaction_id;
+	$gateway = $MemberOrder->gateway;
+	$levelID = $MemberOrder->membership_id;
+	$orderEmail = $MemberOrder->Email;
 
-    global $wpdb;
+	if ($gateway == "braintree") {
 
-    $orders = $wpdb->get_results("SELECT subscription_transaction_id FROM a02_pmpro_membership_orders WHERE subscription_transaction_id = '" . $subID . "'");
+		if ( isset( $_COOKIE['daric_clickid'] ) ) {
+			$clickID = $_COOKIE['daric_clickid'];
+		} else {
+			global $wpdb;
+			$results = $wpdb->get_results( "SELECT * FROM `a02_click_id` WHERE `email` = '$orderEmail'" );
+			if ( count( $results ) > 0 ) {
+				$clickID = $results[0]->clickid;
+			} else {
+				$clickID = "";
+			}
+			$wpdb->flush();
+		}
 
-    $count = count($orders);
-    return $count;
+		if ($clickID != "") {
 
+			global $wpdb;
+			$orders           = $wpdb->get_results( "SELECT o.*, UNIX_TIMESTAMP(o.timestamp) as timestamp, l.name as membership_level_name FROM $wpdb->pmpro_membership_orders o LEFT JOIN $wpdb->pmpro_membership_levels l ON o.membership_id = l.id WHERE o.user_id = '$MemberOrder->user_id' AND o.subscription_transaction_id = '$MemberOrder->subscription_transaction_id' ORDER BY timestamp DESC" );
+			$transactionCount = count( $orders );
+			$wpdb->flush();
+
+			if ( $transactionCount == 1 ) {
+
+				$data = array(
+					'id'          => 'NULL',
+					'email'       => $orderEmail,
+					'clickid'     => $clickID,
+					'recurringid' => $transactionID,
+					'timestamp'   => current_time( 'mysql', 1 )
+				);
+
+				global $wpdb;
+				$wpdb->insert( 'a02_click_id', $data );
+				$wpdb->flush();
+
+				$params = array(
+					"uid"      => "drbt",
+					"clickid"  => $clickID,
+					"function" => "free"
+				);
+
+				httpPost( "http://affiliate.daricbennett.com/", $params );
+
+				$postback = "http://affiliate.daricbennett.com/?uid=drbt&clickid=" . $clickID . "&function=free";
+
+				send_email( $gateway, $orderArray, $levelID, $transactionCount, $postback );
+			}
+
+			if ( $transactionCount > 1 ) {
+
+				$params = array(
+					"uid"     => "drbt",
+					"clickid" => $clickID
+				);
+
+				httpPost( "http://affiliate.daricbennett.com/", $params );
+
+				$postback = "http://affiliate.daricbennett.com/?uid=drbt&clickid=" . $clickID;
+				send_email( $gateway, $orderArray, $levelID, $transactionCount, $postback );
+			}
+		}
+	}
 }
+add_action( 'pmpro_added_order', 'fire_braintree_postback', 10, 1 );
+
+/*
+ *
+ * Fire PayPal Postback on free trial signup
+ * Save click id, transaction id, and order email into db table a02_click_id
+ *
+ * */
+
+function my_pmpro_after_checkout($user_id, $morder) {
+
+	$orderArray = json_encode($morder);
+
+	$transactionID = $morder->subscription_transaction_id;
+	$gateway = $morder->gateway;
+	$orderEmail = $morder->Email;
+
+	if ($gateway == "paypalexpress") {
+
+
+		if (isset($_COOKIE['daric_clickid'])) {
+			$clickID = $_COOKIE['daric_clickid'];
+		} else {
+			global $wpdb;
+			$results = $wpdb->get_results("SELECT * FROM `a02_click_id` WHERE `email` = '$orderEmail'");
+			if (count($results) > 0) {
+				$clickID = $results[0]->clickid;
+			} else {
+				$clickID = "";
+			}
+
+			$wpdb->flush();
+		}
+
+		if ($clickID != "") {
+
+			$data = array(
+				'id'          => 'NULL',
+				'email'       => $orderEmail,
+				'clickid'     => $clickID,
+				'recurringid' => $transactionID,
+				'timestamp'   => current_time( 'mysql', 1 )
+			);
+
+			global $wpdb;
+			$wpdb->insert( 'a02_click_id', $data );
+			$wpdb->flush();
+
+			$params = array(
+				"uid"      => "drbt",
+				"clickid"  => $clickID,
+				"function" => "free"
+			);
+
+			httpPost( "http://affiliate.daricbennett.com/", $params );
+
+			$postback = "http://affiliate.daricbennett.com/?uid=drbt&clickid=" . $clickID . "&function=free";
+
+			$to      = "mcirami@gmail.com";
+			$headers = array( 'Content-Type: text/html; charset=UTF-8' );
+			$subject = "Triggered pmpro_after_checkout paypal express from functions.php";
+			$body    = "user ID: " . $user_id . "<br><br> The whole array is: <br>" . $orderArray . "<br><br> transaction Id: " . $transactionID . "<br><br> gateway: " . $gateway . "<br><br> postback: " . $postback;
+
+			wp_mail( $to, $subject, $body, $headers );
+		}
+	}
+}
+
+add_action('pmpro_after_checkout', 'my_pmpro_after_checkout', 10, 2);
+
+function send_email($gateway, $array, $level, $count, $post) {
+	$to = "mcirami@gmail.com";
+	$headers = array('Content-Type: text/html; charset=UTF-8');
+	$subject = "Triggered function from functions.php";
+	$body = "Payment gateway:" . $gateway . "<br><br> The whole array is: <br>" . $array . "<br><br>The member level is: " . $level . "<br><br> transaction count: " . $count . "<br><br> postback url: " . $post;
+
+	wp_mail($to, $subject, $body, $headers);
+}
+
+
+function devplus_wpquery_where( $where ){
+	global $current_user;
+
+	if( is_user_logged_in() ){
+		// logged in user, but are we viewing the library?
+		if( isset( $_POST['action'] ) && ( $_POST['action'] == 'query-attachments' ) ){
+			// here you can add some extra logic if you'd want to.
+			$where .= ' AND post_author='.$current_user->data->ID;
+		}
+	}
+
+	return $where;
+}
+
+add_filter( 'posts_where', 'devplus_wpquery_where' );
+
+function change_title() {
+	$wpua_profile_title = '<h3>Profile Picture</h3>';
+
+	return $wpua_profile_title;
+}
+add_filter('wpua_profile_title', 'change_title');
 
 /*
 function rewrite_braintree_hook(){

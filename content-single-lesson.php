@@ -26,7 +26,7 @@
 			
 			<?php
 				
-				if (!pmpro_hasMembershipLevel() && get_field('free_lesson_link')) : ?>
+				//if (!pmpro_hasMembershipLevel() && get_field('free_lesson_link')) : ?>
 
                     <?php
                         $type = null;
@@ -101,21 +101,21 @@
 
                     <?php endif;
 				
-				elseif (pmpro_hasMembershipLevel() && is_user_logged_in()) : ?>
+				//elseif (pmpro_hasMembershipLevel() && is_user_logged_in()) : ?>
 					
-					<div class="video_wrapper full_width">
-						<iframe src="<?php echo the_field('member_lesson_link'); ?>?rel=0&showinfo=0"></iframe>
+					<!--<div class="video_wrapper full_width">
+						<iframe src="<?php /*echo the_field('member_lesson_link'); */?>?rel=0&showinfo=0"></iframe>
 					</div>
 					
 					<div class="quote_section full_width">
-						<img src="<?php echo bloginfo('template_url'); ?>/images/icon-quote-left.png" />
-						<p><?php echo the_field('lesson_description'); ?></p>
-					</div>
-		  <?php else :
+						<img src="<?php /*echo bloginfo('template_url'); */?>/images/icon-quote-left.png" />
+						<p><?php /*echo the_field('lesson_description'); */?></p>
+					</div>-->
+		  <?php //else :
 			  
-					get_template_part( 'content', 'not-member' );
+					//get_template_part( 'content', 'not-member' );
 			
-		  endif; ?>
+		  //endif; ?>
 													
 
 		</div>

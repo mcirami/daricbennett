@@ -432,6 +432,42 @@ function create_video_post_type() {
 }
 add_action( 'init', 'create_video_post_type' );
 
+
+
+function create_tv_video_post_type() {
+	register_post_type( 'tv-videos',
+		array(
+			'labels' => array(
+				'name' => __( 'TV Videos' ),
+				'singular_name' => __( 'TV Video' ),
+				'add_new' => ('Add New Video'),
+				'add_new_item' => ('Add New Video'),
+				'edit_item' => ('Edit Video'),
+				'new_item' => ('New Video'),
+				'view_item' => ('View Videos'),
+				'search_items' => ('Search TV Videos'),
+				'not_found' => ('No TV Video found'),
+				'not_found_in_trash' => ('No TV Video found in Trash'),
+				'parent_item_colon' => ('Parent Video:'),
+				'menu_name' => ('TV Videos'),
+			),
+			'public' => true,
+			'has_archive' => false,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'capability_type'    => 'post',
+			'hierarchical'       => false,
+			'menu_icon' => get_template_directory_uri() . '/images/videos-icon.png',
+			'supports' => array( 'title', 'editor', 'thumbnail', 'comments', 'author' ),
+			'rewrite' => array( 'slug' => 'bass-nation-tv' ),
+			'show_in_rest' => true
+		)
+	);
+}
+add_action( 'init', 'create_tv_video_post_type' );
+
 add_filter( 'the_content', 'make_clickable');
 
 function autoblank($text) {
@@ -711,3 +747,184 @@ function my_save_post( $post_id )
 
     wp_mail( $to, $subject, $body, $headers );
 }
+
+/*
+ * Fire Facebook Pixel on second order
+ */
+function fire_fb_pixel( $MemberOrder ) {
+
+	$orderArray = json_encode($MemberOrder);
+
+	//level id 1,2,3,4
+    $levelID = $MemberOrder->membership_id;
+	$gateway = $MemberOrder->gateway;
+
+	global $wpdb;
+	$orders = $wpdb->get_results("SELECT o.*, UNIX_TIMESTAMP(o.timestamp) as timestamp, l.name as membership_level_name FROM $wpdb->pmpro_membership_orders o LEFT JOIN $wpdb->pmpro_membership_levels l ON o.membership_id = l.id WHERE o.user_id = '$MemberOrder->user_id' AND o.subscription_transaction_id = '$MemberOrder->subscription_transaction_id' ORDER BY timestamp DESC");
+	$transactionCount = count( $orders );
+
+	//if ($gateway == "paypalexpress") {
+
+	//	send_email($gateway, $orderArray, $levelID, $transactionCount);
+
+		/*$data = array(
+			'id' => 'NULL',
+			'email' => $MemberOrder->Email,
+			'timestamp' => current_time( 'mysql', 1)
+		);
+
+		global $wpdb;
+		$wpdb->insert('a02_paypal_checkout', $data);
+
+		$emails = $wpdb->get_results("SELECT * FROM `a02_paypal_checkout` WHERE `email` = '$MemberOrder->Email'");
+		$transactionCount = count( $emails );
+
+		if($wpdb->last_error != '' || $wpdb->last_error != null) :
+			$errorArray = json_encode($wpdb->last_error);
+
+			$to = "mcirami@gmail.com";
+			$headers = array('Content-Type: text/html; charset=UTF-8');
+			$subject = "Triggered function from functions.php";
+			$body = "Gateway equals paypal express and wpdb error is: <br>" . $errorArray;
+
+			wp_mail($to, $subject, $body, $headers);
+
+		endif;*/
+
+		/*if ($transactionCount == 1) {
+
+			$to = "mcirami@gmail.com";
+			$headers = array('Content-Type: text/html; charset=UTF-8');
+			$subject = "Triggered function from functions.php";
+			$body = "Gateway equals paypal express and transaction count equals 1 trigger.<br><br> The whole array is: <br>" . $orderArray . "<br><br>The member level is: " . $levelID . "<br><br> transaction count: " . $transactionCount . "<br><br>gateway: " . $gateway;
+
+			wp_mail($to, $subject, $body, $headers);
+
+		} elseif ($transactionCount == 2) {
+
+			$to = "mcirami@gmail.com";
+			$headers = array('Content-Type: text/html; charset=UTF-8');
+			$subject = "Triggered function from functions.php";
+			$body = "Gateway equals paypal express and transaction count equals 2 trigger.<br><br> The whole array is: <br>" . $orderArray . "<br><br>The member level is: " . $levelID . "<br><br> transaction count: " . $transactionCount . "<br><br>gateway: " . $gateway;
+
+			wp_mail($to, $subject, $body, $headers);
+		}*/
+
+	//}
+
+	if ($gateway == "braintree" && $transactionCount == 2) {
+
+		send_email($gateway, $orderArray, $levelID, $transactionCount);
+	}
+}
+add_action( 'pmpro_added_order', 'fire_fb_pixel', 10, 1 );
+
+function send_email($gateway, $array, $level, $count) {
+	$to = "mcirami@gmail.com";
+	$headers = array('Content-Type: text/html; charset=UTF-8');
+	$subject = "Triggered function from functions.php";
+	$body = "Payment gateway:" . $gateway . "<br><br> The whole array is: <br>" . $array . "<br><br>The member level is: " . $level . "<br><br> transaction count: " . $count;
+
+	wp_mail($to, $subject, $body, $headers);
+}
+
+function paypal_transaction_search($email) {
+
+	$info = 'USER=admin_api1.daricbennett.com'
+		.'&PWD=DUU9V32WYX8K33QK'
+		.'&SIGNATURE=AGXD3lllfe0isxl6RLXWWkOdqi43A0w0Mv6h0e.2xUiLXwwRLrNGrOPl'
+		.'&METHOD=TransactionSearch'
+		.'&TRANSACTIONCLASS=RECEIVED'
+		.'&EMAIL=' . $email
+		.'&STARTDATE=2018-01-01T05:38:48Z'
+		.'&VERSION=94';
+
+	$curl = curl_init('https://api-3t.paypal.com/nvp');
+	curl_setopt($curl, CURLOPT_FAILONERROR, true);
+	curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+	curl_setopt($curl, CURLOPT_POSTFIELDS,  $info);
+	curl_setopt($curl, CURLOPT_HEADER, 0);
+	curl_setopt($curl, CURLOPT_POST, 1);
+
+	$result = curl_exec($curl);
+
+# Bust the string up into an array by the ampersand (&)
+# You could also use parse_str(), but it would most likely limit out
+	$result = explode("&", $result);
+
+	echo "result array : <br>";
+	print_r($result);
+	echo "<br><br>";
+
+# Loop through the new array and further bust up each element by the equal sign (=)
+# and then create a new array with the left side of the equal sign as the key and the right side of the equal sign as the value
+	foreach($result as $value){
+		$value = explode("=", $value);
+		$temp[$value[0]] = $value[1];
+	}
+
+# At the time of writing this code, there were 11 different types of responses that were returned for each record
+# There may only be 10 records returned, but there will be 110 keys in our array which contain all the different pieces of information for each record
+# Now create a 2 dimensional array with all the information for each record together
+	for($i=0; $i<count($temp)/11; $i++){
+		$returned_array[$i] = array(
+			"timestamp"         =>    urldecode($temp["L_TIMESTAMP".$i]),
+			"timezone"          =>    urldecode($temp["L_TIMEZONE".$i]),
+			"type"              =>    urldecode($temp["L_TYPE".$i]),
+			"email"             =>    urldecode($temp["L_EMAIL".$i]),
+			"name"              =>    urldecode($temp["L_NAME".$i]),
+			"transaction_id"    =>    urldecode($temp["L_TRANSACTIONID".$i]),
+			"status"            =>    urldecode($temp["L_STATUS".$i]),
+			"amt"               =>    urldecode($temp["L_AMT".$i]),
+			"currency_code"     =>    urldecode($temp["L_CURRENCYCODE".$i]),
+			"fee_amount"        =>    urldecode($temp["L_FEEAMT".$i]),
+			"net_amount"        =>    urldecode($temp["L_NETAMT".$i]));
+	}
+
+	echo "returned array : <br>";
+	print_r($returned_array);
+	echo "<br><br>";
+
+	echo count($returned_array);
+}
+
+
+add_filter( 'posts_where', 'devplus_wpquery_where' );
+function devplus_wpquery_where( $where ){
+	global $current_user;
+
+	if( is_user_logged_in() ){
+		// logged in user, but are we viewing the library?
+		if( isset( $_POST['action'] ) && ( $_POST['action'] == 'query-attachments' ) ){
+			// here you can add some extra logic if you'd want to.
+			$where .= ' AND post_author='.$current_user->data->ID;
+		}
+	}
+
+	return $where;
+}
+
+function change_title() {
+	$wpua_profile_title = '<h3>Profile Picture</h3>';
+
+	return $wpua_profile_title;
+}
+add_filter('wpua_profile_title', 'change_title');
+
+/*
+function rewrite_braintree_hook(){
+
+    global $wp_rewrite;
+
+    $plugin_url = plugins_url( 'brainhook.php', __FILE__ );
+    $plugin_url = substr( $plugin_url, strlen( home_url() ) + 1 );
+
+    add_rewrite_rule('brainhook', $plugin_url ,'top');
+
+
+    $wp_rewrite->flush_rules(true);
+}*/

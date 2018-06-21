@@ -20,7 +20,7 @@
 					<h2><?php echo the_field('page_header'); ?></h2>
 			</div><!-- .container -->
 		 </header>
-	 	
+
 		<section class="top_section full_width">
 			<div class="container">
 				<h2><?php echo the_field('heading_text'); ?></h2>

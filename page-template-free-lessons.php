@@ -116,8 +116,15 @@ global $post;
                                                     }elseif ($subHeading == "Show Lesson Description"){
                                                         echo the_field('title_bar_description');
                                                     } else {
+                                                    	$totalTerms = count($terms);
+                                                    	$count = 0;
                                                         foreach ($terms as $term) {
                                                             echo $term->name;
+                                                            $count++;
+                                                            if ($totalTerms > 1 && $count < $totalTerms) {
+                                                            	echo " / ";
+                                                            }
+
                                                         }
                                                     } ?>
                                                 </span>

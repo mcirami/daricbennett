@@ -310,6 +310,25 @@ var loadReload = function() {
         }
         document.cookie = name + "=" + value + expires + "; path=/";
     }
+/*
+
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i = 0; i <ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length,c.length);
+			}
+		}
+		return "";
+	}
+
+	document.getElementById("custom").value = getCookie("daric_clickid");
+*/
 
     $('.accordion').on('click', function () {
 
@@ -794,7 +813,7 @@ var loadReload = function() {
         var filterizr = $('.filtr-container');
 
         filterizr.filterizr({
-            layout: 'sameSize'
+            layout: 'sameSize',
         });
     }
 
@@ -908,7 +927,7 @@ var loadReload = function() {
 
         $('.replace_video').bind("click", function (e) {
             e.preventDefault();
-            $('.video_wrapper').removeClass('soundslice_video');
+            $('.video_wrapper').removeClass('video_notation');
             var vimeoLink = $(this).data('replace');
             $(this).parent().nextAll('.video_wrapper').find('iframe').attr('src', vimeoLink);
         });
@@ -917,6 +936,7 @@ var loadReload = function() {
         submitComment($('.comment_submit .submit'));
         commentCancel();
     });
+
 
     var fullURL = window.location.href;
 

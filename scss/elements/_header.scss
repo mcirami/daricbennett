@@ -535,6 +535,10 @@
 				background: linear-gradient(to bottom,  #0b0b0b 11%,#151515 52%,#1e1f1f 88%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b0b0b', endColorstr='#1e1f1f',GradientType=0 ); /* IE6-9 */
 
+                a {
+                    color: $yellow;
+                }
+
 			}
 	 	}
 	}
@@ -554,7 +558,22 @@ ul.member_menu {
 			a {
 				padding-right: 0;
 			}
+
+            .sub-menu {
+                left: auto;
+                right: -20px;
+            }
 		}
+
+        &:first-child {
+            a {
+                padding-left: 0;
+
+                @include media($mobile) {
+                    padding-left: 10px;
+                }
+            }
+        }
 		
 		&.open {
 			padding-bottom: 0 !important;
@@ -577,10 +596,10 @@ ul.member_menu {
 		}
 		
 		a {
-			padding: 0 20px;
+			padding: 0 18px;
 			
 			@include media($tablet){
-				padding: 0 15px;
+				padding: 0 10px;
 				font-size: 15px !important;
 			}
 		}
@@ -610,7 +629,7 @@ ul.member_menu {
 			display: none;
 			background: #000;
 			position: absolute;
-			left: 0;
+			left: -5px;
 			white-space: nowrap;
 			top: 100%;
 			border-bottom-left-radius: 4px;

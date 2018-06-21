@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:itunesu="http://www.itunesu.com/feed" version="2.0">
+    <channel>
+        <link>https://www.daricbennett.com</link>
+        <language>en-us</language>
+        <copyright>&#xA9;2018</copyright>
+        <webMaster>admin@daricbennett.com (Daric Bennett)</webMaster>
+        <managingEditor>admin@daricbennett.com (Daric Bennett)</managingEditor>
+        <image>
+            <url>https://www.daricbennett.com/wp-content/uploads/2018/04/4-3-18-with-SnoopEvans-1400x1400.jpg</url>
+            <title>Bass Nation TV Episode #2 w/ Alan "Snoop" Evans</title>
+            <link>https://www.daricbennett.com</link>
+        </image>
+        <itunes:owner>
+            <itunes:name>Daric Bennett</itunes:name>
+            <itunes:email>admin@daricbennett.com</itunes:email>
+        </itunes:owner>
+        <itunes:category text="Music">
+            <itunes:category text="Education" />
+            <itunes:category text="Training" />
+        </itunes:category>
+        <itunes:keywords>bass guitar, inverview, gospel musicians, gospel music, daric bennett, alan evans, alan snoop evans, snoop, bass nation, bass nation tv, daricbennett.com</itunes:keywords>
+        <itunes:explicit>no</itunes:explicit>
+        <itunes:image href="https://www.daricbennett.com/wp-content/uploads/2018/04/4-3-18-with-SnoopEvans-1400x1400.jpg" />
+        <atom:link href="https://www.daricbennett.com/podcast/feed2.xml" rel="self" type="application/rss+xml" />
+        <pubDate>Tuesday, 03 April 2018 17:00:00 EST</pubDate>
+        <title>Bass Nation TV Episode #2 w/ Alan "Snoop" Evans</title>
+        <itunes:author>DaricBennett.com</itunes:author>
+        <description>Live one on one interview with Alan 'Snoop' Evans II, a native of Detroit, MI., who has taken the gospel music industry by storm with his unique approach to playing bass. He is a live and session musician in the gospel community, as evidenced by his impressive discography and the countless live performances that mark his professional career. Check out this interview as I dive into his roots and current career in the gospel industry.</description>
+        <itunes:summary>Live one on one interview with Alan 'Snoop' Evans II, a native of Detroit, MI., who has taken the gospel music industry by storm with his unique approach to playing bass. He is a live and session musician in the gospel community, as evidenced by his impressive discography and the countless live performances that mark his professional career. Check out this interview as I dive into his roots and current career in the gospel industry.</itunes:summary>
+        <itunes:subtitle>Daric Bennett interviews renowned gospel bass player Alan "Snoop" Evans.</itunes:subtitle>
+        <lastBuildDate>Tuesday, 03 April 2018 17:00:00 EST</lastBuildDate>
+        <item>
+            <title>Bass Nation TV Episode #2 w/ Alan "Snoop" Evans</title>
+            <description>Live one on one interview with Alan 'Snoop' Evans II, a native of Detroit, MI., who has taken the gospel music industry by storm with his unique approach to playing bass. He is a live and session musician in the gospel community, as evidenced by his impressive discography and the countless live performances that mark his professional career. Check out this interview as I dive into his roots and current career in the gospel industry.</description>
+            <itunes:summary>Live one on one interview with Alan 'Snoop' Evans II, a native of Detroit, MI., who has taken the gospel music industry by storm with his unique approach to playing bass. He is a live and session musician in the gospel community, as evidenced by his impressive discography and the countless live performances that mark his professional career. Check out this interview as I dive into his roots and current career in the gospel industry.</itunes:summary>
+            <itunes:subtitle>Daric Bennett interviews renowned gospel bass player Alan "Snoop" Evans.</itunes:subtitle>
+            <itunesu:music itunesu:code="112" />
+            <enclosure url="https://www.daricbennett.com/wp-content/uploads/2018/04/BNTV-2-FREE.mp3" type="audio/mp3" length="1" />
+            <guid>https://www.daricbennett.com/wp-content/uploads/2018/04/BNTV-2-FREE.mp3</guid>
+            <itunes:duration>0:10:20</itunes:duration>
+            <pubDate>Tuesday, 03 April 2018 17:00:00 EST</pubDate>
+        </item>
+    </channel>
+</rss>

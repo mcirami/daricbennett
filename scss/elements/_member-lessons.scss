@@ -1,25 +1,26 @@
-.lessons_page {
+.simplefavorite-button {
+    font-family: 'robotoregular', sans-serif;
+    border: none;
+    opacity: 1 !important;
+    padding: 5px 10px;
+    font-size: 13px;
+    float: left;
 
-    .simplefavorite-button {
-        font-family: 'robotoregular', sans-serif;
-        border: none;
-        opacity: 1 !important;
-        padding: 5px 10px;
-        font-size: 13px;
-
-        @include media($mobile) {
-            font-size: 11px;
-            padding: 4px 5px;
-        }
-
-        &:hover {
-            background: #c4a020;
-        }
-
-        &.active:hover {
-            background: $black;
-        }
+    @include media($mobile) {
+        font-size: 11px;
+        padding: 4px 5px;
     }
+
+    &:hover {
+        background: #c4a020 !important;
+    }
+
+    &.active:hover {
+        background: $black;
+    }
+}
+
+.lessons_page {
 
     .top_content {
         padding: 20px;
