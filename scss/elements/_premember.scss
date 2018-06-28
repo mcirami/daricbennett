@@ -6,9 +6,9 @@
     }
 
     .join_text {
+        font-family: 'robotobold', sans-serif;
         text-align: center;
         color: $black;
-        font-family: 'robotobold';
 
         a {
             text-transform: uppercase;
@@ -17,176 +17,150 @@
     }
 }
 
-.tml {
-	font-family: 'robotolight';
-	max-width: none !important;
-	width: 500px;
-	font-size: 15px;
-	margin: 0 auto;
-	text-align: left;
-	background: $lightGray;
-	padding: 40px;
-	-webkit-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
-	-moz-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
-	box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
-	border: 1px solid $borderGray;
-	color: $black;
-	
-	@include media($tablet){
-		width: 425px;
-	}
-	
-	@include media($mobile){
-		width: 375px;
-		padding: 25px;
-		font-size: 14px;
-	}
-	
-	@include media($smallMobile){
-		width: 100%;
-	}
-	
-	input {
-		height: 40px;
-		border: 1px solid $borderGray;
-		padding: 10px;
-		
-		@include media($mobile){
-			height: 35px;
-		}
-	}
-	
-	input[type="submit"] {
-		padding: 8px 24px;
-	}
-	
-	.button {
-		background: $red;
-		padding: 8px 24px;
-		color: $white;
-		font-size: 18px;
-		border-radius: 4px;
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		height: 40px;
-		border: none;
-		
-		@include media($mobile){
-			font-size: 14px;
-			height: 35px;
-		}
-	}
+.um .um-field-checkbox.active:not(.um-field-radio-state-disabled) i {
+    color: $red !important;
+}
 
-	a {
-		color: $red;
-		text-decoration: underline;
-	}
-	
-	&.tml-login {
-		color: $black;
+.um-login {
+    font-family: 'robotolight', sans-serif;
+    font-size: 15px;
+    margin: 30px auto;
+    text-align: left;
+    background: $lightGray;
+    padding: 40px;
+    -webkit-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+    -moz-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+    box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+    border: 1px solid $borderGray;
+    color: $black;
 
-		.tml-submit-wrap {
-			width: 100%;
-			display: block;
-			text-align: left;
-			
-			&:before {
-				content:'';
-				position: absolute;
-				background: url('../images/white-arrow.png') no-repeat;
-				width: 28px;
-				height: 12px;
-				left: 92px;
-				z-index: 1;
-				top: 16px;
-				
-				@include media($mobile){
-					content: none;
-				}
-			}
-			
-			input[type="submit"] {
-				padding: 5px 64px 8px 24px;
-				
-				@include media($mobile){
-					padding: 0;
-				}
-			}
-		}
-		
-		.tml-rememberme-submit-wrap {
-			display: block;
-			margin-bottom: 0;
-			color: $black;
-		}
-		
-		.tml-rememberme-wrap {
-			display: block;
-			width: auto;
-			float: left;
-			
-			@include media($mobile){
-				line-height: 1;
-			}
-			
-			input[type="checkbox"] {
-				margin-right: 5px;
-				
-				@include media($mobile){
-					padding: 0;
-					margin: 0;
-					height: 15px;
-				}
-			}
-			
-			label {
-				@include media($mobile){
-					font-size: 12px;
-				}
-			}
-		}
-		
-		.tml-action-links {
-			float: left;
-			display: block;
-			padding-top: 11px;
-			margin: 0 0 0 40px;
-			
-			@include media($mobile){
-				margin: 0 15px 0 0;
-				font-size: 12px;
-				padding-top: 2px;
-				float: right;
-			}
-			
-			a {
-				color: $black;
-			}
-			
-			li {
-				&:last-child {
-						
-					a {
-						&:after {
-							content: '';
-							background: url('../images/right-arrow.png') no-repeat;
-							width: 10px;
-							height: 16px;
-							position: absolute;
-							right: -22px;
-							background-size: 65%;
-							top: 2px;
-							
-							@include media($mobile){
-								right: -18px;
-								background-size: 45%;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+    @include media($tablet){
+        width: 425px !important;
+    }
+
+    @include media($mobile){
+        width: 375px !important;
+        padding: 25px;
+        font-size: 14px;
+    }
+
+    @include media($smallMobile){
+        width: 100% !important;
+    }
+
+    input {
+        height: 40px !important;
+        border: 1px solid $borderGray !important;
+        padding: 10px !important;
+
+        @include media($mobile){
+            height: 35px !important;
+        }
+    }
+
+    .um-left {
+        text-align: left;
+
+        input[type="submit"] {
+            font-family: 'robotoregular', sans-serif;
+            background: $black !important;
+            padding: 8px 24px 12px !important;
+            color: $white;
+            font-size: 18px;
+            border-radius: 4px !important;
+            -webkit-border-radius: 4px !important;
+            -moz-border-radius: 4px !important;
+            height: 40px !important;
+            border: none !important;
+
+            @include media($tablet) {
+                font-size: 16px;
+            }
+
+            @include media($mobile){
+                font-size: 14px;
+                height: 35px !important;
+                padding: 0 !important;
+            }
+
+            &:hover {
+                background: #4D4D54 !important;
+            }
+        }
+    }
+
+
+    .um-right a {
+        font-family: 'robotoregular', sans-serif;
+        background: $red !important;
+        color: $white !important;
+        padding: 10px 24px 8px!important;
+        font-size: 18px;
+        border-radius: 4px !important;
+        -webkit-border-radius: 4px !important;
+        -moz-border-radius: 4px !important;
+        height: 40px !important;
+        border: none !important;
+
+        @include media($tablet) {
+            font-size: 16px;
+            padding: 12px 24px 8px !important;
+        }
+
+        @include media($mobile){
+            font-size: 14px;
+            height: 35px !important;
+        }
+
+        &:hover {
+            background: #c30b21 !important;
+        }
+    }
+}
+
+.um-um_password_id.um {
+    margin-top: 60px;
+    margin-bottom: 60px !important;
+    background: $lightGray;
+    padding: 20px;
+    -webkit-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+    -moz-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+    box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+    border: 1px solid $borderGray;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+
+    input[type="submit"] {
+        float: left;
+        font-family: 'robotoregular', sans-serif;
+        font-size: 16px;
+        padding: 12px 24px !important;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        background: $red !important;
+        color: $white;
+        min-width: unset !important;
+
+        &:hover {
+            background: #c30b21 !important;
+        }
+
+        @include media($tablet){
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+
+        @include media($mobile){
+            padding: 7px 10px;
+            font-size: 12px;
+        }
+
+        @include media($smallMobile){
+            width: 100% !important;
+        }
+    }
 }
 
 .confirmation_page {
@@ -247,21 +221,7 @@
 				font-size: 14px;
 				width: 100%;
 			}
-		/*	
-			&:first-child {
-				width: 45%;
-				margin: 0 auto 15px;
-				
-				@include media($tablet){
-					width: 50%;
-				}
-				
-				@include media($mobile){
-					width: 100%;
-				}
-				
-			}
-		*/	
+
 			p {
 				margin: 0;
 				display: inline-block;
@@ -369,8 +329,6 @@
 	}
 	
 	.highlight {
-		//top: -44px;
-		//right: -5px;
 		width: 100%;
 		text-align: center;
 		background: #f2d12d;
@@ -384,7 +342,7 @@
 		}
 		
 		p {
-			font-family: 'robotomedium';
+			font-family: 'robotomedium', sans-serif;
 			display: inline-block;
 			margin: 0;
 			font-size: 18px;
@@ -398,13 +356,13 @@
 		padding: 15px 5px 10px;
 		
 		h2 {
-			font-family: 'robotobold';
+			font-family: 'robotobold', sans-serif;
 			font-size: 27px;
 			margin-top: 0;
 		}
 		
 		p {
-			font-family: 'robotoregular';
+			font-family: 'robotoregular' , sans-serif;
 			font-size: 14px;
 			margin: 0;
 		}
@@ -415,25 +373,14 @@
 		padding: 0 10px 20px;
 		
 		h3 {
-			font-family: 'robotobold';
+			font-family: 'robotobold', sans-serif;
 			display: inline-block;
 			font-size: 30px;
 			margin: 20px 0;
-
-			
-			/*&:before {
-				content: '';
-				position: absolute;
-				background: url('../images/dollar-sign.png') no-repeat;
-				width: 20px;
-				height: 40px;
-				top: -22px;
-				left: -20px;
-			}*/
 		}
 		
 		 p {
-			 font-family: 'robotoregular';
+			 font-family: 'robotoregular', sans-serif;
 			 font-size: 14px;
 			 color: $grayText;
 			 margin-bottom: 0;

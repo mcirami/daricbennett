@@ -43,9 +43,11 @@
 					 		<div class="column">
 						 		<div class="heading full_width">
 							 		<h3>My Profile</h3>
-							 		<a href="/your-profile">(Edit)</a>
+							 		<a href="/user">(Edit)</a>
 						 		</div>
-						 		<?php echo get_avatar( $current_user->ID, 200 ); ?>
+						 		<?php //echo get_avatar( $current_user->ID, 200 );
+							        echo get_wp_user_avatar( $current_user->ID, 200 );
+						 		?>
 					 		</div>
 					 		<div class="column">
 						 		<div class="heading full_width">
@@ -57,7 +59,7 @@
 							 		</div>
 							 		<div class="info_wrap account">
 								 		<h4>Account</h4>
-								 		<a class="button red" href="/your-profile">Edit Profile</a>
+								 		<a class="button red" href="/user">Edit Profile</a>
 								 		<a class="button yellow" href="/my-inbox/?fepaction=messagebox&fep-filter=inbox">My Inbox</a>
 							 		</div>
 						 		</div>

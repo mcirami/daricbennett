@@ -1,3 +1,4 @@
+
 <div class="not_member full_width">
 	<div class="container">
 		<h2> You Must Be A Member To View This Page...</h2>
@@ -11,3 +12,29 @@
 		</div>
 	</div>
 </div>
+
+<script>
+
+	let redirectURL = window.location.href;
+
+	//console.log(redirectURL);
+
+	createCookie("login_redirect", redirectURL, 5);
+
+	setcookie("postedArticle", true, time() + (60 * 20)); // 60 seconds ( 1 minute) * 20 = 20 minutes
+
+	function createCookie(name, value, minutes) {
+
+		var expires;
+
+		if (minutes) {
+			var date = new Date();
+			date.setTime(date.getTime() + (minutes * 60 * 1000));
+			expires = "; expires=" + date.toGMTString();
+		}
+		else {
+			expires = "";
+		}
+		document.cookie = name + "=" + value + expires + "; path=/";
+	}
+</script>

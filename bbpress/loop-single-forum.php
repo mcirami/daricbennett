@@ -95,7 +95,6 @@ if ($forumResults != null) {
 
 			<span class="bbp-topic-freshness-author"><?php bbp_author_link( array( 'post_id' => bbp_get_forum_last_active_id(), 'size' => 14 ) ); ?>
 			<?php do_action( 'bbp_theme_before_forum_freshness_link' ); ?>
-
 			<?php bbp_forum_freshness_link(); ?>
 	
 			<?php do_action( 'bbp_theme_after_forum_freshness_link' ); ?>

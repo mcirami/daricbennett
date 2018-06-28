@@ -121,12 +121,12 @@ global $wpdb, $pmpro_msg, $pmpro_msgt, $pmpro_levels, $current_user, $levels, $a
 						<a class="button black" href="<?php echo pmpro_url("billing", "", "https")?>"><?php _e("Update Billing Info", "pmpro"); ?></a>
 						<?php //} ?>
 						
-						<?php 
+						<?php
 							//To do: Only show CHANGE link if this level is in a group that has upgrade/downgrade rules
 							if(count($pmpro_levels) > 1 && !defined("PMPRO_DEFAULT_LEVEL")) { 
 								
 								if ($level->id < 4) {
-							?>	
+							?>
 								<a class="button yellow" href="<?php echo pmpro_url("levels")?>"><?php _e("Upgrade", "pmpro");?></a>
 						
 						<?php   }
@@ -183,20 +183,20 @@ global $wpdb, $pmpro_msg, $pmpro_msgt, $pmpro_levels, $current_user, $levels, $a
 			</div> <!-- end pmpro_account-invoices -->
 			<?php } ?>
 			
-			<?php if(in_array('links', $sections) && (has_filter('pmpro_member_links_top') || has_filter('pmpro_member_links_bottom'))) { ?>
+			<?php /*if(in_array('links', $sections) && (has_filter('pmpro_member_links_top') || has_filter('pmpro_member_links_bottom'))) { */?><!--
 			<div id="pmpro_account-links" class="pmpro_box">
-				<h3><?php _e("Member Links", "pmpro");?></h3>
+				<h3><?php /*_e("Member Links", "pmpro");*/?></h3>
 				<ul>
-					<?php 
+					<?php /*
 						do_action("pmpro_member_links_top");
-					?>
+					*/?>
 					
-					<?php 
+					<?php /*
 						do_action("pmpro_member_links_bottom");
-					?>
+					*/?>
 				</ul>
-			</div> <!-- end pmpro_account-links -->		
-			<?php } ?>
+			</div> <!-- end pmpro_account-links -->
+			<?php /*} */?>
 		</div> <!-- end pmpro_account -->
 
 	<?php

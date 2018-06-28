@@ -7,9 +7,9 @@
 ?>
 
 	<div class="page_content full_width <?php if (is_user_logged_in()){ echo "member";} ?>">
-		<?php if (pmpro_hasMembershipLevel() || is_page(27) || is_page(19) || is_page(20) || is_page(22) || is_page(335) || is_page(23) || is_page(333) || is_page(30) || is_page(2602)) : ?>
+		<?php if (pmpro_hasMembershipLevel() || is_page('membership-checkout') || is_page('privacy') || is_page('terms-of-use') || is_page('membership-levels') || is_page('login') || is_page('logout')|| is_page('password-reset')) : ?>
 			<header>
-				<?php if (is_page('member-profile')): ?>
+				<?php if (is_page('user')): ?>
 					<h1 class="entry-titlem sub_header">Bass Nation Directory Profile</h1>
 				<?php else : ?>
 					<h1 class="entry-titlem sub_header"><?php the_title(); ?></h1>

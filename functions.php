@@ -948,23 +948,112 @@ function devplus_wpquery_where( $where ){
 
 add_filter( 'posts_where', 'devplus_wpquery_where' );
 
-function change_title() {
+/*function change_title() {
 	$wpua_profile_title = '<h3>Profile Picture</h3>';
 
 	return $wpua_profile_title;
 }
-add_filter('wpua_profile_title', 'change_title');
+add_filter('wpua_profile_title', 'change_title');*/
 
-/*
-function rewrite_braintree_hook(){
+/***
+ ***	@Do not apply to backend default avatars
+ ***/
+/*add_filter('avatar_defaults', 'um_avatar_defaults', 99999 );
+function um_avatar_defaults($avatar_defaults) {
 
-    global $wp_rewrite;
-
-    $plugin_url = plugins_url( 'brainhook.php', __FILE__ );
-    $plugin_url = substr( $plugin_url, strlen( home_url() ) + 1 );
-
-    add_rewrite_rule('brainhook', $plugin_url ,'top');
-
-
-    $wp_rewrite->flush_rules(true);
+    return $avatar_defaults;
 }*/
+
+remove_filter('get_avatar', 'um_get_avatar', 99999, 5);
+
+
+/*add_filter( 'um_user_avatar_url_filter', 'my_user_avatar_url', 10, 1 );
+function my_user_avatar_url( $avatar_uri ) {
+	/*$current_user = wp_get_current_user();
+	$user_id = $current_user->ID;*/
+	//$userEmail = get_the_author_meta('user_email');
+	/*$avatar_uri = get_wp_user_avatar_src();
+	return $avatar_uri;
+}*/
+
+
+/* First we need to extend main profile tabs */
+
+add_filter('um_profile_tabs', 'add_custom_profile_tab', 1 );
+function add_custom_profile_tab( $tabs ) {
+
+	$tabs['mycustomtab'] = array(
+		'name' => 'Change Password',
+		'icon' => 'um-faicon-asterisk',
+		'custom' => true
+	);
+
+	return $tabs;
+
+}
+
+/* Then we just have to add content to that tab using this action */
+
+add_action('um_profile_content_mycustomtab_default', 'um_profile_content_mycustomtab_default');
+function um_profile_content_mycustomtab_default( $args ) {
+
+	$current_user = wp_get_current_user();
+	$user_id = $current_user->ID;
+	$meta = get_user_meta($user_id, 'profile');
+	$meta = $meta[0];
+	$passerror='';
+	if(isset($_POST['changepass']))
+	{
+		if($_POST['npass']!=$_POST['cpass'])
+		{
+			$passerror='Confirm password not match';
+		}else{
+			if($_POST['npass']==''){
+				$password=$_POST['password'];
+			}
+			else{
+				$password=$_POST['npass'];
+			}
+			wp_set_password( $password, $user_id );
+			$passerror='Password has been changed';
+		}
+	}
+	?>
+	<form class="password_change"  method="post" enctype="multipart/form-data" action="#" onsubmit="return change_password();">
+		<h2>Change Password</h2>
+		<div class="form-field">
+			<label>New Password</label>
+			<input type="password" name="npass" id="pass" />
+		</div>
+		<div class="form-field">
+			<label>Confirm Password</label>
+			<input type="password" name="cpass" id="cpass" />
+		</div>
+		<div id="error"><?php echo $passerror; ?></div>
+		<input class="button red" type="submit" name="changepass"  value="Submit" />
+	</form>
+<?php
+}
+
+add_filter( 'um_myprofile_edit_menu_items', 'my_myprofile_edit_menu_items', 10, 1 );
+function my_myprofile_edit_menu_items( $items ) {
+
+	unset( $items['myaccount'] );
+	unset( $items['logout'] );
+	return $items;
+}
+
+add_filter( 'um_browser_url_redirect_to__filter', 'my_browser_url_redirect_to', 10, 1 );
+function my_browser_url_redirect_to( $url ) {
+
+	if ( isset( $_COOKIE['login_redirect'] ) ) {
+		$url = $_COOKIE['login_redirect'];
+	} else {
+		$hostUrl = get_site_url();
+
+		$url = $hostUrl . "/member-home";
+
+	}
+
+	return $url;
+}
