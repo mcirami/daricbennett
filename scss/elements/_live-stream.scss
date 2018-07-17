@@ -1,0 +1,68 @@
+.live_stream {
+    padding: 60px 0;
+
+    .columns_wrap {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+
+        @include media($tablet) {
+            @include span-columns(8);
+        }
+    }
+
+    .column {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+
+        @include media($tablet) {
+            @include span-columns(8);
+        }
+
+        &.one {
+            width: 75%;
+            float: left;
+
+            @include media($tablet) {
+                width: 100%;
+            }
+        }
+
+        &.two {
+            width: 25%;
+            float: left;
+
+            @include media($tablet) {
+                width: 100%;
+            }
+
+            iframe {
+                position: absolute;
+                top:0;
+                left: 0;
+                height: 100%;
+
+                @include media($tablet) {
+                    position: relative;
+                    width: 100%;
+                    height: 300px;
+                }
+            }
+        }
+
+    }
+}

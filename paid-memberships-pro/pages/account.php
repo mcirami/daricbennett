@@ -53,8 +53,8 @@ global $wpdb, $pmpro_msg, $pmpro_msgt, $pmpro_levels, $current_user, $levels, $a
 						</ul>
 					</div><!-- content_wrap -->
 					<div class="pmpro_actionlinks">
-						<a class="button black" href="<?php echo admin_url('profile.php')?>"><?php _e("Edit Profile", "pmpro");?></a>
-						<a class="button yellow" href="<?php echo admin_url('profile.php')?>#update-password"><?php _e('Change Password', 'pmpro');?></a>
+						<a class="button black" href="/user/?profiletab=main&um_action=edit"><?php _e("Edit Profile", "pmpro");?></a>
+						<a class="button yellow" href="/user/?profiletab=changepassword"><?php _e('Change Password', 'pmpro');?></a>
 					</div>
 				</div> <!-- end pmpro_account-profile -->
 			<?php } ?>

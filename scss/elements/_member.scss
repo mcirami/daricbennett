@@ -694,7 +694,22 @@
 	}
 }
 
+#wpua-preview-existing img {
+    max-height: unset !important;
+}
+
+.um-profile-photo-overlay span.um-profile-photo-overlay-s {
+    display: none !important;
+}
+
 .um {
+
+    .cover_photo_text {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+    }
 
     .um-profile-photo {
 
@@ -709,6 +724,7 @@
         a.um-profile-photo-img {
             top: -85px !important;
             z-index: 1;
+            width: 150px;
 
             @include media($smallMobile) {
                 width: 100px !important;
@@ -777,6 +793,14 @@
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
             border-radius: 50%;
+        }
+
+        .um-dropdown {
+            border: none;
+        }
+
+        .um-icon-arrow-up-b:before {
+            content: none;
         }
     }
 
@@ -916,5 +940,81 @@
                 padding: 5px 8px;
             }
         }
+    }
+}
+
+#wpua-edit-103 {
+    #wpua-add-existing,#wpua-remove-existing, #wpua-undo-existing, p.submit input {
+        font-family: 'robotoregular', sans-serif;
+        font-size: 16px;
+        padding: 7px 15px;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+
+        @include media($tablet){
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+
+        @include media($mobile){
+            padding: 7px 10px;
+            font-size: 12px;
+        }
+
+        @include media($smallMobile){
+            padding: 5px 8px;
+        }
+    }
+
+    #wpua-add-existing, p.submit input {
+        background: $red;
+        color: $white;
+
+        &:hover {
+            background: #c30b21;
+        }
+    }
+
+    #wpua-remove-button-existing {
+        position: absolute;
+        left: 0;
+
+        #wpua-remove-existing {
+            background: $black;
+            color: $white;
+
+
+            &:hover {
+                background: #4D4D54;
+            }
+        }
+    }
+
+    #wpua-undo-button-existing {
+        position: absolute;
+        left: 145px;
+
+        @include media($tablet) {
+            left: 125px;
+        }
+
+        @include media($mobile) {
+            left: 105px;
+        }
+
+        #wpua-undo-existing {
+            background: $yellow;
+            color: $black;
+
+            &:hover {
+                background: #c4a020;
+            }
+        }
+    }
+
+    p.submit {
+        width: 100%;
+        margin-top: 75px;
     }
 }

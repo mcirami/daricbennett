@@ -27,6 +27,7 @@
 		do_action( 'um_profile_before_header', $args );
 
 		if ( um_is_on_edit_profile() ) { ?>
+
 		<form method="post" action="">
 			<?php }
 
@@ -50,6 +51,11 @@
 			 * ?>
 			 */
 			do_action( 'um_profile_header_cover_area', $args );
+
+			if ( um_is_on_edit_profile() ) {
+				//echo"<a class=\"button red um-cover has-cover um-trigger-menu-on-click\" href=\"#\" data-user_id=\"103\">Change Cover Photo</a>";
+				echo "<p class='cover_photo_text'>(click cover photo above to change)</p>";
+			}
 
 			/**
 			 * UM hook
@@ -94,7 +100,7 @@
 			 * ?>
 			 */
 			$classes = apply_filters( 'um_profile_navbar_classes', '' ); ?>
-			<div class="right_column_wrap">
+
 			<div class="um-profile-navbar <?php echo $classes ?>">
 				<?php
 				/**
@@ -192,7 +198,6 @@
 
 			print "</div>"; ?>
 
-			</div>
 			<?php
 			if ( um_is_on_edit_profile() ) { ?>
 		</form>

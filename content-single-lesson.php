@@ -96,7 +96,20 @@
 
                         <div class="quote_section full_width">
                             <img src="<?php echo bloginfo('template_url'); ?>/images/icon-quote-left.png" />
-                            <p><?php echo the_field('lesson_description'); ?></p>
+	                        <?php
+	                            $postId = get_the_ID();
+	                            if ($postId == 3699) : ?>
+	                                <p>#BASSNATION check out this metronome on steriods!! It's an awesome practice tool that will really help get you grooving and improving. Check out all the details of the
+		                                <a target="_blank" href="http://bit.ly/beatbuddypedal">BeatBuddy Right Here Right Now</a>!</p>
+	                                <br>
+			                        <br>
+			                        <p>For full access to all my exclusive lessons, start your free trial today!</p>
+
+                            <?php else :
+	                                echo apply_filters( 'acf_the_content', the_field('lesson_description') );
+
+                                    endif; ?>
+
                         </div>
 
                     <?php endif;

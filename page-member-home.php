@@ -48,6 +48,8 @@
 						 		<?php //echo get_avatar( $current_user->ID, 200 );
 							        echo get_wp_user_avatar( $current_user->ID, 200 );
 						 		?>
+
+
 					 		</div>
 					 		<div class="column">
 						 		<div class="heading full_width">

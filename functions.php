@@ -239,14 +239,6 @@ add_filter('embed_oembed_html', 'wrap_embed_with_div', 10, 3);
 
 add_filter('show_admin_bar', '__return_false');
 
-// Hide Admin Bar for All Users Except Adminministrators
-function bs_hide_admin_bar() {
-    if (!current_user_can('administrator') && !is_admin()) {
-        show_admin_bar(false);
-    }
-}
-add_action('after_setup_theme', 'bs_hide_admin_bar');
-
 function pages_category() {
 	register_taxonomy_for_object_type('category', 'page');
 }
@@ -948,33 +940,15 @@ function devplus_wpquery_where( $where ){
 
 add_filter( 'posts_where', 'devplus_wpquery_where' );
 
-/*function change_title() {
+function change_title() {
 	$wpua_profile_title = '<h3>Profile Picture</h3>';
 
 	return $wpua_profile_title;
 }
-add_filter('wpua_profile_title', 'change_title');*/
+add_filter('wpua_profile_title', 'change_title');
 
-/***
- ***	@Do not apply to backend default avatars
- ***/
-/*add_filter('avatar_defaults', 'um_avatar_defaults', 99999 );
-function um_avatar_defaults($avatar_defaults) {
-
-    return $avatar_defaults;
-}*/
 
 remove_filter('get_avatar', 'um_get_avatar', 99999, 5);
-
-
-/*add_filter( 'um_user_avatar_url_filter', 'my_user_avatar_url', 10, 1 );
-function my_user_avatar_url( $avatar_uri ) {
-	/*$current_user = wp_get_current_user();
-	$user_id = $current_user->ID;*/
-	//$userEmail = get_the_author_meta('user_email');
-	/*$avatar_uri = get_wp_user_avatar_src();
-	return $avatar_uri;
-}*/
 
 
 /* First we need to extend main profile tabs */
@@ -982,9 +956,15 @@ function my_user_avatar_url( $avatar_uri ) {
 add_filter('um_profile_tabs', 'add_custom_profile_tab', 1 );
 function add_custom_profile_tab( $tabs ) {
 
-	$tabs['mycustomtab'] = array(
+	$tabs['changepassword'] = array(
 		'name' => 'Change Password',
 		'icon' => 'um-faicon-asterisk',
+		'custom' => true
+	);
+
+	$tabs['changeprofilephoto'] = array(
+		'name' => 'Change Profile Photo',
+		'icon' => 'um-faicon-image',
 		'custom' => true
 	);
 
@@ -994,13 +974,13 @@ function add_custom_profile_tab( $tabs ) {
 
 /* Then we just have to add content to that tab using this action */
 
-add_action('um_profile_content_mycustomtab_default', 'um_profile_content_mycustomtab_default');
-function um_profile_content_mycustomtab_default( $args ) {
+add_action('um_profile_content_changepassword_default', 'um_profile_content_changepassword_default');
+function um_profile_content_changepassword_default( $args ) {
 
 	$current_user = wp_get_current_user();
 	$user_id = $current_user->ID;
 	$meta = get_user_meta($user_id, 'profile');
-	$meta = $meta[0];
+	//$meta = $meta[0];
 	$passerror='';
 	if(isset($_POST['changepass']))
 	{
@@ -1035,6 +1015,31 @@ function um_profile_content_mycustomtab_default( $args ) {
 <?php
 }
 
+add_action('um_profile_content_changeprofilephoto_default', 'um_profile_content_changeprofilephoto_default');
+function um_profile_content_changeprofilephoto_default( $args ) {
+
+	$current_user = wp_get_current_user();
+	$user_id = $current_user->ID;
+?>
+	<div class="content_wrap">
+		<div class="column">
+				<?php echo do_shortcode('[avatar_upload]'); ?>
+		</div>
+		<div class="column">
+
+				<?php
+					$coverURL = um_get_default_cover_uri();
+				?>
+
+				<img src="<?php echo $coverURL; ?>">
+
+		</div>
+	</div>
+
+<?php
+}
+
+
 add_filter( 'um_myprofile_edit_menu_items', 'my_myprofile_edit_menu_items', 10, 1 );
 function my_myprofile_edit_menu_items( $items ) {
 
@@ -1056,4 +1061,15 @@ function my_browser_url_redirect_to( $url ) {
 	}
 
 	return $url;
+}
+
+
+add_filter( 'um_user_photo_menu_edit', 'my_user_photo_menu_edit', 10, 1);
+function my_user_photo_menu_edit( $items ) {
+
+	foreach ($items as $i => $value) {
+		unset($items[$i]);
+	}
+
+	return $items;
 }
