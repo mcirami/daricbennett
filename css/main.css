@@ -1583,6 +1583,9 @@ img {
       padding-top: 146px; } }
   .page_content.member {
     padding-top: 98px; }
+    @media screen and (max-width: 1023px) {
+      .page_content.member {
+        padding-top: 90px; } }
     @media screen and (max-width: 768px) {
       .page_content.member {
         padding-top: 76px; } }
@@ -2075,9 +2078,12 @@ h3, p {
       -moz-transition: .5s ease-in-out;
       -o-transition: .5s ease-in-out;
       transition: .5s ease-in-out; }
+      @media screen and (max-width: 1280px) {
+        #global_header .header_bottom .logo {
+          width: 280px; } }
       @media screen and (max-width: 1023px) {
         #global_header .header_bottom .logo {
-          width: 200px; } }
+          width: 180px; } }
       @media screen and (max-width: 768px) {
         #global_header .header_bottom .logo {
           width: 185px; } }
@@ -2147,6 +2153,10 @@ h3, p {
             top: 17px;
             font-size: 18px;
             padding: 0 5px; }
+            @media screen and (max-width: 1280px) {
+              #global_header .header_bottom .menu ul li:after {
+                right: -2px;
+                font-size: 16px; } }
           #global_header .header_bottom .menu ul li:first-child {
             padding-left: 0; }
           #global_header .header_bottom .menu ul li:last-child {
@@ -2158,6 +2168,9 @@ h3, p {
             color: #fff;
             text-transform: uppercase;
             font-size: 18px; }
+            @media screen and (max-width: 1280px) {
+              #global_header .header_bottom .menu ul li a {
+                font-size: 16px; } }
             #global_header .header_bottom .menu ul li a:hover {
               color: #ddb72e; }
             @media screen and (max-width: 1023px) {
@@ -2276,36 +2289,7 @@ h3, p {
   border-top: 2px solid #2d2d2d;
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
-  overflow-y: scroll;
-  /*	&.animating {
-  		display: block;
-  	}
-  	
-  	&.menu_visible {
-  		display: block;
-  		position: fixed;
-  	}
-  */
-  /* 	.mobile_heading {
-   		@include span-columns(12);
-   		text-transform: uppercase;
-   		color: $darkGray;
-   		font-size: 16px;
-   		text-align: center;
-   		padding: 23px 20px;
-   		border-bottom: 1px outset $yellow;
-   		font-family: 'robotomedium';
-  		!* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+16,131313+48,131313+53,000000+81 *!
-  		background: #000000; !* Old browsers *!
-  		background: -moz-linear-gradient(top,  #000000 16%, #131313 48%, #131313 53%, #000000 81%); !* FF3.6-15 *!
-  		background: -webkit-linear-gradient(top,  #000000 16%,#131313 48%,#131313 53%,#000000 81%); !* Chrome10-25,Safari5.1-6 *!
-  		background: linear-gradient(to bottom,  #000000 16%,#131313 48%,#131313 53%,#000000 81%); !* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ *!
-  		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=0 ); !* IE6-9 *!
-  		
-  		h3 {
-  			margin: 0;
-  		}
-   	}*/ }
+  overflow-y: scroll; }
   @media screen and (max-width: 768px) {
     .mobile_menu {
       display: block; } }
@@ -2400,10 +2384,13 @@ ul.member_menu > li {
     padding: 15px 0 21px 0 !important; }
   ul.member_menu > li a {
     padding: 0 18px; }
+    @media screen and (max-width: 1280px) {
+      ul.member_menu > li a {
+        padding: 0 10px; } }
     @media screen and (max-width: 1023px) {
       ul.member_menu > li a {
-        padding: 0 10px;
-        font-size: 15px !important; } }
+        padding: 0 8px;
+        font-size: 12px !important; } }
   @media screen and (max-width: 768px) {
     ul.member_menu > li.menu-item-has-children > a:after {
       content: '+';
@@ -10689,6 +10676,27 @@ form.pmpro_form .pmpro_checkout-fields div {
 
 .live_stream {
   padding: 60px 0; }
+  .live_stream .title {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 100%; }
+    .live_stream .title:last-child {
+      margin-right: 0; }
+    .live_stream .title h3 {
+      font-family: 'robotobold', sans-serif;
+      font-size: 30px;
+      text-align: left;
+      margin: 0 0 40px;
+      line-height: 1.2;
+      text-transform: none; }
+      @media screen and (max-width: 1023px) {
+        .live_stream .title h3 {
+          font-size: 28px; } }
+      @media screen and (max-width: 768px) {
+        .live_stream .title h3 {
+          font-size: 26px;
+          margin: 0 0 20px; } }
   .live_stream .columns_wrap {
     width: 100%;
     display: -webkit-box;
@@ -10727,26 +10735,119 @@ form.pmpro_form .pmpro_checkout-fields div {
         .live_stream .column:last-child {
           margin-right: 0; } }
     .live_stream .column.one {
-      width: 75%;
+      width: 60%;
       float: left; }
       @media screen and (max-width: 1023px) {
         .live_stream .column.one {
           width: 100%; } }
     .live_stream .column.two {
-      width: 25%;
-      float: left; }
+      width: 40%;
+      float: left;
+      padding-left: 2%; }
       @media screen and (max-width: 1023px) {
         .live_stream .column.two {
           width: 100%; } }
+      .live_stream .column.two .live_chat {
+        float: left;
+        display: block;
+        margin-right: 2.3576515979%;
+        width: 100%;
+        height: 100%; }
+        .live_stream .column.two .live_chat:last-child {
+          margin-right: 0; }
       .live_stream .column.two iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
+        float: left;
+        width: 100%;
         height: 100%; }
         @media screen and (max-width: 1023px) {
           .live_stream .column.two iframe {
             position: relative;
             width: 100%;
-            height: 300px; } }
+            height: 300px;
+            max-height: 300px; } }
+        @media screen and (max-width: 768px) {
+          .live_stream .column.two iframe {
+            height: 360px;
+            max-height: 360px;
+            margin-top: 20px; } }
+    .live_stream .column #status {
+      top: -30px;
+      width: 100%;
+      float: left; }
+      @media screen and (max-width: 768px) {
+        .live_stream .column #status {
+          top: 10px;
+          text-align: center; } }
+  .live_stream.blog .row {
+    padding: 20px 0;
+    border-top: 1px solid #827d7d;
+    margin-top: 20px; }
+    .live_stream.blog .row:first-child {
+      border-top: none;
+      margin-top: 0; }
+    .live_stream.blog .row .title a {
+      color: #131313;
+      display: inline-block; }
+      .live_stream.blog .row .title a:hover {
+        color: #f20f2b; }
+
+#live_comments {
+  min-height: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap; }
+  #live_comments .reply {
+    display: none; }
+  #live_comments .edit-link {
+    display: none; }
+  #live_comments #comments {
+    padding: 0;
+    /* bottom: 0;
+     position: absolute;*/
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    height: 100%; }
+    #live_comments #comments .comment-content > p {
+      padding: 5px 10px;
+      margin-bottom: 0; }
+    #live_comments #comments .comment-content .comment_heading {
+      padding: 10px; }
+    #live_comments #comments #respond {
+      padding-top: 10px;
+      margin-top: auto;
+      bottom: 0; }
+    #live_comments #comments ol {
+      max-height: 420px;
+      min-height: 300px;
+      width: 100%;
+      overflow-y: scroll;
+      border: 1px solid #827d7d;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px; }
+  #live_comments .comment-respond form .comment-form-comment textarea:last-child {
+    height: 40px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-top: 5px; }
+  #live_comments .comment-metadata > a {
+    width: 50% !important;
+    float: right !important;
+    text-align: right; }
 
 /*# sourceMappingURL=main.css.map */

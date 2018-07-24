@@ -512,7 +512,8 @@ jQuery(document).ready(function($) {
 
     var postCommentURL = window.location.href;
 
-    if ((currentPage.pageName !== "Video Q & A") && (currentPage.postType === "videos")) {
+
+    if (((currentPage.pageName !== "Video Q & A")  && (currentPage.postType === "videos")) || (currentPage.postType === "live-streams")) {
 
         if ($('.comment-content > p a').length ) {
 
@@ -621,7 +622,7 @@ jQuery(document).ready(function($) {
     function submitComment(commentSubmitButton) {
         commentSubmitButton.click(function (e) {
 
-            if(currentPage.postType === "videos" && replyToUser == null) {
+            if((currentPage.postType === "videos" || currentPage.postType === "live-streams") && replyToUser == null) {
                 console.log('videos');
             } else {
                 e.preventDefault();

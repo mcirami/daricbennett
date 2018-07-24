@@ -243,6 +243,10 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 	
 	&.member {
 		padding-top: 98px;
+
+		@include media($tablet) {
+			padding-top: 90px;
+		}
 		
 		@include media($mobile){
 			padding-top: 76px;

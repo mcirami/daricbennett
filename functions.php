@@ -190,7 +190,7 @@ function boiler_scripts_styles() {
     //wp_enqueue_script( 'images_loaded', get_template_directory_uri() . '/js/vendor/images-loaded/imagesloaded.pkgd.min.js', array('jquery'), '', true );
 
     wp_localize_script('main_js', 'currentUser', array(
-	   'nonce' =>  wp_create_nonce('wp_rest'),
+	    'nonce' =>  wp_create_nonce('wp_rest'),
         'siteURL' => get_site_url(),
         'userLogin' => wp_get_current_user()->user_login,
         'userID' => wp_get_current_user()->ID,
@@ -203,7 +203,8 @@ function boiler_scripts_styles() {
 
 
     wp_localize_script('main_js', 'currentPage', array(
-       'pageName' =>  get_the_title(),
+
+        'pageName' =>  get_the_title(),
         'postType' => get_post_type(),
     ));
 
@@ -460,6 +461,40 @@ function create_tv_video_post_type() {
 }
 add_action( 'init', 'create_tv_video_post_type' );
 
+function create_live_stream_post_type() {
+    register_post_type( 'live-streams',
+        array(
+            'labels' => array(
+                'name' => __( 'Live Streams' ),
+                'singular_name' => __( 'Live Stream' ),
+                'add_new' => ('Add New Stream'),
+                'add_new_item' => ('Add New Stream'),
+                'edit_item' => ('Edit Stream'),
+                'new_item' => ('New Stream'),
+                'view_item' => ('View Streams'),
+                'search_items' => ('Search Streams'),
+                'not_found' => ('No Stream found'),
+                'not_found_in_trash' => ('No Stream found in Trash'),
+                'parent_item_colon' => ('Parent Stream:'),
+                'menu_name' => ('Live Streams'),
+            ),
+            'public' => true,
+            'has_archive' => false,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'query_var'          => true,
+            'capability_type'    => 'post',
+            'hierarchical'       => false,
+            'menu_icon' => get_template_directory_uri() . '/images/live-stream-icon.png',
+            'supports' => array( 'title', 'editor', 'thumbnail', 'comments', 'author' ),
+            'rewrite' => array( 'slug' => 'live-stream' ),
+            'show_in_rest' => true
+        )
+    );
+}
+add_action( 'init', 'create_live_stream_post_type' );
+
 add_filter( 'the_content', 'make_clickable');
 
 function autoblank($text) {
@@ -511,9 +546,13 @@ add_filter( 'comment_form_submit_button', 'filter_comment_form_submit_button', 1
 function my_comment_form_edits($edit_fields) {
 
     if (get_post_type() == "videos") {
-        $title_reply = 'REPLY TO THIS THREAD' /*. "<br><span>" . '(you can also embed a video response in your reply, ex: https://www.youtube.com/embed/YTvideoCode )' . "</span>"*/;
+        $title_reply = 'REPLY TO THIS THREAD';
         $label_submit = 'Post Reply';
         $title_reply_after = '<span>(you can also embed a video response in your reply, ex: https://www.youtube.com/embed/YTvideoCode )</span>';
+    } else if (get_post_type() == "live-streams"){
+        $title_reply = 'CHAT LIVE';
+        $label_submit = 'Submit';
+        $title_reply_after = '';
     } else {
         $title_reply = 'Questions? Comments...get in touch!';
         $label_submit = 'Post Comment';
@@ -571,7 +610,7 @@ function send_reply_to_user_email() {
 
     $to = $userEmail;
     $subject = "Someone replied to your comment";
-    $message = "Go to the link below to read and reply to the comment posted: <br><br>" . $replyURL;
+    $message = 'Go to the link below to read and reply to the comment posted: <br><br> <a href="' . $replyURL . '">'. $replyURL . '</a>';
     $headers = "From: admin@daricbennett.com";
 
     if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
@@ -615,7 +654,7 @@ function comment_notif_text_edit($message, $comment_id) {
                Follow this link to login and view the reply: <br><br>' . $this->the_permalink($comment_id);*/
 
     $message = 'You received a reply to your "' .  $postTitle . '" thread you posted in the Video Q & A section from ' . $comment_author . '<br> 
-               Follow this link to login and view the reply: <br><br>' . $postURL;
+               Follow this link to login and view the reply: <br><br> <a href="' . $postURL . '">'. $postURL . '</a>';
 
     return $message;
 

@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Live Stream
+ * Template Name: Live Streams
  *
- * The template for displaying free lessons page.
+ * The template for displaying past Live Streams.
  *
  *
  * @package boiler
@@ -11,7 +11,19 @@
 
 get_header();
 
-$domain = (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : $_SERVER['SERVER_NAME']);
+
+global $post;
+
+$args = array(
+    'post_type' => 'live-streams',
+    'order_by' => 'post_date',
+    'order' => 'DESC',
+    'posts_per_page' => -1
+    //'paged' => $ourCurrentPage
+);
+
+$streams = new WP_Query($args);
+
 
 
 ?>
@@ -19,23 +31,46 @@ $domain = (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : $_SERVER['SERV
 <div class="full_width page_content <?php if (is_user_logged_in()){ echo "member";} ?>">
 	<header class="sub_header full_width">
 		<div class="container">
-			<h1><?php the_title();?></h1>
+			<h1>Past Live Streams</h1>
 		</div><!-- .container -->
 	</header>
 
-	<div class="full_width live_stream">
+	<div class="full_width live_stream blog">
 		<div class="container">
-			<div class="columns_wrap">
-				<div class="column one">
-					<div class="video_wrapper">
-						<iframe src="<?php the_field('video_embed_link'); ?>" frameborder="0" allowfullscreen></iframe>
-					</div>
-				</div>
-				<div class="column two">
-					<iframe src="<?php the_field('chat_embed_link'); ?>&embed_domain=<?php echo $domain; ?>" frameborder="0" allowfullscreen></iframe>
-				</div>
-			</div>
-		</div>
+
+            <?php if (pmpro_hasMembershipLevel()) : ?>
+
+                    <article class="full_width">
+
+                        <?php if ( $streams->have_posts() ) : ?>
+
+                            <?php while ( $streams->have_posts() ) : $streams->the_post(); ?>
+
+                                <?php
+                                /* Include the Post-Format-specific template for the content.
+                                 * If you want to overload this in a child theme then include a file
+                                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                                 */
+                                get_template_part( 'content-live-streams', get_post_format() );
+                                ?>
+
+                            <?php endwhile; ?>
+
+
+                        <?php else : ?>
+
+                                <h3>No Streams Yet</h3>
+
+                        <?php endif; ?>
+                    </article>
+
+            <?php else :
+
+                get_template_part( 'content', 'not-member' );  ?>
+
+            <?php endif; ?>
+
+        </div>
 	</div>
 </div>
 
