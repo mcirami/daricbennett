@@ -140,7 +140,7 @@
     }
 }
 
-
+/*
 
 #live_comments {
     min-height: 100%;
@@ -165,8 +165,8 @@
 
     #comments {
         padding: 0;
-       /* bottom: 0;
-        position: absolute;*/
+       !* bottom: 0;
+        position: absolute;*!
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -223,3 +223,4 @@
         text-align: right;
     }
 }
+*/

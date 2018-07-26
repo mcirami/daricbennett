@@ -182,6 +182,17 @@ function boiler_scripts_styles() {
 
     wp_enqueue_script( 'jquery_ui', get_template_directory_uri() . '/js/vendor/jquery-ui.min.js', array('jquery'), '', true );
 
+	if ( get_post_type() == 'live-streams' ) {
+		//wp_enqueue_script( 'server_js', get_template_directory_uri() . '/js/vendor/live-chat/server.js',array( 'jquery' ), '', true );
+		wp_register_script( 'app_js', get_template_directory_uri() . '/js/vendor/live-chat/app.js', array(), false, true );
+
+		wp_enqueue_script( 'axios', 'https://unpkg.com/axios/dist/axios.min.js', array('jquery'), '', true );
+		wp_enqueue_script( 'vue', 'https://unpkg.com/vue', array('jquery'), '', true );
+		wp_enqueue_script( 'pusher', '//js.pusher.com/4.0/pusher.min.js', array('jquery'), '', true );
+
+		wp_enqueue_script( 'app_js' );
+	}
+
     //wp_enqueue_script( 'emoji', get_template_directory_uri() . '/js/vendor/emoji.min.js', array('jquery'), '', true );
     if (is_page('lessons')){
 

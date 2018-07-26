@@ -17,13 +17,8 @@ $domain = (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : $_SERVER['SERV
             <!--<div class="live_chat">
                 <iframe src="<?php /*the_field('chat_embed_link'); */?>" frameborder="0" allowfullscreen></iframe>
             </div>-->
-            <div id="live_comments">
-                <?php
-                if ( comments_open() || get_comments_number() ) :
-                    comments_template();
-                endif;
-                ?>
-            </div>
+
+
         </div>
     </div>
 
