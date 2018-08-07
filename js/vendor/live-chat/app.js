@@ -21,7 +21,7 @@ const app = new Vue({
 
 			axios.post('wp-json/wp/v2/posts/', Qs.stringify(data))
 			.then(response => {
-                console.log(data);
+
 				// User has joined the chat
 				this.joined = true;
 				const channel = pusher.subscribe('presence-groupChat');
@@ -84,9 +84,10 @@ const app = new Vue({
 				username: this.username,
 				message: this.newMessage
 			};
+            console.log(message);
 			// Clear input field
 			this.newMessage = '';
-			axios.post('wp-json/wp/v2/posts/', message);
+			axios.post('wp-json/wp/v2/posts/', Qs.stringify(message));
 		},
 		listen() {
 			const channel = pusher.subscribe('presence-groupChat');
