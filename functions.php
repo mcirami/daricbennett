@@ -1132,3 +1132,14 @@ function my_user_photo_menu_edit( $items ) {
 
 	return $items;
 }
+
+$wpdb->query(
+		'CREATE TABLE IF NOT EXISTS `a02_chat_message` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `messages`  text NOT NULL,
+  `uid` varchar(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `time` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+);'
+);
