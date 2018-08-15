@@ -11,7 +11,7 @@ get_header(); ?>
 			
 			<header class="sub_header full_width">
 				<div class="container">
-					<h1>Free Online Bass Lessons</h1>
+					<h1><?php if (!is_user_logged_in()) { ?>Free Online Bass Lessons <?php } else { the_title(); }?></h1>
 				</div><!-- .container -->
 			 </header>
 			 

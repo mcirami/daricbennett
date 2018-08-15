@@ -640,6 +640,54 @@ ul.member_menu {
 				@include media($mobile){
 					padding: 0 0 0 36px !important;
 				}
+
+                a {
+                    display: block;
+                    padding: 15px 45px 20px;
+                    text-transform: none;
+
+                    &:before {
+                        content:'';
+                        background: url('../images/right-arrow-gray.png') no-repeat;
+                        position: absolute;
+                        width: 10px;
+                        height: 17px;
+                        left: 20px;
+                        top: 21px;
+                        background-size: 70%;
+
+                        @include media($mobile){
+                            background-size: 50%;
+                            top: 23px;
+                        }
+                    }
+
+                    &:hover {
+                        color: $black !important;
+
+                        @include media($mobile){
+                            color: $white !important;
+                        }
+
+                        &:before {
+                            content:'';
+                            background: url('../images/right-arrow.png') no-repeat;
+                            position: absolute;
+                            width: 10px;
+                            height: 17px;
+                            left: 20px;
+                            top: 21px;
+                            background-size: 70%;
+
+                            @include media($mobile){
+                                background: url('../images/right-arrow-gray.png') no-repeat;
+                                background-size: 50%;
+                                top: 23px;
+                            }
+                        }
+                    }
+
+                }
 				
 				&:first-child {
 					@include media($mobile){
@@ -664,6 +712,15 @@ ul.member_menu {
 					@include media($mobile){
 						background: none;
 					}
+
+                    a {
+                        color: $black;
+
+                        &:before {
+                            background: url('../images/right-arrow.png') no-repeat;
+                            background-size: 70%;
+                        }
+                    }
 				}
 				
 				&.current_page_item {
@@ -679,54 +736,22 @@ ul.member_menu {
 						}
 					}
 				}
-				
-				a {
-					display: block;
-					padding: 15px 45px 20px;
-					text-transform: none;
-					
-					&:before {
-						content:'';
-						background: url('../images/right-arrow-gray.png') no-repeat;
-						position: absolute;
-						width: 10px;
-						height: 17px;
-						left: 20px;
-						top: 21px;
-						background-size: 70%;
-						
-						@include media($mobile){
-							background-size: 50%;
-							top: 23px;
-						}
-					}
-					
-					&:hover {
-						color: $black !important;
-						
-						@include media($mobile){
-							color: $white !important;
-						}
-						
-						&:before {
-							content:'';
-							background: url('../images/right-arrow.png') no-repeat;
-							position: absolute;
-							width: 10px;
-							height: 17px;
-							left: 20px;
-							top: 21px;
-							background-size: 70%;
-							
-							@include media($mobile){
-								background: url('../images/right-arrow-gray.png') no-repeat;
-								background-size: 50%;
-								top: 23px;
-							}
-						}
-					}
-					
-				}
+
+				.sub-menu {
+                    width: 100%;
+                    left: 0;
+                    top: 54px;
+                    white-space: initial;
+
+                    a {
+                        font-size: 16px;
+                        padding-left: 62px;
+
+                        &:before {
+                            left: 48px;
+                        }
+                    }
+                }
 			}
 		}
 	}

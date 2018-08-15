@@ -59,7 +59,7 @@
         }
     }
 
-    #video_player {
+    #video_player, .course_video_player {
         background: $darkerGray;
         //max-height: 900px;
         //overflow-y: scroll;
@@ -806,4 +806,126 @@
 
 #commentform iframe {
     height: 230px !important;
+}
+
+.lessons_page.courses {
+
+    .course_video_player {
+        margin-top: 20px;
+
+        @include media($mobile) {
+            margin-top: 40px;
+        }
+
+        &.open {
+            &:before {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-left: 30px solid transparent;
+                border-right: 30px solid transparent;
+                border-bottom: 30px solid;
+                border-bottom-color: #373839;
+                top: -22px;
+                left: 50%;
+                margin-left: -20px;
+                z-index: -1;
+            }
+        }
+    }
+
+    .row {
+        padding: 40px 0;
+        border-bottom: 1px solid $darkGray;
+
+        &.open_player {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .column {
+            @include span-columns(6);
+            text-align: left;
+
+            @include media($mobile) {
+                @include span-columns(4);
+                padding: 0;
+            }
+
+            &:last-child {
+                padding-left: 40px;
+
+                @include media($mobile) {
+                    padding-left: 0;
+                }
+            }
+
+            a {
+                text-transform: uppercase;
+                display: inline-block;
+            }
+
+            h1 {
+                margin-top: 0;
+                font-size: 28px;
+                margin-bottom: 5px;
+
+                @include media($tablet) {
+                    font-size: 26px;
+                }
+
+                @include media($mobile) {
+                    margin-top: 10px;
+                }
+
+                a {
+                    color: $black;
+                }
+            }
+
+            h4 {
+                margin: 5px 0;
+                font-size: 12px;
+
+                a {
+                    color: $black;
+                    text-decoration: underline;
+                }
+
+                &.sub_title {
+                    font-size: 18px;
+                }
+            }
+
+            p {
+                @include media($tablet) {
+                    font-size: 14px;
+                }
+            }
+
+            .button_wrap {
+                margin-top: 20px;
+                float: left;
+
+                @include media($smallMobile) {
+                    @include span-columns(4);
+                }
+
+                .button {
+                    padding: 10px 30px;
+
+                    @include media($smallMobile) {
+                        width: 100%;
+                        display: block;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            border-bottom: 1px solid $darkGray;
+        }
+    }
 }

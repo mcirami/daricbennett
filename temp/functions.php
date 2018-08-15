@@ -541,8 +541,8 @@ function create_courses_post_type() {
 			'show_in_menu'       => true,
 			'query_var'          => true,
 			'capability_type'    => 'post',
-			'hierarchical'       => true,
-			'menu_icon' => get_template_directory_uri() . '/images/courses-icon.png',
+			'hierarchical'       => false,
+			'menu_icon' => get_template_directory_uri() . '/images/bass-icon.png',
 			'supports' => array( 'title', 'editor', 'thumbnail', 'comments', 'author' ),
 			//'rewrite' => array( 'slug' => 'courses' ),
 			'show_in_rest' => true

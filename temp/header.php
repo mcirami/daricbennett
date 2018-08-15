@@ -54,7 +54,9 @@ if (isset($_GET['clickid'])) {
 	fbq('init', '1092024584249788'); // Insert your pixel ID here.
 	fbq('track', 'PageView');
 	</script>
-	<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1092024584249788&ev=PageView&noscript=1"/></noscript>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=1092024584249788&ev=PageView&noscript=1"
+	/></noscript>
 	<!-- DO NOT MODIFY -->
 	<!-- End Facebook Pixel Code -->
 
@@ -115,7 +117,6 @@ if (isset($_GET['clickid'])) {
     <meta property="fb:app_id" content="476725656008860" />
 
     <?php wp_head(); ?>
-	<script src="http://localhost:81/socket.io/socket.io.js"></script>
 </head>
 
 <?php 
@@ -316,6 +317,16 @@ if (isset($_GET['clickid'])) {
 			</div>
 		</div>
 	</header>
+	<!--
+	<div class="lightbox_pop full_width">
+		 <div class="image_wrap">
+			 <img class="lightbox_img" src="" alt="">
+			 <div class="close_button">
+				<img src="<?php echo bloginfo('template_url'); ?>/images/close-button.png" />
+			 </div>
+		 </div>
+	 </div>
+	-->
 <div class="wrapper">
 	<div id="email_join">
 		<a href="/"><div class="logo"><img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" /></div></a>

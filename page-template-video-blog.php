@@ -32,6 +32,34 @@ if($pageTitle == "Video Q &#038; A") {
 	    'order' => 'DESC',
 	    'posts_per_page' => -1,
 	);
+} elseif ($pageTitle == "Beginners Course") {
+	$args = array (
+		'post_type' => 'lessons',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'level',
+				'field' => 'slug',
+				'terms' => 'beginner'
+			),
+		),
+		'order_by' => 'post_date',
+		'order' => 'ASC',
+		'posts_per_page' => -1,
+	);
+} elseif ($pageTitle == "Slap Course") {
+	$args = array (
+		'post_type' => 'lessons',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' => 'slap-series'
+			),
+		),
+		'order_by' => 'post_date',
+		'order' => 'ASC',
+		'posts_per_page' => -1,
+	);
 }
 
 $posts = new WP_Query($args);
@@ -49,8 +77,12 @@ $posts = new WP_Query($args);
             <div class="full_width">
                 <div class="container">
                     <div class="top_section">
-                        <h3><?php the_field('sub_heading'); ?></h3>
-                        <p><?php the_field('description'); ?></p>
+	                    <?php if (get_field('sub_heading')) {?>
+                                <h3><?php the_field('sub_heading'); ?></h3>
+	                    <?php } ?>
+	                    <?php if (get_field('description')) {?>
+                                <p><?php the_field('description'); ?></p>
+	                        <?php } ?>
 	                    <?php if($pageTitle == "Video Q &#038; A") : ?>
                             <button id="post_video_btn" class="button yellow"><?php the_field('button_text'); ?></button>
 	                    <?php endif; ?>
@@ -95,7 +127,7 @@ $posts = new WP_Query($args);
                                  * If you want to overload this in a child theme then include a file
                                  * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                                  */
-                                get_template_part( 'content-video-blog', get_post_format() );
+                                    get_template_part( 'content-video-blog', get_post_format() );
                                 ?>
 
                             <?php endwhile; ?>

@@ -271,40 +271,22 @@ jQuery(document).ready(function($) {
         }
         document.cookie = name + "=" + value + expires + "; path=/";
     }
-/*
-
-	function getCookie(cname) {
-		var name = cname + "=";
-		var ca = document.cookie.split(';');
-		for(var i = 0; i <ca.length; i++) {
-			var c = ca[i];
-			while (c.charAt(0)==' ') {
-				c = c.substring(1);
-			}
-			if (c.indexOf(name) == 0) {
-				return c.substring(name.length,c.length);
-			}
-		}
-		return "";
-	}
-
-	document.getElementById("custom").value = getCookie("daric_clickid");
-*/
 
     $('.accordion').on('click', function () {
 
-        var panelHeight = 0;
-        var rowHeight = 60;
+        //var panelHeight = 0;
+       // var rowHeight = 60;
         var headerHeight = $('#global_header').height();
         var accordion = $(this);
         var arrow = $(this).children('.arrow');
         var panel = $(this).next('.panel');
-        var previousPanel = $(this).parent().prevAll('.row').has('.show');
+        //var previousPanel = $(this).parent().prevAll('.row').has('.show');
+        var hash = $(this).children("a").attr("href");
 
-        if (previousPanel.length > 0) {
+        /*if (previousPanel.length > 0) {
             panelHeight = $('.panel.show').height();
             rowHeight = $('.lessons_page .video_list .row').height();
-        }
+        }*/
 
         $('.accordion').not(this).removeClass('active');
         $('.arrow').removeClass('active');
@@ -314,15 +296,17 @@ jQuery(document).ready(function($) {
             accordion.removeClass('active');
             arrow.removeClass('active');
             panel.removeClass('show');
-            $('html,body').animate({scrollTop: $(this).offset().top - headerHeight}, 1000);
+            //$('html,body').animate({scrollTop: $(hash).offset().top - headerHeight}, 1000);
         } else {
             accordion.addClass('active');
             arrow.addClass('active');
             panel.addClass('show');
-
-            $('html,body').animate({scrollTop: $(this).offset().top - (headerHeight + panelHeight + rowHeight)}, 800);
-
         }
+
+	    setTimeout(function () {
+		    $('html,body').animate({scrollTop: $(hash).offset().top - headerHeight}, 500);
+	    }, 1000);
+
     });
 
 
@@ -564,7 +548,6 @@ jQuery(document).ready(function($) {
                     }
 
                     $("<div class='video_embed'><div class='video_wrapper'><iframe frameborder='0' allowfullscreen src='" + newEmbedLink + "/?rel=0&showinfo=0'></iframe></div></div>").insertAfter($(commentContent[y]));
-                    console.log(newEmbedLink);
                 }
 
             }
@@ -805,30 +788,46 @@ jQuery(document).ready(function($) {
 
     $('.play_video').on('click', function () {
 
-        $("html, body").animate({scrollTop: 100}, "slow");
-
         var videoSrc = $(this).data('src');
         var videoType = $(this).data('type');
         var replaceVideoLink = $(this).data('replace');
         var videoTitle = $(this).data('title');
         var notation = $(this).data('notation');
+	    var favoriteButton = '';
+	    var videoPlayer = '';
+	    var hash = $(this).attr("href") + "-video";
+	    var htmlBody = $("html, body");
+
+	    if (currentPage.postType !== "courses") {
+		    $("html, body").animate({scrollTop: $('#video_player').offset().top - $('#global_header').height()}, 1000);
+	    } else {
+		    videoPlayer = $(this).closest('.row').children('.course_video_player');
+	    }
 
         //var keyboardVideo = $('.keyboard_embed').data('embed');
         var commentContent = $(this).parent().nextAll('.comment_wrap').html();
-        var videoPlayer = $('#video_player').empty();
 
-        //if (currentPage.pageName === 'Lessons') {
-            var favoriteButton = $(this).parent().children('.button_wrap').html();
-        //} else {
-             //favoriteButton = "";
-        //}
+	    if (currentPage.postType !== "courses") {
+	    	videoPlayer = $('#video_player').empty();
+	    } else {
+		    $('.course_video_player').empty().removeClass('open');
+		    $('.lessons_page.courses .row').removeClass('open_player');
+		    $(this).closest('.row').addClass('open_player');
+		    videoPlayer.addClass('open');
+	    }
 
-        /*var iframe = document.createElement( "iframe" );
+	    if (currentPage.postType !== "courses") {
+	    	favoriteButton = $(this).
+			    parent().
+			    children('.button_wrap').
+			    html();
+	    } else {
+		    favoriteButton = $(this).
+			    parent().
+			    prev('.button_wrap').
+			    html();
+	    }
 
-        //iframe.setAttribute( "id", "ssembed" );
-        iframe.setAttribute( "frameborder", "0" );
-        iframe.setAttribute( "allowfullscreen", "" );
-        iframe.setAttribute( "src", videoSrc);*/
 
         if ($(this).parent().parent().children('.video_files').length) {
 
@@ -885,7 +884,9 @@ jQuery(document).ready(function($) {
             '</div>' +
             '</div>';
 
-        $(html).hide().appendTo(videoPlayer).slideDown(2000);
+        $(html).hide().appendTo(videoPlayer).slideDown(1000, function(){
+	        htmlBody.animate({scrollTop: $(hash).offset().top - $('#global_header').height()}, 500);
+        });
 
         $('.replace_video').bind("click", function (e) {
             e.preventDefault();
@@ -937,5 +938,4 @@ jQuery(document).ready(function($) {
             }, 800);
         })
     }
-
 });

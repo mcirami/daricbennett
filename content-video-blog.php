@@ -44,13 +44,19 @@
 
 	    <?php else :
 
-			    $attachment_id = get_field('og_image');
-			    $size = "large";
-			    $ogImage = wp_get_attachment_image_src( $attachment_id, $size );
-	    ?>
-			    <a href="<?php the_permalink(); ?>">
-				    <img class="og_img" src="<?php echo $ogImage[0];?>" />
-			    </a>
+		        if (get_field('og_image')) {
+				    $attachment_id = get_field('og_image');
+				    $size = "large";
+				    $ogImage = wp_get_attachment_image_src( $attachment_id, $size );
+		    ?>
+				    <a href="<?php the_permalink(); ?>">
+					    <img class="og_img" src="<?php echo $ogImage[0];?>" />
+				    </a>
+		        <?php } else { ?>
+				        <a href="<?php the_permalink(); ?>">
+			                <img class="default" src="<?php echo bloginfo('template_url'); ?>/images/lessons-screenshot.jpg" />
+			            </a>
+		        <?php } ?>
 
 	    <?php endif; ?>
 
@@ -73,15 +79,18 @@
 
 	    <?php
             $post_id = get_the_ID();
-            $commentCount = wp_count_comments( $post_id ); ?>
-        <h4><?php if ($postType == "videos") { echo "Thread Replies: "; } else { echo  "Episode Inquiries: "; } ?>
+            $commentCount = wp_count_comments( $post_id );
+	    if($postType != "courses") :
+            ?>
+	        <h4><?php  if ($postType == "videos") { echo "Thread Replies: "; } else { echo  "Episode Inquiries: "; } ?>
 
-	                <?php echo $commentCount->total_comments; ?>
-        </h4>
+		                <?php echo $commentCount->total_comments; ?>
+	        </h4>
 
-        <p><?php the_field('description'); ?></p>
-        <div class="button_wrap">
-            <a class="button red" href="<?php the_permalink(); ?>"><?php if ($postType == "videos") { echo "Open Thread"; } else {  the_field('button_text'); } ?></a>
+	        <p><?php the_field('description'); ?></p>
+	    <?php endif; ?>
+	    <div class="button_wrap">
+            <a class="button red" href="<?php the_permalink(); ?>"><?php if ($postType == "videos") { echo "Open Thread"; } elseif ($postType == "courses"){ echo "Open Course"; } else {  the_field('button_text'); } ?></a>
         </div>
     </div>
 

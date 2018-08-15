@@ -3,23 +3,17 @@
  * @package boiler
  */
 ?>
+	<?php if (!is_user_logged_in()) { ?>
+		<header>
+			 <h2> <?php the_title(); ?></h2>
+		</header>
+	<?php } ?>
 
-	<header>
-		<h2><?php the_title(); ?></h2>
-<!--
-		<div class="entry-meta">
-			<?php //boiler_posted_on(); ?>
-		</div>
--->
-	</header>
-
-		<?php //the_content(); ?>
-
-        <div class="social_buttons full_width">
-            <a class="instagram" target="_blank" href="https://www.instagram.com/daric_bennett"><span class="icon"><span class="text">Follow On Instagram</span></span></a>
-            <a class="facebook" target="_blank" href="https://www.facebook.com/daricbennettlessons"><span class="icon"><span class="text">Like On Facebook</span></span></a>
-            <a class="youtube" target="_blank" href="https://www.youtube.com/c/DaricBennett"><span class="icon"><span class="text">Subscribe on You Tube</span></span></a>
-        </div>
+    <div class="social_buttons full_width">
+        <a class="instagram" target="_blank" href="https://www.instagram.com/daric_bennett"><span class="icon"><span class="text">Follow On Instagram</span></span></a>
+        <a class="facebook" target="_blank" href="https://www.facebook.com/daricbennettlessons"><span class="icon"><span class="text">Like On Facebook</span></span></a>
+        <a class="youtube" target="_blank" href="https://www.youtube.com/c/DaricBennett"><span class="icon"><span class="text">Subscribe on You Tube</span></span></a>
+    </div>
 		
 		<div class="videos full_width">
             <?php if(pmpro_hasMembershipLevel()) { echo do_shortcode('[favorite_button]'); }?>
