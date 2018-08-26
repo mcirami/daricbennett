@@ -63,18 +63,6 @@ if ($posts) : ?>
 
 					<?php endif; ?>
 
-					<?php
-					$addFile = get_field('add_file');
-
-					if (have_rows('files')) : ?>
-
-						<?php while (have_rows('files')) : the_row();?>
-
-							<a class="video_files" href="#" data-file="<?php the_sub_field('file'); ?>" data-text="<?php the_sub_field('file_text'); ?>"></a>
-
-						<?php endwhile; ?>
-
-					<?php endif; ?>
 					<div class="vid_image_wrap">
 
 
@@ -123,7 +111,18 @@ if ($posts) : ?>
 				</div><!-- column -->
 
 				<div class="column">
+                    <?php
+                    $addFile = get_field('add_file');
 
+                    if (have_rows('files')) : ?>
+
+                        <?php while (have_rows('files')) : the_row();?>
+
+                            <a class="video_files" href="#" data-file="<?php the_sub_field('file'); ?>" data-text="<?php the_sub_field('file_text'); ?>"></a>
+
+                        <?php endwhile; ?>
+
+                    <?php endif; ?>
 					<div class="lesson_content full_width">
 						<h1><?php the_title(); ?></h1>
 					</div>

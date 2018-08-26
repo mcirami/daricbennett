@@ -847,10 +847,10 @@ jQuery(document).ready(function($) {
 			    html();
 	    }
 
-
         if ($(this).parent().parent().children('.video_files').length) {
 
             var files = $(this).parent().parent().children('.video_files');
+
             var fileElements = "";
 
             for (var i = 0; i < files.length; i++) {

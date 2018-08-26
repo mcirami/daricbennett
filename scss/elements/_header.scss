@@ -729,7 +729,7 @@ ul.member_menu {
 						
 						&:hover {
 							color: $black;
-							
+
 							@include media($mobile){
 								color: $white;
 							}
