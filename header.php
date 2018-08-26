@@ -115,7 +115,7 @@ if (isset($_GET['clickid'])) {
     <meta property="fb:app_id" content="476725656008860" />
 
     <?php wp_head(); ?>
-	<script src="http://localhost:81/socket.io/socket.io.js"></script>
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>-->
 </head>
 
 <?php 

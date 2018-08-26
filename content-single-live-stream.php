@@ -92,17 +92,21 @@
 		    </div>
 	    </div>-->
 
-	    <ul class="chatbox" id="chatbox">
+	   <!-- <ul class="chatbox" id="chatbox">
 		    <?php
-		    if(get_current_user_id()=="0"){
+/*		    if(get_current_user_id()=="0"){
 			    echo "<h2><center>Login to join chat room</center></h2>";
 		    }
-		    ?>
+		    */?>
 	    </ul>
 	    <br/>
 	    <div id="name-group" class="form-group">
 		    <textarea class="form-control msg_box" id="msg_box" placeholder="Type here and check the Title in Tab"></textarea>
 
+	    </div>-->
+
+	    <div class="live_chat">
+		    <iframe src="https://204.48.27.175/chat-example/public/" frameborder="0" allowfullscreen></iframe>
 	    </div>
     </div>
 </div>

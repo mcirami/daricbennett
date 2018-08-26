@@ -793,19 +793,38 @@ jQuery(document).ready(function($) {
         var replaceVideoLink = $(this).data('replace');
         var videoTitle = $(this).data('title');
         var notation = $(this).data('notation');
+        var postID = $(this).data('postid');
 	    var favoriteButton = '';
 	    var videoPlayer = '';
-	    var hash = $(this).attr("href") + "-video";
 	    var htmlBody = $("html, body");
 
 	    if (currentPage.postType !== "courses") {
-		    $("html, body").animate({scrollTop: $('#video_player').offset().top - $('#global_header').height()}, 1000);
+		    htmlBody.animate({scrollTop: $('#video_player').offset().top - $('#global_header').height()}, 1000);
 	    } else {
+		    var hash = $(this).attr("href") + "-video";
 		    videoPlayer = $(this).closest('.row').children('.course_video_player');
 	    }
 
         //var keyboardVideo = $('.keyboard_embed').data('embed');
         var commentContent = $(this).parent().nextAll('.comment_wrap').html();
+	    ///var ajaxURL = protocol + "//" + domain + "/wp-json/wp/v2/posts"; //myAjaxurl.ajaxurl;
+
+	    /*commentContent = $.ajax({
+		    type: "POST",
+		    dataType: "json",
+		    url: ajaxURL,
+		    data: {action: 'get_lesson_comments', id: postID},
+		    success: function (data) {
+			    //alert ("Email Sent");
+			    console.log("Data Got");
+		    },
+		    error: function (xhRequest, errorThrown, resp) {
+			    console.log(errorThrown);
+			    console.log(JSON.stringify(resp));
+		    }
+	    });
+
+	    console.log(commentContent);*/
 
 	    if (currentPage.postType !== "courses") {
 	    	videoPlayer = $('#video_player').empty();
@@ -885,7 +904,12 @@ jQuery(document).ready(function($) {
             '</div>';
 
         $(html).hide().appendTo(videoPlayer).slideDown(1000, function(){
-	        htmlBody.animate({scrollTop: $(hash).offset().top - $('#global_header').height()}, 500);
+        	if (currentPage.postType === "courses") {
+		        htmlBody.animate({
+			        scrollTop: $(hash).offset().top -
+			        $('#global_header').height()
+		        }, 500);
+	        }
         });
 
         $('.replace_video').bind("click", function (e) {
@@ -899,7 +923,6 @@ jQuery(document).ready(function($) {
         submitComment($('.comment_submit .submit'));
         commentCancel();
     });
-
 
     var fullURL = window.location.href;
 

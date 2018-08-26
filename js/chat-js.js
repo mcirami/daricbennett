@@ -1,6 +1,7 @@
 ( function( $ ) {
-	var socket = io();
-	var uid=1;
+
+	var socket = io.();
+	var uid=chat.data;
 	socket.emit('validate',uid);
 
 	$('.msg_box').keypress(function(event){

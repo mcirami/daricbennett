@@ -197,9 +197,11 @@ function boiler_scripts_styles() {
             array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
         );*/
 
-		wp_enqueue_script( 'chat-js', get_template_directory_uri() . '/js/vendor/live-chat/chat-js.js', array( 'jquery' ), '20150330', true );
+		/*wp_enqueue_script( 'require-js', get_template_directory_uri() . '/js/require.js', array( 'jquery' ), '', true );
+		wp_enqueue_script( 'socket-io', 'https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js', array( 'jquery' ), '', true );
+		wp_enqueue_script( 'chat-js', get_template_directory_uri() . '/js/chat-js.js', array( 'jquery' ), '20150330', true );
 		$data = array("id"=>get_current_user_id());
-		wp_localize_script( "chat-js", "blog", $data );
+		wp_localize_script( "chat-js", "chat", $data );*/
 
 	}
 
@@ -1180,3 +1182,14 @@ $wpdb->query(
   PRIMARY KEY (`id`)
 );'
 );
+
+/*function get_lesson_comments() {
+
+	$comments = get_comments(array('post_id' => $_POST['id']));
+	$comments = json_encode($comments);
+
+	return $comments;
+}
+
+add_action('wp_ajax_nopriv_do_ajax', 'get_lesson_comments');
+add_action('wp_ajax_do_ajax', 'get_lesson_comments');*/

@@ -10,6 +10,7 @@
 
     $type = null;
     $videoLink = get_field('member_lesson_link');
+    $id = get_the_ID();
 
     if (strpos($videoLink, "youtube") !== false) {
         $str = explode("embed/", $videoLink);
@@ -99,11 +100,11 @@
 
             <?php if ($type == 'youtube') : ?>
 
-                    <a id="<?php echo $hash; ?>" class="play_video" data-type="<?php echo "youtube";?>" data-src="<?php echo $videoLink; ?>/?rel=0&showinfo=0&autoplay=1" data-title="<?php echo the_title();?>" href="#<?php echo $hash;?>">
+                    <a id="<?php echo $hash; ?>" class="play_video" data-type="<?php echo "youtube";?>" data-src="<?php echo $videoLink; ?>/?rel=0&showinfo=0&autoplay=1" data-title="<?php echo the_title();?>" data-postid="<?php echo $id; ?>" href="#<?php echo $hash;?>">
 
             <?php elseif ($type == 'vimeo') : ?>
 
-                    <a id="<?php echo $hash; ?>" class="play_video" data-type="<?php echo "vimeo";?>" data-src="<?php echo $videoLink; ?>/?autoplay=1" data-title="<?php echo the_title();?>" href="#<?php echo $hash;?>">
+                    <a id="<?php echo $hash; ?>" class="play_video" data-type="<?php echo "vimeo";?>" data-src="<?php echo $videoLink; ?>/?autoplay=1" data-title="<?php echo the_title();?>" data-postid="<?php echo $id; ?>" href="#<?php echo $hash;?>">
 
             <?php elseif ($type == 'soundslice') : ?>
 
@@ -113,6 +114,7 @@
                        data-src="<?php echo $embedCode; ?>"
                        data-title="<?php echo the_title();?>"
                        data-notation="<?php echo $display; ?>"
+                       data-postid="<?php echo $id; ?>"
                        href="#<?php echo $hash;?>">
 
             <?php endif; ?><!-- type -->
