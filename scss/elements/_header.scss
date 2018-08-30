@@ -299,6 +299,29 @@
 						}
 					}
 				}
+
+                &.sub-menu li:hover a{
+                    color: $black;
+                }
+
+                &.sub-menu li:hover .sub-menu li a {
+                    color: $white;
+                }
+
+                &.sub-menu li:hover .sub-menu li a:hover {
+                    color: $black;
+
+                    &:before {
+                        content: '';
+                        background: url('../images/right-arrow.png') no-repeat;
+                        position: absolute;
+                        width: 6px;
+                        height: 14px;
+                        left: 46px;
+                        top: 21px;
+                        background-size: 100%;
+                    }
+                }
 			}
 		}
 	}
@@ -544,6 +567,10 @@ ul.member_menu {
             .sub-menu {
                 left: auto;
                 right: -20px;
+
+                @include media($mobile) {
+                    right: 0;
+                }
             }
 		}
 
@@ -638,8 +665,59 @@ ul.member_menu {
 				width: 100% !important;
 				
 				@include media($mobile){
-					padding: 0 0 0 36px !important;
+					padding: 0 0 0 10px !important;
 				}
+
+				&:first-child {
+					@include media($mobile){
+						border-top: 1px inset #827d7d;
+					}
+				}
+
+				&:last-child {
+					@include media($mobile){
+						border-bottom: none;
+
+					}
+				}
+
+				&:after {
+					content:'' !important;
+				}
+
+				&:hover {
+					background: $yellow;
+
+					a {
+						color: $black;
+
+						&:before {
+							background: url('../images/right-arrow.png') no-repeat;
+							background-size: 100%;
+						}
+					}
+				}
+
+                &.menu-item-has-children:hover {
+
+                    a {
+                        color: $white;
+
+                        &:before {
+                            background: url('../images/right-arrow-gray.png') no-repeat;
+                            background-size: 100%;
+                        }
+                    }
+
+                    > a {
+                        color: $black;
+
+                        &:before {
+                            background: url('../images/right-arrow.png') no-repeat;
+                            background-size: 100%;
+                        }
+                    }
+                }
 
                 a {
                     display: block;
@@ -650,82 +728,39 @@ ul.member_menu {
                         content:'';
                         background: url('../images/right-arrow-gray.png') no-repeat;
                         position: absolute;
-                        width: 10px;
-                        height: 17px;
+                        width: 6px;
+                        height: 14px;
                         left: 20px;
                         top: 21px;
-                        background-size: 70%;
+                        background-size: 100%;
 
                         @include media($mobile){
-                            background-size: 50%;
+                            background-size: 100%;
                             top: 23px;
                         }
                     }
 
                     &:hover {
-                        color: $black !important;
-
-                        @include media($mobile){
-                            color: $white !important;
-                        }
+                        color: $black;
 
                         &:before {
                             content:'';
                             background: url('../images/right-arrow.png') no-repeat;
                             position: absolute;
-                            width: 10px;
-                            height: 17px;
+                            width: 6px;
+                            height: 14px;
                             left: 20px;
                             top: 21px;
-                            background-size: 70%;
-
-                            @include media($mobile){
-                                background: url('../images/right-arrow-gray.png') no-repeat;
-                                background-size: 50%;
-                                top: 23px;
-                            }
+                            background-size: 100%;
                         }
                     }
 
                 }
 				
-				&:first-child {
-					@include media($mobile){
-						border-top: 1px inset #827d7d;
-					}
-				}
-				
-				&:last-child {
-					@include media($mobile){
-						border-bottom: none;
-						
-					}
-				}
-				
-				&:after {
-					content:'' !important;
-				}
-				
-				&:hover {
-					background: $yellow;
-					
-					@include media($mobile){
-						background: none;
-					}
-
-                    a {
-                        color: $black;
-
-                        &:before {
-                            background: url('../images/right-arrow.png') no-repeat;
-                            background-size: 70%;
-                        }
-                    }
-				}
-				
 				&.current_page_item {
 					a {
-						color: $yellow;
+						background: $yellow;
+                        color: $black;
 						
 						&:hover {
 							color: $black;
@@ -743,12 +778,26 @@ ul.member_menu {
                     top: 54px;
                     white-space: initial;
 
+                    @include media($mobile) {
+                        top:0;
+                        margin-top: 0;
+                    }
+
                     a {
                         font-size: 16px;
                         padding-left: 62px;
 
                         &:before {
-                            left: 48px;
+                            left: 38px;
+                        }
+
+                        &:hover {
+                            color: $black;
+
+                            &:before {
+                                background: url('../images/right-arrow.png') no-repeat;
+                                background-size: 100%;
+                            }
                         }
                     }
                 }

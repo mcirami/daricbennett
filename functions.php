@@ -632,6 +632,7 @@ add_filter('comment_form_defaults', 'my_comment_form_edits', 10, 2);
 function send_comment_notify_email() {
 
     $url = site_url();
+	$replyURL = $_POST['url'];
 
     if (strpos($url,'test') !== false || strpos($url,'staging') !== false ) {
         $mailTo = "matteo@mscwebservices.net, mcirami@gmail.com";
@@ -643,7 +644,7 @@ function send_comment_notify_email() {
 
     $to = $mailTo;
     $subject = "You have a new comment";
-    $message = "Go to the link below to Approve, Discard or Reply to comment: <br><br>" . $editLink;
+    $message = "Go to the link below to Approve or Discard comment: <br><br>" . $editLink . "<br><br> Reply to lesson comment here: <br><br>" . $replyURL;
     $headers = "From: admin@daricbennett.com";
 
     if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
@@ -1171,7 +1172,7 @@ function my_user_photo_menu_edit( $items ) {
 
 	return $items;
 }
-
+/*
 $wpdb->query(
 		'CREATE TABLE IF NOT EXISTS `a02_chat_message` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1181,7 +1182,7 @@ $wpdb->query(
   `time` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 );'
-);
+);*/
 
 /*function get_lesson_comments() {
 

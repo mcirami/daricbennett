@@ -60,8 +60,6 @@ if (isset($_GET['clickid'])) {
 
     <?php
 
-        //$ogImage = get_field('og_image');
-
         $attachment_id = get_field('og_image');
         $size = "video-thumb";
         $ogImage = wp_get_attachment_image_src( $attachment_id, $size );
@@ -77,13 +75,7 @@ if (isset($_GET['clickid'])) {
 
                 $str = get_field('free_lesson_link');
 
-                //if( ( $video_thumbnail = get_video_thumbnail() ) != null ) :
     ?>
-                    <!--<meta property="og:image" content="<?php /*echo $video_thumbnail;*/?>" />
-                    <meta property="og:image:secure_url" content="<?php /*echo $video_thumbnail;*/?>" />
-                    <meta property="og:image:type" content="image/jpeg" />
-                    <meta property="og:image:width" content="1200" />
-                    <meta property="og:image:height" content="630" />-->
 
                 <?php if (strpos($str, "youtube") !== false) :
 
@@ -96,7 +88,7 @@ if (isset($_GET['clickid'])) {
                     <meta property="og:image:width" content="1200" />
                     <meta property="og:image:height" content="630" />
 
-                <?php endif; //$video_thumbnail or youtube?>
+                <?php endif; //if youtube?>
 
             <?php endif; //is_single?>
 
@@ -115,13 +107,12 @@ if (isset($_GET['clickid'])) {
     <meta property="fb:app_id" content="476725656008860" />
 
     <?php wp_head(); ?>
-	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>-->
+
 </head>
 
-<?php 
-	$url = site_url(); 
-	$current_user = wp_get_current_user();
-	$username = $current_user->user_login;
+<?php
+$current_user = wp_get_current_user();
+$username = $current_user->user_login;
 ?>
 
 <body <?php body_class(); ?>>
@@ -161,29 +152,8 @@ if (isset($_GET['clickid'])) {
 	</div>-->
 
 	<?php if (is_user_logged_in()) : ?>
-		<?php wp_nav_menu( array( 'theme_location' => 'members', 'container' => false, 'menu_class' => 'member_menu' ) ); // remember to assign a menu in the admin to remove the container div ?>
-			<!--<ul class="member_menu">
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187">
-                    <a href="<?php /*$url; */?>/lessons/">Lessons</a>
-				</li>
-				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent-item menu-item-188"><a>Community</a>
-					<ul class="sub-menu" style="display: none;">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-219"><a href="<?php /*$url; */?>/forums/">Bass Nation Forums</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-395"><a href="<?php /*$url; */?>/membership-account/directory/">Bass Nation Members</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-228"><a href="<?php /*$url; */?>/passions/">Passions</a></li>
-					</ul>
-				</li>
-				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent-item menu-item-189"><a>Account</a>
-					<ul class="sub-menu" style="display: none;">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-230"><a href="<?php /*$url; */?>/your-profile/">My Profile</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="<?php /*$url; */?>/membership-account/">My Account</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="<?php /*do_shortcode('[bbpm-messages-link]'); */?>">My Inbox</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="<?php /*$url; */?>/contact-us/">Contact Us</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196"><a href="<?php /*echo wp_logout_url(); */?>">Log Out</a></li>
-					</ul>
-				</li>
-			</ul>-->
 
+		<?php wp_nav_menu( array( 'theme_location' => 'members', 'container' => false, 'menu_class' => 'member_menu' ) ); // remember to assign a menu in the admin to remove the container div ?>
 		
 	<?php else : ?>
 		<nav role="navigation">
@@ -256,7 +226,7 @@ if (isset($_GET['clickid'])) {
 						    endwhile;
 						
 						else : ?>
-						
+
 							// no layouts found
 						<?php endif; ?>
 						
@@ -281,31 +251,9 @@ if (isset($_GET['clickid'])) {
 
 							<?php if (is_user_logged_in()): ?>
 							
-									<?php wp_nav_menu( array( 'theme_location' => 'members', 'container' => false, 'menu_class' => 'member_menu' ) ); // remember to assign a menu in the admin to remove the container div ?>
+									<?php wp_nav_menu( array( 'theme_location' => 'members', 'container' => false, 'menu_class' => 'member_menu' ) ); // remember to assign a menu in the admin to remove the container div ?
 									
-									<!--<ul class="member_menu">
-										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187">
-                                            <a href="<?php /*$url; */?>/lessons/">Lessons</a>
-										</li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent-item menu-item-188"><a>Community</a>
-											<ul class="sub-menu" style="display: none;">
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-219"><a href="<?php /*$url; */?>/forums/">Bass Nation Forums</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-395"><a href="<?php /*$url; */?>/membership-account/directory/">Bass Nation Members</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-228"><a href="<?php /*$url; */?>/passions/">Passions</a></li>
-											</ul>
-										</li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent-item menu-item-189"><a>Account</a>
-											<ul class="sub-menu" style="display: none;">
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-230"><a href="<?php /*$url; */?>/your-profile/">My Profile</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="<?php /*$url; */?>/membership-account/">My Account</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="<?php /*echo do_shortcode('[bbpm-messages-link]'); */?>">My Inbox</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="<?php /*$url; */?>/contact-us/">Contact Us</a></li>
-												<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196"><a href="<?php /*echo wp_logout_url(); */?>">Log Out</a></li>
-											</ul>
-										</li>
-									</ul>-->
-									
-							<?php else : ?>
+							else : ?>
 							
 								<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'header_menu' ) ); // remember to assign a menu in the admin to remove the container div ?>
 								
@@ -337,14 +285,4 @@ if (isset($_GET['clickid'])) {
 
 			</div>
 		</div>
-
-        <?php //echo the_field('email_form_shortcode', 'options'); ?>
-		
-		<!--End mc_embed_signup-->
-		<!-- 
-			<iframe src="<?php //echo bloginfo('template_url'); ?>/signup-form.html" frameborder="0" width="654" height="200">
-			<a href="http://link-to-form-on-mailchimp-site" target="_blank">Anchor text saying "click here to sign up" or something like that for people whose browsers can't read iframes</a>
-		</iframe>
-			
-		-->
 	</div>

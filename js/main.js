@@ -605,6 +605,8 @@ jQuery(document).ready(function($) {
     function submitComment(commentSubmitButton) {
         commentSubmitButton.click(function (e) {
 
+	        commentReplyURL = window.location.href;
+
             if((currentPage.postType === "videos" || currentPage.postType === "live-streams") && replyToUser == null) {
                 console.log('videos');
             } else {
@@ -671,7 +673,7 @@ jQuery(document).ready(function($) {
                                 type: "POST",
                                 dataType: "json",
                                 url: ajaxURL,
-                                data: {action: 'send_comment_notify_email'},
+                                data: {action: 'send_comment_notify_email', url: commentReplyURL},
                                 success: function (data) {
                                     //alert ("Email Sent");
                                     console.log("Comment Posted, Email Sent");
