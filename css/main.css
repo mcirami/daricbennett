@@ -2500,12 +2500,15 @@ ul.member_menu > li {
             background-size: 100%; }
       ul.member_menu > li ul.sub-menu li.current_page_item a {
         background: #ddb72e;
-        color: #131313; }
+        color: #131313 !important; }
         ul.member_menu > li ul.sub-menu li.current_page_item a:hover {
-          color: #131313; }
+          color: #131313 !important; }
           @media screen and (max-width: 768px) {
             ul.member_menu > li ul.sub-menu li.current_page_item a:hover {
               color: #fff; } }
+        ul.member_menu > li ul.sub-menu li.current_page_item a:before {
+          background: url("../images/right-arrow.png") no-repeat;
+          background-size: 100%; }
       ul.member_menu > li ul.sub-menu li .sub-menu {
         width: 100%;
         left: 0;

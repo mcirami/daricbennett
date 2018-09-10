@@ -760,15 +760,20 @@ ul.member_menu {
 				&.current_page_item {
 					a {
 						background: $yellow;
-                        color: $black;
+                        color: $black !important;
 						
 						&:hover {
-							color: $black;
+							color: $black !important;
 
 							@include media($mobile){
 								color: $white;
 							}
 						}
+
+                        &:before {
+                            background: url('../images/right-arrow.png') no-repeat;
+                            background-size: 100%;
+                        }
 					}
 				}
 
