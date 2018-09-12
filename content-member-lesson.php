@@ -172,10 +172,10 @@
                 <p>Date Added <?php echo get_the_date('n/j/Y'); ?></p>
             </div>
 
-            <div class="comment_wrap">
-                <?php if ((is_single() || is_page()) && is_user_logged_in()) { comments_template(); }?>
+            <!--<div class="comment_wrap">
+                <?php /*if ((is_single() || is_page()) && is_user_logged_in()) { comments_template(); }*/?>
             </div>
-
+-->
 
 
         </div><!-- column -->

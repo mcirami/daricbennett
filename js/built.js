@@ -627,6 +627,13 @@ var loadReload = function() {
 
             $(this).parent().next('.comment_reply_wrap').addClass('open').slideDown(600);
 
+            if(currentPage.pageName === "Lessons") {
+
+
+
+                $('<p></p>').insertBefore($(this).parent().next('.comment_reply_wrap').children('.cancel_comment'));
+            }
+
         });
     }
 
@@ -790,6 +797,10 @@ var loadReload = function() {
                 commentReplyURL = null;
                 replyToUser = null;
                 commentSubmitButton.next('.loading_gif').html('');
+
+                if(currentPage.pageName === "Lessons") {
+                    $(this).parent().parent().children('p').remove();
+                }
             }
 
         });
@@ -847,25 +858,30 @@ var loadReload = function() {
 	    }
 
         //var keyboardVideo = $('.keyboard_embed').data('embed');
-        var commentContent = $(this).parent().nextAll('.comment_wrap').html();
-	    ///var ajaxURL = protocol + "//" + domain + "/wp-json/wp/v2/posts"; //myAjaxurl.ajaxurl;
+        //var commentContent = $(this).parent().nextAll('.comment_wrap').html();
+	    //var ajaxURL = protocol + "//" + domain + "/wp-json/wp/v2/posts"; //myAjaxurl.ajaxurl;
+        var ajaxURL = myAjaxurl.ajaxurl;
+        //var commentContent = '';
 
-	    /*commentContent = $.ajax({
-		    type: "POST",
-		    dataType: "json",
-		    url: ajaxURL,
+        var commentContent = $.ajax({
+		    type: "post",
+            dataType: 'html',
 		    data: {action: 'get_lesson_comments', id: postID},
-		    success: function (data) {
+            url: ajaxURL,
+            global: false,
+            async:false,
+		    success: function (response) {
 			    //alert ("Email Sent");
-			    console.log("Data Got");
+			    //console.log(response);
+                return response;
 		    },
 		    error: function (xhRequest, errorThrown, resp) {
 			    console.log(errorThrown);
 			    console.log(JSON.stringify(resp));
 		    }
-	    });
 
-	    console.log(commentContent);*/
+	    }).responseText;
+
 
 	    if (currentPage.postType !== "courses") {
 	    	videoPlayer = $('#video_player').empty();
@@ -940,7 +956,11 @@ var loadReload = function() {
             '</div>' +
             '</div>' +
             '<div class="video_content_wrap">' +
-            commentContent +
+            '<div id="comments" class="comments-area">' +
+            '<ol class="comment-list">' +
+                commentContent +
+            '</ol>' +
+            '</div>' +
             '</div>' +
             '</div>';
 

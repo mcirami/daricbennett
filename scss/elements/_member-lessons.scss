@@ -192,7 +192,15 @@
                 position: absolute !important;
                 right: 0;
                 bottom: 0;
+
+                @include media($mobile) {
+                    position: relative !important;
+                    right: auto;
+                    bottom: auto;
+                    width: 100%;
+                }
             }
+
 
             a {
                 display: block;
@@ -650,6 +658,22 @@
             }
         }
     }
+
+    /*&.member_lesson_comments {
+
+        .comment-author {
+            @include span-columns(3);
+            float: left;
+            display: block;
+            background: 0 0;
+            margin-right: 5px;
+            max-width: unset;
+        }
+
+        .comment-body {
+            @include span-columns(12);
+        }
+    }*/
 }
 
 .comment_reply_wrap {
@@ -727,7 +751,6 @@
     }
 }
 
-
 .keyboard_popup {
     display: none;
     width: 100%;
@@ -798,6 +821,13 @@
             display: block;
         }
     }
+
+    /*&.member_lesson_comments {
+        .comment-meta {
+            @include span-columns(9);
+            max-width: unset;
+        }
+    }*/
 }
 
 #respond #comment-form-identity {

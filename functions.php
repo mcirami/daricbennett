@@ -1184,13 +1184,20 @@ $wpdb->query(
 );'
 );*/
 
-/*function get_lesson_comments() {
+function get_lesson_comments() {
 
-	$comments = get_comments(array('post_id' => $_POST['id']));
-	$comments = json_encode($comments);
+    $postID = $_POST['id'];
+	$comments = get_comments(array('post_id' => $postID, 'status' => 'approve'));
+	wp_list_comments(array(
+            'avatar_size' => 100,
+            'style'       => 'ol',
+            'short_ping'  => true,
+            'callback' => 'boiler_comment' ), $comments);
 
-	return $comments;
+	 comment_form( '', $postID );
+
+	//echo $comments . comment_form( '', $postID );
 }
 
-add_action('wp_ajax_nopriv_do_ajax', 'get_lesson_comments');
-add_action('wp_ajax_do_ajax', 'get_lesson_comments');*/
+add_action('wp_ajax_nopriv_get_lesson_comments', 'get_lesson_comments');
+add_action('wp_ajax_get_lesson_comments', 'get_lesson_comments');

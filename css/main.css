@@ -4599,6 +4599,12 @@ ul.member_menu > li {
     position: absolute !important;
     right: 0;
     bottom: 0; }
+    @media screen and (max-width: 768px) {
+      .lessons_page .video_list .column .vid_image_wrap .simplefavorite-button {
+        position: relative !important;
+        right: auto;
+        bottom: auto;
+        width: 100%; } }
   .lessons_page .video_list .column a {
     display: block; }
   .lessons_page .video_list .column .comment_wrap {
@@ -4786,7 +4792,22 @@ ul.member_menu > li {
   margin-right: 2.3576515979%;
   width: 100%;
   padding: 30px 0;
-  text-align: left; }
+  text-align: left;
+    /*&.member_lesson_comments {
+
+        .comment-author {
+            @include span-columns(3);
+            float: left;
+            display: block;
+            background: 0 0;
+            margin-right: 5px;
+            max-width: unset;
+        }
+
+        .comment-body {
+            @include span-columns(12);
+        }
+    }*/ }
   #comments:last-child {
     margin-right: 0; }
   #comments .comments-title {
@@ -5106,7 +5127,13 @@ ul.member_menu > li {
       width: 100%; }
 
 .video_content_wrap #comments {
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  /*&.member_lesson_comments {
+      .comment-meta {
+          @include span-columns(9);
+          max-width: unset;
+      }
+  }*/ }
   .video_content_wrap #comments .comment-content {
     width: 100%; }
     .video_content_wrap #comments .comment-content .comment_heading {

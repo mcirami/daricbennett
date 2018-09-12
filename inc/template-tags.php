@@ -115,7 +115,7 @@ function boiler_comment( $comment, $args, $depth ) {
                         <?php comment_reply_link( array_merge( $args, array( 'add_below' => 'div-comment', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
                     </div>
 
-                    <div class="comment_reply_wrap">
+                    <div class="comment_reply_wrap bitch">
                         <?php
                         $comments_args = array ('title_reply' => __( 'Leave A Reply', 'textdomain' ));
 
