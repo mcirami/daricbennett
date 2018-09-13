@@ -829,13 +829,6 @@ jQuery(document).ready(function($) {
 
     $('.play_video').on('click', function () {
 
-        var videoSrc = $(this).data('src');
-        var videoType = $(this).data('type');
-        var replaceVideoLink = $(this).data('replace');
-        var videoTitle = $(this).data('title');
-        var notation = $(this).data('notation');
-        var postID = $(this).data('postid');
-	    var favoriteButton = '';
 	    var videoPlayer = '';
 	    var htmlBody = $("html, body");
 
@@ -846,13 +839,125 @@ jQuery(document).ready(function($) {
 		    videoPlayer = $(this).closest('.row').children('.course_video_player');
 	    }
 
-        //var keyboardVideo = $('.keyboard_embed').data('embed');
-        //var commentContent = $(this).parent().nextAll('.comment_wrap').html();
-	    //var ajaxURL = protocol + "//" + domain + "/wp-json/wp/v2/posts"; //myAjaxurl.ajaxurl;
-        var ajaxURL = myAjaxurl.ajaxurl;
-        //var commentContent = '';
+	    var videoSrc = $(this).data('src');
+	    var videoType = $(this).data('type');
+	    var replaceVideoLink = $(this).data('replace');
+	    var videoTitle = $(this).data('title');
+	    var notation = $(this).data('notation');
+	    var postID = $(this).data('postid');
+	    var favoriteButton = '';
+	    var ajaxURL = myAjaxurl.ajaxurl;
 
-        var commentContent = $.ajax({
+	    if (currentPage.postType !== "courses") {
+		    videoPlayer = $('#video_player').empty();
+	    } else {
+		    $('.course_video_player').empty().removeClass('open');
+		    $('.lessons_page.courses .row').removeClass('open_player');
+		    $(this).closest('.row').addClass('open_player');
+		    videoPlayer.addClass('open');
+	    }
+
+	    if (currentPage.postType !== "courses") {
+		    favoriteButton = $(this).
+			    parent().
+			    children('.button_wrap').
+			    html();
+	    } else {
+		    favoriteButton = $(this).
+			    parent().
+			    prev('.button_wrap').
+			    html();
+	    }
+
+	    if ($(this).parent().parent().children('.video_files').length) {
+
+		    var files = $(this).parent().parent().children('.video_files');
+
+		    var fileElements = "";
+
+		    for (var i = 0; i < files.length; i++) {
+			    fileElements += '<a target="_blank" download href="' + files[i].dataset.file + '">' + files[i].dataset.text + '</a>';
+		    }
+	    } else {
+		    fileElements = "";
+	    }
+
+
+        commentsAjaxCall(ajaxURL, postID).then(function(response){
+
+		    var commentContent = response;
+
+	        if (videoType === "soundslice_video") {
+
+		        var replaceVideo =
+			        '<p class="replace_link">Video trouble? <a class="replace_video" href="#" data-replace="' + replaceVideoLink + '">Use this LINK!</a></p>';
+
+		        /*if (keyboardVideo !== "undefined") {
+					var keyboardLink =
+						'<div class="links_wrap"><a class="keyboard_link" href="#" data-embed="' + keyboardVideo + '">Want to watch this bass line played on a keyboard?</a></div>';
+				} else {
+					keyboardLink = "";
+				}*/
+
+	        } else {
+		        replaceVideo = "";
+		        //keyboardLink = "";
+	        }
+
+	        var html = '<div class="full_width lesson_title">' +
+		        '<h3>' + videoTitle + '</h3>' +
+		        '</div>' +
+		        '<div class="content_wrap full_width">' +
+		        '<div class="video_iframe_wrap">' + favoriteButton + replaceVideo;
+
+	        if (fileElements) {
+		        html +=  '<div class="links_wrap">' +
+			        fileElements +
+			        '</div>';
+	        }
+
+	        if (notation === 'yes') {
+		        html += '<div class="video_wrapper video_notation">';
+	        } else {
+		        html += '<div class="video_wrapper">';
+	        }
+
+	        html += '<iframe frameborder="0" allowfullscreen src="' + videoSrc + '"></iframe>' +
+		        '</div>' +
+		        '</div>' +
+		        '<div class="video_content_wrap">' +
+		        '<div id="comments" class="comments-area">' +
+		        '<ol class="comment-list">' +
+		        commentContent +
+		        '</ol>' +
+		        '</div>' +
+		        '</div>' +
+		        '</div>';
+
+	        $(html).hide().appendTo(videoPlayer).slideDown(1000, function(){
+		        if (currentPage.postType === "courses") {
+			        htmlBody.animate({
+				        scrollTop: $(hash).offset().top -
+				        $('#global_header').height()
+			        }, 500);
+		        }
+	        });
+
+	        $('.replace_video').bind("click", function (e) {
+		        e.preventDefault();
+		        $('.video_wrapper').removeClass('video_notation');
+		        var vimeoLink = $(this).data('replace');
+		        $(this).parent().nextAll('.video_wrapper').find('iframe').attr('src', vimeoLink);
+	        });
+
+	        replyToComment($('a.comment-reply-link'));
+	        submitComment($('.comment_submit .submit'));
+	        commentCancel();
+	    }, function(reason){
+	        console.log("error", reason);
+	    });
+
+        /*var commentContent = $.ajax({
 		    type: "post",
             dataType: 'html',
 		    data: {action: 'get_lesson_comments', id: postID},
@@ -869,110 +974,21 @@ jQuery(document).ready(function($) {
 			    console.log(JSON.stringify(resp));
 		    }
 
-	    }).responseText;
+	    }).responseText;*/
 
 
-	    if (currentPage.postType !== "courses") {
-	    	videoPlayer = $('#video_player').empty();
-	    } else {
-		    $('.course_video_player').empty().removeClass('open');
-		    $('.lessons_page.courses .row').removeClass('open_player');
-		    $(this).closest('.row').addClass('open_player');
-		    videoPlayer.addClass('open');
-	    }
 
-	    if (currentPage.postType !== "courses") {
-	    	favoriteButton = $(this).
-			    parent().
-			    children('.button_wrap').
-			    html();
-	    } else {
-		    favoriteButton = $(this).
-			    parent().
-			    prev('.button_wrap').
-			    html();
-	    }
-
-        if ($(this).parent().parent().children('.video_files').length) {
-
-            var files = $(this).parent().parent().children('.video_files');
-
-            var fileElements = "";
-
-            for (var i = 0; i < files.length; i++) {
-                fileElements += '<a target="_blank" download href="' + files[i].dataset.file + '">' + files[i].dataset.text + '</a>';
-            }
-        } else {
-            fileElements = "";
-        }
-
-        if (videoType === "soundslice_video") {
-
-            var replaceVideo =
-                '<p class="replace_link">Video trouble? <a class="replace_video" href="#" data-replace="' + replaceVideoLink + '">Use this LINK!</a></p>';
-
-            /*if (keyboardVideo !== "undefined") {
-                var keyboardLink =
-                    '<div class="links_wrap"><a class="keyboard_link" href="#" data-embed="' + keyboardVideo + '">Want to watch this bass line played on a keyboard?</a></div>';
-            } else {
-                keyboardLink = "";
-            }*/
-
-        } else {
-            replaceVideo = "";
-            //keyboardLink = "";
-        }
-
-        var html = '<div class="full_width lesson_title">' +
-            '<h3>' + videoTitle + '</h3>' +
-            '</div>' +
-            '<div class="content_wrap full_width">' +
-            '<div class="video_iframe_wrap">' + favoriteButton + replaceVideo;
-
-        if (fileElements) {
-            html +=  '<div class="links_wrap">' +
-                fileElements +
-                '</div>';
-        }
-
-        if (notation === 'yes') {
-            html += '<div class="video_wrapper video_notation">';
-        } else {
-            html += '<div class="video_wrapper">';
-        }
-
-        html += '<iframe frameborder="0" allowfullscreen src="' + videoSrc + '"></iframe>' +
-            '</div>' +
-            '</div>' +
-            '<div class="video_content_wrap">' +
-            '<div id="comments" class="comments-area">' +
-            '<ol class="comment-list">' +
-                commentContent +
-            '</ol>' +
-            '</div>' +
-            '</div>' +
-            '</div>';
-
-        $(html).hide().appendTo(videoPlayer).slideDown(1000, function(){
-        	if (currentPage.postType === "courses") {
-		        htmlBody.animate({
-			        scrollTop: $(hash).offset().top -
-			        $('#global_header').height()
-		        }, 500);
-	        }
-        });
-
-        $('.replace_video').bind("click", function (e) {
-            e.preventDefault();
-            $('.video_wrapper').removeClass('video_notation');
-            var vimeoLink = $(this).data('replace');
-            $(this).parent().nextAll('.video_wrapper').find('iframe').attr('src', vimeoLink);
-        });
-
-        replyToComment($('a.comment-reply-link'));
-        submitComment($('.comment_submit .submit'));
-        commentCancel();
     });
+
+    function commentsAjaxCall(url, postid) {
+
+    	return $.ajax({
+		    method: 'post',
+		    dataType: 'html',
+		    data: {action: 'get_lesson_comments', id: postid},
+		    url: url
+	    })
+    }
 
     var fullURL = window.location.href;
 
