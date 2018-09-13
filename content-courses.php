@@ -4,7 +4,7 @@
  */
 
 $posts = get_field('lesson_links');
-
+$id = get_the_ID();
 
 if ($posts) : ?>
 
@@ -132,11 +132,11 @@ if ($posts) : ?>
 					<div class="button_wrap">
 						<?php if ($type == 'youtube') : ?>
 
-						<a id="<?php echo $hash; ?>" class="play_video button red" data-type="<?php echo "youtube";?>" data-src="<?php echo $videoLink; ?>/?rel=0&showinfo=0&autoplay=1" data-title="<?php echo the_title();?>" href="#<?php echo $hash;?>">
+						<a id="<?php echo $hash; ?>" class="play_video button red" data-type="<?php echo "youtube";?>" data-src="<?php echo $videoLink; ?>/?rel=0&showinfo=0&autoplay=1" data-title="<?php echo the_title();?>" data-postid="<?php echo $id; ?>" href="#<?php echo $hash;?>">
 
 							<?php elseif ($type == 'vimeo') : ?>
 
-							<a id="<?php echo $hash; ?>" class="play_video button red" data-type="<?php echo "vimeo";?>" data-src="<?php echo $videoLink; ?>/?autoplay=1" data-title="<?php echo the_title();?>" href="#<?php echo $hash;?>">
+							<a id="<?php echo $hash; ?>" class="play_video button red" data-type="<?php echo "vimeo";?>" data-src="<?php echo $videoLink; ?>/?autoplay=1" data-title="<?php echo the_title();?>" data-postid="<?php echo $id; ?>" href="#<?php echo $hash;?>">
 
 								<?php elseif ($type == 'soundslice') : ?>
 
@@ -146,6 +146,7 @@ if ($posts) : ?>
 								   data-src="<?php echo $embedCode; ?>"
 								   data-title="<?php echo the_title();?>"
 								   data-notation="<?php echo $display; ?>"
+								   data-postid="<?php echo $id; ?>"
 								   href="#<?php echo $hash;?>">
 
 									<?php endif; ?><!-- type -->
@@ -153,9 +154,9 @@ if ($posts) : ?>
 
 									Watch Now</a>
 					</div>
-					<div class="comment_wrap">
-						<?php if ((is_single() || is_page()) && is_user_logged_in()) { comments_template(); }?>
-					</div>
+					<!--<div class="comment_wrap">
+						<?php /*if ((is_single() || is_page()) && is_user_logged_in()) { comments_template(); }*/?>
+					</div>-->
 
 				</div><!-- column -->
 			</div><!-- columns_wrap -->

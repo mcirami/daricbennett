@@ -566,12 +566,15 @@ jQuery(document).ready(function($) {
         replyToComment(commentReply);
     }
 
+	var commentSubmitButton = $('.comment_submit .submit');
+
     function replyToComment(commentReply) {
         commentReply.prop('onclick', null).off('click');
 
         commentReply.click(function (e) {
 
             e.preventDefault();
+            $(this).parent().css('display', 'none');
 
             replyToUser = $(this).attr('aria-label').split("to");
             replyToUser = replyToUser[1].trim();
@@ -588,17 +591,41 @@ jQuery(document).ready(function($) {
 
             $(this).parent().next('.comment_reply_wrap').addClass('open').slideDown(600);
 
-            if(currentPage.pageName === "Lessons") {
+            if(currentPage.pageName === "Lessons" || currentPage.postType === "courses") {
 
+	            var postID = $(this).closest('.video_content_wrap').prev('.video_iframe_wrap').children('button').data('postid');
 
+	            var ajaxURL = myAjaxurl.ajaxurl;
+	            var commentForm = $.ajax({
+		            type: "post",
+		            dataType: 'html',
+		            data: {action: 'get_comment_form', id: postID},
+		            url: ajaxURL,
+		            global: false,
+		            async:false,
+		            success: function (response) {
+			            //alert ("Email Sent");
+			            return response;
+		            },
+		            error: function (xhRequest, errorThrown, resp) {
+			            console.log(errorThrown);
+			            console.log(JSON.stringify(resp));
+		            }
 
-                $('<p></p>').insertBefore($(this).parent().next('.comment_reply_wrap').children('.cancel_comment'));
+	            }).responseText;
+
+                $(commentForm).insertBefore($(this).parent().next('.comment_reply_wrap').children('.cancel_comment'));
+
+	            commentSubmitButton = $( ".comment_submit .submit" );
+
+	            if (commentSubmitButton.length) {
+		            submitComment(commentSubmitButton);
+	            }
+
             }
 
         });
     }
-
-    var commentSubmitButton = $('.comment_submit .submit');
 
     var protocol = window.location.protocol;
     var domain = window.location.hostname;
@@ -614,6 +641,7 @@ jQuery(document).ready(function($) {
 
 	        commentReplyURL = window.location.href;
 
+	        console.log(replyToUser);
             if((currentPage.postType === "videos" || currentPage.postType === "live-streams") && replyToUser == null) {
                 console.log('videos');
             } else {
@@ -758,12 +786,12 @@ jQuery(document).ready(function($) {
                 commentReplyURL = null;
                 replyToUser = null;
                 commentSubmitButton.next('.loading_gif').html('');
+                var link = $(this).closest('.reply').children('.reply_button').css('display', 'block');
 
-                if(currentPage.pageName === "Lessons") {
-                    $(this).parent().parent().children('p').remove();
+                if(currentPage.pageName === "Lessons" || currentPage.postType === "courses") {
+                    $(this).parent().parent().children('#respond').remove();
                 }
             }
-
         });
     }
 

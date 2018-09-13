@@ -1193,11 +1193,36 @@ function get_lesson_comments() {
             'style'       => 'ol',
             'short_ping'  => true,
             'callback' => 'boiler_comment' ), $comments);
-
-	 comment_form( '', $postID );
+	$args = array(
+		'id_form'           => 'commentform',
+		'class_form'      => 'comment-form',
+		'id_submit'         => 'submit',
+		'class_submit'      => 'submit',
+		'name_submit'       => 'submit',
+		'label_submit'      => __( 'Post Comment' ),
+		'format'            => 'xhtml');
+	 comment_form( $args, $postID );
 
 	//echo $comments . comment_form( '', $postID );
 }
 
 add_action('wp_ajax_nopriv_get_lesson_comments', 'get_lesson_comments');
 add_action('wp_ajax_get_lesson_comments', 'get_lesson_comments');
+
+function get_comment_form() {
+
+	$postID = $_POST['id'];
+	$args = array(
+		'id_form'           => 'commentform',
+		'class_form'      => 'comment-form',
+		'id_submit'         => 'submit',
+		'class_submit'      => 'submit',
+		'name_submit'       => 'submit',
+		'title_reply'       => __( 'Leave a Reply' ),
+		'label_submit'      => __( 'Post Comment' ),
+		'format'            => 'xhtml');
+	comment_form($args , $postID);
+}
+
+add_action('wp_ajax_nopriv_get_comment_form', 'get_comment_form');
+add_action('wp_ajax_get_comment_form', 'get_comment_form');
