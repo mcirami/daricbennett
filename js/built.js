@@ -992,8 +992,9 @@ var loadReload = function() {
 	        replyToComment($('a.comment-reply-link'));
 	        submitComment($('.comment_submit .submit'));
 	        commentCancel();
-	    }, function(reason){
-	        console.log("error", reason);
+
+		    }, function(reason){
+		        console.log("error", reason);
 	    });
 
         /*var commentContent = $.ajax({
