@@ -1029,3 +1029,11 @@ jQuery(document).ready(function($) {
         })
     }
 });
+
+/*
+$('#easyPaginate').easyPaginate({
+	paginateElement: 'li',
+	elementsPerPage: 20,
+	effect: 'climb'
+});
+*/
