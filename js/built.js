@@ -837,7 +837,22 @@ var loadReload = function() {
     if (currentPage.pageName === 'Lessons') {
         var filterizr = $('.filtr-container');
 
-        filterizr.filterizr({
+        filterizr.filterizr('setOptions', {
+        	callbacks: {
+		        onFilteringEnd: function() {
+			       var items = document.getElementById('filter_images');
+			       //var itemArray = [];
+			        for(var i = 0; i < items.length; i++) {
+			        	/*if(items[i].hasClass('filteredOut')) {
+					        items.splice(items[i],1);
+			        	}*/
+				        console.log(items[i]);
+			        }
+
+
+
+		        }
+	        },
             layout: 'sameSize',
         });
     }
