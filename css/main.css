@@ -10630,11 +10630,14 @@ form.pmpro_form .pmpro_checkout-fields div {
       .video_submit #post_submit_form .acf-form-submit input:hover {
         background: #c30b21; }
 .video_submit .content {
-  padding: 20px 0 60px;
-  width: 100%; }
+  padding: 0 0 60px;
+  width: 100%;
+  border-top: 1px solid #827d7d; }
 .video_submit .row {
   padding: 40px 0;
-  border-top: 1px solid #827d7d; }
+  border-bottom: 1px solid #827d7d; }
+  .video_submit .row:last-child {
+    border-bottom: none; }
   .video_submit .row .column {
     float: left;
     display: block;
@@ -10685,8 +10688,6 @@ form.pmpro_form .pmpro_checkout-fields div {
       margin-top: 20px; }
       .video_submit .row .column .button_wrap .button {
         padding: 10px 30px; }
-  .video_submit .row:last-child {
-    border-bottom: 1px solid #827d7d; }
 
 .single_video {
   color: #131313; }

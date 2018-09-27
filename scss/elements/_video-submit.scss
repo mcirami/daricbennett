@@ -156,13 +156,18 @@
     }
 
     .content {
-        padding: 20px 0 60px;
+        padding: 0 0 60px;
         width: 100%;
+        border-top: 1px solid $darkGray;
     }
 
     .row {
         padding: 40px 0;
-        border-top: 1px solid $darkGray;
+        border-bottom: 1px solid $darkGray;
+
+        &:last-child {
+            border-bottom: none;
+        }
 
         .column {
             @include span-columns(6);
@@ -229,10 +234,6 @@
                     padding: 10px 30px;
                 }
             }
-        }
-
-        &:last-child {
-            border-bottom: 1px solid $darkGray;
         }
     }
 }

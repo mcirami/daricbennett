@@ -72,7 +72,7 @@
 							 		<div class="info_wrap">
 								 		<h4>Instruction</h4>
 								 		<a class="button red" href="/lessons">Member Lessons</a>
-                                        <a class="button yellow" href="/video-q-and-a">Video Q & A</a>
+                                        <a class="button yellow" href="/courses">Courses</a>
 							 		</div>
 						 		</div>
 						 		<div class="row full_width">

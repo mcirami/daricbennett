@@ -44,13 +44,14 @@
 
 	    <?php else :
 
-		        if (get_field('og_image')) {
-				    $attachment_id = get_field('og_image');
+		        if ($image = get_field('course_image')) {
+				   /* $attachment_id = get_field('og_image');
 				    $size = "large";
-				    $ogImage = wp_get_attachment_image_src( $attachment_id, $size );
+				    $ogImage = wp_get_attachment_image_src( $attachment_id, $size );*/
 		    ?>
 				    <a href="<?php the_permalink(); ?>">
-					    <img class="og_img" src="<?php echo $ogImage[0];?>" />
+					    <!--<img class="og_img" src="<?php /*echo $ogImage[0];*/?>" />-->
+                        <img src="<?php echo $image['url']; ?>" alt="">
 				    </a>
 		        <?php } else { ?>
 				        <a href="<?php the_permalink(); ?>">
