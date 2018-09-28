@@ -801,10 +801,34 @@ jQuery(document).ready(function($) {
         filterizr.filterizr('setOptions', {
         	callbacks: {
 		        onFilteringEnd: function() {
-			      // var numberOfItems = $(".filtr-item:not(.filteredOut)");
-			       console.log($(".filtr-item:not(.filteredOut)"));
+			        $(".pagination").empty();
+
+			        setTimeout(function () {
+
+				        var items = document.getElementsByClassName('filtr-item');
+				        var itemsArray = [];
+						for (var x=0; x < items.length; x++) {
+							if(items[x].classList.contains('filteredOut')) {
+								continue;
+							} else {
+								itemsArray.push(items[x].outerHTML);
+							}
+						}
+
+						var numberOfItems = itemsArray.length;
+						var limitPerPage = 20;
+				        var totalPages = Math.round(numberOfItems / limitPerPage);
+				        $(".pagination").append("<li class='current-page'><a href='javascript:void(0)'>" + 1 + "</a></li>");
+
+				        for (var i = 2; i <= totalPages; i++) {
+					        $(".pagination").append("<li class='current-page'><a href='javascript:void(0)'>" + i + "</a></li>");
+				        }
+
+
+			        }, 1000);
 		        }
 	        },
+
             layout: 'sameSize',
         });
     }

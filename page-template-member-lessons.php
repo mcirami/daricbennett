@@ -163,7 +163,9 @@ if (pmpro_hasMembershipLevel()) {
                         <?php endif; ?>
 
                     </div><!-- filtr-container filter_images-->
-                </div><!--  -->
+                </div><!-- video_list -->
+
+	            <div class="pagination full_width"></div>
 
             </div><!-- container -->
         </div><!-- full_width -->
