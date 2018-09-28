@@ -122,54 +122,48 @@ if (pmpro_hasMembershipLevel()) {
 
                     <?php endif; ?>
 
-	                <div id="easyPaginate" class="full_width">
+                    <div id="filter_images" class="filtr-container full_width">
 
-	                    <div id="filter_images" class="filtr-container full_width">
+                        <?php if ($favorites == null && $title == "Favorite Lessons") : ?>
 
-	                        <?php if ($favorites == null && $title == "Favorite Lessons") : ?>
+                            <div class="text_wrap full_width">
+                                <h2>You have no Favorite Lessons</h2>
+                                <div class="button_wrap full_width">
+                                    <a class="button red" href="/lessons">Go To Lesson page Now!</a>
+                                </div>
 
-	                            <div class="text_wrap full_width">
-	                                <h2>You have no Favorite Lessons</h2>
-	                                <div class="button_wrap full_width">
-	                                    <a class="button red" href="/lessons">Go To Lesson page Now!</a>
-	                                </div>
+                            </div>
 
-	                            </div>
+                        <?php else : ?>
 
-	                        <?php else : ?>
+                            <?php if ( $lessons->have_posts() ) : while( $lessons->have_posts() ) : $lessons->the_post();
 
-	                            <?php if ( $lessons->have_posts() ) : while( $lessons->have_posts() ) : $lessons->the_post();
+                                    $hide = get_field('hide_lesson');
 
-	                                    $hide = get_field('hide_lesson');
+                                    if (!$hide) : ?>
 
-	                                    if (!$hide) : ?>
+                                        <?php get_template_part('content', 'member-lesson'); ?>
 
-	                                        <?php get_template_part('content', 'member-lesson'); ?>
+                                    <?php endif; ?> <!-- hide -->
 
-	                                    <?php endif; ?> <!-- hide -->
-
-	                                <?php endwhile; //query loop
+                                <?php endwhile; //query loop
 
 
-						                /*previous_posts_link();
-						                next_posts_link('Next Page', $lessons->max_num_pages);*/
-	                                else :
+                                    /*previous_posts_link();
+                                    next_posts_link('Next Page', $lessons->max_num_pages);*/
+                                else :
 
-	                                    echo 'no posts found';
+                                    echo 'no posts found';
 
-	                                endif; // if has posts
+                                endif; // if has posts
 
-	                                wp_reset_query();
-	                            ?>
+                                wp_reset_query();
+                            ?>
 
-	                        <?php endif; ?>
+                        <?php endif; ?>
 
-	                    </div><!-- filtr-container -->
-
-	                </div><!-- filter_images -->
-                </div>
-
-
+                    </div><!-- filtr-container filter_images-->
+                </div><!--  -->
 
             </div><!-- container -->
         </div><!-- full_width -->

@@ -207,8 +207,9 @@ function boiler_scripts_styles() {
 
     //wp_enqueue_script( 'emoji', get_template_directory_uri() . '/js/vendor/emoji.min.js', array('jquery'), '', true );
     if (is_page('lessons')){
-	    //wp_enqueue_script('easyPaginate', get_template_directory_uri() . '/js/vendor/jquery.easyPaginate.js', array('jquery'), '', true);
+
         wp_enqueue_script('filterizr', get_template_directory_uri() . '/js/vendor/jquery.filterizr.min.js', array('jquery'), '', true);
+        //wp_enqueue_script('easyPaginate', get_template_directory_uri() . '/js/vendor/jquery.easyPaginate.js', array('jquery'), '', true);
 
     }
     //wp_enqueue_script( 'images_loaded', get_template_directory_uri() . '/js/vendor/images-loaded/imagesloaded.pkgd.min.js', array('jquery'), '', true );
