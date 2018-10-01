@@ -836,33 +836,39 @@ var loadReload = function() {
 
     if (currentPage.pageName === 'Lessons') {
         var filterizr = $('.filtr-container');
+        var lessonArray = [];
+        var paginationDiv = $(".pagination");
+        var items = document.getElementsByClassName('filtr-item');
 
         filterizr.filterizr('setOptions', {
         	callbacks: {
-		        onFilteringEnd: function() {
-			        $(".pagination").empty();
+                onFilteringStart: function() {
+                    /*lessonArray = [];
+                    var html = '';
 
+                    for (var x = 0; x < items.length; x++) {
+                        lessonArray.push(items[x].outerHTML);
+                    }
+
+                    $('#filter_images').html(html);*/
+                    console.log(lessonArray.length);
+
+                },
+
+		        onFilteringEnd: function() {
+                    paginationDiv.empty();
+                    lessonArray.length = 0;
 			        setTimeout(function () {
 
-				        var items = document.getElementsByClassName('filtr-item');
-				        var itemsArray = [];
-						for (var x=0; x < items.length; x++) {
+						for (var x = 0; x < items.length; x++) {
 							if(items[x].classList.contains('filteredOut')) {
 								continue;
 							} else {
-								itemsArray.push(items[x].outerHTML);
+                                lessonArray.push(items[x].outerHTML);
 							}
 						}
 
-						var numberOfItems = itemsArray.length;
-						var limitPerPage = 20;
-				        var totalPages = Math.round(numberOfItems / limitPerPage);
-				        $(".pagination").append("<li class='current-page'><a href='javascript:void(0)'>" + 1 + "</a></li>");
-
-				        for (var i = 2; i <= totalPages; i++) {
-					        $(".pagination").append("<li class='current-page'><a href='javascript:void(0)'>" + i + "</a></li>");
-				        }
-
+						lessonPagination(lessonArray, paginationDiv);
 
 			        }, 1000);
 		        }
@@ -870,6 +876,50 @@ var loadReload = function() {
 
             layout: 'sameSize',
         });
+
+        function lessonPagination(itemsArray, pagination) {
+            var html = '';
+            var numberOfItems = itemsArray.length;
+            var limitPerPage = 21;
+            var totalPages = Math.round(numberOfItems / limitPerPage);
+            pagination.append("<li class='current-page'><a class='page_number active' data-page='1' href='#'>" + 1 + "</a></li>");
+
+            for (var i = 2; i <= totalPages; i++) {
+                pagination.append("<li class='current-page'><a class='page_number' data-page='" + i + "' href='#'>" + i + "</a></li>");
+            }
+
+            $('.page_number').bind("click", function(e) {
+                e.preventDefault();
+                var html = '';
+                if (!$(this).hasClass('active')) {
+                    $('.page_number').removeClass('active');
+                    $(this).addClass('active');
+                    var pageNumber = $(this).data('page');
+                    var pageItems;
+                    var start;
+                    var end;
+
+                    start = (pageNumber * 21) - 21;
+                    end = pageNumber * 21;
+
+
+                    pageItems = itemsArray.slice(start,end);
+                    for (var y = 0; y <= pageItems.length - 1; y++) {
+                        html += pageItems[y];
+                    }
+
+                    $('#filter_images').html(html);
+
+                }
+            });
+
+            var pageItems = itemsArray.slice(0,limitPerPage);
+            for (var y = 0; y <= pageItems.length - 1; y++) {
+                html += pageItems[y];
+            }
+
+            $('#filter_images').html(html);
+        }
     }
 
     $('.filter_list li').click(function () {

@@ -175,8 +175,8 @@
 
         .column {
             width: 33.3%;
-            display: block;
-            float: left;
+            display: inline-block;
+            //float: left;
             padding: 20px;
 
             @include media($tablet) {
@@ -367,8 +367,14 @@
         }
     }
 
+    /*.filtr-item {
+        transform: none !important;
+        position: relative !important;
+    }*/
+
     .filtr-container {
         overflow:hidden;
+        //height: auto !important;
 
         &:before, &:after {
             display: table;
