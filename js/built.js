@@ -843,16 +843,15 @@ var loadReload = function() {
         filterizr.filterizr('setOptions', {
         	callbacks: {
                 onFilteringStart: function() {
-                    /*lessonArray = [];
+                    lessonArray = [];
                     var html = '';
 
                     for (var x = 0; x < items.length; x++) {
                         lessonArray.push(items[x].outerHTML);
                     }
 
-                    $('#filter_images').html(html);*/
+                    $('#filter_images').html(html);
                     console.log(lessonArray.length);
-
                 },
 
 		        onFilteringEnd: function() {
