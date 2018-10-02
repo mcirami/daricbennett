@@ -836,22 +836,23 @@ var loadReload = function() {
 
     if (currentPage.pageName === 'Lessons') {
         var filterizr = $('.filtr-container');
-        var lessonArray = [];
+        /*var lessonArray = [];
         var paginationDiv = $(".pagination");
-        var items = document.getElementsByClassName('filtr-item');
+        var items = document.getElementsByClassName('filtr-item');*/
 
         filterizr.filterizr('setOptions', {
-        	callbacks: {
+        	/*callbacks: {
                 onFilteringStart: function() {
-                    lessonArray = [];
+                    //lessonArray = [];
                     var html = '';
 
                     for (var x = 0; x < items.length; x++) {
-                        lessonArray.push(items[x].outerHTML);
+                        //lessonArray.push(items[x].outerHTML);
+                        html += items[x].outerHTML;
                     }
 
                     $('#filter_images').html(html);
-                    console.log(lessonArray.length);
+                    console.log(html);
                 },
 
 		        onFilteringEnd: function() {
@@ -871,12 +872,12 @@ var loadReload = function() {
 
 			        }, 1000);
 		        }
-	        },
+	        },*/
 
             layout: 'sameSize',
         });
 
-        function lessonPagination(itemsArray, pagination) {
+        /*function lessonPagination(itemsArray, pagination) {
             var html = '';
             var numberOfItems = itemsArray.length;
             var limitPerPage = 21;
@@ -918,7 +919,7 @@ var loadReload = function() {
             }
 
             $('#filter_images').html(html);
-        }
+        }*/
     }
 
     $('.filter_list li').click(function () {
