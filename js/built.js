@@ -533,7 +533,7 @@ var loadReload = function() {
         $("body, html").css('overflow-y', 'scroll');
     });
 
-    var postCommentURL = window.location.href;
+    //var postCommentURL = window.location.href;
 
     if (((currentPage.pageName !== "Video Q & A")  && (currentPage.postType === "videos")) || (currentPage.postType === "live-streams")) {
 
@@ -592,7 +592,7 @@ var loadReload = function() {
 
         }
     }
-    
+
 
     var ajaxComments = null;
     var commentReply = $('a.comment-reply-link');
@@ -780,9 +780,9 @@ var loadReload = function() {
                         location.reload();
                     },
                     failure: function (xhr) {
-                        //alert(xhr.send(data));
+                        alert("There was an error posting your comment. Please try again.");
                         xhr.send(data);
-                        console.log(JSON.stringify(resp));
+                        //console.log(JSON.stringify(resp));
                     }
                 });
 

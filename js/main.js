@@ -494,7 +494,7 @@ jQuery(document).ready(function($) {
         $("body, html").css('overflow-y', 'scroll');
     });
 
-    var postCommentURL = window.location.href;
+    //var postCommentURL = window.location.href;
 
     if (((currentPage.pageName !== "Video Q & A")  && (currentPage.postType === "videos")) || (currentPage.postType === "live-streams")) {
 
@@ -741,9 +741,9 @@ jQuery(document).ready(function($) {
                         location.reload();
                     },
                     failure: function (xhr) {
-                        //alert(xhr.send(data));
+                        alert("There was an error posting your comment. Please try again.");
                         xhr.send(data);
-                        console.log(JSON.stringify(resp));
+                        //console.log(JSON.stringify(resp));
                     }
                 });
 
