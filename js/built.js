@@ -535,7 +535,6 @@ var loadReload = function() {
 
     var postCommentURL = window.location.href;
 
-
     if (((currentPage.pageName !== "Video Q & A")  && (currentPage.postType === "videos")) || (currentPage.postType === "live-streams")) {
 
         if ($('.comment-content > p a').length ) {
@@ -593,7 +592,7 @@ var loadReload = function() {
 
         }
     }
-
+    
 
     var ajaxComments = null;
     var commentReply = $('a.comment-reply-link');
