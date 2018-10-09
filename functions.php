@@ -725,6 +725,34 @@ function comment_notif_text_edit($message, $comment_id) {
 add_filter( 'comment_notification_text', 'comment_notif_text_edit', 1, 2 );
 
 
+function send_comment_error_email() {
+
+    $url = site_url();
+    $replyURL = $_POST['url'];
+    $data = $_POST['data'];
+
+    $mailTo = "matteo@mscwebservices.net, mcirami@gmail.com";
+
+    $editLink = $url . '/wp-admin/edit-comments.php';
+
+    $to = $mailTo;
+    $subject = "You have a new comment";
+    $message = "Go to the link below to Approve or Discard comment: <br><br>" . $editLink . "<br><br> Reply to lesson comment here: <br><br>" . $replyURL . "<br><br>Data: <br><br>" . $data;
+    $headers = "From: admin@daricbennett.com";
+
+    if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        if (wp_mail($to, $subject, $message, $headers)) {
+            echo json_encode(array('status' => 'success', 'message' => 'Comment notification message sent.'));
+            exit;
+        } else {
+            echo json_encode(error_get_last());
+            die();
+        }
+    }
+}
+
+add_action("wp_ajax_send_comment_notify_email", "send_comment_error_email");
+
 function subscribe_all() {
 
     $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -1189,7 +1217,7 @@ $wpdb->query(
 function get_lesson_comments() {
 
     $postID = $_POST['id'];
-	$comments = get_comments(array('post_id' => $postID, 'status' => 'approve'));
+	$comments = get_comments(array('post_id' => $postID));
 	wp_list_comments(array(
             'avatar_size' => 100,
             'style'       => 'ol',

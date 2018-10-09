@@ -724,75 +724,92 @@ var loadReload = function() {
 
                 //var url = "http://staging-daric.mscwebservices.net/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
-                var url = protocol + "//" + domain + "/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
+                if (comment !== 'undefined') {
 
-                ajaxComments = $.ajax({
-                    url: url,
-                    type: "POST",
-                    async: true,
-                    dataType: 'json',
-                    data: data,
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader("X-WP-Nonce", currentUser.nonce);
-                        xhr.setRequestHeader("authorization", "OAuth oauth_consumer_key='IWmItGndx8oY',oauth_token='x3pmlsoef6ayQEdkasPgG01h',oauth_signature_method='HMAC-SHA1',oauth_timestamp='1497396491',oauth_nonce='Lqz1LK',oauth_version='1.0',oauth_signature='EnWnLRtpkruPc1bTtKVhMgECFWg%253D'");
-                        xhr.setRequestHeader("cache-control", "no-cache");
-                        xhr.setRequestHeader("postman-token", "25dc514c-3ad3-0c17-95e8-9dcc960c9ca0");
-                        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                    },
-                    success: function (data, xhr) {
+                    var url = protocol + "//" + domain + "/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
-                        if (userRole[0] !== 'administrator') {
-                            commentsEmail = $.ajax({
-                                type: "POST",
-                                dataType: "json",
-                                url: ajaxURL,
-                                data: {action: 'send_comment_notify_email', url: commentReplyURL},
-                                success: function (data) {
-                                    //alert ("Email Sent");
-                                    console.log("Comment Posted, Email Sent");
-                                },
-                                error: function (xhRequest, errorThrown, resp) {
-                                    console.log(errorThrown);
-                                    console.log(JSON.stringify(resp));
-                                }
-                            });
-
-                        } else {
-
-                            commentsEmailAdmin = $.ajax({
-                                type: "post",
-                                async: true,
-                                //dataType: "json",
-                                url: ajaxURL,
-                                data: {action: 'rv_admin_comments_to_author_comments'},
-                                success: function (data) {
-                                    //alert ("Email Sent");
-                                    console.log("Comment Posted, Email Sent");
-                                },
-                                error: function (xhRequest, errorThrown, resp) {
-                                    console.log(errorThrown);
-                                    console.log(JSON.stringify(xhRequest));
-                                }
-                            });
-                        }
-
-                        commentContent[1].value = "";
-                        location.reload();
-                    },
-                    failure: function (xhr) {
-                        alert("There was an error posting your comment. Please try again.");
-                        xhr.send(data);
-                        //console.log(JSON.stringify(resp));
-                    }
-                });
-
-                if (replyToUser !== null && commentReplyURL !== null) {
-
-                    commentsReplyEmail = $.ajax({
+                    ajaxComments = $.ajax({
+                        url: url,
                         type: "POST",
-                        dataType: "json",
-                        url: ajaxURL,
-                        data: {action: 'send_reply_to_user_email', user: replyToUser, url: commentReplyURL},
+                        async: true,
+                        dataType: 'json',
+                        data: data,
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("X-WP-Nonce", currentUser.nonce);
+                            xhr.setRequestHeader("authorization", "OAuth oauth_consumer_key='IWmItGndx8oY',oauth_token='x3pmlsoef6ayQEdkasPgG01h',oauth_signature_method='HMAC-SHA1',oauth_timestamp='1497396491',oauth_nonce='Lqz1LK',oauth_version='1.0',oauth_signature='EnWnLRtpkruPc1bTtKVhMgECFWg%253D'");
+                            xhr.setRequestHeader("cache-control", "no-cache");
+                            xhr.setRequestHeader("postman-token", "25dc514c-3ad3-0c17-95e8-9dcc960c9ca0");
+                            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                        },
+                        success: function (data, xhr) {
+
+                            if (userRole[0] !== 'administrator') {
+                                var commentsEmail = $.ajax({
+                                    type: "POST",
+                                    dataType: "json",
+                                    url: ajaxURL,
+                                    data: {action: 'send_comment_notify_email', url: commentReplyURL},
+                                    success: function (data) {
+                                        //alert ("Email Sent");
+                                        console.log("Comment Posted, Email Sent" + data);
+                                    },
+                                    error: function (xhRequest, errorThrown, resp) {
+                                        console.log(errorThrown);
+                                        console.log(JSON.stringify(resp));
+                                    }
+                                });
+
+                            } else {
+
+                                var commentsEmailAdmin = $.ajax({
+                                    type: "post",
+                                    async: true,
+                                    //dataType: "json",
+                                    url: ajaxURL,
+                                    data: {action: 'rv_admin_comments_to_author_comments'},
+                                    success: function (data) {
+                                        //alert ("Email Sent");
+                                        console.log("Comment Posted, Email Sent");
+                                    },
+                                    error: function (xhRequest, errorThrown) {
+                                        console.log(errorThrown);
+                                        console.log(JSON.stringify(xhRequest));
+                                    }
+                                });
+                            }
+
+                            commentContent[1].value = "";
+                            location.reload();
+                        },
+                        failure: function (xhr) {
+                            alert("There was an error posting your comment. Please try again.");
+                            xhr.send(data);
+                            //console.log(JSON.stringify(resp));
+                        }
+                    });
+
+                    if (replyToUser !== null && commentReplyURL !== null) {
+
+                        var commentsReplyEmail = $.ajax({
+                            type: "POST",
+                            dataType: "json",
+                            url: ajaxURL,
+                            data: {action: 'send_reply_to_user_email', user: replyToUser, url: commentReplyURL},
+                            success: function (data) {
+                                //alert ("Email Sent");
+                                console.log(data);
+                            },
+                            error: function (xhRequest, errorThrown, resp) {
+                                //alert("Error sending email");
+                                console.log(errorThrown);
+                                console.log(JSON.stringify(resp));
+                            }
+                        });
+                    }
+                } else {
+
+                    $.ajax({
+                        data: {action: 'send_comment_error_email', url: commentReplyURL, data: data},
                         success: function (data) {
                             //alert ("Email Sent");
                             console.log(data);
@@ -805,7 +822,6 @@ var loadReload = function() {
                     });
                 }
             }
-
         });
     }
 
