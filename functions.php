@@ -729,7 +729,7 @@ function send_comment_error_email() {
 
     $url = site_url();
     $replyURL = $_POST['url'];
-    $data = $_POST['data'];
+    $data = $_POST['commentData'];
 
     $mailTo = "matteo@mscwebservices.net, mcirami@gmail.com";
 

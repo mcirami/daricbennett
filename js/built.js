@@ -679,7 +679,6 @@ var loadReload = function() {
 
 	        commentReplyURL = window.location.href;
 
-	        console.log(replyToUser);
             if((currentPage.postType === "videos" || currentPage.postType === "live-streams") && replyToUser == null) {
                 console.log('videos');
             } else {
@@ -724,9 +723,9 @@ var loadReload = function() {
 
                 //var url = "http://staging-daric.mscwebservices.net/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
-                if (comment !== 'undefined') {
+                var url = protocol + "//" + domain + "/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
-                    var url = protocol + "//" + domain + "/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
+                if (comment !== 'undefined') {
 
                     ajaxComments = $.ajax({
                         url: url,
@@ -808,11 +807,38 @@ var loadReload = function() {
                     }
                 } else {
 
-                    $.ajax({
-                        data: {action: 'send_comment_error_email', url: commentReplyURL, data: data},
+                    ajaxComments = $.ajax({
+	                    url: url,
+	                    type: "POST",
+	                    async: true,
+	                    dataType: 'json',
+	                    data: data,
+	                    beforeSend: function (xhr) {
+		                    xhr.setRequestHeader("X-WP-Nonce", currentUser.nonce);
+		                    xhr.setRequestHeader("authorization", "OAuth oauth_consumer_key='IWmItGndx8oY',oauth_token='x3pmlsoef6ayQEdkasPgG01h',oauth_signature_method='HMAC-SHA1',oauth_timestamp='1497396491',oauth_nonce='Lqz1LK',oauth_version='1.0',oauth_signature='EnWnLRtpkruPc1bTtKVhMgECFWg%253D'");
+		                    xhr.setRequestHeader("cache-control", "no-cache");
+		                    xhr.setRequestHeader("postman-token", "25dc514c-3ad3-0c17-95e8-9dcc960c9ca0");
+		                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	                    },
                         success: function (data) {
-                            //alert ("Email Sent");
-                            console.log(data);
+	                        var commentsEmail = $.ajax({
+		                        type: "POST",
+		                        dataType: "json",
+		                        url: ajaxURL,
+		                        data: {action: 'send_comment_error_email', url: commentReplyURL, commentData: data},
+		                        success: function (data) {
+			                        //alert ("Email Sent");
+			                        console.log("'Error' Email Sent");
+		                        },
+		                        error: function (xhRequest, errorThrown, resp) {
+			                        console.log(errorThrown);
+			                        console.log(JSON.stringify(resp));
+		                        }
+	                        });
+
+	                        commentContent[1].value = "";
+	                        location.reload();
+
                         },
                         error: function (xhRequest, errorThrown, resp) {
                             //alert("Error sending email");

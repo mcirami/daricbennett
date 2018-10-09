@@ -1,0 +1,4 @@
+[19-Aug-2016 04:38:12 UTC] mojo_plugin_activated
+[13-Oct-2016 09:56:42 America/Denver] PHP Warning:  copy(/tmp/wp-cli-cacert.pem): failed to open stream: Permission denied in phar:///usr/local/bin/wp/php/utils.php on line 26
+[13-Oct-2016 09:58:00 America/Denver] PHP Warning:  copy(/tmp/wp-cli-cacert.pem): failed to open stream: Permission denied in phar:///usr/local/bin/wp/php/utils.php on line 26
+[16-Nov-2016 10:58:11 America/Denver] PHP Warning:  copy(/tmp/wp-cli-cacert.pem): failed to open stream: Permission denied in phar:///usr/local/bin/wp/php/utils.php on line 26
