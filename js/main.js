@@ -629,8 +629,6 @@ jQuery(document).ready(function($) {
     var protocol = window.location.protocol;
     var domain = window.location.hostname;
 
-    //var emoji = new EmojiConvertor();
-
     if (commentSubmitButton.length) {
         submitComment(commentSubmitButton);
     }
@@ -646,47 +644,47 @@ jQuery(document).ready(function($) {
                 e.preventDefault();
 
                 $(this).next('.loading_gif').html('<img src ="https://www.daricbennett.com/images/loading-gif.gif"/>');
-
                 var today = new Date();
-                //var ajaxURL = currentUser.ajaxurl;
-                var ajaxURL = myAjaxurl.ajaxurl;
                 var postID = $(this).parent().next('input#comment_post_ID').attr('value');
                 var commentContent = $(this).parent().prevAll('p.comment-form-comment:first').children();
                 var comment = commentContent[1].value;
 
-                //var commentContent = $(this).parent().prevAll('#wp-comment-wrap:first').children();
-                //var comment = commentContent[1]['lastChild'].value;
+                if (comment === 'undefined' || comment === "" || comment === null) {
 
-                //var comment = $(this).parent().prevAll('#wp-comment-wrap').next('iframe #tinymce p');
+                    $(this).next('.loading_gif').html('');
 
-                var userLogin = currentUser.userLogin;
-                var userID = currentUser.userID;
-                var userEmail = currentUser.userEmail;
-                var userRole = currentUser.userRole;
+                    alert("There was an error posting your comment. Please try again. " +
+                        "This Could be due to an invalid character or blank form");
 
-                var JSONObj = {
-                    "post": postID,
-                    "content": comment,
-                    "author": userID,
-                    "author_name": userLogin,
-                    "author_email": userEmail,
-                    "date": today,
-                    "parent": parent
-                };
+                } else {
+                    var ajaxURL = myAjaxurl.ajaxurl;
+                    var userLogin = currentUser.userLogin;
+                    var userID = currentUser.userID;
+                    var userEmail = currentUser.userEmail;
+                    var userRole = currentUser.userRole;
 
-                var data = JSON.stringify(JSONObj);
+                    var JSONObj = {
+                        "post": postID,
+                        "content": comment,
+                        "author": userID,
+                        "author_name": userLogin,
+                        "author_email": userEmail,
+                        "date": today,
+                        "parent": parent
+                    };
 
-                //var url = "http://darben.dev/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
+                    var data = JSON.stringify(JSONObj);
 
-                //var url = "https://www.daricbennett.com/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
+                    //var url = "http://darben.dev/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
-                //var url = "https://staging.daricbennett.com/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
+                    //var url = "https://www.daricbennett.com/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
-                //var url = "http://staging-daric.mscwebservices.net/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
+                    //var url = "https://staging.daricbennett.com/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
-                var url = protocol + "//" + domain + "/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
+                    //var url = "http://staging-daric.mscwebservices.net/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
 
-                if (comment !== 'undefined') {
+                    var url = protocol + "//" + domain + "/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
+
 
                     ajaxComments = $.ajax({
                         url: url,
@@ -766,47 +764,6 @@ jQuery(document).ready(function($) {
                             }
                         });
                     }
-                } else {
-
-                    ajaxComments = $.ajax({
-	                    url: url,
-	                    type: "POST",
-	                    async: true,
-	                    dataType: 'json',
-	                    data: data,
-	                    beforeSend: function (xhr) {
-		                    xhr.setRequestHeader("X-WP-Nonce", currentUser.nonce);
-		                    xhr.setRequestHeader("authorization", "OAuth oauth_consumer_key='IWmItGndx8oY',oauth_token='x3pmlsoef6ayQEdkasPgG01h',oauth_signature_method='HMAC-SHA1',oauth_timestamp='1497396491',oauth_nonce='Lqz1LK',oauth_version='1.0',oauth_signature='EnWnLRtpkruPc1bTtKVhMgECFWg%253D'");
-		                    xhr.setRequestHeader("cache-control", "no-cache");
-		                    xhr.setRequestHeader("postman-token", "25dc514c-3ad3-0c17-95e8-9dcc960c9ca0");
-		                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	                    },
-                        success: function (data) {
-	                        var commentsEmail = $.ajax({
-		                        type: "POST",
-		                        dataType: "json",
-		                        url: ajaxURL,
-		                        data: {action: 'send_comment_error_email', url: commentReplyURL, commentData: data},
-		                        success: function (data) {
-			                        //alert ("Email Sent");
-			                        console.log("'Error' Email Sent");
-		                        },
-		                        error: function (xhRequest, errorThrown, resp) {
-			                        console.log(errorThrown);
-			                        console.log(JSON.stringify(resp));
-		                        }
-	                        });
-
-	                        commentContent[1].value = "";
-	                        location.reload();
-
-                        },
-                        error: function (xhRequest, errorThrown, resp) {
-                            //alert("Error sending email");
-                            console.log(errorThrown);
-                            console.log(JSON.stringify(resp));
-                        }
-                    });
                 }
             }
         });
