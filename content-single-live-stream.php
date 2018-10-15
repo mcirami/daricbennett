@@ -106,7 +106,7 @@
 	    </div>-->
 
 	    <div class="live_chat">
-		    <iframe src="https://204.48.27.175/chat-example/public/" frameborder="0" allowfullscreen></iframe>
+		    <iframe src="https://mscchat.com/embed" frameborder="0" allowfullscreen></iframe>
 	    </div>
     </div>
 </div>
