@@ -106,8 +106,12 @@
 	    </div>-->
 
 	    <div class="live_chat">
-		    <iframe src="https://mscchat.com/embed" frameborder="0" allowfullscreen></iframe>
-	    </div>
+		    <iframe src="https://mscchat.com/" frameborder="0" allowfullscreen></iframe>
+            <!--<iframe src='https://minnit.chat/daricstream?embed&transparent' width='1000' height='500' style='border:none;' allowTransparency='true'></iframe>-->
+            <!--<div id="arena-chat" data-publisher="daric-bennetts-bass-lessons" data-chatroom="daric-bennetts-bass-lessons-global" data-position="in-page"></div>
+            <script src="https://go.arena.im/public/js/arenachatlib.js?p=daric-bennetts-bass-lessons&e=daric-bennetts-bass-lessons-global"></script>-->
+            <!--<iframe src='https://go.arena.im/embed/chat/daric-bennetts-bass-lessons/daric-bennetts-bass-lessons-global' style='border: 0; width: 100%; height: 400px; border-radius: 4px;'></iframe>-->
+        </div>
     </div>
 </div>
 
