@@ -1227,3 +1227,43 @@ function get_comment_form() {
 
 add_action('wp_ajax_nopriv_get_comment_form', 'get_comment_form');
 add_action('wp_ajax_get_comment_form', 'get_comment_form');
+
+
+function pmpro_expiration_date_shortcode( $atts ) {
+    //make sure PMPro is active
+    if(!function_exists('pmpro_getMembershipLevelForUser'))
+        return;
+
+    //get attributes
+    $a = shortcode_atts( array(
+        'user' => '',
+    ), $atts );
+
+    //find user
+    if(!empty($a['user']) && is_numeric($a['user'])) {
+        $user_id = $a['user'];
+    } elseif(!empty($a['user']) && strpos($a['user'], '@') !== false) {
+        $user = get_user_by('email', $a['user']);
+        $user_id = $user->ID;
+    } elseif(!empty($a['user'])) {
+        $user = get_user_by('login', $a['user']);
+        $user_id = $user->ID;
+    } else {
+        $user_id = false;
+    }
+
+    //no user ID? bail
+    if(!isset($user_id))
+        return;
+
+    //get the user's level
+    $level = pmpro_getMembershipLevelForUser($user_id);
+
+    if(!empty($level) && !empty($level->enddate))
+        $content = date(get_option('date_format'), $level->enddate);
+    else
+        $content = "---";
+
+    return $content;
+}
+add_shortcode('pmpro_expiration_date', 'pmpro_expiration_date_shortcode');
