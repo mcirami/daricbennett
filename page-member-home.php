@@ -30,6 +30,9 @@
 			 	<div class="container">
 				 	
 				 	<div class="member_home full_width">
+					    <div class="banner_wrap full_width">
+						    <a target="_blank" href="https://teespring.com/stores/bass-nation-apparel?pr=D25OFF"><img src="<?php echo bloginfo( 'template_url' ); ?>/images/banner.jpg"/></a>
+					    </div>
 					 	<?php if ($current_user->user_firstname !== '') : ?>
 				 			<h2> Welcome To Daric Bennett's Bass Nation, <?php echo $current_user->user_firstname; ?>!</h2>
 				 		<?php else : ?>

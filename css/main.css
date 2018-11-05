@@ -8670,15 +8670,21 @@ form.pmpro_form .pmpro_checkout-fields div {
 }
 */
 .member_home {
-  font-family: 'robotoregular';
+  font-family: 'robotoregular', sans-serif;
   text-align: center;
-  padding: 100px 0; }
+  padding: 40px 0; }
   @media screen and (max-width: 768px) {
     .member_home {
       padding: 40px 0; } }
   .member_home h2 {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 100%;
     font-size: 30px;
-    font-family: 'robotoregular'; }
+    font-family: 'robotoregular', sans-serif; }
+    .member_home h2:last-child {
+      margin-right: 0; }
     @media screen and (max-width: 1023px) {
       .member_home h2 {
         font-size: 28px; } }
@@ -8858,6 +8864,16 @@ form.pmpro_form .pmpro_checkout-fields div {
           @media screen and (max-width: 1023px) {
             .member_home .content_wrap .row .info_wrap h4 {
               font-size: 16px; } }
+
+.banner_wrap {
+  padding: 0 20%;
+  margin-bottom: 40px; }
+  @media screen and (max-width: 768px) {
+    .banner_wrap {
+      padding: 0 10%; } }
+  @media screen and (max-width: 550px) {
+    .banner_wrap {
+      padding: 0 2%; } }
 
 .tml-profile {
   float: left;
