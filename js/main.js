@@ -158,19 +158,16 @@ jQuery(document).ready(function($) {
         });
     }
 
+
     $('.mobile_menu_icon').on('touchstart click', function (e) {
         e.preventDefault();
 
         $(this).toggleClass('open');
         $('.wrapper').toggleClass('slide');
         $('#global_header').toggleClass('slide');
-        if ($('.mobile_menu').hasClass('cover')) {
-            $('.mobile_menu').removeClass('cover');
+        if ($('.mobile_menu_icon').hasClass('open')) {
             $('body, html').css('overflow-y', 'hidden');
         } else {
-            window.setTimeout(function () {
-                $('.mobile_menu').addClass("cover");
-            }, 800);
             $('body, html').css('overflow-y', 'auto');
         }
 
@@ -179,9 +176,6 @@ jQuery(document).ready(function($) {
     $('.wrapper.slide').click(function () {
         $('.mobile_menu_icon').toggleClass('open');
         $('.wrapper').toggleClass('slide');
-        window.setTimeout(function () {
-            $('.mobile_menu').addClass("cover");
-        }, 800);
     });
 
     ajaxMailChimpForm($("#subscribe-form"), $("#subscribe-result"));

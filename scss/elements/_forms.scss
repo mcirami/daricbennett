@@ -586,10 +586,6 @@ form.pmpro_form .pmpro_checkout-fields div {
 	.pmpro_checkout {
 		@include span-columns(12);
 		
-		@include media($mobile){
-			padding: 0 5px;
-		}
-		
 		tbody {
 			@include span-columns(12);
 			
@@ -948,20 +944,42 @@ form.pmpro_form .pmpro_checkout-fields div {
 	display: none;
 }
 
+form.pmpro_form #other_discount_code.input {
+    max-width: 75%;
+
+    @include media($mobile) {
+        max-width: unset;
+    }
+}
+
+.discount_form {
+    @include span-columns(12);
+    padding: 20px 10px;
+    text-align: center;
+    border-bottom: 4px solid red;
+
+    input[type="button"] {
+        width: 22%;
+        float: left;
+
+        @include media($mobile) {
+            margin-top: 20px;
+        }
+    }
+
+    label {
+        margin-top: 0 !important;
+    }
+}
+
 #other_discount_code_p {
 	@include span-columns(12);
-	font-size: 14px;
+	font-size: 16px;
 	border: none;
 	padding-bottom: 0;
-	padding-top: 24px;
-	
-	@include media($tablet){
-		padding-top: 19px;
-	}
 	
 	@include media($smallMobile){
-		padding-top: 12px;
-		font-size: 12px;
+		font-size: 14px;
 	}
 	
 	a {

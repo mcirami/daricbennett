@@ -2308,15 +2308,6 @@ h3, p {
   @media screen and (max-width: 768px) {
     .mobile_menu {
       display: block; } }
-  .mobile_menu.cover:before {
-    content: '';
-    background: #000;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; }
   .mobile_menu:before {
     background: none;
     z-index: -999; }
@@ -8266,9 +8257,6 @@ form.pmpro_form .pmpro_checkout-fields div {
     width: 100%; }
     .pmpro_form .pmpro_checkout:last-child {
       margin-right: 0; }
-    @media screen and (max-width: 768px) {
-      .pmpro_form .pmpro_checkout {
-        padding: 0 5px; } }
     .pmpro_form .pmpro_checkout tbody {
       float: left;
       display: block;
@@ -8552,24 +8540,44 @@ form.pmpro_form .pmpro_checkout-fields div {
   height: 100%;
   display: none; }
 
+form.pmpro_form #other_discount_code.input {
+  max-width: 75%; }
+  @media screen and (max-width: 768px) {
+    form.pmpro_form #other_discount_code.input {
+      max-width: unset; } }
+
+.discount_form {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 100%;
+  padding: 20px 10px;
+  text-align: center;
+  border-bottom: 4px solid red; }
+  .discount_form:last-child {
+    margin-right: 0; }
+  .discount_form input[type="button"] {
+    width: 22%;
+    float: left; }
+    @media screen and (max-width: 768px) {
+      .discount_form input[type="button"] {
+        margin-top: 20px; } }
+  .discount_form label {
+    margin-top: 0 !important; }
+
 #other_discount_code_p {
   float: left;
   display: block;
   margin-right: 2.3576515979%;
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   border: none;
-  padding-bottom: 0;
-  padding-top: 24px; }
+  padding-bottom: 0; }
   #other_discount_code_p:last-child {
     margin-right: 0; }
-  @media screen and (max-width: 1023px) {
-    #other_discount_code_p {
-      padding-top: 19px; } }
   @media screen and (max-width: 550px) {
     #other_discount_code_p {
-      padding-top: 12px;
-      font-size: 12px; } }
+      font-size: 14px; } }
   #other_discount_code_p a {
     color: #f20f2b;
     font-family: 'robotobolditalic'; }

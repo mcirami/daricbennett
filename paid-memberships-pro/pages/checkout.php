@@ -162,6 +162,7 @@
 
 	    <div id="pmpro_level-<?php echo $pmpro_level->id; ?>">
 		    <form id="pmpro_form" class="pmpro_form checkout_page" action="<?php if(!empty($_REQUEST['review'])) echo pmpro_url("checkout", "?level=" . $pmpro_level->id); ?>" method="post">
+
 			    <div class="red_border_wrap full_width">
                     <input type="hidden" id="level" name="level" value="<?php echo esc_attr($pmpro_level->id) ?>" />
                     <input type="hidden" id="checkjavascript" name="checkjavascript" value="1" />
@@ -210,95 +211,9 @@
 
                             <?php //do_action("pmpro_checkout_after_level_cost"); ?>
 
-                            <?php /*if($pmpro_show_discount_code) { */?><!--
-                                <?php /*if($discount_code && !$pmpro_review) { */?>
-                                    <p id="other_discount_code_p" class="pmpro_small"><a id="other_discount_code_a" href="#discount_code"><?php /*_e('Click here to change your discount code.', 'paid-memberships-pro' );*/?></a></p>
-                                <?php /*} elseif(!$pmpro_review) { */?>
-                                    <p id="other_discount_code_p" class="pmpro_small"><?php /*_e('Do you have a discount code?', 'paid-memberships-pro' );*/?> <a id="other_discount_code_a" href="#discount_code"><?php /*_e('Click here to enter your discount code', 'paid-memberships-pro' );*/?></a>.</p>
-                                <?php /*} elseif($pmpro_review && $discount_code) { */?>
-                                    <p><strong><?php /*_e('Discount Code', 'paid-memberships-pro' );*/?>:</strong> <?php /*echo $discount_code*/?></p>
-                                <?php /*} */?>
-                            --><?php /*} */?>
 
-                            <?php /*if($pmpro_show_discount_code) { */?><!--
-                                <div id="other_discount_code_tr" style="display: none;">
-                                    <label for="other_discount_code"><?php /*_e('Discount Code', 'paid-memberships-pro' );*/?></label>
-                                    <input id="other_discount_code" name="other_discount_code" type="text" class="input <?php /*echo pmpro_getClassForField("other_discount_code");*/?>" size="20" value="<?php /*echo esc_attr($discount_code); */?>" />
-                                    <input type="button" name="other_discount_code_button" id="other_discount_code_button" value="<?php /*_e('Apply', 'paid-memberships-pro' );*/?>" />
-                                </div>
-                            --><?php /*}*/ ?>
                         <!--</div>--> <!-- end pmpro_checkout-fields -->
                    <!-- </div>--> <!-- end pmpro_pricing_fields -->
-
-                    <?php if($pmpro_show_discount_code) { ?>
-                        <script>
-                            <!--
-                            //update discount code link to show field at top of form
-                            jQuery('#other_discount_code_a').attr('href', 'javascript:void(0);');
-                            jQuery('#other_discount_code_a').click(function() {
-                                jQuery('#other_discount_code_tr').show();
-                                jQuery('#other_discount_code_p').hide();
-                                jQuery('#other_discount_code').focus();
-                            });
-
-                            //update real discount code field as the other discount code field is updated
-                            jQuery('#other_discount_code').keyup(function() {
-                                jQuery('#discount_code').val(jQuery('#other_discount_code').val());
-                            });
-                            jQuery('#other_discount_code').blur(function() {
-                                jQuery('#discount_code').val(jQuery('#other_discount_code').val());
-                            });
-
-                            //update other discount code field as the real discount code field is updated
-                            jQuery('#discount_code').keyup(function() {
-                                jQuery('#other_discount_code').val(jQuery('#discount_code').val());
-                            });
-                            jQuery('#discount_code').blur(function() {
-                                jQuery('#other_discount_code').val(jQuery('#discount_code').val());
-                            });
-
-                            //applying a discount code
-                            jQuery('#other_discount_code_button').click(function() {
-                                var code = jQuery('#other_discount_code').val();
-                                var level_id = jQuery('#level').val();
-
-                                if(code)
-                                {
-                                    //hide any previous message
-                                    jQuery('.pmpro_discount_code_msg').hide();
-
-                                    //disable the apply button
-                                    jQuery('#other_discount_code_button').attr('disabled', 'disabled');
-
-                                    jQuery.ajax({
-                                        url: '<?php echo admin_url('admin-ajax.php'); ?>',type:'GET',timeout:<?php echo apply_filters("pmpro_ajax_timeout", 5000, "applydiscountcode");?>,
-                                        dataType: 'html',
-                                        data: "action=applydiscountcode&code=" + code + "&level=" + level_id + "&msgfield=pmpro_message",
-                                        error: function(xml){
-                                            alert('Error applying discount code [1]');
-
-                                            //enable apply button
-                                            jQuery('#other_discount_code_button').removeAttr('disabled');
-                                        },
-                                        success: function(responseHTML){
-                                            if (responseHTML == 'error')
-                                            {
-                                                alert('Error applying discount code [2]');
-                                            }
-                                            else
-                                            {
-                                                jQuery('#pmpro_message').html(responseHTML);
-                                            }
-
-                                            //enable invite button
-                                            jQuery('#other_discount_code_button').removeAttr('disabled');
-                                        }
-                                    });
-                                }
-                            });
-                            -->
-                        </script>
-                    <?php } ?>
 
                     <?php
                     do_action('pmpro_checkout_after_pricing_fields');
@@ -312,6 +227,98 @@
                                 <span class="pmpro_checkout-h3-msg"><?php /*_e('Already have an account?', 'paid-memberships-pro' );*/?> <a href="<?php /*echo wp_login_url(pmpro_url("checkout", "?level=" . $pmpro_level->id)); */?>"><?php /*_e('Log in here', 'paid-memberships-pro' );*/?></a></span>
                             </h3>-->
                             <h3>Complete The Form To Start Your Free Trial!</h3>
+	                        <!-- DISCOUNT CODE FORM-->
+	                        <div class="discount_form">
+		                        <?php if($pmpro_show_discount_code) { ?>
+			                        <?php if($discount_code && !$pmpro_review) { ?>
+				                        <p id="other_discount_code_p" class="pmpro_small"><a id="other_discount_code_a" href="#discount_code"><?php _e('Click here to change your discount code.', 'paid-memberships-pro' );?></a></p>
+			                        <?php } elseif(!$pmpro_review) { ?>
+				                        <p id="other_discount_code_p" class="pmpro_small"><?php _e('Do you have a discount code?', 'paid-memberships-pro' );?> <a id="other_discount_code_a" href="#discount_code"><?php _e('Click here to enter your discount code', 'paid-memberships-pro' );?></a>.</p>
+			                        <?php } elseif($pmpro_review && $discount_code) { ?>
+				                        <p><strong><?php _e('Discount Code', 'paid-memberships-pro' );?>:</strong> <?php echo $discount_code?></p>
+			                        <?php } ?>
+		                        <?php } ?>
+
+		                        <?php if($pmpro_show_discount_code) { ?>
+			                        <div id="other_discount_code_tr" style="display: none;">
+				                        <label for="other_discount_code"><?php _e('Discount Code', 'paid-memberships-pro' );?></label>
+				                        <input id="other_discount_code" name="other_discount_code" type="text" class="input <?php echo pmpro_getClassForField("other_discount_code");?>" size="20" value="<?php echo esc_attr($discount_code); ?>" />
+				                        <input class="button yellow" type="button" name="other_discount_code_button" id="other_discount_code_button" value="<?php _e('Apply', 'paid-memberships-pro' );?>" />
+			                        </div>
+		                        <?php } ?>
+	                        </div>
+
+	                        <?php if($pmpro_show_discount_code) { ?>
+		                        <script>
+
+			                        //update discount code link to show field at top of form
+			                        jQuery('#other_discount_code_a').attr('href', 'javascript:void(0);');
+			                        jQuery('#other_discount_code_a').click(function() {
+				                        jQuery('#other_discount_code_tr').show();
+				                        jQuery('#other_discount_code_p').hide();
+				                        jQuery('#other_discount_code').focus();
+			                        });
+
+			                        //update real discount code field as the other discount code field is updated
+			                        jQuery('#other_discount_code').keyup(function() {
+				                        jQuery('#discount_code').val(jQuery('#other_discount_code').val());
+			                        });
+			                        jQuery('#other_discount_code').blur(function() {
+				                        jQuery('#discount_code').val(jQuery('#other_discount_code').val());
+			                        });
+
+			                        //update other discount code field as the real discount code field is updated
+			                        jQuery('#discount_code').keyup(function() {
+				                        jQuery('#other_discount_code').val(jQuery('#discount_code').val());
+			                        });
+			                        jQuery('#discount_code').blur(function() {
+				                        jQuery('#other_discount_code').val(jQuery('#discount_code').val());
+			                        });
+
+			                        //applying a discount code
+			                        jQuery('#other_discount_code_button').click(function() {
+				                        var code = jQuery('#other_discount_code').val();
+				                        var level_id = jQuery('#level').val();
+
+				                        if(code)
+				                        {
+					                        //hide any previous message
+					                        jQuery('.pmpro_discount_code_msg').hide();
+
+					                        //disable the apply button
+					                        jQuery('#other_discount_code_button').attr('disabled', 'disabled');
+
+					                        jQuery.ajax({
+						                        url: '<?php echo admin_url('admin-ajax.php'); ?>',type:'GET',timeout:<?php echo apply_filters("pmpro_ajax_timeout", 5000, "applydiscountcode");?>,
+						                        dataType: 'html',
+						                        data: "action=applydiscountcode&code=" + code + "&level=" + level_id + "&msgfield=pmpro_message",
+						                        error: function(xml){
+							                        alert('Error applying discount code [1]');
+
+							                        //enable apply button
+							                        jQuery('#other_discount_code_button').removeAttr('disabled');
+						                        },
+						                        success: function(responseHTML){
+							                        if (responseHTML == 'error')
+							                        {
+								                        alert('Error applying discount code [2]');
+							                        }
+							                        else
+							                        {
+								                        jQuery('#pmpro_message').html(responseHTML);
+							                        }
+
+							                        //enable invite button
+							                        jQuery('#other_discount_code_button').removeAttr('disabled');
+						                        }
+					                        });
+				                        }
+			                        });
+
+		                        </script>
+	                        <?php } ?>
+
+	                        <!------------------>
                             <div class="pmpro_checkout-fields user_info full_width">
                                 <div class="pmpro_checkout-field pmpro_checkout-field-username">
                                     <label for="username"><?php _e('Username', 'paid-memberships-pro' );?><span>*</span></label>
