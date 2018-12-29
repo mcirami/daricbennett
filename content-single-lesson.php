@@ -113,7 +113,7 @@
 					<div class="video_wrapper full_width">
 						<iframe src="<?php echo the_field('member_lesson_link');?>?rel=0&showinfo=0"></iframe>
 					</div>
-                    <?php if (the_field('lesson_description') != null) : ?>
+                    <?php if (get_field('lesson_description')) : ?>
                         <div class="quote_section full_width">
                             <img src="<?php echo bloginfo('template_url'); ?>/images/icon-quote-left.png" />
                             <p><?php echo the_field('lesson_description'); ?></p>
