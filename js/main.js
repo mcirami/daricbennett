@@ -22,11 +22,9 @@ jQuery(document).ready(function($) {
         scrolling: 'hidden',
         beforeShow: function () {
             $("body").css({'overflow-y': 'hidden !important'});
-            //$(".wrapper").css({'position':'fixed'});
         },
         afterClose: function () {
             $("body").css({'overflow-y': 'visible'});
-            //$(".wrapper").css({'position':'relative'});
         },
         helpers: {
             overlay: {
@@ -234,9 +232,6 @@ jQuery(document).ready(function($) {
                     }
                     $resultElement.html(message);
                 } else {
-                    /*$resultElement.css("color", "white");
-                    $resultElement.html("Thanks for subscribing to DaricBennett.com!<br>Check your inbox to confirm your email ~ Daric");*/
-
                     createCookie("subscribed", "success", 5000);
 
                     window.location.href = "https://www.daricbennett.com/thank-you/";
@@ -268,19 +263,11 @@ jQuery(document).ready(function($) {
 
     $('.accordion').on('click', function () {
 
-        //var panelHeight = 0;
-       // var rowHeight = 60;
         var headerHeight = $('#global_header').height();
         var accordion = $(this);
         var arrow = $(this).children('.arrow');
         var panel = $(this).next('.panel');
-        //var previousPanel = $(this).parent().prevAll('.row').has('.show');
         var hash = $(this).children("a").attr("href");
-
-        /*if (previousPanel.length > 0) {
-            panelHeight = $('.panel.show').height();
-            rowHeight = $('.lessons_page .video_list .row').height();
-        }*/
 
         $('.accordion').not(this).removeClass('active');
         $('.arrow').removeClass('active');
@@ -290,7 +277,6 @@ jQuery(document).ready(function($) {
             accordion.removeClass('active');
             arrow.removeClass('active');
             panel.removeClass('show');
-            //$('html,body').animate({scrollTop: $(hash).offset().top - headerHeight}, 1000);
         } else {
             accordion.addClass('active');
             arrow.addClass('active');
@@ -369,7 +355,6 @@ jQuery(document).ready(function($) {
             $(".rtmedia-uploader-div .rtmedia-simple-file-upload").append("Media Uploading....");
 
             if (".rtmedia-container:contains('Media Uploading')") {
-                //if(".bbp-attachments-form:contains('Media Uploading')") {
 
                 $('#media_upload_wait').addClass('show');
                 $("body, html").css('overflow-y', 'hidden');
@@ -396,18 +381,9 @@ jQuery(document).ready(function($) {
 
     if (youtube.length) {
 
-        for (var i = 0; i < youtube.length; i++) {
-            /*
-            var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed + "/mqdefault.jpg";
+        for (var a = 0; a < youtube.length; a++) {
 
-            var image = new Image();
-            image.src = source;
-            image.addEventListener( "load", function() {
-                youtube[ i ].appendChild( image );
-            }( i ) );
-            */
-
-            youtube[i].addEventListener("click", function () {
+            youtube[a].addEventListener("click", function () {
 
                 var iframe = document.createElement("iframe");
 
@@ -426,9 +402,9 @@ jQuery(document).ready(function($) {
 
     if (vimeo.length) {
 
-        for (var i = 0; i < vimeo.length; i++) {
+        for (var b = 0; b < vimeo.length; b++) {
 
-            vimeo[i].addEventListener("click", function () {
+            vimeo[b].addEventListener("click", function () {
 
                 var iframe = document.createElement("iframe");
 
@@ -446,9 +422,9 @@ jQuery(document).ready(function($) {
 
     if (soundslice.length) {
 
-        for (var i = 0; i < soundslice.length; i++) {
+        for (var c = 0; c < soundslice.length; c++) {
 
-            soundslice[i].addEventListener("click", function () {
+            soundslice[c].addEventListener("click", function () {
 
                 var iframe = document.createElement("iframe");
 
@@ -462,15 +438,6 @@ jQuery(document).ready(function($) {
             });
         }
     }
-
-    /*$('.soundslice_video img').on('click', function(){
-
-        window.setTimeout(function(){
-            var ssiframe = document.getElementById('ssembed').contentWindow;
-            ssiframe.postMessage('{"method": "setFullscreen", "arg": true}', 'https://www.soundslice.com');
-        }, 1000);
-
-    });*/
 
     $('.keyboard_link').click(function (e) {
         e.preventDefault();
@@ -488,9 +455,13 @@ jQuery(document).ready(function($) {
         $("body, html").css('overflow-y', 'scroll');
     });
 
-    //var postCommentURL = window.location.href;
+    var pageURL = currentPage.postSlug;
 
-    if (((currentPage.pageName !== "Video Q & A")  && (currentPage.postType === "videos")) || (currentPage.postType === "live-streams")) {
+    if ((currentPage.postType === "videos") || (currentPage.postType === "live-streams") || (pageURL.includes("free-bass-lessons")) ) {
+        commentVideoEmbed();
+    }
+
+    function commentVideoEmbed() {
 
         if ($('.comment-content > p a').length ) {
 
@@ -508,11 +479,19 @@ jQuery(document).ready(function($) {
                 } else if (videoLink.includes("youtu.be")) {
                     str = videoLink.split(".be/");
                     embedLink = "https://www.youtube.com/embed/" + str[1];
+                } else {
+                    embedLink = "";
                 }
 
-                $("<div class='video_embed'><div class='video_wrapper'><iframe frameborder='0' allowfullscreen src='" + embedLink + "/?rel=0&showinfo=0'></iframe></div></div>").insertAfter($(links[x]).parent());
+                if(embedLink !== "") {
 
-                links[x].replaceWith("");
+                    $("<div class='video_embed'><div class='video_wrapper'><iframe frameborder='0' allowfullscreen src='" +
+                        embedLink +
+                        "/?rel=0&showinfo=0'></iframe></div></div>").
+                        insertAfter($(links[x]).parent());
+
+                    links[x].replaceWith("");
+                }
 
             }
         }
@@ -538,9 +517,17 @@ jQuery(document).ready(function($) {
                     } else if (newVideoLink.includes("youtu.be")) {
                         str = newVideoLink.split(".be/");
                         newEmbedLink = "https://www.youtube.com/embed/" + str[1];
+                    } else {
+                        newEmbedLink = "";
                     }
 
-                    $("<div class='video_embed'><div class='video_wrapper'><iframe frameborder='0' allowfullscreen src='" + newEmbedLink + "/?rel=0&showinfo=0'></iframe></div></div>").insertAfter($(commentContent[y]));
+                    if(newEmbedLink !== "") {
+
+                        $("<div class='video_embed'><div class='video_wrapper'><iframe frameborder='0' allowfullscreen src='" +
+                            newEmbedLink +
+                            "/?rel=0&showinfo=0'></iframe></div></div>").
+                            insertAfter($(commentContent[y]));
+                    }
                 }
 
             }
@@ -548,10 +535,9 @@ jQuery(document).ready(function($) {
         }
     }
 
-
-    var ajaxComments = null;
+    //var ajaxComments = null;
     var commentReply = $('a.comment-reply-link');
-    var parent = 0;
+    var commentParent = 0;
     var replyToUser = null;
     var commentReplyURL = null;
 
@@ -559,30 +545,31 @@ jQuery(document).ready(function($) {
         replyToComment(commentReply);
     }
 
-	var commentSubmitButton = $('.comment_submit .submit');
-
     function replyToComment(commentReply) {
         commentReply.prop('onclick', null).off('click');
 
         commentReply.click(function (e) {
 
             e.preventDefault();
+
+            if ($('.comment_reply_wrap').hasClass('open')) {
+                $('.comment_reply_wrap').removeClass('open').slideUp(600);
+                $('.reply_button').css('display', 'inline-block');
+
+                if(currentPage.pageName === "Lessons" || currentPage.postType === "courses") {
+                    $('#respond').remove();
+                }
+            }
+
             $(this).parent().css('display', 'none');
+            $(this).parent().next('.comment_reply_wrap').addClass('open').slideDown(600);
 
             replyToUser = $(this).attr('aria-label').split("to");
             replyToUser = replyToUser[1].trim();
 
             commentReplyURL = window.location.href;
 
-            var buttonUrl = $(this).attr('href').split("=");
-            var value = buttonUrl[1].split("#");
-            parent = value[0];
-
-            if (!$(this).parent().next('.comment_reply_wrap').hasClass('open')) {
-                $('.comment_reply_wrap').removeClass('open').slideUp(600);
-            }
-
-            $(this).parent().next('.comment_reply_wrap').addClass('open').slideDown(600);
+            commentParent = parseInt($(this).closest('li.comment').attr('id').replace(/[^\d]/g, ''),10);
 
             if(currentPage.pageName === "Lessons" || currentPage.postType === "courses") {
 
@@ -609,160 +596,12 @@ jQuery(document).ready(function($) {
 
                 $(commentForm).insertBefore($(this).parent().next('.comment_reply_wrap').children('.cancel_comment'));
 
-	            commentSubmitButton = $( ".comment_submit .submit" );
-
-	            if (commentSubmitButton.length) {
-		            submitComment(commentSubmitButton);
-	            }
-
             }
+
+            $(this).closest('.reply').find('#comment_parent').val(commentParent);
 
         });
     }
-
-    var protocol = window.location.protocol;
-    var domain = window.location.hostname;
-
-    if (commentSubmitButton.length) {
-        submitComment(commentSubmitButton);
-    }
-
-    function submitComment(commentSubmitButton) {
-        commentSubmitButton.click(function (e) {
-
-	        commentReplyURL = window.location.href;
-
-            if((currentPage.postType === "videos" || currentPage.postType === "live-streams") && replyToUser == null) {
-                console.log('videos');
-            } else {
-                e.preventDefault();
-
-                $(this).next('.loading_gif').html('<img src ="https://www.daricbennett.com/images/loading-gif.gif"/>');
-                var today = new Date();
-                var postID = $(this).parent().next('input#comment_post_ID').attr('value');
-                var commentContent = $(this).parent().prevAll('p.comment-form-comment:first').children();
-                var comment = commentContent[1].value;
-
-                if (comment === 'undefined' || comment === "" || comment === null) {
-
-                    $(this).next('.loading_gif').html('');
-
-                    alert("There was an error posting your comment. Please try again. " +
-                        "This Could be due to an invalid character or blank form");
-
-                } else {
-                    var ajaxURL = myAjaxurl.ajaxurl;
-                    var userLogin = currentUser.userLogin;
-                    var userID = currentUser.userID;
-                    var userEmail = currentUser.userEmail;
-                    var userRole = currentUser.userRole;
-
-                    var JSONObj = {
-                        "post": postID,
-                        "content": comment,
-                        "author": userID,
-                        "author_name": userLogin,
-                        "author_email": userEmail,
-                        "date": today,
-                        "parent": parent
-                    };
-
-                    var data = JSON.stringify(JSONObj);
-
-                    //var url = "http://darben.dev/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
-
-                    //var url = "https://www.daricbennett.com/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
-
-                    //var url = "https://staging.daricbennett.com/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
-
-                    //var url = "http://staging-daric.mscwebservices.net/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
-
-                    var url = protocol + "//" + domain + "/wp-json/wp/v2/comments/?post=" + postID + "&content=" + comment + "&author=" + userID + "&author_name=" + userLogin + "&author_email=" + userEmail + "&parent=" + parent;
-
-
-                    ajaxComments = $.ajax({
-                        url: url,
-                        type: "POST",
-                        async: true,
-                        dataType: 'json',
-                        data: data,
-                        beforeSend: function (xhr) {
-                            xhr.setRequestHeader("X-WP-Nonce", currentUser.nonce);
-                            xhr.setRequestHeader("authorization", "OAuth oauth_consumer_key='IWmItGndx8oY',oauth_token='x3pmlsoef6ayQEdkasPgG01h',oauth_signature_method='HMAC-SHA1',oauth_timestamp='1497396491',oauth_nonce='Lqz1LK',oauth_version='1.0',oauth_signature='EnWnLRtpkruPc1bTtKVhMgECFWg%253D'");
-                            xhr.setRequestHeader("cache-control", "no-cache");
-                            xhr.setRequestHeader("postman-token", "25dc514c-3ad3-0c17-95e8-9dcc960c9ca0");
-                            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                        },
-                        success: function (data, xhr) {
-
-                            if (userRole[0] !== 'administrator') {
-                                var commentsEmail = $.ajax({
-                                    type: "POST",
-                                    dataType: "json",
-                                    url: ajaxURL,
-                                    data: {action: 'send_comment_notify_email', url: commentReplyURL},
-                                    success: function (data) {
-                                        //alert ("Email Sent");
-                                        console.log("Comment Posted, Email Sent" + data);
-                                    },
-                                    error: function (xhRequest, errorThrown, resp) {
-                                        console.log(errorThrown);
-                                        console.log(JSON.stringify(resp));
-                                    }
-                                });
-
-                            } else {
-
-                                var commentsEmailAdmin = $.ajax({
-                                    type: "post",
-                                    async: true,
-                                    //dataType: "json",
-                                    url: ajaxURL,
-                                    data: {action: 'rv_admin_comments_to_author_comments'},
-                                    success: function (data) {
-                                        //alert ("Email Sent");
-                                        console.log("Comment Posted, Email Sent");
-                                    },
-                                    error: function (xhRequest, errorThrown) {
-                                        console.log(errorThrown);
-                                        console.log(JSON.stringify(xhRequest));
-                                    }
-                                });
-                            }
-
-                            commentContent[1].value = "";
-                            location.reload();
-                        },
-                        failure: function (xhr) {
-                            alert("There was an error posting your comment. Please try again.");
-                            xhr.send(data);
-                            //console.log(JSON.stringify(resp));
-                        }
-                    });
-
-                    if (replyToUser !== null && commentReplyURL !== null) {
-
-                        var commentsReplyEmail = $.ajax({
-                            type: "POST",
-                            dataType: "json",
-                            url: ajaxURL,
-                            data: {action: 'send_reply_to_user_email', user: replyToUser, url: commentReplyURL},
-                            success: function (data) {
-                                //alert ("Email Sent");
-                                console.log(data);
-                            },
-                            error: function (xhRequest, errorThrown, resp) {
-                                //alert("Error sending email");
-                                console.log(errorThrown);
-                                console.log(JSON.stringify(resp));
-                            }
-                        });
-                    }
-                }
-            }
-        });
-    }
-
 
     if ($('.cancel_comment').length) {
         commentCancel();
@@ -770,109 +609,31 @@ jQuery(document).ready(function($) {
 
     function commentCancel() {
 
-        $('.cancel_comment a').click(function (e) {
+        $('.cancel_comment a').bind('click', function (e) {
             e.preventDefault();
             if ($('.comment_reply_wrap').hasClass('open')) {
                 $('.comment_reply_wrap').removeClass('open').slideUp(600);
-                parent = 0;
+                commentParent = 0;
                 commentReplyURL = null;
                 replyToUser = null;
-                commentSubmitButton.next('.loading_gif').html('');
+                //commentSubmitButton.next('.loading_gif').html('');
                 var link = $(this).closest('.reply').children('.reply_button').css('display', 'block');
 
                 if(currentPage.pageName === "Lessons" || currentPage.postType === "courses") {
                     $(this).parent().parent().children('#respond').remove();
                 }
+
             }
         });
     }
 
+
     if (currentPage.pageName === 'Lessons') {
         var filterizr = $('.filtr-container');
-        /*var lessonArray = [];
-        var paginationDiv = $(".pagination");
-        var items = document.getElementsByClassName('filtr-item');*/
 
         filterizr.filterizr('setOptions', {
-        	/*callbacks: {
-                onFilteringStart: function() {
-                    //lessonArray = [];
-                    var html = '';
-
-                    for (var x = 0; x < items.length; x++) {
-                        //lessonArray.push(items[x].outerHTML);
-                        html += items[x].outerHTML;
-                    }
-
-                    $('#filter_images').html(html);
-                    console.log(html);
-                },
-
-		        onFilteringEnd: function() {
-                    paginationDiv.empty();
-                    lessonArray.length = 0;
-			        setTimeout(function () {
-
-						for (var x = 0; x < items.length; x++) {
-							if(items[x].classList.contains('filteredOut')) {
-								continue;
-							} else {
-                                lessonArray.push(items[x].outerHTML);
-							}
-						}
-
-						lessonPagination(lessonArray, paginationDiv);
-
-			        }, 1000);
-		        }
-	        },*/
-
             layout: 'sameSize',
         });
-
-        /*function lessonPagination(itemsArray, pagination) {
-            var html = '';
-            var numberOfItems = itemsArray.length;
-            var limitPerPage = 21;
-            var totalPages = Math.round(numberOfItems / limitPerPage);
-            pagination.append("<li class='current-page'><a class='page_number active' data-page='1' href='#'>" + 1 + "</a></li>");
-
-            for (var i = 2; i <= totalPages; i++) {
-                pagination.append("<li class='current-page'><a class='page_number' data-page='" + i + "' href='#'>" + i + "</a></li>");
-            }
-
-            $('.page_number').bind("click", function(e) {
-                e.preventDefault();
-                var html = '';
-                if (!$(this).hasClass('active')) {
-                    $('.page_number').removeClass('active');
-                    $(this).addClass('active');
-                    var pageNumber = $(this).data('page');
-                    var pageItems;
-                    var start;
-                    var end;
-
-                    start = (pageNumber * 21) - 21;
-                    end = pageNumber * 21;
-
-
-                    pageItems = itemsArray.slice(start,end);
-                    for (var y = 0; y <= pageItems.length - 1; y++) {
-                        html += pageItems[y];
-                    }
-
-                    $('#filter_images').html(html);
-
-                }
-            });
-
-            var pageItems = itemsArray.slice(0,limitPerPage);
-            for (var y = 0; y <= pageItems.length - 1; y++) {
-                html += pageItems[y];
-            }
-
-            $('#filter_images').html(html);
-        }*/
     }
 
     $('.filter_list li').click(function () {
@@ -903,11 +664,14 @@ jQuery(document).ready(function($) {
 
 	    var videoPlayer = '';
 	    var htmlBody = $("html, body");
+        var clickHash = $(this).attr("href");
+
+        createCookie("clickHash", clickHash, 5);
 
 	    if (currentPage.postType !== "courses") {
 		    htmlBody.animate({scrollTop: $('#video_player').offset().top - $('#global_header').height()}, 1000);
 	    } else {
-		    var hash = $(this).attr("href") + "-video";
+		    var hash = clickHash + "-video";
 		    videoPlayer = $(this).closest('.row').children('.course_video_player');
 	    }
 
@@ -964,13 +728,6 @@ jQuery(document).ready(function($) {
 		        var replaceVideo =
 			        '<p class="replace_link">Video trouble? <a class="replace_video" href="#" data-replace="' + replaceVideoLink + '">Use this LINK!</a></p>';
 
-		        /*if (keyboardVideo !== "undefined") {
-					var keyboardLink =
-						'<div class="links_wrap"><a class="keyboard_link" href="#" data-embed="' + keyboardVideo + '">Want to watch this bass line played on a keyboard?</a></div>';
-				} else {
-					keyboardLink = "";
-				}*/
-
 	        } else {
 		        replaceVideo = "";
 		        //keyboardLink = "";
@@ -1023,34 +780,15 @@ jQuery(document).ready(function($) {
 	        });
 
 	        replyToComment($('a.comment-reply-link'));
-	        submitComment($('.comment_submit .submit'));
 	        commentCancel();
 
 		    }, function(reason){
 		        console.log("error", reason);
 	    });
 
-        /*var commentContent = $.ajax({
-		    type: "post",
-            dataType: 'html',
-		    data: {action: 'get_lesson_comments', id: postID},
-            url: ajaxURL,
-            global: false,
-            async:false,
-		    success: function (response) {
-			    //alert ("Email Sent");
-			    //console.log(response);
-                return response;
-		    },
-		    error: function (xhRequest, errorThrown, resp) {
-			    console.log(errorThrown);
-			    console.log(JSON.stringify(resp));
-		    }
-
-	    }).responseText;*/
-
-
-
+        setTimeout(function () {
+            commentVideoEmbed();
+        }, 3000);
     });
 
     function commentsAjaxCall(url, postid) {
@@ -1100,12 +838,6 @@ jQuery(document).ready(function($) {
             }, 800);
         })
     }
-
-    /*$('#easyPaginate').easyPaginate({
-        paginateElement: '.filtr-item',
-        elementsPerPage: 10,
-        effect: 'climb'
-    });*/
 });
 
 

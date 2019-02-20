@@ -5123,13 +5123,7 @@ ul.member_menu > li {
 
 .video_content_wrap #comments {
   padding-bottom: 20px;
-  color: #454647;
-  /*&.member_lesson_comments {
-      .comment-meta {
-          @include span-columns(9);
-          max-width: unset;
-      }
-  }*/ }
+  color: #454647; }
   .video_content_wrap #comments .comment-content {
     width: 100%; }
     .video_content_wrap #comments .comment-content .comment_heading {
@@ -5159,6 +5153,12 @@ ul.member_menu > li {
       display: none; }
     .video_content_wrap #comments .comment-meta.mobile {
       display: block; }
+  .video_content_wrap #comments .comment-reply-title span {
+    font-size: 14px;
+    margin-top: 5px; }
+    @media screen and (max-width: 768px) {
+      .video_content_wrap #comments .comment-reply-title span {
+        font-size: 12px; } }
 
 #respond #comment-form-identity {
   display: none !important; }

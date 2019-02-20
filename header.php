@@ -239,7 +239,12 @@ $username = $current_user->user_login;
 		<div class="header_bottom <?php if(!is_front_page() && !is_page(5)){ echo "background"; } ?>">
 			<?php wp_reset_query(); ?>
 			<div class="container">
-				<a href="/"><h1 class="logo"><img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" /></h1></a>
+				<?php if (is_user_logged_in()): ?>
+					<a href="/member-home"><h1 class="logo"><img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" /></h1></a>
+				<?php else : ?>
+					<a href="/"><h1 class="logo"><img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" /></h1></a>
+				<?php endif; ?>
+
 				<a class="mobile_menu_icon" href="#">
 					<span></span>
 					<span></span>

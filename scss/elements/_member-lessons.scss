@@ -829,12 +829,14 @@
         }
     }
 
-    /*&.member_lesson_comments {
-        .comment-meta {
-            @include span-columns(9);
-            max-width: unset;
+    .comment-reply-title span {
+        font-size: 14px;
+        margin-top: 5px;
+
+        @include media($mobile) {
+            font-size: 12px;
         }
-    }*/
+    }
 }
 
 #respond #comment-form-identity {
