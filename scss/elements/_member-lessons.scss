@@ -694,7 +694,12 @@
         bottom: 0;
         right: 0;
     }
+
+    #reply-title {
+        color: $black;
+    }
 }
+
 
 .comment-respond, .comment_reply_wrap{
 
@@ -806,6 +811,12 @@
 
     .comment-reply-title {
         color: $white;
+    }
+
+    .comment_reply_wrap {
+        #reply-title {
+            color: $black;
+        }
     }
 
     .comment-metadata {

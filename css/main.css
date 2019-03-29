@@ -5035,6 +5035,8 @@ ul.member_menu > li {
     position: absolute;
     bottom: 0;
     right: 0; }
+  .comment_reply_wrap #reply-title {
+    color: #131313; }
 
 .comment-respond h3, .comment_reply_wrap h3 {
   margin-top: 0;
@@ -5130,6 +5132,8 @@ ul.member_menu > li {
       padding: 10px; }
   .video_content_wrap #comments .comment-reply-title {
     color: #fff; }
+  .video_content_wrap #comments .comment_reply_wrap #reply-title {
+    color: #131313; }
   .video_content_wrap #comments .comment-metadata {
     float: left;
     display: block;
