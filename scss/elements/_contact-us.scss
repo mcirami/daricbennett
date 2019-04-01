@@ -89,9 +89,14 @@
 			
 			.your-question {
 				select {
+					height: 40px;
 					width: 100%;
 					border: 1px solid $borderGray;
 					background: $white;
+
+					@include media($mobile){
+						height: 35px;
+					}
 				}
 			}
 			

@@ -541,8 +541,6 @@ jQuery(document).ready(function($) {
     var replyToUser = null;
     var commentReplyURL = null;
 
-    console.log(commentReply);
-
     if (commentReply.length) {
         replyToComment(commentReply);
     }

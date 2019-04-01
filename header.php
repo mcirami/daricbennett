@@ -106,7 +106,9 @@ if (isset($_GET['clickid'])) {
     <meta property="og:url" content="<?php echo $actual_link; ?>" />
     <meta property="fb:app_id" content="476725656008860" />
 
-    <?php wp_head(); ?>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+	<?php wp_head(); ?>
 
 </head>
 

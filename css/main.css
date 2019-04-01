@@ -5476,9 +5476,13 @@ ul.member_menu > li {
       color: #f20f2b;
       border-color: #f20f2b; }
     .contact_us .top_section form .your-question select {
+      height: 40px;
       width: 100%;
       border: 1px solid #c8c8c8;
       background: #fff; }
+      @media screen and (max-width: 768px) {
+        .contact_us .top_section form .your-question select {
+          height: 35px; } }
     .contact_us .top_section form img {
       width: auto;
       float: right; }
