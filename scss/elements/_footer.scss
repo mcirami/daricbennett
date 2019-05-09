@@ -56,11 +56,12 @@
 			}
 			
 			h3 {
-				font-family: 'robotoregular';
+				font-family: 'robotoregular', sans-serif;
 				font-weight: lighter;
 				margin-top: 0;
 				text-transform: uppercase;
 				font-size: 18px;
+				color: $white;
 				
 				@include media($tablet){
 					font-size: 16px;
@@ -80,7 +81,7 @@
 				}
 				
 				a {
-					font-family: 'robotolight';
+					font-family: 'robotolight', sans-serif;
 					color: $grayText;
 					font-size: 14px;
 					
@@ -116,7 +117,7 @@
 				}
 				
 				li {
-					font-family: 'robotolight';
+					font-family: 'robotolight', sans-serif;
 					color: $grayText;
 					font-size: 14px;
 					
@@ -141,7 +142,7 @@
 						}
 						
 						a {
-							font-family: 'robotolight';
+							font-family: 'robotolight', sans-serif;
 							float: left;
 							color: $white;
 							
@@ -289,7 +290,7 @@
 				}
 				
 				&:after {
-					font-family: 'robotolight';
+					font-family: 'robotolight', sans-serif;
 					content: '|';
 					position: absolute;
 					right: -4px;
@@ -313,7 +314,7 @@
 				}
 				
 				a {
-					font-family: 'robotolight';
+					font-family: 'robotolight', sans-serif;
 					color: $grayText;
 				}
 			}

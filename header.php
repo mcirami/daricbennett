@@ -69,9 +69,10 @@ if (isset($_GET['clickid'])) {
             <meta property="og:image:secure_url" content="<?php echo $ogImage[0];?>" />
             <meta property="og:image:type" content="image/jpeg" />
 
-        <?php else :
+        <?php else : ?>
 
-            if(is_single()) :
+	        <meta property="og:image" content="<?php echo bloginfo( 'template_url' ); ?>/images/og-image-bass-nation.png" />
+	        <?php   if(is_single()) :
 
                 $str = get_field('free_lesson_link');
 
@@ -105,8 +106,6 @@ if (isset($_GET['clickid'])) {
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?php echo $actual_link; ?>" />
     <meta property="fb:app_id" content="476725656008860" />
-
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 	<?php wp_head(); ?>
 

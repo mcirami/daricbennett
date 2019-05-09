@@ -13,7 +13,7 @@
   
  ?>
  
- 	<section class="contact_us full_width page_content <?php if (is_user_logged_in()) { echo member;} ?>">
+ 	<section class="contact_us full_width page_content <?php if (is_user_logged_in()) { echo 'member';} ?>">
 	 	
 	 	<header class="sub_header full_width">
 			 <div class="container">

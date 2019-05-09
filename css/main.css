@@ -2897,11 +2897,12 @@ ul.member_menu > li {
           #global_footer .content_wrap .columns_wrap:last-child {
             margin-right: 0; } }
       #global_footer .content_wrap .columns_wrap h3 {
-        font-family: 'robotoregular';
+        font-family: 'robotoregular', sans-serif;
         font-weight: lighter;
         margin-top: 0;
         text-transform: uppercase;
-        font-size: 18px; }
+        font-size: 18px;
+        color: #fff; }
         @media screen and (max-width: 1023px) {
           #global_footer .content_wrap .columns_wrap h3 {
             font-size: 16px; } }
@@ -2925,7 +2926,7 @@ ul.member_menu > li {
             #global_footer .content_wrap .columns_wrap .column:last-child {
               margin-right: 0; } }
         #global_footer .content_wrap .columns_wrap .column a {
-          font-family: 'robotolight';
+          font-family: 'robotolight', sans-serif;
           color: #958c8c;
           font-size: 14px; }
           #global_footer .content_wrap .columns_wrap .column a:hover {
@@ -2948,7 +2949,7 @@ ul.member_menu > li {
             margin-left: 5px;
             color: #fff; }
         #global_footer .content_wrap .columns_wrap .column li {
-          font-family: 'robotolight';
+          font-family: 'robotolight', sans-serif;
           color: #958c8c;
           font-size: 14px; }
           @media screen and (max-width: 768px) {
@@ -2975,7 +2976,7 @@ ul.member_menu > li {
                 display: inline-block;
                 float: none; } }
             #global_footer .content_wrap .columns_wrap .column .icon_wrap .row a {
-              font-family: 'robotolight';
+              font-family: 'robotolight', sans-serif;
               float: left;
               color: #fff; }
               #global_footer .content_wrap .columns_wrap .column .icon_wrap .row a:hover {
@@ -3067,7 +3068,7 @@ ul.member_menu > li {
             line-height: 1;
             padding: 5px; } }
         #global_footer .copy ul li:after {
-          font-family: 'robotolight';
+          font-family: 'robotolight', sans-serif;
           content: '|';
           position: absolute;
           right: -4px;
@@ -3083,7 +3084,7 @@ ul.member_menu > li {
         #global_footer .copy ul li:last-child:after {
           content: none; }
         #global_footer .copy ul li a {
-          font-family: 'robotolight';
+          font-family: 'robotolight', sans-serif;
           color: #958c8c; }
 
 .home_section {
@@ -10943,13 +10944,26 @@ form.pmpro_form #other_discount_code.input {
       @media screen and (max-width: 1023px) {
         .live_stream .column.one {
           width: 100%; } }
+      .live_stream .column.one a {
+        display: block; }
+      .live_stream .column.one .button_wrap {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 0;
+        padding-top: 20%; }
+        .live_stream .column.one .button_wrap img {
+          width: auto;
+          margin: 0 auto; }
     .live_stream .column.two {
       width: 40%;
       float: left;
       padding-left: 2%; }
       @media screen and (max-width: 1023px) {
         .live_stream .column.two {
-          width: 100%; } }
+          width: 100%;
+          padding-left: 0;
+          margin-top: 20px; } }
       .live_stream .column.two .live_chat {
         float: left;
         display: block;
@@ -10960,8 +10974,7 @@ form.pmpro_form #other_discount_code.input {
           margin-right: 0; }
       .live_stream .column.two iframe {
         float: left;
-        width: 100%;
-        height: 100%; }
+        width: 100% !important; }
         @media screen and (max-width: 1023px) {
           .live_stream .column.two iframe {
             position: relative;
@@ -11031,6 +11044,29 @@ form.pmpro_form #other_discount_code.input {
   font-size: 9px;
   float: left;
   margin-top: 10px; }
+
+.rumbletalk-embed {
+  min-height: 100%; }
+
+.rumbletalk-archive .image {
+  max-width: 35px;
+  max-height: 35px; }
+
+.rumbletalk-archive .user-message {
+  border: 1px solid #EEE;
+  padding: 5px;
+  margin: 3px; }
+
+.rumbletalk-archive .name {
+  vertical-align: top;
+  font-weight: bold;
+  margin-right: 10px; }
+
+.rumbletalk-archive .time {
+  float: right; }
+
+.rumbletalk-archive .text {
+  vertical-align: top; }
 
 /*
 
