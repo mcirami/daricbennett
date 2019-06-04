@@ -9295,45 +9295,164 @@ form.pmpro_form #other_discount_code.input {
     margin-bottom: 40px; }
 
 .not_member {
-  padding: 10% 0;
+  padding: 80px 0;
   text-align: center;
   color: #131313; }
+  @media screen and (max-width: 1023px) {
+    .not_member {
+      padding: 40px 0; } }
+  .not_member .content_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap; }
+    @media screen and (max-width: 768px) {
+      .not_member .content_wrap {
+        float: left;
+        display: block;
+        margin-right: 7.4229703521%;
+        width: 100%; }
+        .not_member .content_wrap:last-child {
+          margin-right: 0; } }
+  .not_member .column {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px; }
+    .not_member .column:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 768px) {
+      .not_member .column {
+        float: left;
+        display: block;
+        margin-right: 7.4229703521%;
+        width: 100%; }
+        .not_member .column:last-child {
+          margin-right: 0; } }
+    .not_member .column:last-child {
+      padding: 0 10px;
+      background: #f1f1f1; }
+      @media screen and (max-width: 768px) {
+        .not_member .column:last-child {
+          margin-top: 20px; } }
+      .not_member .column:last-child h3 {
+        font-size: 24px; }
+        @media screen and (max-width: 1023px) {
+          .not_member .column:last-child h3 {
+            font-size: 22px; } }
+        .not_member .column:last-child h3 span {
+          color: #f20f2b; }
+    .not_member .column .um-login {
+      border: none;
+      box-shadow: none;
+      margin: 0;
+      padding: 0; }
+      @media screen and (max-width: 1023px) {
+        .not_member .column .um-login {
+          width: 100% !important; } }
+      .not_member .column .um-login a.um-link-alt {
+        text-align: left; }
+  .not_member .button_wrap {
+    display: inline-block;
+    margin-top: 20px; }
+    .not_member .button_wrap a {
+      font-family: 'robotobold', sans-serif;
+      display: inline-block;
+      color: #131313;
+      font-size: 20px;
+      text-transform: uppercase;
+      padding: 12px 24px; }
+      @media screen and (max-width: 1023px) {
+        .not_member .button_wrap a {
+          padding: 12px 20px;
+          font-size: 18px; } }
   .not_member h2 {
-    font-size: 30px; }
+    font-family: 'robotobold', sans-serif;
+    text-transform: uppercase;
+    font-size: 34px;
+    color: #131313;
+    border-bottom: none; }
     @media screen and (max-width: 1023px) {
       .not_member h2 {
         font-size: 28px; } }
     @media screen and (max-width: 768px) {
       .not_member h2 {
         font-size: 18px; } }
-  .not_member h3 {
-    color: #f20f2b;
-    text-transform: none;
-    font-size: 24px; }
-    @media screen and (max-width: 1023px) {
-      .not_member h3 {
-        font-size: 22px; } }
-    @media screen and (max-width: 768px) {
-      .not_member h3 {
-        font-size: 15px; } }
-  .not_member .button_wrap {
-    display: inline-block;
-    margin-top: 20px; }
-    .not_member .button_wrap a {
-      display: inline-block; }
-      @media screen and (max-width: 768px) {
-        .not_member .button_wrap a {
-          padding-top: 3px; } }
-  .not_member p {
-    font-size: 20px;
-    display: inline-block;
-    margin: 0 20px; }
-    @media screen and (max-width: 1023px) {
-      .not_member p {
-        font-size: 18px; } }
-    @media screen and (max-width: 768px) {
-      .not_member p {
-        font-size: 14px; } }
+  .not_member .heading {
+    background: #131313; }
+    .not_member .heading h3 {
+      color: #fff;
+      font-size: 24px; }
+      @media screen and (max-width: 1023px) {
+        .not_member .heading h3 {
+          font-size: 22px; } }
+      .not_member .heading h3 span {
+        color: #ddb72e; }
+  .not_member .top_section {
+    padding: 20px 10px; }
+    .not_member .top_section h4 {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 100%;
+      font-family: 'robotolight', sans-serif;
+      font-size: 20px;
+      margin-bottom: 10px;
+      margin-top: 5px; }
+      .not_member .top_section h4:last-child {
+        margin-right: 0; }
+    .not_member .top_section p {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 100%;
+      font-size: 16px; }
+      .not_member .top_section p:last-child {
+        margin-right: 0; }
+      .not_member .top_section p span {
+        font-family: 'robotobold', sans-serif;
+        color: #f20f2b;
+        font-size: 26px; }
+  .not_member .bottom_section .heading {
+    background: #f20f2b; }
+    .not_member .bottom_section .heading h3 {
+      font-size: 20px; }
+      @media screen and (max-width: 1023px) {
+        .not_member .bottom_section .heading h3 {
+          font-size: 15px; } }
+  .not_member .bottom_section .content {
+    padding: 20px 10px;
+    text-align: left; }
+    .not_member .bottom_section .content li {
+      padding-left: 50px; }
+      .not_member .bottom_section .content li:before {
+        content: '';
+        position: absolute;
+        background: url(../images/check.png) no-repeat;
+        width: 20px;
+        height: 15px;
+        left: 21px;
+        top: 5px; }
+      .not_member .bottom_section .content li p {
+        font-size: 14px; }
 
 /*
 .bbpm-top-header {
@@ -11047,6 +11166,10 @@ form.pmpro_form #other_discount_code.input {
 
 .rumbletalk-embed {
   min-height: 100%; }
+
+.rumbletalk-archive {
+  max-height: 400px;
+  overflow: scroll; }
 
 .rumbletalk-archive .image {
   max-width: 35px;

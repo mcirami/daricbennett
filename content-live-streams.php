@@ -40,7 +40,7 @@ if (strpos($videoLink, "embed") !== false) {
 		        <div class="rumbletalk-embed">
 			        <meta charset="utf-8">
 			        <div class="rumbletalk-archive">
-				        <?php the_field('chat_history');?>
+				        <?php the_field('chat_history', false);?>
 			        </div>
 		        </div>
 	        </div>
