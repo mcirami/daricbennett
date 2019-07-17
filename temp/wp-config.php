@@ -2,8 +2,6 @@
 /** Enable W3 Total Cache */
 define('WP_CACHE', true); // Added by W3 Total Cache
 
-
-define('WP_AUTO_UPDATE_CORE', false);// This setting was defined by WordPress Toolkit to prevent WordPress auto-updates. Do not change it to avoid conflicts with the WordPress Toolkit auto-updates feature.
 /**
  * The base configuration for WordPress
  *
@@ -25,19 +23,20 @@ define('WP_AUTO_UPDATE_CORE', false);// This setting was defined by WordPress To
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'wordpress_3');
+ //Added by WP-Cache Manager
+define('DB_NAME', 'jeffimec_a02');
 
 /** MySQL database username */
-define('DB_USER', 'wordpress_0');
+define('DB_USER',       'jeffimec_a02');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'zyQw&091');
+define('DB_PASSWORD',       'g3X4y9v_SE');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost:3306');
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8mb4');
+define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
@@ -51,15 +50,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         's4 Z|Gmi~S2lh00JRyDzYAT9S;4GkH&$16QfyUF$U%M=:+/7H/@:YM9u~}5CqCi$');
-define('SECURE_AUTH_KEY',  'XXcg_z{=kH5%bLCNvve!R/{9PSE!MpmGp3hH,niqJRHn)}aTVt/rpoI XZoyx$~#');
-define('LOGGED_IN_KEY',    '@s*zd_:H#|Vmb6]^Y?@O:8VRGThN1~t:O+#i#7jcU;I-3-u9D:@W[$,e?IDH?mAE');
-define('NONCE_KEY',        '5U8gNh{a$isrH#Lty)!jX0xN]~pu.*S%DveS#Qcw/0JI5H Zczb~L`?IbDNe1{F5');
-define('AUTH_SALT',        '<8>wuc;k~/M{uH$G*)S[gDTnF_Cu)jWEcw<g$1N&La`aaFO#V)&/E4;f`orJA(vn');
-define('SECURE_AUTH_SALT', 'c5,x+^jY3:[Q==C>u:$n(uDZ+~)8(L<:3 GkjcziU@p(*E8VYiTvB/<zP|i0.n@n');
-define('LOGGED_IN_SALT',   'VEK?wgt4W~7j#kqvo:qbPt~@YPN.Z.U,s~z44*WzL3ru/f)G^U[+L=89wPb_R_P9');
-define('NONCE_SALT',       '@Bu)m% :9+D|&~ZpBCVq+6qg^IZG>>]FAUxtqC5)nWmHlP$C5mf.k|au:VE2.j]o');
-
+define('AUTH_KEY',       'yvzJlFpIotzA^0wCtaVZndQbOYy6ptMYw(i94HTegsXp9Uugu1f&wLYtK7DLdncA');
+define('SECURE_AUTH_KEY',       'O6Bz7YtNlZesaNe2P3nzd0QwsSW9&Qb&rDwXYvu5iMBAf@m0nb%iOHCK0SuwXc03');
+define('LOGGED_IN_KEY',       'qwvC3aMBkdMUf8s%d4bbqbIr&LNzSGhURj7x!kbQpr@rqYSnaWDUgABUXZi7Um!P');
+define('NONCE_KEY',       'Lutk5y)jnu^IV#VE1u)tx#O5go1O*n!s03ZHlhmskV0a%L4I(0O2rcZKT4Ge8*ot');
+define('AUTH_SALT',       'FkDoV1pFn9T6*!oV7b3MbYBeU!!cWn(Jr6(sVVaWO6s3RlHkYUhil5hU(z!3EIq3');
+define('SECURE_AUTH_SALT',       'cLdYvtzzVFqRS!tFXIvncCAWX15r4L(oxD@lQMjTLa@%Ev5J)FFHBHbew5r)kD#K');
+define('LOGGED_IN_SALT',       'T9t9y0P7jLLo&@vL#ggQHHw!*Vp0zolsXYEZAw@P&DXkV&mgsmKfhfKjpo#oy1(J');
+define('NONCE_SALT',       'fX1&aapuht^qJ9u(VcASkXKthZ6gZ3w#B8rXJadlxPW@YcyzZi^DEf0&DlTwcW0L');
 /**#@-*/
 
 /**
@@ -82,13 +80,18 @@ $table_prefix  = 'a02_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-//define('WP_DEBUG', true);
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);
+ini_set('log_errors','On');
+ini_set('display_errors','Off');
+ini_set('error_reporting', E_ALL );
 
-ini_set('log_errors', 'On');
-ini_set('error_log', 'wp-content/php-errors.log');
-//error_reporting(E_ALL);
+define('WP_HOME','https://daricbennett.com');
+define('WP_SITEURL','https://daricbennett.com');
 
 /* That's all, stop editing! Happy blogging. */
+
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
@@ -96,3 +99,11 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+define( 'WP_ALLOW_MULTISITE', true );
+
+define ('FS_METHOD', 'direct');
+
+define( 'WP_AUTO_UPDATE_CORE', false );
+
+?>
