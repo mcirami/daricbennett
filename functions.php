@@ -719,6 +719,23 @@ function my_save_post( $post_id )
     if (is_admin()) {
         return;
     }
+
+	$url = site_url();
+
+	if (strpos($url,'test') !== false || strpos($url,'staging') !== false ) {
+		$mailTo = "matteo@mscwebservices.net";
+	} else {
+		$mailTo = 'admin@daricbennett.com, daric@daricbennett.com';
+	}
+
+	$link = get_permalink($post_id);
+
+	$to = $mailTo;
+	$headers = array('Content-Type: text/html; charset=UTF-8');
+	$subject = 'A new Q & A Video was submitted';
+	$body = 'A new video was submitted to the Video Q & A section! <br><br>To view it click here:<br>' . $link;
+
+	wp_mail( $to, $subject, $body, $headers );
 }
 
 function httpPost($url, $params) {
