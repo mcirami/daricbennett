@@ -194,7 +194,7 @@
 
 					<?php endif; ?>
 					
-					<h4 class="rec_text">(Max file size: 100MB - Recommend .mp4 video for cross browser support)</h4>
+					<!--<h4 class="rec_text">(Max file size: 100MB - Recommend .mp4 video for cross browser support)</h4>-->
 
 					<?php do_action( 'bbp_theme_before_topic_form_submit_wrapper' ); ?>
 					

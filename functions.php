@@ -1160,3 +1160,38 @@ function pmpro_expiration_date_shortcode( $atts ) {
     return $content;
 }
 add_shortcode('pmpro_expiration_date', 'pmpro_expiration_date_shortcode');
+
+add_filter('bbp_after_get_the_content_parse_args', 'add_media_button');
+
+function add_media_button( $args ) {
+	$args['media_buttons'] = true;
+
+	return $args;
+}
+
+add_filter('bbp_get_topic_content', 'video_embed');
+add_filter('bbp_get_reply_content', 'video_embed');
+function video_embed($content){
+
+	$search = 'video';
+	if (preg_match("/{$search}/i", $content)) {
+		$positionStart = strpos($content, "http");
+		$positionEnd = strpos($content, "\"]");
+		$link = substr($content, $positionStart, $positionEnd);
+		$positionEnd2 = strpos($link, "\"]");
+		$linkFinal = substr($link, 0, $positionEnd2);
+
+		$replaceStart = strpos($content, "[video");
+		$replaceEnd = strpos($content, "video]");
+
+		$replace = substr_replace($content, ' ', $replaceStart, $replaceEnd);
+
+		$replaceStart2 = strpos($replace, "video]");
+		$replaceEnd2 = strpos($replace, "]");
+
+		$content = substr_replace($replace, ' ', $replaceStart2, $replaceEnd2);
+	}
+
+	return do_shortcode('[evp_embed_video url="' . $linkFinal . '" template="mediaelement"]') . $content;
+
+}

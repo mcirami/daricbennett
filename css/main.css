@@ -6425,7 +6425,11 @@ ul.member_menu > li {
 .forum_wrapper {
   padding: 40px 0;
   color: #131313;
-  font-family: 'robotoregular'; }
+  font-family: 'robotoregular', sans-serif; }
+  .forum_wrapper .bbp-attachments-form {
+    display: none; }
+  .forum_wrapper .mejs-overlay {
+    display: none; }
   .forum_wrapper .forums_home {
     background: #fff;
     z-index: 1; }
@@ -6493,6 +6497,8 @@ ul.member_menu > li {
     width: 100%; }
     .forum_wrapper #new-post h4:last-child {
       margin-right: 0; }
+    .forum_wrapper #new-post h4.rec_text {
+      display: none; }
   .forum_wrapper #rtmedia_uploader_filelist {
     float: left;
     display: block;
@@ -7376,7 +7382,7 @@ ul.member_menu > li {
                 font-size: 12px; } }
             .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-user-body .bbp-user-section p:last-child, .forum_wrapper #bbpress-forums #bbp-user-wrapper .profile_content .bbp-user-section p:last-child {
               margin-right: 0; }
-  .forum_wrapper button {
+  .forum_wrapper .bbp-submit-wrapper button {
     font-family: 'robotoregular';
     color: #fff;
     background: #f20f2b;
@@ -7386,13 +7392,13 @@ ul.member_menu > li {
     -moz-border-radius: 4px;
     font-size: 18px;
     border: none; }
-    .forum_wrapper button:hover {
+    .forum_wrapper .bbp-submit-wrapper button:hover {
       background: #c30b21; }
     @media screen and (max-width: 1023px) {
-      .forum_wrapper button {
+      .forum_wrapper .bbp-submit-wrapper button {
         font-size: 14px; } }
     @media screen and (max-width: 768px) {
-      .forum_wrapper button {
+      .forum_wrapper .bbp-submit-wrapper button {
         font-size: 16px;
         padding: 4px 18px 6px; } }
   .forum_wrapper .topic_button {

@@ -1,8 +1,16 @@
 .forum_wrapper {
 	padding: 40px 0;
 	color: $black;
-	font-family: 'robotoregular';
-	
+	font-family: 'robotoregular', sans-serif;
+
+	.bbp-attachments-form {
+		display: none;
+	}
+
+	.mejs-overlay {
+		display: none;
+	}
+
 	.forums_home {
 		background: $white;
 		z-index: 1;
@@ -69,6 +77,10 @@
 		
 		h4 {
 			@include span-columns(12);
+
+			&.rec_text {
+				display: none;
+			}
 		}
 	}
 	
@@ -1288,29 +1300,31 @@
 		}
 
 	}
-		
-	button {
-		font-family: 'robotoregular';
-		color: $white;
-		background: $red;
-		padding: 5px 20px 7px;
-		border-radius: 4px;
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		font-size: 18px;
-		border: none;
-		
-		&:hover {
-			background: #c30b21;
-		}
-		
-		@include media($tablet){
-			font-size: 14px;
-		}
-		
-		@include media($mobile){
-			font-size: 16px;
-			padding: 4px 18px 6px;
+
+	.bbp-submit-wrapper {
+		button {
+			font-family: 'robotoregular';
+			color: $white;
+			background: $red;
+			padding: 5px 20px 7px;
+			border-radius: 4px;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			font-size: 18px;
+			border: none;
+
+			&:hover {
+				background: #c30b21;
+			}
+
+			@include media($tablet) {
+				font-size: 14px;
+			}
+
+			@include media($mobile) {
+				font-size: 16px;
+				padding: 4px 18px 6px;
+			}
 		}
 	}
 	
