@@ -2,61 +2,72 @@ jQuery(document).ready(function($) {
 
     var navIcon = $('.user_mobile_nav p span');
 
-
     $('.bbp-topic-freshness-author').each(function () {
         var $this = $(this);
         $this.html($this.html().replace(/&nbsp;/g, ''));
     });
 
-    $(".fancybox").click(function (e) {
-        e.preventDefault();
-        $('#email_join').addClass('active');
-    });
+    fancyboxInit();
 
-    $(".fancybox").fancybox({
-        arrows: false,
-        autoSize: false,
-        width: '750',
-        height: '410',
-        closeBtn: true,
-        scrolling: 'hidden',
-        beforeShow: function () {
-            $("body").css({'overflow-y': 'hidden !important'});
-        },
-        afterClose: function () {
-            $("body").css({'overflow-y': 'visible'});
-        },
-        helpers: {
-            overlay: {
-                locked: true
-            }
+    function fancyboxInit() {
+        var fancybox = $(".fancybox");
+
+        if(fancybox.length) {
+            fancybox.click(function(e) {
+                e.preventDefault();
+                $('#email_join').addClass('active');
+            });
+
+            fancybox.fancybox({
+                arrows: false,
+                autoSize: false,
+                width: '750',
+                height: '410',
+                closeBtn: true,
+                scrolling: 'hidden',
+                beforeShow: function() {
+                    $("body").css({'overflow-y': 'hidden !important'});
+                },
+                afterClose: function() {
+                    $("body").css({'overflow-y': 'visible'});
+                },
+                helpers: {
+                    overlay: {
+                        locked: true
+                    }
+                }
+            });
         }
-    });
 
-    $(".fancybox2").click(function (e) {
-        e.preventDefault();
-    });
+        var fancybox2 = $(".fancybox2");
 
-    $(".fancybox2").fancybox({
-        arrows: false,
-        autoSize: false,
-        width: '750',
-        height: '750',
-        closeBtn: true,
-        //scrolling: 'hidden',
-        beforeShow: function () {
-            $("body").css({'overflow-y': 'hidden'});
-        },
-        afterClose: function () {
-            $("body").css({'overflow-y': 'visible'});
-        },
-        helpers: {
-            overlay: {
-                locked: true
-            }
+        if(fancybox2.length) {
+
+            fancybox2.click(function(e) {
+                e.preventDefault();
+            });
+
+            fancybox2.fancybox({
+                arrows: false,
+                autoSize: false,
+                width: '750',
+                height: '750',
+                closeBtn: true,
+                //scrolling: 'hidden',
+                beforeShow: function() {
+                    $("body").css({'overflow-y': 'hidden'});
+                },
+                afterClose: function() {
+                    $("body").css({'overflow-y': 'visible'});
+                },
+                helpers: {
+                    overlay: {
+                        locked: true
+                    }
+                }
+            });
         }
-    });
-
+    }
 
     $('.members_only_video_pop').fancybox({
         arrows: false,

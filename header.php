@@ -148,9 +148,6 @@ $username = $current_user->user_login;
 		
 		<?php endif; ?>
 	</div>
-<!--	<div class="mobile_heading full_width">
-		<h3>Menu</h3>
-	</div>-->
 
 	<?php if (is_user_logged_in()) : ?>
 

@@ -59,7 +59,7 @@
 			a {
 				color: $white;
 				border-bottom: 1px dashed $white;
-				font-family: 'robotobold';
+				font-family: 'robotobold', sans-serif;
 				margin-left: 5px;
 				
 				&:hover {
@@ -281,7 +281,7 @@
 					}
 					
 					a {
-						font-family: 'robotoregular';
+						font-family: 'robotoregular', sans-serif;
 						color: $white;
 						text-transform: uppercase;
 						font-size: 18px;
@@ -328,7 +328,7 @@
 }
 
 .sub_header {
-	font-family: 'robotomedium';
+	font-family: 'robotomedium', sans-serif;
 	background: $lightGray;
 	color: $black;
 	font-size: 36px;
@@ -515,7 +515,7 @@
 				color:$white;
 				text-decoration:none;
 				text-transform:uppercase;
-				font-family: 'robotoregular';
+				font-family: 'robotoregular', sans-serif;
 		 	}
 		 	
 		 	&.current_page_item {
@@ -857,7 +857,7 @@ ul.member_menu {
 	h2 {
 		@include span-columns(12);
 		font-size: 34px;
-		font-family: 'robotomedium';
+		font-family: 'robotomedium', sans-serif;
 		text-transform: uppercase;
 		line-height: 1;
 		
@@ -960,7 +960,7 @@ ul.member_menu {
 		}
 
 		input[type="submit"] {
-			font-family: 'robotomedium';
+			font-family: 'robotomedium', sans-serif;
 			font-size: 20px;
 			width: 20%;
 			color: $white;

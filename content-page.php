@@ -24,6 +24,13 @@
 					) );
 				?>
 			</div>
+
+			<?php
+
+				if(is_page('login') || is_page('password-reset')) {
+					echo do_shortcode( '[bws_google_captcha]' );
+				} ?>
+
 		<?php else :
 			
 			get_template_part( 'content', 'not-member' );

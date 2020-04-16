@@ -237,24 +237,22 @@
 			</script>
 			
 		<?php endif; ?>
-		<div id="media_upload_wait">
+		<!--<div id="media_upload_wait">
 			<div class="text_wrap">
 				 <h2>Your Media is Uploading....</h2>
 				 <h3>The page will refresh when it's complete, please be patient!</h3>
 			 </div>
 		 </div>
 
-        <input type="hidden" id="ajax_url" value="<?php echo admin_url('admin-ajax.php'); ?>"/>
-
         <div class="keyboard_popup">
             <div class="iframe_wrap">
                 <div class="close_button">
-                    <img src="<?php echo bloginfo('template_url'); ?>/images/close-button.png"/>
+                    <img src="<?php /*echo bloginfo('template_url'); */?>/images/close-button.png"/>
                 </div>
                 <iframe src="" frameborder="0"></iframe>
             </div>
 
-        </div>
+        </div>-->
 
 	</body>
 </html>

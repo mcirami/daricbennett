@@ -295,7 +295,7 @@
 			}
 			
 			.watch {
-				font-family: 'robotoregular';
+				font-family: 'robotoregular', sans-serif;
 				padding: 18px 0px;
 				width: 70%;
 				background: $lightGray;
@@ -429,7 +429,7 @@
 				padding-bottom: 20px;
 				
 				a {
-					font-family: 'robotobold';
+					font-family: 'robotobold', sans-serif;
 					font-size: 22px;
 					color: $yellow;
 					text-decoration: underline;
@@ -453,7 +453,7 @@
                 padding-bottom: 20px;
 
                 a {
-                    font-family: 'robotobold';
+                    font-family: 'robotobold', sans-serif;
                     font-size: 24px;
                     color: $red;
                     text-decoration: underline;

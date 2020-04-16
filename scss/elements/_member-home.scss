@@ -151,11 +151,6 @@
 				@include media($mobile){
 					padding: 10px 10px 20px;
 				}
-				/*
-				@include media($mobile){
-					@include span-columns(4);
-				}
-				*/
 				&:before {
 	                content: '';
 	                position: absolute;

@@ -45,7 +45,7 @@
 		}
 		
 		p {
-			font-family: 'robotoregular';
+			font-family: 'robotoregular', sans-serif;
 			border-bottom: 1px solid $borderGray;
 			display: inline-block;
 			padding-bottom: 15px;
@@ -120,7 +120,7 @@
 			}
 			
 			p {
-				font-family: 'robotobolditalic';
+				font-family: 'robotobolditalic', sans-serif;
 				font-size: 16px;
 				margin: 0;
 				padding: 0;
@@ -141,7 +141,7 @@
 			margin: 20px 0 0;
 			
 			p {
-				font-family: 'robotomediumitalic';
+				font-family: 'robotomediumitalic', sans-serif;
 				display: inline-block;
 				margin-bottom: 0;
 				margin-right: 10px;
@@ -1056,44 +1056,3 @@ form.pmpro_form #other_discount_code.input {
 #pmpro_payment_method span.gateway_paypalexpress {
 	margin-left: 0;
 }
-/*
-.pmpro_payment-discount-code {
-	width: 100%;
-	float: left;
-	
-	#discount_code {
-		width: auto;
-	}
-	
-	#discount_code_button {
-		font-family: 'robotoregular';
-		font-size: 16px;
-		padding: 7px 15px;
-		border-radius: 4px;
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		background: $yellow;
-		color: $black;
-		width: auto;
-		
-		@include media($tablet){
-			padding: 6px 12px;
-			font-size: 14px;
-		}
-		
-		@include media($mobile){
-			padding: 7px 10px;
-			font-size: 12px;
-		}
-		
-		@include media($smallMobile){
-			padding: 5px 8px;
-		}
-	}
-	
-	#discount_code_message {
-		width: 100%;
-		float: left;
-	}
-}
-*/

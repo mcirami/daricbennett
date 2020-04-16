@@ -143,7 +143,6 @@ global $post;
 
                                     <?php get_template_part('content', 'free-lesson'); ?>
 
-
                                 </div><!-- row -->
 
                             <?php endif; ?> <!-- hide -->

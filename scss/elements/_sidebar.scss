@@ -12,7 +12,7 @@
 	}
 	
 	.widget-title {
-		font-family: 'robotomedium';
+		font-family: 'robotomedium', sans-serif;
 		color: $white;
 		padding: 8px 10px;
 		background: $orange;
@@ -75,7 +75,7 @@
 		}
 		
 		.button {
-			font-family: 'robotoregular';
+			font-family: 'robotoregular', sans-serif;
 			border: none;
 			width: 30%;
 			padding: 4px 0 5px;

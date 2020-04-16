@@ -100,23 +100,6 @@ if ( function_exists( 'add_image_size' ) ) {
     add_image_size( 'video-thumb', 640, 360, true );
 }
 
-// remove injected CSS for recent comments widget
-/*
-function boiler_remove_wp_widget_recent_comments_style() {
-   if ( has_filter('wp_head', 'wp_widget_recent_comments_style') ) {
-      remove_filter('wp_head', 'wp_widget_recent_comments_style' );
-   }
-}
-*/
-// remove injected CSS from recent comments widget
-/*
-function boiler_remove_recent_comments_style() {
-  global $wp_widget_factory;
-  if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
-    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
-  }
-}
-*/
 // remove injected CSS from gallery
 function boiler_gallery_style($css) {
   return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
@@ -188,7 +171,9 @@ function boiler_scripts_styles() {
         //'ajaxurl' => admin_url( 'admin-ajax.php' )
     ));
 
-    wp_localize_script( 'main_js', 'myAjaxurl', array('ajaxurl' => admin_url( 'admin-ajax.php' )));
+	if(pmpro_hasMembershipLevel()) {
+		wp_localize_script( 'main_js', 'myAjaxurl', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+	}
 
     wp_localize_script('main_js', 'currentPage', array(
 
@@ -338,10 +323,6 @@ function lessons_cat_taxonomy() {
             'show_in_rest' => true,
             'show_ui'   => true,
             'show_admin_column' => true
-            /*'rewrite' => array(
-                'slug' => 'themes', // This controls the base slug that will display before each term
-                'with_front' => false // Don't display the category base before 
-            )*/
         )  
     );  
 }  
@@ -358,11 +339,6 @@ function lessons_level_taxonomy() {
             'show_ui'   => true,
             'show_admin_column' => true,
             'show_in_rest' => true
-            
-            /*'rewrite' => array(
-                'slug' => 'themes', // This controls the base slug that will display before each term
-                'with_front' => false // Don't display the category base before 
-            )*/
         )  
     );  
 }  
@@ -736,6 +712,8 @@ function my_save_post( $post_id )
 	$body = 'A new video was submitted to the Video Q & A section! <br><br>To view it click here:<br>' . $link;
 
 	wp_mail( $to, $subject, $body, $headers );
+
+	httpPost('http//', ' ');
 }
 
 function httpPost($url, $params) {

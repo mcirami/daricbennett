@@ -366,12 +366,6 @@
             }
         }
     }
-
-    /*.filtr-item {
-        transform: none !important;
-        position: relative !important;
-    }*/
-
     .filtr-container {
         overflow:hidden;
         //height: auto !important;
@@ -664,22 +658,6 @@
             }
         }
     }
-
-    /*&.member_lesson_comments {
-
-        .comment-author {
-            @include span-columns(3);
-            float: left;
-            display: block;
-            background: 0 0;
-            margin-right: 5px;
-            max-width: unset;
-        }
-
-        .comment-body {
-            @include span-columns(12);
-        }
-    }*/
 }
 
 .comment_reply_wrap {

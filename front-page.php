@@ -31,11 +31,6 @@ get_header(); ?>
 						?>
 					</div>
 				</div>
-				
-				<!--
-				<iframe class="home_top" src="<?php //echo bloginfo('template_url'); ?>/signup-form.html" frameborder="0" width="654" height="200">
-					<a href="http://link-to-form-on-mailchimp-site" target="_blank">Anchor text saying "click here to sign up" or something like that for people whose browsers can't read iframes</a>
-				</iframe>-->
 			</div>
 		</section><!-- hero -->
 		<section class="motto full_width">
@@ -99,9 +94,6 @@ get_header(); ?>
 					<p class="bold desktop"><?php echo the_field('about_form_text_desktop'); ?></p>
 					<p class="bold mobile"><?php echo the_field('about_form_text_mobile'); ?></p>
 					<?php echo the_field('email_form_shortcode'); ?>
-				<!--	<iframe class="home_bottom" src="<?php echo bloginfo('template_url'); ?>/signup-form.html" frameborder="0" width="654" height="200">
-						<a href="http://link-to-form-on-mailchimp-site" target="_blank">Anchor text saying "click here to sign up" or something like that for people whose browsers can't read iframes</a>
-					</iframe>-->
 				</div>
 				<div class="column">
 					<div class="video_wrapper full_width">

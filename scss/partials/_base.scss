@@ -87,7 +87,6 @@ body {
 
 a {
 	text-decoration: none;
-	/*@include transition(color 1s ease-in);*/
 	cursor: pointer;
 }
 
@@ -326,7 +325,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 	}
 	
 	input[type="submit"] {
-		font-family: 'robotomedium';
+		font-family: 'robotomedium', sans-serif;
 		font-size: 20px;
 		width: 100%;
 		color: $white;
@@ -447,7 +446,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 		}
 		
 		h4 {
-			font-family: 'robotoregular';
+			font-family: 'robotoregular', sans-serif;
 			display: block;
 			background: $red;
 			color: $white;
@@ -519,7 +518,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 			@include span-columns(12);
 			
 			a {
-				font-family: 'robotoregular';
+				font-family: 'robotoregular', sans-serif;
 				color: $grayText;
 				font-size: 16px;
 			}
