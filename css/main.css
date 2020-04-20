@@ -8031,10 +8031,11 @@ ul.member_menu > li {
         .form_wrapper .column .pmpro_submit {
           text-align: center; } }
     .form_wrapper .column #pmpro_submit_span {
-      float: left; }
-      @media screen and (max-width: 768px) {
+      float: left;
+      width: 302px; }
+      @media screen and (max-width: 550px) {
         .form_wrapper .column #pmpro_submit_span {
-          float: left !important; } }
+          width: 100%; } }
       .form_wrapper .column #pmpro_submit_span:before {
         content: '';
         position: absolute;
@@ -8042,12 +8043,15 @@ ul.member_menu > li {
         width: 28px;
         height: 12px;
         right: 17px;
-        top: 17px;
+        top: 15px;
         z-index: 1; }
         @media screen and (max-width: 768px) {
           .form_wrapper .column #pmpro_submit_span:before {
             right: 12px;
             background-size: 85%; } }
+        @media screen and (max-width: 550px) {
+          .form_wrapper .column #pmpro_submit_span:before {
+            background: none; } }
     .form_wrapper .column p.terms {
       width: 100%;
       float: left;
@@ -8068,12 +8072,14 @@ ul.member_menu > li {
       font-family: 'robotobold', sans-serif;
       float: left;
       border: none;
-      padding: 10px 60px 10px 20px; }
+      padding: 10px 20px; }
       @media screen and (max-width: 768px) {
         .form_wrapper .column input[type="submit"] {
-          padding: 10px 50px 10px 20px;
-          display: inline-block;
-          width: auto; } }
+          padding: 10px 20px;
+          display: inline-block; } }
+      @media screen and (max-width: 550px) {
+        .form_wrapper .column input[type="submit"] {
+          width: 100%; } }
     .form_wrapper .column #pmpro_paypalexpress_checkout {
       float: left; }
   .form_wrapper .bottom_section {
@@ -8125,7 +8131,7 @@ form.pmpro_form .pmpro_checkout-fields div {
   padding: 0 10px; }
 
 .pmpro_btn.pmpro_btn-submit-checkout {
-  width: auto; }
+  width: 100%; }
 
 .pmpro_form {
   float: left;
@@ -8550,12 +8556,10 @@ form.pmpro_form #other_discount_code.input {
   margin-left: 0; }
 
 .pmpro_captcha {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 100%; }
-  .pmpro_captcha:last-child {
-    margin-right: 0; }
+  margin-bottom: 20px; }
+  @media screen and (max-width: 768px) {
+    .pmpro_captcha .g-recaptcha {
+      margin: auto; } }
 
 .member_home {
   font-family: 'robotoregular', sans-serif;

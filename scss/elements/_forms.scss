@@ -411,10 +411,11 @@
 		
 		#pmpro_submit_span {
             float: left;
+			width: 302px;
 
-            @include media($mobile) {
-                float: left !important;
-            }
+			@include media($smallMobile) {
+				width: 100%;
+			}
 
             &:before {
                 content: '';
@@ -423,13 +424,17 @@
                 width: 28px;
                 height: 12px;
                 right: 17px;
-                top: 17px;
+                top: 15px;
                 z-index: 1;
 
                 @include media($mobile) {
                     right: 12px;
                     background-size: 85%;
                 }
+
+				@include media($smallMobile) {
+					background: none;
+				}
             }
 
 		}
@@ -455,12 +460,15 @@
 			font-family: 'robotobold', sans-serif;
             float: left;
 			border: none;
-			padding: 10px 60px 10px 20px;
+			padding: 10px 20px;
 			
 			@include media($mobile){
-				padding: 10px 50px 10px 20px;
+				padding: 10px 20px;
 				display: inline-block;
-				width: auto;
+			}
+
+			@include media($smallMobile) {
+				width: 100%;
 			}
 		}
 		
@@ -531,7 +539,7 @@ form.pmpro_form .pmpro_checkout-fields div {
 }
 
 .pmpro_btn.pmpro_btn-submit-checkout {
-    width: auto;
+    width: 100%;
 }
 	
 .pmpro_form {
@@ -1058,5 +1066,11 @@ form.pmpro_form #other_discount_code.input {
 }
 
 .pmpro_captcha {
-	@include span-columns(12);
+	margin-bottom: 20px;
+
+	.g-recaptcha {
+		@include media($mobile) {
+			margin: auto;
+		}
+	}
 }

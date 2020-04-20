@@ -746,6 +746,18 @@
 
 				    <?php } else { ?>
 
+				    <div class="pmpro_checkout-field pmpro_captcha">
+					    <?php
+					    global $recaptcha, $recaptcha_publickey;
+					    if($recaptcha == 2 || ($recaptcha == 1 && pmpro_isLevelFree($pmpro_level))) {
+						    echo pmpro_recaptcha_get_html($recaptcha_publickey, NULL, true);
+					    }
+					    ?>
+				    </div> <!-- end pmpro_captcha -->
+
+				    <?php
+				    do_action('pmpro_checkout_after_captcha');
+				    ?>
 					    <?php
 					    $pmpro_checkout_default_submit_button = apply_filters('pmpro_checkout_default_submit_button', true);
 					    if($pmpro_checkout_default_submit_button)
@@ -769,18 +781,6 @@
 			?>
 		</span>
 			    </div>
-			    <div class="pmpro_checkout-field pmpro_captcha">
-				    <?php
-				    global $recaptcha, $recaptcha_publickey;
-				    if($recaptcha == 2 || ($recaptcha == 1 && pmpro_isLevelFree($pmpro_level))) {
-					    echo pmpro_recaptcha_get_html($recaptcha_publickey, NULL, true);
-				    }
-				    ?>
-			    </div> <!-- end pmpro_captcha -->
-
-			    <?php
-			    do_action('pmpro_checkout_after_captcha');
-			    ?>
 		    </form>
 
 		    <?php do_action('pmpro_checkout_after_form'); ?>
