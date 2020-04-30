@@ -174,7 +174,7 @@
     .video_list {
 
         .column {
-            width: 33.3%;
+            width: 32.9%;
             display: inline-block;
             //float: left;
             padding: 20px;
@@ -184,7 +184,7 @@
             }
 
             @include media($mobile) {
-                width: 50%;
+                width: 49.5%;
                 padding: 10px;
             }
 
@@ -956,4 +956,10 @@
             border-bottom: 1px solid $darkGray;
         }
     }
+}
+
+.video_container {
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
 }

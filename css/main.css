@@ -4587,7 +4587,7 @@ ul.member_menu > li {
         .lessons_page #video_player .video_content_wrap:last-child, .lessons_page .course_video_player .video_content_wrap:last-child {
           margin-right: 0; } }
 .lessons_page .video_list .column {
-  width: 33.3%;
+  width: 32.9%;
   display: inline-block;
   padding: 20px; }
   @media screen and (max-width: 1023px) {
@@ -4595,7 +4595,7 @@ ul.member_menu > li {
       padding: 15px; } }
   @media screen and (max-width: 768px) {
     .lessons_page .video_list .column {
-      width: 50%;
+      width: 49.5%;
       padding: 10px; } }
   .lessons_page .video_list .column .vid_image_wrap .simplefavorite-button {
     position: absolute !important;
@@ -5254,6 +5254,11 @@ ul.member_menu > li {
             text-align: center; } }
   .lessons_page.courses .row:last-child {
     border-bottom: 1px solid #827d7d; }
+
+.video_container {
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden; }
 
 .passions h2 {
   font-family: 'robotomedium'; }
