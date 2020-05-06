@@ -268,24 +268,27 @@ $username = $current_user->user_login;
 		</div>
 	</header>
 <div class="wrapper">
-	<div id="email_join">
-		<a href="/"><div class="logo"><img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" /></div></a>
-		<h2><?php echo the_field('heading_text', 'options'); ?></h2>
-		<p><?php echo the_field('form_text', 'options'); ?></p>
-		<!-- Begin MailChimp Signup Form-->
-		<div id="mc_embed_signup">
-			<form action="https://daricbennett.us14.list-manage.com/subscribe/post-json?u=31b2e6fbc1efe1874039014fd&amp;id=08854914fe&c=?" method="get" id="subscribe-form" name="subscribe-form" class="validate" novalidate>
-			    <div id="mc_embed_signup_scroll">
-					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Address" required>
-				    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-				    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-					    <input type="text" name="b_31b2e6fbc1efe1874039014fd_08854914fe" tabindex="-1" value="">
-					</div>
-					 <input type="submit" value="<?php echo the_field('button_text', 'options'); ?>" name="subscribe" id="mc-embedded-subscribe" class="button">
-			    </div>
-			</form>
-			<div id="subscribe-result">
 
+	<?php if (!is_user_logged_in()) :?>
+		<div id="email_join">
+			<a href="/"><div class="logo"><img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" /></div></a>
+			<h2><?php echo the_field('heading_text', 'options'); ?></h2>
+			<p><?php echo the_field('form_text', 'options'); ?></p>
+			<!-- Begin MailChimp Signup Form-->
+			<div id="mc_embed_signup">
+				<form action="https://daricbennett.us14.list-manage.com/subscribe/post-json?u=31b2e6fbc1efe1874039014fd&amp;id=08854914fe&c=?" method="get" id="subscribe-form" name="subscribe-form" class="validate" novalidate>
+				    <div id="mc_embed_signup_scroll">
+						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Address" required>
+					    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+						    <input type="text" name="b_31b2e6fbc1efe1874039014fd_08854914fe" tabindex="-1" value="">
+						</div>
+						 <input type="submit" value="<?php echo the_field('button_text', 'options'); ?>" name="subscribe" id="mc-embedded-subscribe" class="button">
+				    </div>
+				</form>
+				<div id="subscribe-result">
+
+				</div>
 			</div>
 		</div>
-	</div>
+	<?php endif; ?>

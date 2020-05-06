@@ -129,7 +129,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 
 
 .button {
-	font-family: 'robotoregular', sans-serif;
+	@include robotoreg;
 	font-size: 16px;
 	padding: 7px 15px;
 	border-radius: 4px;
@@ -173,7 +173,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 		color: $white;
 		
 		&:hover {
-			background: #c30b21;
+			background: $darkRed;
 		}
 	}
 	
@@ -238,6 +238,14 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 	
 	@include media($smallMobile){
 		padding-top: 146px;
+	}
+
+	.wrap {
+		padding: 40px 0 80px;
+
+		header {
+			display: none;
+		}
 	}
 	
 	&.member {

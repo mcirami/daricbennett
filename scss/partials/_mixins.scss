@@ -28,3 +28,23 @@
 	-ms-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
+
+@mixin robotoreg {
+	font-family: 'robotoregular', sans-serif;
+	font-weight: 300;
+}
+
+@mixin robotomed {
+	font-family: 'robotomedium', sans-serif;
+	font-weight: 500;
+}
+
+@mixin robotobold {
+	font-family: 'robotobold', sans-serif;
+	font-weight: 700;
+}
+
+@mixin robotolight {
+	font-family: 'robotolight', sans-serif;
+	font-weight: 200;
+}

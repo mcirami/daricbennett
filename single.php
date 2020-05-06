@@ -14,6 +14,8 @@ get_header(); ?>
 
 	<section class="page_content full_width<?php if (is_user_logged_in()){ echo " member";} ?>">
 
+		<h1 class="entry-titlem sub_header"><?php the_title(); ?></h1>
+
 		<div class="container">
 
 	        <div class="wrap">

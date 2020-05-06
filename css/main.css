@@ -1499,6 +1499,7 @@ img {
 
 .button {
   font-family: 'robotoregular', sans-serif;
+  font-weight: 300;
   font-size: 16px;
   padding: 7px 15px;
   border-radius: 4px;
@@ -1529,7 +1530,7 @@ img {
     background: #f20f2b;
     color: #fff; }
     .button.red:hover {
-      background: #c30b21; }
+      background: #880415; }
   .button.yellow {
     background: #ddb72e;
     color: #131313; }
@@ -1580,6 +1581,10 @@ img {
   @media screen and (max-width: 550px) {
     .page_content {
       padding-top: 146px; } }
+  .page_content .wrap {
+    padding: 40px 0 80px; }
+    .page_content .wrap header {
+      display: none; }
   .page_content.member {
     padding-top: 98px; }
     @media screen and (max-width: 1023px) {
@@ -1878,10 +1883,12 @@ img {
   font-style: normal;
   font-display: swap; }
 h1, h2 {
-  font-family: 'robotobold', sans-serif; }
+  font-family: 'robotobold', sans-serif;
+  font-weight: 700; }
 
 h3, p {
-  font-family: 'robotolight', sans-serif; }
+  font-family: 'robotolight', sans-serif;
+  font-weight: 200; }
 
 .container {
   max-width: 80.2em;
@@ -5259,6 +5266,81 @@ ul.member_menu > li {
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden; }
+
+.ld-course-list-content {
+  padding: 80px 0; }
+  @media screen and (max-width: 1023px) {
+    .ld-course-list-content {
+      padding: 60px 0; } }
+  @media screen and (max-width: 768px) {
+    .ld-course-list-content {
+      padding: 40px 0; } }
+  .ld-course-list-content .entry-title {
+    font-size: 22px; }
+    @media screen and (max-width: 1023px) {
+      .ld-course-list-content .entry-title {
+        font-size: 20px; } }
+  @media screen and (max-width: 768px) {
+    .ld-course-list-content .ld-course-list-items .ld_course_grid {
+      margin: 0 auto 20px; } }
+  .ld-course-list-content .ld-course-list-items .ld_course_grid .btn-primary {
+    background-color: #f20f2b;
+    border-color: #f20f2b; }
+    .ld-course-list-content .ld-course-list-items .ld_course_grid .btn-primary:hover {
+      background-color: #880415; }
+  .ld-course-list-content .ld-course-list-items .ld_course_grid .thumbnail.course {
+    height: 100%; }
+    .ld-course-list-content .ld-course-list-items .ld_course_grid .thumbnail.course .ld_course_grid_price.ribbon-enrolled {
+      background: #f20f2b; }
+
+.learndash-wrapper input[type="button"], .learndash-wrapper .ld-button, .learndash-wrapper input[type="submit"] {
+  font-family: 'robotoregular', sans-serif;
+  font-weight: 300;
+  border-radius: 4px !important;
+  -webkit-border-radius: 4px !important;
+  -moz-border-radius: 4px !important;
+  font-size: 16px !important;
+  padding: 7px 15px !important; }
+  .learndash-wrapper input[type="button"]:hover, .learndash-wrapper .ld-button:hover, .learndash-wrapper input[type="submit"]:hover {
+    background-color: #880415 !important; }
+  @media screen and (max-width: 768px) {
+    .learndash-wrapper input[type="button"], .learndash-wrapper .ld-button, .learndash-wrapper input[type="submit"] {
+      font-size: 14px !important;
+      width: 100% !important;
+      max-width: unset !important; } }
+@media screen and (max-width: 768px) {
+  .learndash-wrapper .wpProQuiz_content .wpProQuiz_button2 {
+    margin-bottom: 1em !important; } }
+.learndash-wrapper .ld-item-list .ld-item-list-item {
+  border: 2px solid #f20f2b; }
+  .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-list-item-preview .ld-status-icon {
+    margin-top: 0; }
+    .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-list-item-preview .ld-status-icon .ld-icon:before {
+      transform: translateY(-70%) translateX(-50%); }
+  .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-list-item-preview {
+    padding: 0; }
+    .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-list-item-preview:hover {
+      background-color: #f1f1f1; }
+    .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-list-item-preview a {
+      padding: 20px; }
+      .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-list-item-preview a:hover {
+        background-color: #f1f1f1; }
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_questionListItem label:focus-within {
+  border-color: #880415; }
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_questionListItem label.is-selected {
+  border-color: #f20f2b; }
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_question_text {
+  margin-top: 20px; }
+  .learndash-wrapper .wpProQuiz_content .wpProQuiz_question_text p {
+    font-family: 'robotobold', sans-serif;
+    font-weight: 700;
+    font-size: 24px; }
+    @media screen and (max-width: 1023px) {
+      .learndash-wrapper .wpProQuiz_content .wpProQuiz_question_text p {
+        font-size: 20px; } }
+    @media screen and (max-width: 768px) {
+      .learndash-wrapper .wpProQuiz_content .wpProQuiz_question_text p {
+        font-size: 18px; } }
 
 .passions h2 {
   font-family: 'robotomedium'; }

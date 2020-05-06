@@ -312,11 +312,11 @@ function create_lesson_post_type() {
 add_action( 'init', 'create_lesson_post_type' );
 
 
-function lessons_cat_taxonomy() {  
+function lessons_cat_taxonomy() {
     register_taxonomy(  
-        'category',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces). 
+        'category',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
         'lessons',  //post type name
-        array(  
+        array(
             'hierarchical' => true,  
             'label' => 'Category',  //Display name
             'query_var' => true,
@@ -328,11 +328,11 @@ function lessons_cat_taxonomy() {
 }  
 add_action( 'init', 'lessons_cat_taxonomy');
 
-function lessons_level_taxonomy() {  
+function lessons_level_taxonomy() {
     register_taxonomy(  
-        'level',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces). 
+        'level',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
         'lessons',  //post type name
-        array(  
+        array(
             'hierarchical' => true,  
             'label' => 'Level',  //Display name
             'query_var' => true,
@@ -449,7 +449,7 @@ function create_live_stream_post_type() {
 }
 add_action( 'init', 'create_live_stream_post_type' );
 
-
+/*
 function create_courses_post_type() {
 	register_post_type( 'courses',
 		array(
@@ -482,7 +482,7 @@ function create_courses_post_type() {
 		)
 	);
 }
-add_action( 'init', 'create_courses_post_type' );
+add_action( 'init', 'create_courses_post_type' );*/
 
 
 add_filter( 'the_content', 'make_clickable');
@@ -1173,3 +1173,21 @@ function video_embed($content){
 	return do_shortcode('[evp_embed_video url="' . $linkFinal . '" template="mediaelement"]') . $content;
 
 }
+
+/*function run_activate_plugin( $plugin ) {
+	$current = get_option( 'active_plugins' );
+	$plugin = plugin_basename( trim( $plugin ) );
+
+	if ( !in_array( $plugin, $current ) ) {
+		$current[] = $plugin;
+		sort( $current );
+		do_action( 'activate_plugin', trim( $plugin ) );
+		update_option( 'active_plugins', $current );
+		do_action( 'activate_' . trim( $plugin ) );
+		do_action( 'activated_plugin', trim( $plugin) );
+	}
+
+	return null;
+}
+
+run_activate_plugin( 'ultimate-member/ultimate-member.php' );*/

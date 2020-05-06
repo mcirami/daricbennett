@@ -39,8 +39,6 @@ var loadReload = function() {
 }
 ;jQuery(document).ready(function($) {
 
-    console.log('FUCK OFF');
-
     var navIcon = $('.user_mobile_nav p span');
 
     $('.bbp-topic-freshness-author').each(function () {

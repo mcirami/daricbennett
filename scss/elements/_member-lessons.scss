@@ -963,3 +963,134 @@
     height: 0;
     overflow: hidden;
 }
+
+.ld-course-list-content {
+    padding: 80px 0;
+
+    @include media($tablet) {
+        padding: 60px 0;
+    }
+
+    @include media($mobile) {
+        padding: 40px 0;
+    }
+
+    .entry-title {
+        font-size: 22px;
+
+        @include media($tablet) {
+            font-size: 20px;
+        }
+    }
+
+    .ld-course-list-items .ld_course_grid {
+
+        @include media($mobile) {
+            margin: 0 auto 20px;
+        }
+
+        .btn-primary {
+            background-color: $red;
+            border-color: $red;
+
+            &:hover {
+                background-color: $darkRed;
+            }
+        }
+
+        .thumbnail.course {
+            height: 100%;
+
+            .ld_course_grid_price.ribbon-enrolled {
+                background: $red;
+            }
+        }
+    }
+}
+
+.learndash-wrapper {
+
+    input[type="button"], .ld-button, input[type="submit"] {
+        @include robotoreg;
+        border-radius: 4px !important;
+        -webkit-border-radius: 4px !important;
+        -moz-border-radius: 4px !important;
+        font-size: 16px !important;
+        padding: 7px 15px !important;
+
+        &:hover {
+            background-color: $darkRed !important;
+        }
+
+        @include media($mobile){
+            font-size: 14px !important;
+            width: 100% !important;
+            max-width: unset !important;
+        }
+    }
+
+    .wpProQuiz_content .wpProQuiz_button2 {
+        @include media($mobile) {
+            margin-bottom: 1em !important;
+        }
+    }
+
+    .ld-item-list .ld-item-list-item {
+        border: 2px solid $red;
+
+        .ld-item-list-item-preview .ld-status-icon {
+            margin-top: 0;
+
+            .ld-icon:before {
+                transform: translateY(-70%) translateX(-50%);
+            }
+        }
+
+        .ld-item-list-item-preview {
+            padding: 0;
+
+            &:hover {
+                background-color: $lightGray;
+            }
+
+            a {
+                padding: 20px;
+
+                &:hover {
+                    background-color: $lightGray;
+                }
+            }
+        }
+    }
+
+    .wpProQuiz_content {
+
+        .wpProQuiz_questionListItem label {
+
+            &:focus-within {
+                border-color: $darkRed;
+            }
+
+            &.is-selected {
+                border-color: $red;
+            }
+        }
+
+        .wpProQuiz_question_text {
+            margin-top: 20px;
+
+            p {
+                @include robotobold;
+                font-size: 24px;
+
+                @include media($tablet) {
+                    font-size: 20px;
+                }
+
+                @include media($mobile) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

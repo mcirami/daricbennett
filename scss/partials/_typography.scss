@@ -88,9 +88,9 @@
 }
 
 h1, h2 {
-    font-family: 'robotobold', sans-serif;
+    @include robotobold;
 }
 
 h3, p {
-    font-family: 'robotolight', sans-serif;
+    @include robotolight;
 }
