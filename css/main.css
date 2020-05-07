@@ -3562,133 +3562,121 @@ ul.member_menu > li {
   position: absolute !important;
   width: 100% !important; }
 
-.login_page {
-  padding: 80px 0; }
-  @media screen and (max-width: 768px) {
-    .login_page {
-      padding: 40px 0; } }
-  .login_page .join_text {
-    font-family: 'robotobold', sans-serif;
-    text-align: center;
-    color: #131313; }
-    .login_page .join_text a {
-      text-transform: uppercase;
+.join_text {
+  font-family: 'robotobold', sans-serif;
+  text-align: center;
+  color: #131313;
+  margin-top: 40px; }
+  .join_text a {
+    text-transform: uppercase;
+    color: #f20f2b; }
+
+.pmpro_login_wrap, .pmpro_lost_password_wrap {
+  text-align: center; }
+  .pmpro_login_wrap hr, .pmpro_lost_password_wrap hr {
+    display: none; }
+  .pmpro_login_wrap .pmpro_actions_nav, .pmpro_lost_password_wrap .pmpro_actions_nav {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50px);
+    -moz-transform: translateX(-50px);
+    -ms-transform: translateX(-50px);
+    -o-transform: translateX(-50px);
+    -webkit-transform: translateX(-50px); }
+    @media screen and (max-width: 768px) {
+      .pmpro_login_wrap .pmpro_actions_nav, .pmpro_lost_password_wrap .pmpro_actions_nav {
+        bottom: -5px; } }
+    .pmpro_login_wrap .pmpro_actions_nav a, .pmpro_lost_password_wrap .pmpro_actions_nav a {
+      font-family: 'robotomedium', sans-serif;
+      font-weight: 500;
       color: #f20f2b; }
+      @media screen and (max-width: 768px) {
+        .pmpro_login_wrap .pmpro_actions_nav a, .pmpro_lost_password_wrap .pmpro_actions_nav a {
+          font-size: 12px; } }
+      .pmpro_login_wrap .pmpro_actions_nav a:hover, .pmpro_lost_password_wrap .pmpro_actions_nav a:hover {
+        color: #880415; }
 
-.um .um-field-checkbox.active:not(.um-field-radio-state-disabled) i {
-  color: #f20f2b !important; }
+.pmpro_lost_password_wrap .pmpro_actions_nav {
+  display: none; }
 
-.um-login {
+#loginform, #lostpasswordform {
+  float: none;
   font-family: 'robotolight', sans-serif;
   font-size: 15px;
   margin: 30px auto;
   text-align: left;
   background: #f1f1f1;
-  padding: 40px;
+  padding: 40px 40px 60px 40px;
   -webkit-box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
   -moz-box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
   box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
   border: 1px solid #c8c8c8;
-  color: #131313; }
+  color: #131313;
+  max-width: 500px; }
   @media screen and (max-width: 1023px) {
-    .um-login {
-      width: 425px !important; } }
+    #loginform, #lostpasswordform {
+      width: 425px; } }
   @media screen and (max-width: 768px) {
-    .um-login {
-      width: 375px !important;
+    #loginform, #lostpasswordform {
+      width: 375px;
       padding: 25px;
       font-size: 14px; } }
   @media screen and (max-width: 550px) {
-    .um-login {
-      width: 100% !important; } }
-  .um-login input {
-    height: 40px !important;
-    border: 1px solid #c8c8c8 !important;
-    padding: 10px !important; }
+    #loginform, #lostpasswordform {
+      width: 100%; } }
+  #loginform label, #lostpasswordform label {
+    font-family: 'robotolight', sans-serif;
+    font-weight: 200;
+    color: #131313;
+    line-height: 22px;
+    margin-bottom: 8px; }
+  #loginform input, #lostpasswordform input {
+    height: 40px;
+    border: 1px solid #c8c8c8;
+    padding: 10px;
+    max-width: unset !important;
+    width: 100%; }
     @media screen and (max-width: 768px) {
-      .um-login input {
-        height: 35px !important; } }
-  .um-login .um-left {
-    text-align: left; }
-    .um-login .um-left input[type="submit"] {
-      font-family: 'robotoregular', sans-serif;
-      background: #131313 !important;
-      padding: 8px 24px 12px !important;
-      color: #fff;
-      font-size: 18px;
-      border-radius: 4px !important;
-      -webkit-border-radius: 4px !important;
-      -moz-border-radius: 4px !important;
-      height: 40px !important;
-      border: none !important; }
-      @media screen and (max-width: 1023px) {
-        .um-login .um-left input[type="submit"] {
-          font-size: 16px; } }
-      @media screen and (max-width: 768px) {
-        .um-login .um-left input[type="submit"] {
-          font-size: 14px;
-          height: 35px !important;
-          padding: 0 !important; } }
-      .um-login .um-left input[type="submit"]:hover {
-        background: #4D4D54 !important; }
-  .um-login .um-right a {
+      #loginform input, #lostpasswordform input {
+        height: 35px;
+        width: 100% !important; } }
+  #loginform input[type="submit"], #lostpasswordform input[type="submit"] {
     font-family: 'robotoregular', sans-serif;
-    background: #f20f2b !important;
-    color: #fff !important;
-    padding: 10px 24px 8px !important;
+    background: #131313;
+    padding: 8px 24px 12px;
+    color: #fff;
     font-size: 18px;
-    border-radius: 4px !important;
-    -webkit-border-radius: 4px !important;
-    -moz-border-radius: 4px !important;
-    height: 40px !important;
-    border: none !important; }
-    @media screen and (max-width: 1023px) {
-      .um-login .um-right a {
-        font-size: 16px;
-        padding: 12px 24px 8px !important; } }
-    @media screen and (max-width: 768px) {
-      .um-login .um-right a {
-        font-size: 14px;
-        height: 35px !important; } }
-    .um-login .um-right a:hover {
-      background: #c30b21 !important; }
-
-.um-um_password_id.um {
-  margin-top: 60px;
-  margin-bottom: 60px !important;
-  background: #f1f1f1;
-  padding: 20px;
-  -webkit-box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
-  -moz-box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
-  box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
-  border: 1px solid #c8c8c8;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px; }
-  .um-um_password_id.um input[type="submit"] {
-    float: left;
-    font-family: 'robotoregular', sans-serif;
-    font-size: 16px;
-    padding: 12px 24px !important;
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
-    background: #f20f2b !important;
-    color: #fff;
-    min-width: unset !important; }
-    .um-um_password_id.um input[type="submit"]:hover {
-      background: #c30b21 !important; }
+    height: 40px;
+    border: none; }
     @media screen and (max-width: 1023px) {
-      .um-um_password_id.um input[type="submit"] {
-        padding: 6px 12px;
-        font-size: 14px; } }
+      #loginform input[type="submit"], #lostpasswordform input[type="submit"] {
+        font-size: 16px; } }
     @media screen and (max-width: 768px) {
-      .um-um_password_id.um input[type="submit"] {
-        padding: 7px 10px;
-        font-size: 12px; } }
-    @media screen and (max-width: 550px) {
-      .um-um_password_id.um input[type="submit"] {
-        width: 100% !important; } }
+      #loginform input[type="submit"], #lostpasswordform input[type="submit"] {
+        font-size: 14px;
+        height: 35px;
+        padding: 0; } }
+    #loginform input[type="submit"]:hover, #lostpasswordform input[type="submit"]:hover {
+      background: #4D4D54 !important; }
+  #loginform .login-remember input, #lostpasswordform .login-remember input {
+    height: 16px;
+    width: 20px; }
+
+.pmpro_lost_password_wrap {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .pmpro_lost_password_wrap:last-child {
+    margin-right: 0; }
+
+.pmpro_lost_password-instructions {
+  color: #131313;
+  margin-top: 30px; }
 
 .confirmation_page {
   margin: 100px 0;
@@ -8178,7 +8166,7 @@ ul.member_menu > li {
       .form_wrapper .bottom_section {
         padding-bottom: 0; } }
     .form_wrapper .bottom_section p {
-      font-family: 'robotomediumitalic';
+      font-family: 'robotomediumitalic', sans-serif;
       color: #958c8c;
       font-size: 20px;
       line-height: 1.4; }
@@ -8849,7 +8837,7 @@ form.pmpro_form #other_discount_code.input {
     .banner_wrap {
       padding: 0 2%; } }
 
-.tml-profile {
+.profile_wrap {
   float: left;
   display: block;
   margin-right: 2.35765%;
@@ -8859,20 +8847,37 @@ form.pmpro_form #other_discount_code.input {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   margin: 40px 0; }
-  .tml-profile:last-child {
+  .profile_wrap:last-child {
     margin-right: 0; }
   @media screen and (max-width: 768px) {
-    .tml-profile {
+    .profile_wrap {
       padding: 20px; } }
-  .tml-profile input {
+  .profile_wrap input {
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px; }
-  .tml-profile #your-profile > h3 {
+  .profile_wrap #your-profile > h3 {
     display: none; }
-  .tml-profile table.form-table {
-    display: none; }
-  .tml-profile .image_wrap {
+  .profile_wrap .cover_img {
+    max-height: 300px;
+    overflow-y: hidden; }
+  .profile_wrap .avatar_wrap img {
+    position: absolute;
+    top: -88px;
+    left: 24px;
+    z-index: 1;
+    width: 150px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%; }
+  .profile_wrap .pmpro_member_profile_edit_wrap {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .profile_wrap .pmpro_member_profile_edit_wrap:last-child {
+      margin-right: 0; }
+  .profile_wrap .image_wrap {
     float: left;
     display: block;
     margin-right: 2.35765%;
@@ -8886,18 +8891,18 @@ form.pmpro_form #other_discount_code.input {
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px; }
-    .tml-profile .image_wrap:last-child {
+    .profile_wrap .image_wrap:last-child {
       margin-right: 0; }
     @media screen and (max-width: 768px) {
-      .tml-profile .image_wrap {
+      .profile_wrap .image_wrap {
         float: left;
         display: block;
         margin-right: 7.42297%;
         width: 100%;
         line-height: 1.4; }
-        .tml-profile .image_wrap:last-child {
+        .profile_wrap .image_wrap:last-child {
           margin-right: 0; } }
-    .tml-profile .image_wrap label {
+    .profile_wrap .image_wrap label {
       font-family: 'robotoregular', sans-serif;
       color: #000;
       width: auto;
@@ -8905,9 +8910,9 @@ form.pmpro_form #other_discount_code.input {
       font-size: 16px;
       margin-right: 10px; }
       @media screen and (max-width: 768px) {
-        .tml-profile .image_wrap label {
+        .profile_wrap .image_wrap label {
           font-size: 14px; } }
-    .tml-profile .image_wrap input {
+    .profile_wrap .image_wrap input {
       border: none;
       float: left;
       width: auto;
@@ -8916,155 +8921,168 @@ form.pmpro_form #other_discount_code.input {
       margin: 0;
       font-size: 16px;
       background: #fff; }
-    .tml-profile .image_wrap .description {
+    .profile_wrap .image_wrap .description {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 100%;
       font-size: 13px; }
-      .tml-profile .image_wrap .description:last-child {
+      .profile_wrap .image_wrap .description:last-child {
         margin-right: 0; }
       @media screen and (max-width: 768px) {
-        .tml-profile .image_wrap .description {
+        .profile_wrap .image_wrap .description {
           font-size: 11px; } }
-  .tml-profile .user_info {
+  .profile_wrap form {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 48.82117%; }
-    .tml-profile .user_info:last-child {
+    width: 100%;
+    background-color: #f1f1f1;
+    -webkit-box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
+    box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
+    border: 1px solid #c8c8c8;
+    padding: 80px 40px 40px; }
+    .profile_wrap form:last-child {
       margin-right: 0; }
     @media screen and (max-width: 768px) {
-      .tml-profile .user_info {
-        float: left;
-        display: block;
-        margin-right: 7.42297%;
-        width: 100%;
-        margin-top: 20px; }
-        .tml-profile .user_info:last-child {
-          margin-right: 0; } }
-    .tml-profile .user_info tbody {
+      .profile_wrap form {
+        margin-top: 20px; } }
+    @media screen and (max-width: 768px) {
+      .profile_wrap form label {
+        font-size: 13px; } }
+    .profile_wrap form .pmpro_member_profile_edit-field-hide_directory {
+      display: none; }
+    .profile_wrap form .pmpro_checkout_box-user, .profile_wrap form .pmpro_checkout_box-just_profile {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      .profile_wrap form .pmpro_checkout_box-user:last-child, .profile_wrap form .pmpro_checkout_box-just_profile:last-child {
+        margin-right: 0; }
+    .profile_wrap form .pmpro_checkout_box-just_profile {
+      margin-right: 0; }
+    .profile_wrap form .pmpro_submit {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 100%; }
-      .tml-profile .user_info tbody:last-child {
+      .profile_wrap form .pmpro_submit:last-child {
         margin-right: 0; }
-      .tml-profile .user_info tbody tr {
-        float: left;
-        display: block;
-        margin-right: 2.35765%;
-        width: 100%; }
-        .tml-profile .user_info tbody tr:last-child {
-          margin-right: 0; }
-    @media screen and (max-width: 768px) {
-      .tml-profile .user_info label {
-        font-size: 13px; } }
-    .tml-profile .user_info input {
+      .profile_wrap form .pmpro_submit hr {
+        display: none; }
+      .profile_wrap form .pmpro_submit input {
+        background-color: #f20f2b;
+        color: #fff; }
+        .profile_wrap form .pmpro_submit input:hover {
+          background-color: #880415; }
+        .profile_wrap form .pmpro_submit input.pmpro_btn-cancel {
+          display: none; }
+    .profile_wrap form input {
       height: 40px;
       margin-bottom: 20px; }
       @media screen and (max-width: 1023px) {
-        .tml-profile .user_info input {
+        .profile_wrap form input {
           margin-bottom: 10px; } }
       @media screen and (max-width: 768px) {
-        .tml-profile .user_info input {
+        .profile_wrap form input {
           height: 35px;
           margin-top: 5px; } }
-    .tml-profile .user_info select {
+    .profile_wrap form select {
       background: #fff;
       height: 40px;
       border: 1px solid #c8c8c8; }
       @media screen and (max-width: 768px) {
-        .tml-profile .user_info select {
+        .profile_wrap form select {
           font-size: 13px;
           height: 35px; } }
-  .tml-profile .wpua-edit-container {
+  .profile_wrap .wpua-edit-container {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 100%;
     margin: 20px 0; }
-    .tml-profile .wpua-edit-container:last-child {
+    .profile_wrap .wpua-edit-container:last-child {
       margin-right: 0; }
-    .tml-profile .wpua-edit-container h3 {
+    .profile_wrap .wpua-edit-container h3 {
       margin: 0 0  6px 0;
       text-transform: none;
       font-size: 16px;
       font-family: 'robotolight', sans-serif; }
-    .tml-profile .wpua-edit-container p {
+    .profile_wrap .wpua-edit-container p {
       margin-bottom: 0; }
-    .tml-profile .wpua-edit-container input {
+    .profile_wrap .wpua-edit-container input {
       background: #fff;
       height: 45px;
       width: 85%;
       margin-right: 1%; }
       @media screen and (max-width: 768px) {
-        .tml-profile .wpua-edit-container input {
+        .profile_wrap .wpua-edit-container input {
           float: left;
           display: block;
           margin-right: 7.42297%;
           width: 100%; }
-          .tml-profile .wpua-edit-container input:last-child {
+          .profile_wrap .wpua-edit-container input:last-child {
             margin-right: 0; } }
-    .tml-profile .wpua-edit-container button {
+    .profile_wrap .wpua-edit-container button {
       background: #aeabab;
       padding: 8px 5px;
       height: 45px;
       width: 13%; }
       @media screen and (max-width: 768px) {
-        .tml-profile .wpua-edit-container button {
+        .profile_wrap .wpua-edit-container button {
           height: 35px;
           padding: 8px 12px;
           width: auto; } }
     @media screen and (max-width: 768px) {
-      .tml-profile .wpua-edit-container #wpua-upload-messages-existing {
+      .profile_wrap .wpua-edit-container #wpua-upload-messages-existing {
         font-size: 12px;
         line-height: 1.4;
         margin-top: 5px; } }
 @-moz-document url-prefix() {
-  .tml-profile .wpua-edit-container #wpua-upload-button-existing input {
+  .profile_wrap .wpua-edit-container #wpua-upload-button-existing input {
     padding: 0; } }
-    .tml-profile .wpua-edit-container #wpua-images-existing {
+    .profile_wrap .wpua-edit-container #wpua-images-existing {
       display: none; }
-  .tml-profile .tml-form-table.description {
+  .profile_wrap .tml-form-table.description {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 100%; }
-    .tml-profile .tml-form-table.description:last-child {
+    .profile_wrap .tml-form-table.description:last-child {
       margin-right: 0; }
-    .tml-profile .tml-form-table.description tbody {
+    .profile_wrap .tml-form-table.description tbody {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 100%; }
-      .tml-profile .tml-form-table.description tbody:last-child {
+      .profile_wrap .tml-form-table.description tbody:last-child {
         margin-right: 0; }
-      .tml-profile .tml-form-table.description tbody tr {
+      .profile_wrap .tml-form-table.description tbody tr {
         float: left;
         display: block;
         margin-right: 2.35765%;
         width: 100%; }
-        .tml-profile .tml-form-table.description tbody tr:last-child {
+        .profile_wrap .tml-form-table.description tbody tr:last-child {
           margin-right: 0; }
-        .tml-profile .tml-form-table.description tbody tr.half_width {
+        .profile_wrap .tml-form-table.description tbody tr.half_width {
           width: 48%;
           float: left; }
           @media screen and (max-width: 768px) {
-            .tml-profile .tml-form-table.description tbody tr.half_width {
+            .profile_wrap .tml-form-table.description tbody tr.half_width {
               float: left;
               display: block;
               margin-right: 7.42297%;
               width: 100%; }
-              .tml-profile .tml-form-table.description tbody tr.half_width:last-child {
+              .profile_wrap .tml-form-table.description tbody tr.half_width:last-child {
                 margin-right: 0; } }
-          .tml-profile .tml-form-table.description tbody tr.half_width.right {
+          .profile_wrap .tml-form-table.description tbody tr.half_width.right {
             float: right;
             margin-right: 0; }
-        .tml-profile .tml-form-table.description tbody tr th {
+        .profile_wrap .tml-form-table.description tbody tr th {
           font-family: 'robotolight', sans-serif;
           font-size: 16px; }
-        .tml-profile .tml-form-table.description tbody tr textarea {
+        .profile_wrap .tml-form-table.description tbody tr textarea {
           height: 175px;
           border: 1px solid #c8c8c8;
           border-radius: 4px;
@@ -9072,43 +9090,43 @@ form.pmpro_form #other_discount_code.input {
           -moz-border-radius: 4px;
           padding: 10px; }
     @media screen and (max-width: 768px) {
-      .tml-profile .tml-form-table.description .description {
+      .profile_wrap .tml-form-table.description .description {
         font-size: 13px;
         line-height: 1.4; } }
-  .tml-profile .password {
+  .profile_wrap .password {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 100%;
     margin-bottom: 20px; }
-    .tml-profile .password:last-child {
+    .profile_wrap .password:last-child {
       margin-right: 0; }
-    .tml-profile .password tbody {
+    .profile_wrap .password tbody {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 100%; }
-      .tml-profile .password tbody:last-child {
+      .profile_wrap .password tbody:last-child {
         margin-right: 0; }
-      .tml-profile .password tbody tr {
+      .profile_wrap .password tbody tr {
         float: left;
         display: block;
         margin-right: 2.35765%;
         width: 100%; }
-        .tml-profile .password tbody tr:last-child {
+        .profile_wrap .password tbody tr:last-child {
           margin-right: 0; }
-        .tml-profile .password tbody tr label {
+        .profile_wrap .password tbody tr label {
           margin-bottom: 10px; }
-        .tml-profile .password tbody tr button {
+        .profile_wrap .password tbody tr button {
           background: #ddb72e; }
-  .tml-profile .tml-submit-wrap {
+  .profile_wrap .tml-submit-wrap {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 100%; }
-    .tml-profile .tml-submit-wrap:last-child {
+    .profile_wrap .tml-submit-wrap:last-child {
       margin-right: 0; }
-    .tml-profile .tml-submit-wrap input {
+    .profile_wrap .tml-submit-wrap input {
       background: #131313;
       color: #fff; }
 

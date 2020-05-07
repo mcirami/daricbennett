@@ -1,4 +1,4 @@
-.tml-profile {
+.profile_wrap {
 	@include span-columns(12);
 	padding: 30px;
 	border-radius: 4px;
@@ -21,11 +21,27 @@
 			display: none;
 		}
 	}
-	
-	table.form-table {
-		display: none;
+
+	.cover_img {
+		max-height: 300px;
+		overflow-y: hidden;
 	}
-	
+
+	.avatar_wrap img {
+		position: absolute;
+		top: -88px;
+		left: 24px;
+		z-index: 1;
+		width: 150px;
+		border-radius: 100%;
+		-webkit-border-radius: 100%;;
+		-moz-border-radius: 100%;;
+	}
+
+	.pmpro_member_profile_edit_wrap {
+		@include span-columns(12);
+	}
+
 	.image_wrap {
 		@include span-columns(6);
 		background: $white;
@@ -77,20 +93,17 @@
 		}
 	}
 	
-	.user_info {
-		@include span-columns(6);
+	form {
+		@include span-columns(12);
+		background-color: $lightGray;
+		-webkit-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+		-moz-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+		box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
+		border: 1px solid $borderGray;
+		padding: 80px 40px 40px;
 		
 		@include media($mobile){
-			@include span-columns(4);
 			margin-top: 20px;
-		}
-		
-		tbody {
-			@include span-columns(12);
-			
-			tr {
-				@include span-columns(12);
-			}
 		}
 		
 		label {
@@ -98,6 +111,40 @@
 				font-size: 13px;
 			}
 		}
+
+		.pmpro_member_profile_edit-field-hide_directory {
+			display: none;
+		}
+
+		.pmpro_checkout_box-user, .pmpro_checkout_box-just_profile {
+			@include span-columns(6);
+		}
+
+		.pmpro_checkout_box-just_profile {
+			margin-right: 0;
+		}
+
+		.pmpro_submit {
+			@include span-columns(12);
+
+			hr {
+				display: none;
+			}
+
+			input {
+				background-color: $red;
+				color: $white;
+
+				&:hover {
+					background-color: $darkRed;
+				}
+
+				&.pmpro_btn-cancel {
+					display: none;
+				}
+			}
+		}
+
 		
 		input {
 			height: 40px;

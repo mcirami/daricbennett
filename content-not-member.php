@@ -35,7 +35,7 @@
 			</div>
 			<div class="column">
 				<h3>Already A Member? <span>Login Below</span></h3>
-				<?php echo do_shortcode('[ultimatemember form_id=2597]'); ?>
+				<?php echo do_shortcode('[pmpro_login]'); ?>
 			</div>
 		</div>
 	</div>

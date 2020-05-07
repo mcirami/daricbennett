@@ -161,26 +161,29 @@ function boiler_scripts_styles() {
         wp_enqueue_script('filterizr', get_template_directory_uri() . '/js/vendor/jquery.filterizr.min.js', array('jquery'), '', true);
 
     }
-    wp_localize_script('main_js', 'currentUser', array(
-	    'nonce' =>  wp_create_nonce('wp_rest'),
-        'siteURL' => get_site_url(),
-        'userLogin' => wp_get_current_user()->user_login,
-        'userID' => wp_get_current_user()->ID,
-        'userEmail' => wp_get_current_user()->user_email,
-        'userRole' => wp_get_current_user()->roles,
-        //'ajaxurl' => admin_url( 'admin-ajax.php' )
-    ));
 
-	if(pmpro_hasMembershipLevel()) {
+	if(is_user_logged_in()) {
 		wp_localize_script( 'main_js', 'myAjaxurl', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
+		wp_localize_script('main_js', 'currentPage', array(
+
+			'pageName' =>  get_the_title(),
+			'postType' => get_post_type(),
+			'postSlug' => get_permalink(),
+		));
+
+		wp_localize_script('main_js', 'currentUser', array(
+			'nonce' =>  wp_create_nonce('wp_rest'),
+			'siteURL' => get_site_url(),
+			'userLogin' => wp_get_current_user()->user_login,
+			'userID' => wp_get_current_user()->ID,
+			'userEmail' => wp_get_current_user()->user_email,
+			'userRole' => wp_get_current_user()->roles,
+			//'ajaxurl' => admin_url( 'admin-ajax.php' )
+		));
 	}
 
-    wp_localize_script('main_js', 'currentPage', array(
 
-        'pageName' =>  get_the_title(),
-        'postType' => get_post_type(),
-	    'postSlug' => get_permalink(),
-    ));
 
 }
 add_action( 'wp_enqueue_scripts', 'boiler_scripts_styles' );
@@ -244,7 +247,7 @@ add_filter('pmpro_paypal_button_image', 'my_pmpro_paypal_button_image');
 
 
 
-add_action('personal_options_update', 'extra_profile_fields');
+/*add_action('personal_options_update', 'extra_profile_fields');
 add_action('edit_user_profile_update', 'extra_profile_fields');
 
 function extra_profile_fields($user_id) {
@@ -257,7 +260,67 @@ function extra_profile_fields($user_id) {
 	update_usermeta($user_id, 'bass_amps', $_POST['bass_amps']);
 	update_usermeta($user_id, 'experience', $_POST['experience']);
 	
+}*/
+
+function add_pmpro_profile_fields() {
+	// Don't break if Register Helper is not loaded.
+	if ( ! function_exists( 'pmprorh_add_registration_field' ) ) {
+		return false;
+	}
+
+	$fields = array();
+	$fields[] = new PMProRH_Field(
+			'bass_guitars',
+			'text',
+			array(
+					'label'     => 'Bass Guitar(s)',
+					'profile'   => 'only',
+			)
+	);
+	$fields[] = new PMProRH_Field(
+			'bass_amps',
+			'text',
+			array(
+					'label'     => 'Bass Amp(s)',
+					'profile'   => 'only'
+			)
+	);
+
+	$fields[] = new PMProRH_Field(
+		'experience',
+		'select',
+		array(
+			'label'     => 'Experience',
+			'profile'   => 'only',
+			'options'    => array(
+					'0-2'  => '0-2 years',
+					'3-5'  => '3-5 years',
+					'6-10' => '6-10 years',
+					'10+'  => '10+ years'
+			)
+		)
+	);
+
+	$fields[] = new PMProRH_Field(
+		'description',
+		'textarea',
+		array(
+			'label'     => 'About Me',
+			'profile'   => 'only',
+			'row'       => 5,
+		)
+	);
+
+	// Add the fields into a new checkout_boxes are of the checkout page.
+	foreach ( $fields as $field ) {
+		pmprorh_add_registration_field(
+			'just_profile',				// location on checkout page
+			$field							// PMProRH_Field object
+		);
+	}
 }
+
+add_action('init', 'add_pmpro_profile_fields');
 
 function allowed_types_init() {  
     global $rtmedia;  
@@ -916,11 +979,11 @@ function devplus_wpquery_where( $where ){
 
 add_filter( 'posts_where', 'devplus_wpquery_where' );
 
-remove_filter('get_avatar', 'um_get_avatar', 99999, 5);
+/*remove_filter('get_avatar', 'um_get_avatar', 99999, 5);*/
 
 
 /* First we need to extend main profile tabs */
-
+/*
 add_filter('um_profile_tabs', 'add_custom_profile_tab', 1 );
 function add_custom_profile_tab( $tabs ) {
 
@@ -938,10 +1001,10 @@ function add_custom_profile_tab( $tabs ) {
 
 	return $tabs;
 
-}
+}*/
 
 /* Then we just have to add content to that tab using this action */
-
+/*
 add_action('um_profile_content_changepassword_default', 'um_profile_content_changepassword_default');
 function um_profile_content_changepassword_default( $args ) {
 
@@ -966,7 +1029,7 @@ function um_profile_content_changepassword_default( $args ) {
 			$passerror='Password has been changed';
 		}
 	}
-	?>
+	*/?><!--
 	<form class="password_change"  method="post" enctype="multipart/form-data" action="#" onsubmit="return change_password();">
 		<h2>Change Password</h2>
 		<div class="form-field">
@@ -977,35 +1040,35 @@ function um_profile_content_changepassword_default( $args ) {
 			<label>Confirm Password</label>
 			<input type="password" name="cpass" id="cpass" />
 		</div>
-		<div id="error"><?php echo $passerror; ?></div>
+		<div id="error"><?php /*echo $passerror; */?></div>
 		<input class="button red" type="submit" name="changepass"  value="Submit" />
 	</form>
-<?php
-}
-
+--><?php
+/*}*/
+/*
 add_action('um_profile_content_changeprofilephoto_default', 'um_profile_content_changeprofilephoto_default');
 function um_profile_content_changeprofilephoto_default( $args ) {
 
 	$current_user = wp_get_current_user();
 	$user_id = $current_user->ID;
-?>
+*/?><!--
 	<div class="content_wrap">
 		<div class="column">
-				<?php echo do_shortcode('[avatar_upload]'); ?>
+				<?php /*echo do_shortcode('[avatar_upload]'); */?>
 		</div>
 		<div class="column">
 
 				<?php
-					$coverURL = um_get_default_cover_uri();
-				?>
+/*					$coverURL = um_get_default_cover_uri();
+				*/?>
 
-				<img src="<?php echo $coverURL; ?>">
+				<img src="<?php /*echo $coverURL; */?>">
 
 		</div>
 	</div>
 
-<?php
-}
+--><?php
+/*}
 
 
 add_filter( 'um_myprofile_edit_menu_items', 'my_myprofile_edit_menu_items', 10, 1 );
@@ -1040,7 +1103,7 @@ function my_user_photo_menu_edit( $items ) {
 	}
 
 	return $items;
-}
+}*/
 
 function get_lesson_comments() {
 

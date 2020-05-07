@@ -9,20 +9,26 @@
 	<div class="page_content full_width <?php if (is_user_logged_in()){ echo "member";} ?>">
 		<?php if (pmpro_hasMembershipLevel() || is_page('membership-checkout') || is_page('privacy') || is_page('terms-of-use') || is_page('membership-levels') || is_page('login') || is_page('logout')|| is_page('password-reset')) : ?>
 			<header>
-				<?php if (is_page('user')): ?>
+				<?php if (is_page('member-profile')): ?>
 					<h1 class="entry-titlem sub_header">Bass Nation Directory Profile</h1>
 				<?php else : ?>
 					<h1 class="entry-titlem sub_header"><?php the_title(); ?></h1>
 				<?php endif; ?>
 			</header>
 			<div class="container">
-				<?php the_content(); ?>
+
 				<?php
-					wp_link_pages( array(
+					if(is_page('login')) : ?>
+						<p class="join_text">Not a member yet? <a href="/membership-account/membership-levels/">Join Free Now!</a></p>
+					<?php endif;
+
+					the_content(); ?>
+				<?php
+/*					wp_link_pages( array(
 						'before' => '<div class="page-links">' . __( 'Pages:', 'boiler' ),
 						'after'  => '</div>',
 					) );
-				?>
+				*/?>
 			</div>
 
 			<?php
