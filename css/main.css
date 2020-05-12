@@ -1415,6 +1415,12 @@ body {
   cursor: pointer; }
   .video_wrapper:last-child {
     margin-right: 0; }
+  @media screen and (max-width: 768px) {
+    .video_wrapper {
+      padding-bottom: 70.25%; } }
+  @media screen and (max-width: 550px) {
+    .video_wrapper {
+      padding-bottom: 90.25%; } }
   .video_wrapper iframe {
     position: absolute;
     top: 0;
@@ -5726,7 +5732,6 @@ ul.member_menu > li {
     width: 48.82117%;
     padding: 20px;
     background: #f1f1f1;
-    border-top: none;
     text-align: left;
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -5750,7 +5755,8 @@ ul.member_menu > li {
         #pmpro_account .pmpro_box:last-child {
           margin-right: 0; } }
     #pmpro_account .pmpro_box h3 {
-      font-family: 'robotoregular';
+      font-family: 'robotoregular', sans-serif;
+      font-weight: 300;
       font-size: 20px;
       text-transform: none;
       margin: 0; }
@@ -5772,7 +5778,8 @@ ul.member_menu > li {
         #pmpro_account .pmpro_box .content_wrap {
           padding: 6px 0 6px 10px; } }
       #pmpro_account .pmpro_box .content_wrap p {
-        font-family: 'robotomedium';
+        font-family: 'robotomedium', sans-serif;
+        font-weight: 500;
         color: #f20f2b; }
         @media screen and (max-width: 1023px) {
           #pmpro_account .pmpro_box .content_wrap p {
@@ -5790,7 +5797,8 @@ ul.member_menu > li {
           #pmpro_account .pmpro_box .content_wrap li {
             font-size: 12px; } }
         #pmpro_account .pmpro_box .content_wrap li strong {
-          font-family: 'robotobold'; }
+          font-family: 'robotobold', sans-serif;
+          font-weight: 700; }
     #pmpro_account .pmpro_box td {
       float: left;
       display: block;
@@ -5803,15 +5811,17 @@ ul.member_menu > li {
         float: left;
         font-size: 15px; }
         #pmpro_account .pmpro_box td p.label {
-          font-family: 'robotobold';
+          font-family: 'robotobold', sans-serif;
+          font-weight: 700;
           color: #131313;
           margin-right: 10px; }
         #pmpro_account .pmpro_box td p strong {
-          font-family: 'robotoregular'; }
+          font-family: 'robotoregular', sans-serif;
+          font-weight: 300; }
         #pmpro_account .pmpro_box td p.status {
           color: #fff;
           background: #11a60c;
-          padding: 0px 8px 1px;
+          padding: 0 8px 1px;
           border-radius: 4px;
           -webkit-border-radius: 4px;
           -moz-border-radius: 4px; }
@@ -5859,7 +5869,8 @@ ul.member_menu > li {
         .pmpro_member_directory_search.search-form label input {
           height: 40px; } }
   .pmpro_member_directory_search.search-form input[type="submit"] {
-    font-family: 'robotomedium';
+    font-family: 'robotomedium', sans-serif;
+    font-weight: 500;
     font-size: 18px;
     position: relative;
     text-indent: 0;
@@ -5936,7 +5947,8 @@ ul.member_menu > li {
         .directory_wrapper .pmpro_member_directory .row {
           margin-bottom: 15px; } }
     .directory_wrapper .pmpro_member_directory > h3 {
-      font-family: 'robotoregular';
+      font-family: 'robotoregular', sans-serif;
+      font-weight: 300;
       text-transform: none;
       font-size: 28px;
       margin: 0 0 20px; }
@@ -6047,7 +6059,8 @@ ul.member_menu > li {
         .directory_wrapper .pmpro_member_directory .content_wrap .label {
           display: inline-block; } }
       .directory_wrapper .pmpro_member_directory .content_wrap p {
-        font-family: 'robotoregular';
+        font-family: 'robotoregular', sans-serif;
+        font-weight: 300;
         font-size: 14px;
         color: #f20f2b;
         line-height: 1.5;
@@ -6062,7 +6075,8 @@ ul.member_menu > li {
           .directory_wrapper .pmpro_member_directory .content_wrap p.pmpro_member_directory_link {
             display: block; } }
         .directory_wrapper .pmpro_member_directory .content_wrap p strong {
-          font-family: 'robotolight';
+          font-family: 'robotolight', sans-serif;
+          font-weight: 200;
           color: #131313; }
       .directory_wrapper .pmpro_member_directory .content_wrap a {
         display: inline-block;
@@ -6147,7 +6161,8 @@ ul.member_menu > li {
       .directory_profile_wrap .content_wrap .column p {
         color: #f20f2b; }
         .directory_profile_wrap .content_wrap .column p span {
-          font-family: 'robotobold';
+          font-family: 'robotobold', sans-serif;
+          font-weight: 700;
           margin-right: 5px;
           color: #131313;
           float: left; }
@@ -6211,7 +6226,8 @@ ul.member_menu > li {
         #pmpro_cancel .content_wrap h4 {
           font-size: 12px; } }
     #pmpro_cancel .content_wrap h3 {
-      font-family: 'robotoregular';
+      font-family: 'robotoregular', sans-serif;
+      font-weight: 300;
       font-size: 20px; }
       @media screen and (max-width: 1023px) {
         #pmpro_cancel .content_wrap h3 {
@@ -6264,226 +6280,6 @@ ul.member_menu > li {
     #pmpro_cancel .content_wrap .yellow {
       background: #ddb72e !important;
       margin-top: 15px; }
-
-#wpua-preview-existing img {
-  max-height: unset !important; }
-
-.um-profile-photo-overlay span.um-profile-photo-overlay-s {
-  display: none !important; }
-
-.um .cover_photo_text {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  font-size: 12px; }
-@media screen and (max-width: 550px) {
-  .um .um-profile-photo {
-    width: 100% !important;
-    text-align: center !important;
-    position: absolute;
-    top: 24px;
-    left: 0; } }
-.um .um-profile-photo a.um-profile-photo-img {
-  top: -85px !important;
-  z-index: 1;
-  width: 150px; }
-  @media screen and (max-width: 550px) {
-    .um .um-profile-photo a.um-profile-photo-img {
-      width: 100px !important;
-      height: 100px !important;
-      margin: 0 auto !important;
-      float: none !important;
-      display: inline-block !important;
-      position: relative !important;
-      left: auto !important; } }
-.um .um-profile-meta {
-  padding-left: 220px !important; }
-  @media screen and (max-width: 550px) {
-    .um .um-profile-meta {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      text-align: center !important;
-      padding-top: 60px !important; } }
-  @media screen and (max-width: 550px) {
-    .um .um-profile-meta .um-name {
-      float: none; } }
-
-.um.um-profile {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 100%;
-  margin-top: 40px;
-  background: #f1f1f1;
-  -webkit-box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
-  -moz-box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
-  box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
-  border: 1px solid #c8c8c8;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px; }
-  .um.um-profile:last-child {
-    margin-right: 0; }
-  .um.um-profile .um-field {
-    padding: 20px; }
-  .um.um-profile .um-profile-edit-a.active {
-    color: #f20f2b !important; }
-  .um.um-profile .um-profile-headericon a:hover {
-    color: #f20f2b !important; }
-  .um.um-profile .um-header {
-    padding-left: 20px;
-    padding-right: 20px; }
-    .um.um-profile .um-header .um-profile-photo a.um-profile-photo-img {
-      border: 2px solid #827d7d;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border-radius: 50%; }
-    .um.um-profile .um-header .um-dropdown {
-      border: none; }
-    .um.um-profile .um-header .um-icon-arrow-up-b:before {
-      content: none; }
-  .um.um-profile .um-profile-nav {
-    background: #131313;
-    padding-left: 20px; }
-  .um.um-profile .um-profile-nav-item a {
-    background: #131313; }
-    .um.um-profile .um-profile-nav-item a:hover {
-      background: #f20f2b; }
-  .um.um-profile .um-profile-nav-item.active a {
-    background: #f20f2b; }
-    .um.um-profile .um-profile-nav-item.active a:hover {
-      background: #f20f2b; }
-  .um.um-profile.um-viewing .um-field-label {
-    border-bottom: 1px solid #c8c8c8; }
-  .um.um-profile .um-profile-body {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%;
-    padding: 20px;
-    max-width: unset;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-    .um.um-profile .um-profile-body:last-child {
-      margin-right: 0; }
-    .um.um-profile .um-profile-body .um-field-select .um-field-area.um-field-area-has-icon .select2-selection__rendered {
-      text-indent: 3px; }
-    .um.um-profile .um-profile-body .select2.select2-container .select2-selection {
-      padding: 0 !important; }
-    .um.um-profile .um-profile-body input[type="submit"] {
-      font-size: 16px; }
-      @media screen and (max-width: 1023px) {
-        .um.um-profile .um-profile-body input[type="submit"] {
-          font-size: 14px; } }
-      @media screen and (max-width: 768px) {
-        .um.um-profile .um-profile-body input[type="submit"] {
-          font-size: 12px; } }
-    .um.um-profile .um-profile-body .password_change input[type="password"] {
-      width: 45%; }
-      @media screen and (max-width: 550px) {
-        .um.um-profile .um-profile-body .password_change input[type="password"] {
-          width: 100%; } }
-    .um.um-profile .um-profile-body .password_change #error {
-      color: #f20f2b; }
-    .um.um-profile .um-profile-body .password_change .button {
-      margin-top: 20px; }
-    .um.um-profile .um-profile-body .um-col-alt .um-button {
-      float: left;
-      font-family: 'robotoregular', sans-serif;
-      font-size: 16px;
-      padding: 12px 24px !important;
-      border-radius: 4px;
-      -webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      background: #f20f2b;
-      color: #fff;
-      min-width: unset !important; }
-      .um.um-profile .um-profile-body .um-col-alt .um-button:hover {
-        background: #c30b21; }
-      @media screen and (max-width: 1023px) {
-        .um.um-profile .um-profile-body .um-col-alt .um-button {
-          padding: 6px 12px;
-          font-size: 14px; } }
-      @media screen and (max-width: 768px) {
-        .um.um-profile .um-profile-body .um-col-alt .um-button {
-          padding: 7px 10px;
-          font-size: 12px; } }
-      @media screen and (max-width: 550px) {
-        .um.um-profile .um-profile-body .um-col-alt .um-button {
-          padding: 5px 8px; } }
-  .um.um-profile .um-load-items a {
-    font-family: 'robotoregular', sans-serif;
-    font-size: 16px;
-    padding: 12px 24px !important;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    background: #f20f2b;
-    color: #fff;
-    min-width: unset !important; }
-    .um.um-profile .um-load-items a:hover {
-      background: #c30b21; }
-    @media screen and (max-width: 1023px) {
-      .um.um-profile .um-load-items a {
-        padding: 6px 12px;
-        font-size: 14px; } }
-    @media screen and (max-width: 768px) {
-      .um.um-profile .um-load-items a {
-        padding: 7px 10px;
-        font-size: 12px; } }
-    @media screen and (max-width: 550px) {
-      .um.um-profile .um-load-items a {
-        padding: 5px 8px; } }
-
-#wpua-edit-103 #wpua-add-existing, #wpua-edit-103 #wpua-remove-existing, #wpua-edit-103 #wpua-undo-existing, #wpua-edit-103 p.submit input {
-  font-family: 'robotoregular', sans-serif;
-  font-size: 16px;
-  padding: 7px 15px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px; }
-  @media screen and (max-width: 1023px) {
-    #wpua-edit-103 #wpua-add-existing, #wpua-edit-103 #wpua-remove-existing, #wpua-edit-103 #wpua-undo-existing, #wpua-edit-103 p.submit input {
-      padding: 6px 12px;
-      font-size: 14px; } }
-  @media screen and (max-width: 768px) {
-    #wpua-edit-103 #wpua-add-existing, #wpua-edit-103 #wpua-remove-existing, #wpua-edit-103 #wpua-undo-existing, #wpua-edit-103 p.submit input {
-      padding: 7px 10px;
-      font-size: 12px; } }
-  @media screen and (max-width: 550px) {
-    #wpua-edit-103 #wpua-add-existing, #wpua-edit-103 #wpua-remove-existing, #wpua-edit-103 #wpua-undo-existing, #wpua-edit-103 p.submit input {
-      padding: 5px 8px; } }
-#wpua-edit-103 #wpua-add-existing, #wpua-edit-103 p.submit input {
-  background: #f20f2b;
-  color: #fff; }
-  #wpua-edit-103 #wpua-add-existing:hover, #wpua-edit-103 p.submit input:hover {
-    background: #c30b21; }
-#wpua-edit-103 #wpua-remove-button-existing {
-  position: absolute;
-  left: 0; }
-  #wpua-edit-103 #wpua-remove-button-existing #wpua-remove-existing {
-    background: #131313;
-    color: #fff; }
-    #wpua-edit-103 #wpua-remove-button-existing #wpua-remove-existing:hover {
-      background: #4D4D54; }
-#wpua-edit-103 #wpua-undo-button-existing {
-  position: absolute;
-  left: 145px; }
-  @media screen and (max-width: 1023px) {
-    #wpua-edit-103 #wpua-undo-button-existing {
-      left: 125px; } }
-  @media screen and (max-width: 768px) {
-    #wpua-edit-103 #wpua-undo-button-existing {
-      left: 105px; } }
-  #wpua-edit-103 #wpua-undo-button-existing #wpua-undo-existing {
-    background: #ddb72e;
-    color: #131313; }
-    #wpua-edit-103 #wpua-undo-button-existing #wpua-undo-existing:hover {
-      background: #c4a020; }
-#wpua-edit-103 p.submit {
-  width: 100%;
-  margin-top: 75px; }
 
 .forum_wrapper {
   padding: 40px 0;
@@ -6654,11 +6450,11 @@ ul.member_menu > li {
         .forum_wrapper #bbpress-forums li.bbp-header {
           font-size: 12px; } }
       .forum_wrapper #bbpress-forums li.bbp-header li.bbp-forum-info {
-        width: 30%;
+        width: 45%;
         text-transform: none;
         text-align: left; }
       .forum_wrapper #bbpress-forums li.bbp-header li.bbp-forum-freshness {
-        width: 30%;
+        width: 15%;
         text-align: left; }
         @media screen and (max-width: 1023px) {
           .forum_wrapper #bbpress-forums li.bbp-header li.bbp-forum-freshness {
@@ -6668,9 +6464,11 @@ ul.member_menu > li {
           .forum_wrapper #bbpress-forums li.bbp-header li.bbp-forum-freshness {
             font-size: 12px; } }
       .forum_wrapper #bbpress-forums li.bbp-header li.bbp-forum-topic-count {
-        width: 20%; }
+        width: 16%;
+        text-align: left; }
       .forum_wrapper #bbpress-forums li.bbp-header li.bbp-forum-reply-count {
-        width: 14%; }
+        width: 8%;
+        text-align: left; }
       .forum_wrapper #bbpress-forums li.bbp-header li.bbp-topic-title {
         width: 30%;
         text-align: left;
@@ -6748,7 +6546,7 @@ ul.member_menu > li {
       border: none; }
     .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-info {
       font-family: 'robotoregular', sans-serif;
-      width: 35%;
+      width: 40%;
       text-transform: none; }
       .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-info .title_wrap a {
         float: left; }
@@ -6781,7 +6579,8 @@ ul.member_menu > li {
       .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-info .bbp-forum-content {
         float: left; }
       .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-info .bbp-forum-title {
-        font-family: 'robotobold'; }
+        font-family: 'robotobold', sans-serif;
+        font-weight: 700; }
         @media screen and (max-width: 768px) {
           .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-info .bbp-forum-title {
             line-height: 1; } }
@@ -6812,35 +6611,53 @@ ul.member_menu > li {
         .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-topic-count, .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-reply-count {
           font-size: 12px; } }
     .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness {
-      width: 35%; }
+      width: 30%; }
+      .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness .bbp-topic-freshness-author {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%;
+        padding-top: 25px; }
+        .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness .bbp-topic-freshness-author:last-child {
+          margin-right: 0; }
+      .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness .bbp-author-name {
+        width: 100%;
+        float: left;
+        text-align: left;
+        padding-top: 10px; }
+        @media screen and (max-width: 1023px) {
+          .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness .bbp-author-name {
+            text-align: center; } }
       .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness a {
-        font-family: 'robotoregular';
+        font-family: 'robotoregular', sans-serif;
+        font-weight: 300;
         float: left;
         width: 60%;
         text-align: left;
         color: #131313;
-        font-size: 12px;
-        padding-left: 8px; }
+        font-size: 12px; }
         @media screen and (max-width: 1023px) {
           .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness a {
             width: 100%;
             text-align: center;
-            padding-left: 0;
             font-size: 10px; } }
         .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness a:first-child {
-          width: 40%;
-          padding-left: 0; }
+          width: 40%; }
           @media screen and (max-width: 1023px) {
             .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness a:first-child {
               width: 100%;
               text-align: center; } }
-        .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness a:nth-child(2) {
-          font-family: 'robotomedium';
+        .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness a:last-child {
+          font-family: 'robotomedium', sans-serif;
+          font-weight: 500;
           font-size: 14px;
           color: #f20f2b;
-          padding-top: 8%; }
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%; }
           @media screen and (max-width: 1023px) {
-            .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness a:nth-child(2) {
+            .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness a:last-child {
               padding-top: 0;
               font-size: 12px; } }
         .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness a img {
@@ -6868,7 +6685,8 @@ ul.member_menu > li {
           .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-title a {
             font-size: 12px; } }
       .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-title p {
-        font-family: 'robotobold';
+        font-family: 'robotobold', sans-serif;
+        font-weight: 700;
         float: left;
         width: auto;
         display: inline-block;
@@ -6895,30 +6713,39 @@ ul.member_menu > li {
       width: 15%; }
     .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness {
       width: 33%; }
-      @media screen and (max-width: 1023px) {
-        .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness .bbp-topic-freshness-author {
-          float: left;
-          display: block;
-          margin-right: 3.57866%;
-          width: 100%; }
-          .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness .bbp-topic-freshness-author:last-child {
-            margin-right: 0; } }
-      .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness .bbp-topic-freshness-author img {
-        width: 100%; }
-      .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a {
-        font-family: 'robotoregular';
+      .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness .bbp-topic-freshness-author {
         float: left;
-        width: 60%;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%;
+        padding-top: 30px; }
+        .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness .bbp-topic-freshness-author:last-child {
+          margin-right: 0; }
+        @media screen and (max-width: 1023px) {
+          .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness .bbp-topic-freshness-author {
+            float: left;
+            display: block;
+            margin-right: 3.57866%;
+            width: 100%; }
+            .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness .bbp-topic-freshness-author:last-child {
+              margin-right: 0; } }
+        .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness .bbp-topic-freshness-author img {
+          width: 100%;
+          border: 1px solid #c8c8c8; }
+      .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a {
+        font-family: 'robotoregular', sans-serif;
+        font-weight: 300;
+        display: inline-block;
         text-align: left;
         color: #131313;
-        font-size: 12px;
-        padding-left: 8px; }
+        font-size: 12px; }
         @media screen and (max-width: 1023px) {
           .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a {
             padding-left: 0; } }
         .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:first-child {
           width: 40%;
-          padding-left: 0; }
+          padding-left: 0;
+          float: left; }
           @media screen and (max-width: 1023px) {
             .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:first-child {
               float: left;
@@ -6928,23 +6755,26 @@ ul.member_menu > li {
               text-align: center; }
               .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:first-child:last-child {
                 margin-right: 0; } }
-        .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:nth-child(2) {
-          font-family: 'robotomedium';
+        .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:last-child {
+          font-family: 'robotomedium', sans-serif;
+          font-weight: 500;
           font-size: 14px;
           color: #f20f2b;
-          padding-top: 25px; }
+          position: absolute;
+          left: 0;
+          top: 0; }
           @media screen and (max-width: 1023px) {
-            .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:nth-child(2) {
+            .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:last-child {
               float: left;
               display: block;
               margin-right: 3.57866%;
               width: 100%;
               text-align: center;
               padding-top: 0; }
-              .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:nth-child(2):last-child {
+              .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:last-child:last-child {
                 margin-right: 0; } }
           @media screen and (max-width: 768px) {
-            .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:nth-child(2) {
+            .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:last-child {
               font-size: 12px; } }
         @media screen and (max-width: 1023px) {
           .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:last-child {
@@ -6980,7 +6810,12 @@ ul.member_menu > li {
     .forum_wrapper #bbpress-forums div.even, .forum_wrapper #bbpress-forums ul.even {
       padding-left: 0; }
     .forum_wrapper #bbpress-forums p.bbp-topic-meta {
-      float: left; }
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      .forum_wrapper #bbpress-forums p.bbp-topic-meta:last-child {
+        margin-right: 0; }
       @media screen and (max-width: 1023px) {
         .forum_wrapper #bbpress-forums p.bbp-topic-meta {
           text-align: center;
@@ -7007,7 +6842,8 @@ ul.member_menu > li {
           padding: 3% 0 6% 24%;
           font-size: 12px; } }
       .forum_wrapper #bbpress-forums .bbp-forum-description a, .forum_wrapper #bbpress-forums .bbp-topic-description a {
-        font-family: 'robotomedium'; }
+        font-family: 'robotomedium', sans-serif;
+        font-weight: 500; }
         .forum_wrapper #bbpress-forums .bbp-forum-description a:first-child, .forum_wrapper #bbpress-forums .bbp-topic-description a:first-child {
           position: absolute;
           left: 5px;
@@ -7142,7 +6978,8 @@ ul.member_menu > li {
           .forum_wrapper #bbpress-forums .bbp-body div.bbp-reply-author .bbp-author-name {
             width: 100%;
             margin: 0;
-            font-size: 14px; } }
+            font-size: 14px;
+            text-align: center; } }
         @media screen and (max-width: 768px) {
           .forum_wrapper #bbpress-forums .bbp-body div.bbp-reply-author .bbp-author-name {
             margin: 0; } }
@@ -8842,7 +8679,6 @@ form.pmpro_form #other_discount_code.input {
   display: block;
   margin-right: 2.35765%;
   width: 100%;
-  padding: 30px;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -8851,7 +8687,18 @@ form.pmpro_form #other_discount_code.input {
     margin-right: 0; }
   @media screen and (max-width: 768px) {
     .profile_wrap {
-      padding: 20px; } }
+      margin: 20px 0; } }
+  .profile_wrap .pmpro_message.pmpro_success {
+    position: absolute;
+    z-index: 1;
+    right: 50%;
+    text-align: center;
+    transform: translateX(140px);
+    -webkit-transform: translateX(140px);
+    -ms-transform: translateX(140px);
+    -o-transform: translateX(140px);
+    -moz-transform: translateX(140px);
+    font-size: 18px; }
   .profile_wrap input {
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -8869,7 +8716,12 @@ form.pmpro_form #other_discount_code.input {
     width: 150px;
     border-radius: 100%;
     -webkit-border-radius: 100%;
-    -moz-border-radius: 100%; }
+    -moz-border-radius: 100%;
+    border: 4px solid #ddb72e; }
+    @media screen and (max-width: 768px) {
+      .profile_wrap .avatar_wrap img {
+        top: -55px;
+        width: 100px; } }
   .profile_wrap .pmpro_member_profile_edit_wrap {
     float: left;
     display: block;
@@ -8947,7 +8799,33 @@ form.pmpro_form #other_discount_code.input {
       margin-right: 0; }
     @media screen and (max-width: 768px) {
       .profile_wrap form {
-        margin-top: 20px; } }
+        padding: 60px 20px 20px; } }
+    .profile_wrap form.wpua-edit {
+      padding: 40px; }
+      @media screen and (max-width: 768px) {
+        .profile_wrap form.wpua-edit {
+          padding: 20px; } }
+    .profile_wrap form .pmpro_checkout-field {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      .profile_wrap form .pmpro_checkout-field:last-child {
+        margin-right: 0; }
+    .profile_wrap form input[type="text"], .profile_wrap form input[type="email"], .profile_wrap form select, .profile_wrap form textarea {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%;
+      max-width: unset !important;
+      border: 1px solid #c8c8c8; }
+      .profile_wrap form input[type="text"]:last-child, .profile_wrap form input[type="email"]:last-child, .profile_wrap form select:last-child, .profile_wrap form textarea:last-child {
+        margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        .profile_wrap form input[type="text"], .profile_wrap form input[type="email"], .profile_wrap form select, .profile_wrap form textarea {
+          width: 100% !important; } }
+    .profile_wrap form .pmpro_asterisk {
+      display: none; }
     @media screen and (max-width: 768px) {
       .profile_wrap form label {
         font-size: 13px; } }
@@ -8960,8 +8838,22 @@ form.pmpro_form #other_discount_code.input {
       width: 48.82117%; }
       .profile_wrap form .pmpro_checkout_box-user:last-child, .profile_wrap form .pmpro_checkout_box-just_profile:last-child {
         margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        .profile_wrap form .pmpro_checkout_box-user, .profile_wrap form .pmpro_checkout_box-just_profile {
+          float: left;
+          display: block;
+          margin-right: 7.42297%;
+          width: 100%; }
+          .profile_wrap form .pmpro_checkout_box-user:last-child, .profile_wrap form .pmpro_checkout_box-just_profile:last-child {
+            margin-right: 0; } }
     .profile_wrap form .pmpro_checkout_box-just_profile {
       margin-right: 0; }
+    .profile_wrap form.pmpro_form .pmpro_member_profile_edit-fields div {
+      margin: 0; }
+    .profile_wrap form #description_div {
+      margin-top: 20px; }
+      .profile_wrap form #description_div textarea {
+        padding: 10px; }
     .profile_wrap form .pmpro_submit {
       float: left;
       display: block;
@@ -9000,17 +8892,13 @@ form.pmpro_form #other_discount_code.input {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 100%;
-    margin: 20px 0; }
+    width: 100%; }
     .profile_wrap .wpua-edit-container:last-child {
       margin-right: 0; }
     .profile_wrap .wpua-edit-container h3 {
-      margin: 0 0  6px 0;
-      text-transform: none;
-      font-size: 16px;
-      font-family: 'robotolight', sans-serif; }
-    .profile_wrap .wpua-edit-container p {
-      margin-bottom: 0; }
+      margin-bottom: 10px;
+      margin-top: 0;
+      font-size: 24px; }
     .profile_wrap .wpua-edit-container input {
       background: #fff;
       height: 45px;
@@ -9027,8 +8915,7 @@ form.pmpro_form #other_discount_code.input {
     .profile_wrap .wpua-edit-container button {
       background: #aeabab;
       padding: 8px 5px;
-      height: 45px;
-      width: 13%; }
+      height: 40px; }
       @media screen and (max-width: 768px) {
         .profile_wrap .wpua-edit-container button {
           height: 35px;
@@ -9042,57 +8929,6 @@ form.pmpro_form #other_discount_code.input {
 @-moz-document url-prefix() {
   .profile_wrap .wpua-edit-container #wpua-upload-button-existing input {
     padding: 0; } }
-    .profile_wrap .wpua-edit-container #wpua-images-existing {
-      display: none; }
-  .profile_wrap .tml-form-table.description {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%; }
-    .profile_wrap .tml-form-table.description:last-child {
-      margin-right: 0; }
-    .profile_wrap .tml-form-table.description tbody {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 100%; }
-      .profile_wrap .tml-form-table.description tbody:last-child {
-        margin-right: 0; }
-      .profile_wrap .tml-form-table.description tbody tr {
-        float: left;
-        display: block;
-        margin-right: 2.35765%;
-        width: 100%; }
-        .profile_wrap .tml-form-table.description tbody tr:last-child {
-          margin-right: 0; }
-        .profile_wrap .tml-form-table.description tbody tr.half_width {
-          width: 48%;
-          float: left; }
-          @media screen and (max-width: 768px) {
-            .profile_wrap .tml-form-table.description tbody tr.half_width {
-              float: left;
-              display: block;
-              margin-right: 7.42297%;
-              width: 100%; }
-              .profile_wrap .tml-form-table.description tbody tr.half_width:last-child {
-                margin-right: 0; } }
-          .profile_wrap .tml-form-table.description tbody tr.half_width.right {
-            float: right;
-            margin-right: 0; }
-        .profile_wrap .tml-form-table.description tbody tr th {
-          font-family: 'robotolight', sans-serif;
-          font-size: 16px; }
-        .profile_wrap .tml-form-table.description tbody tr textarea {
-          height: 175px;
-          border: 1px solid #c8c8c8;
-          border-radius: 4px;
-          -webkit-border-radius: 4px;
-          -moz-border-radius: 4px;
-          padding: 10px; }
-    @media screen and (max-width: 768px) {
-      .profile_wrap .tml-form-table.description .description {
-        font-size: 13px;
-        line-height: 1.4; } }
   .profile_wrap .password {
     float: left;
     display: block;
@@ -9119,16 +8955,57 @@ form.pmpro_form #other_discount_code.input {
           margin-bottom: 10px; }
         .profile_wrap .password tbody tr button {
           background: #ddb72e; }
-  .profile_wrap .tml-submit-wrap {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%; }
-    .profile_wrap .tml-submit-wrap:last-child {
-      margin-right: 0; }
-    .profile_wrap .tml-submit-wrap input {
-      background: #131313;
-      color: #fff; }
+
+#wpua-preview-existing img {
+  max-height: unset !important; }
+
+#wpua-edit-103 #wpua-thumbnail-existing img {
+  max-height: unset; }
+#wpua-edit-103 #wpua-add-existing, #wpua-edit-103 #wpua-remove-existing, #wpua-edit-103 #wpua-undo-existing, #wpua-edit-103 p.submit input {
+  font-family: 'robotoregular', sans-serif;
+  font-size: 16px;
+  padding: 7px 15px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px; }
+  @media screen and (max-width: 1023px) {
+    #wpua-edit-103 #wpua-add-existing, #wpua-edit-103 #wpua-remove-existing, #wpua-edit-103 #wpua-undo-existing, #wpua-edit-103 p.submit input {
+      padding: 6px 12px;
+      font-size: 14px; } }
+  @media screen and (max-width: 768px) {
+    #wpua-edit-103 #wpua-add-existing, #wpua-edit-103 #wpua-remove-existing, #wpua-edit-103 #wpua-undo-existing, #wpua-edit-103 p.submit input {
+      padding: 7px 10px;
+      font-size: 12px; } }
+  @media screen and (max-width: 550px) {
+    #wpua-edit-103 #wpua-add-existing, #wpua-edit-103 #wpua-remove-existing, #wpua-edit-103 #wpua-undo-existing, #wpua-edit-103 p.submit input {
+      padding: 5px 8px; } }
+#wpua-edit-103 #wpua-add-existing, #wpua-edit-103 p.submit input {
+  background: #f20f2b;
+  color: #fff; }
+  #wpua-edit-103 #wpua-add-existing:hover, #wpua-edit-103 p.submit input:hover {
+    background: #c30b21; }
+#wpua-edit-103 #wpua-remove-button-existing #wpua-remove-existing {
+  background: #131313;
+  color: #fff; }
+  #wpua-edit-103 #wpua-remove-button-existing #wpua-remove-existing:hover {
+    background: #4D4D54; }
+#wpua-edit-103 #wpua-undo-button-existing #wpua-undo-existing {
+  background: #131313;
+  color: #fff; }
+  #wpua-edit-103 #wpua-undo-button-existing #wpua-undo-existing:hover {
+    background: #4D4D54; }
+#wpua-edit-103 #wpua-add-existing {
+  background: #ddb72e;
+  color: #131313; }
+  #wpua-edit-103 #wpua-add-existing:hover {
+    background: #c4a020; }
+#wpua-edit-103 p.submit {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  #wpua-edit-103 p.submit:last-child {
+    margin-right: 0; }
 
 #update-password .pw-weak {
   text-align: left;

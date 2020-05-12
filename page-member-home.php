@@ -7,7 +7,8 @@
 	 *
 	 * @package boiler
 	 */
-	 
+	/* phpinfo();
+	 exit;*/
 	get_header();
 	
 	
@@ -46,7 +47,7 @@
 					 		<div class="column">
 						 		<div class="heading full_width">
 							 		<h3>My Profile</h3>
-							 		<a href="/user">(Edit)</a>
+							 		<a href="<?php echo home_url();?>/your-profile">(Edit)</a>
 						 		</div>
 						 		<?php //echo get_avatar( $current_user->ID, 200 );
 							        echo get_wp_user_avatar( $current_user->ID, 200 );
@@ -64,8 +65,8 @@
 							 		</div>
 							 		<div class="info_wrap account">
 								 		<h4>Account</h4>
-								 		<a class="button red" href="/user">Edit Profile</a>
-								 		<a class="button yellow" href="/my-inbox/?fepaction=messagebox&fep-filter=inbox">My Inbox</a>
+								 		<a class="button red" href="<?php echo home_url();?>/your-profile">Edit Profile</a>
+								 		<a class="button yellow" href="<?php echo home_url();?>/my-inbox/?fepaction=messagebox&fep-filter=inbox">My Inbox</a>
 							 		</div>
 						 		</div>
 						 		<div class="row full_width">

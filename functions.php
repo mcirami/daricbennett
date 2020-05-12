@@ -96,7 +96,7 @@ add_filter('gallery_style', 'boiler_gallery_style');
 // add_image_size( 'thumb-400', 400, 400, true );
 
 if ( function_exists( 'add_image_size' ) ) {
-    add_image_size('avatar-size', 300, 300, true);
+    //add_image_size('avatar-size', 300, 300, true);
     add_image_size( 'video-thumb', 640, 360, true );
 }
 
@@ -164,27 +164,14 @@ function boiler_scripts_styles() {
 
 	if(is_user_logged_in()) {
 		wp_localize_script( 'main_js', 'myAjaxurl', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
-
-		wp_localize_script('main_js', 'currentPage', array(
-
-			'pageName' =>  get_the_title(),
-			'postType' => get_post_type(),
-			'postSlug' => get_permalink(),
-		));
-
-		wp_localize_script('main_js', 'currentUser', array(
-			'nonce' =>  wp_create_nonce('wp_rest'),
-			'siteURL' => get_site_url(),
-			'userLogin' => wp_get_current_user()->user_login,
-			'userID' => wp_get_current_user()->ID,
-			'userEmail' => wp_get_current_user()->user_email,
-			'userRole' => wp_get_current_user()->roles,
-			//'ajaxurl' => admin_url( 'admin-ajax.php' )
-		));
 	}
 
+	wp_localize_script( 'main_js', 'currentPage', array(
 
-
+		'pageName' => get_the_title(),
+		'postType' => get_post_type(),
+		'postSlug' => get_permalink(),
+	) );
 }
 add_action( 'wp_enqueue_scripts', 'boiler_scripts_styles' );
 
@@ -247,9 +234,9 @@ add_filter('pmpro_paypal_button_image', 'my_pmpro_paypal_button_image');
 
 
 
-/*add_action('personal_options_update', 'extra_profile_fields');
-add_action('edit_user_profile_update', 'extra_profile_fields');
-
+//add_action('personal_options_update', 'extra_profile_fields');
+//add_action('edit_user_profile_update', 'extra_profile_fields');
+/*
 function extra_profile_fields($user_id) {
 	
 	if (!current_user_can('edit_user', $user_id)) {
@@ -512,7 +499,7 @@ function create_live_stream_post_type() {
 }
 add_action( 'init', 'create_live_stream_post_type' );
 
-/*
+
 function create_courses_post_type() {
 	register_post_type( 'courses',
 		array(
@@ -545,7 +532,7 @@ function create_courses_post_type() {
 		)
 	);
 }
-add_action( 'init', 'create_courses_post_type' );*/
+add_action( 'init', 'create_courses_post_type' );
 
 
 add_filter( 'the_content', 'make_clickable');
@@ -979,132 +966,6 @@ function devplus_wpquery_where( $where ){
 
 add_filter( 'posts_where', 'devplus_wpquery_where' );
 
-/*remove_filter('get_avatar', 'um_get_avatar', 99999, 5);*/
-
-
-/* First we need to extend main profile tabs */
-/*
-add_filter('um_profile_tabs', 'add_custom_profile_tab', 1 );
-function add_custom_profile_tab( $tabs ) {
-
-	$tabs['changepassword'] = array(
-		'name' => 'Change Password',
-		'icon' => 'um-faicon-asterisk',
-		'custom' => true
-	);
-
-	$tabs['changeprofilephoto'] = array(
-		'name' => 'Change Profile Photo',
-		'icon' => 'um-faicon-image',
-		'custom' => true
-	);
-
-	return $tabs;
-
-}*/
-
-/* Then we just have to add content to that tab using this action */
-/*
-add_action('um_profile_content_changepassword_default', 'um_profile_content_changepassword_default');
-function um_profile_content_changepassword_default( $args ) {
-
-	$current_user = wp_get_current_user();
-	$user_id = $current_user->ID;
-	$meta = get_user_meta($user_id, 'profile');
-	//$meta = $meta[0];
-	$passerror='';
-	if(isset($_POST['changepass']))
-	{
-		if($_POST['npass']!=$_POST['cpass'])
-		{
-			$passerror='Confirm password not match';
-		}else{
-			if($_POST['npass']==''){
-				$password=$_POST['password'];
-			}
-			else{
-				$password=$_POST['npass'];
-			}
-			wp_set_password( $password, $user_id );
-			$passerror='Password has been changed';
-		}
-	}
-	*/?><!--
-	<form class="password_change"  method="post" enctype="multipart/form-data" action="#" onsubmit="return change_password();">
-		<h2>Change Password</h2>
-		<div class="form-field">
-			<label>New Password</label>
-			<input type="password" name="npass" id="pass" />
-		</div>
-		<div class="form-field">
-			<label>Confirm Password</label>
-			<input type="password" name="cpass" id="cpass" />
-		</div>
-		<div id="error"><?php /*echo $passerror; */?></div>
-		<input class="button red" type="submit" name="changepass"  value="Submit" />
-	</form>
---><?php
-/*}*/
-/*
-add_action('um_profile_content_changeprofilephoto_default', 'um_profile_content_changeprofilephoto_default');
-function um_profile_content_changeprofilephoto_default( $args ) {
-
-	$current_user = wp_get_current_user();
-	$user_id = $current_user->ID;
-*/?><!--
-	<div class="content_wrap">
-		<div class="column">
-				<?php /*echo do_shortcode('[avatar_upload]'); */?>
-		</div>
-		<div class="column">
-
-				<?php
-/*					$coverURL = um_get_default_cover_uri();
-				*/?>
-
-				<img src="<?php /*echo $coverURL; */?>">
-
-		</div>
-	</div>
-
---><?php
-/*}
-
-
-add_filter( 'um_myprofile_edit_menu_items', 'my_myprofile_edit_menu_items', 10, 1 );
-function my_myprofile_edit_menu_items( $items ) {
-
-	unset( $items['myaccount'] );
-	unset( $items['logout'] );
-	return $items;
-}
-
-add_filter( 'um_browser_url_redirect_to__filter', 'my_browser_url_redirect_to', 10, 1 );
-function my_browser_url_redirect_to( $url ) {
-
-	if ( isset( $_COOKIE['login_redirect'] ) ) {
-		$url = $_COOKIE['login_redirect'];
-	} else {
-		$hostUrl = get_site_url();
-
-		$url = $hostUrl . "/member-home";
-
-	}
-
-	return $url;
-}
-
-
-add_filter( 'um_user_photo_menu_edit', 'my_user_photo_menu_edit', 10, 1);
-function my_user_photo_menu_edit( $items ) {
-
-	foreach ($items as $i => $value) {
-		unset($items[$i]);
-	}
-
-	return $items;
-}*/
-
 function get_lesson_comments() {
 
     $postID = $_POST['id'];
@@ -1213,7 +1074,7 @@ function add_media_button( $args ) {
 add_filter('bbp_get_topic_content', 'video_embed');
 add_filter('bbp_get_reply_content', 'video_embed');
 function video_embed($content){
-
+	$linkFinal = '';
 	$search = 'video';
 	if (preg_match("/{$search}/i", $content)) {
 		$positionStart = strpos($content, "http");

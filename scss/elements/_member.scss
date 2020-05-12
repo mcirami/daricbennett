@@ -70,7 +70,6 @@
 		//display: inline-block;
 		padding: 20px;
 		background: $lightGray;
-		border-top: none;
 		text-align: left;
 		border-radius: 4px;
 		-webkit-border-radius: 4px;
@@ -90,7 +89,7 @@
 		}
 		
 		h3 {
-			font-family: 'robotoregular';
+			@include robotoreg;
 			font-size: 20px;
 			text-transform: none;
 			margin: 0;
@@ -118,7 +117,7 @@
 			 }
 			
 			p {
-				font-family: 'robotomedium';
+				@include robotomed;
 				color: $red;
 				
 				@include media($tablet){
@@ -143,7 +142,7 @@
 				}
 				
 				strong {
-					font-family: 'robotobold';
+					@include robotobold;
 				}
 			}
 		}
@@ -157,19 +156,19 @@
 				 font-size: 15px;
 				 
 				 &.label {
-					 font-family: 'robotobold';
+					@include robotobold;
 					 color: $black;
 					 margin-right: 10px;
 				 }
 				 
 				 strong {
-					 font-family: 'robotoregular';
+					 @include robotoreg;
 				 }
 				 
 				 &.status {
 					 color: $white;
 					 background: #11a60c;
-					 padding: 0px 8px 1px;
+					 padding: 0 8px 1px;
 					 border-radius: 4px;
 					 -webkit-border-radius: 4px;
 					 -moz-border-radius: 4px;
@@ -227,7 +226,7 @@
 		}
 		
 		input[type="submit"] {
-			font-family: 'robotomedium';
+			@include robotomed;
 			font-size: 18px;
 			position: relative;
 			text-indent: 0;
@@ -302,7 +301,7 @@
 		}
 		
 		> h3 {
-			font-family: 'robotoregular';
+			@include robotoreg;
 			text-transform: none;
 			font-size: 28px;
 			margin: 0 0 20px;
@@ -408,7 +407,7 @@
 			}
 			
 			p {
-				font-family: 'robotoregular';
+				@include robotoreg;
 				font-size: 14px;
 				color: $red;
 				line-height: 1.5;
@@ -429,7 +428,7 @@
 				}
 				
 				strong {
-					font-family: 'robotolight';
+					@include robotolight;
 					color: $black;
 				}
 			}
@@ -524,7 +523,7 @@
 				color: $red;
 				
 				span {
-					font-family: 'robotobold';
+					@include robotobold;
 					margin-right: 5px;
 					color: $black;
 					float: left;
@@ -616,7 +615,7 @@
 		}
 		
 		h3 {
-			font-family: 'robotoregular';
+			@include robotoreg;
 			font-size: 20px;
 			
 			@include media($tablet){
@@ -694,323 +693,3 @@
 	}
 }
 
-#wpua-preview-existing img {
-    max-height: unset !important;
-}
-
-.um-profile-photo-overlay span.um-profile-photo-overlay-s {
-    display: none !important;
-}
-
-.um {
-
-    .cover_photo_text {
-        position: absolute;
-        width: 100%;
-        text-align: center;
-        font-size: 12px;
-    }
-
-    .um-profile-photo {
-
-        @include media($smallMobile) {
-            width: 100% !important;
-            text-align: center !important;
-            position: absolute;
-            top: 24px;
-            left: 0;
-        }
-
-        a.um-profile-photo-img {
-            top: -85px !important;
-            z-index: 1;
-            width: 150px;
-
-            @include media($smallMobile) {
-                width: 100px !important;
-                height: 100px !important;
-                margin: 0 auto !important;
-                float: none !important;
-                display: inline-block !important;
-                position: relative !important;
-                left: auto !important;
-            }
-        }
-    }
-
-    .um-profile-meta {
-        padding-left: 220px !important;
-
-        @include media($smallMobile) {
-            padding-left: 0 !important;
-            padding-right: 0 !important;
-            text-align: center !important;
-            padding-top: 60px !important;
-        }
-
-        .um-name {
-            @include media($smallMobile) {
-                float: none;
-            }
-        }
-    }
-}
-
-.um.um-profile {
-    @include span-columns(12);
-    margin-top: 40px;
-    background: $lightGray;
-    -webkit-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
-    -moz-box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
-    box-shadow: -2px 2px 3px 1px rgba(0,0,0,.14);
-    border: 1px solid $borderGray;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-
-    .um-field {
-        padding: 20px;
-    }
-
-    .um-profile-edit-a.active {
-        color: $red !important;
-    }
-
-    .um-profile-headericon a:hover {
-        color: $red !important;
-    }
-
-    .um-header {
-        padding-left: 20px;
-        padding-right: 20px;
-
-        .um-profile-photo a.um-profile-photo-img {
-            border: 2px solid $darkGray;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            border-radius: 50%;
-        }
-
-        .um-dropdown {
-            border: none;
-        }
-
-        .um-icon-arrow-up-b:before {
-            content: none;
-        }
-    }
-
-    .um-profile-nav {
-        background: $black;
-        padding-left: 20px;
-    }
-
-    .um-profile-nav-item a {
-        background: $black;
-
-        &:hover {
-            background: $red;
-        }
-    }
-
-    .um-profile-nav-item.active a {
-        background: $red;
-
-        &:hover {
-            background: $red;
-        }
-    }
-
-    &.um-viewing .um-field-label {
-        border-bottom: 1px solid $borderGray;
-    }
-
-    .um-profile-body {
-        @include span-columns(12);
-        padding: 20px;
-        max-width: unset;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-
-        .um-field-select .um-field-area.um-field-area-has-icon .select2-selection__rendered {
-            text-indent: 3px;
-        }
-
-        .select2.select2-container .select2-selection {
-            padding: 0 !important;
-        }
-
-        input[type="submit"] {
-            font-size: 16px;
-
-            @include media($tablet) {
-                font-size: 14px;
-            }
-
-            @include media($mobile) {
-                font-size: 12px;
-            }
-        }
-
-        .password_change{
-
-            input[type="password"] {
-                width: 45%;
-
-                @include media($smallMobile) {
-                    width: 100%;
-                }
-            }
-
-            #error {
-                color: $red;
-            }
-
-            .button {
-                margin-top: 20px;
-            }
-        }
-
-        .um-col-alt {
-            .um-button {
-                float: left;
-                font-family: 'robotoregular', sans-serif;
-                font-size: 16px;
-                padding: 12px 24px !important;
-                border-radius: 4px;
-                -webkit-border-radius: 4px;
-                -moz-border-radius: 4px;
-                background: $red;
-                color: $white;
-                min-width: unset !important;
-
-                &:hover {
-                    background: #c30b21;
-                }
-
-                @include media($tablet){
-                    padding: 6px 12px;
-                    font-size: 14px;
-                }
-
-                @include media($mobile){
-                    padding: 7px 10px;
-                    font-size: 12px;
-                }
-
-                @include media($smallMobile){
-                    padding: 5px 8px;
-                }
-            }
-        }
-    }
-
-    .um-load-items {
-        a {
-            font-family: 'robotoregular', sans-serif;
-            font-size: 16px;
-            padding: 12px 24px !important;
-            border-radius: 4px;
-            -webkit-border-radius: 4px;
-            -moz-border-radius: 4px;
-            background: $red;
-            color: $white;
-            min-width: unset !important;
-
-            &:hover {
-                background: #c30b21;
-            }
-
-            @include media($tablet){
-                padding: 6px 12px;
-                font-size: 14px;
-            }
-
-            @include media($mobile){
-                padding: 7px 10px;
-                font-size: 12px;
-            }
-
-            @include media($smallMobile){
-                padding: 5px 8px;
-            }
-        }
-    }
-}
-
-#wpua-edit-103 {
-    #wpua-add-existing,#wpua-remove-existing, #wpua-undo-existing, p.submit input {
-        font-family: 'robotoregular', sans-serif;
-        font-size: 16px;
-        padding: 7px 15px;
-        border-radius: 4px;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-
-        @include media($tablet){
-            padding: 6px 12px;
-            font-size: 14px;
-        }
-
-        @include media($mobile){
-            padding: 7px 10px;
-            font-size: 12px;
-        }
-
-        @include media($smallMobile){
-            padding: 5px 8px;
-        }
-    }
-
-    #wpua-add-existing, p.submit input {
-        background: $red;
-        color: $white;
-
-        &:hover {
-            background: #c30b21;
-        }
-    }
-
-    #wpua-remove-button-existing {
-        position: absolute;
-        left: 0;
-
-        #wpua-remove-existing {
-            background: $black;
-            color: $white;
-
-
-            &:hover {
-                background: #4D4D54;
-            }
-        }
-    }
-
-    #wpua-undo-button-existing {
-        position: absolute;
-        left: 145px;
-
-        @include media($tablet) {
-            left: 125px;
-        }
-
-        @include media($mobile) {
-            left: 105px;
-        }
-
-        #wpua-undo-existing {
-            background: $yellow;
-            color: $black;
-
-            &:hover {
-                background: #c4a020;
-            }
-        }
-    }
-
-    p.submit {
-        width: 100%;
-        margin-top: 75px;
-    }
-}
