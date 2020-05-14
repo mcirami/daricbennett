@@ -1,6 +1,6 @@
 <?php
 
-if ( ! class_exists( 'TwentyTwenty_Script_Loader' ) ) {
+if ( ! class_exists( 'DaricBennett_Script_Loader' ) ) {
 
 
 	class DaricBennett_Script_Loader {
