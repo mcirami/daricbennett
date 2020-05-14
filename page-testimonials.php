@@ -38,7 +38,7 @@
 
 							<div class="row full_width">
 								<div class="column_one">
-									<img src="<?php echo bloginfo('template_url'); ?>/images/icon-quote-left.png" />
+									<img src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/icon-quote-left.png" />
 								</div>
 								<div class="column_two">
 									<p><?php the_sub_field('quote_text'); ?></p>

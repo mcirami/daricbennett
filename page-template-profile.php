@@ -22,7 +22,7 @@ get_header();?>
 	<section class="profile_wrap">
 		<div class="container">
 			<div class="cover_img full_width">
-				<img src="<?php echo bloginfo( 'template_url' ); ?>/images/home-bass.jpg" alt="playing bass"/>
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home-bass.jpg" alt="playing bass"/>
 			</div>
 			<div class="avatar_wrap full_width">
 				<?php echo do_shortcode('[avatar]'); ?>

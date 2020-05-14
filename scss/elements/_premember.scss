@@ -12,6 +12,7 @@
 }
 .pmpro_login_wrap, .pmpro_lost_password_wrap {
 	text-align: center;
+	position: relative;
 
 	hr{
 		display: none;
@@ -395,6 +396,7 @@
 			 }
 			 
 			 li {
+				 position: relative;
 				 padding-left: 50px;
 				 font-size: 14px;
 				 

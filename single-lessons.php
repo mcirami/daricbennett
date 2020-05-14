@@ -45,13 +45,10 @@ get_header(); ?>
 			</div>
 			
 			<div class="social_media_section full_width">
-				<div class="image_wrap">
-					<!--<img src="<?php echo bloginfo('template_url'); ?>/images/daric-single-lesson.jpg" />-->
-				</div>
 				<div class="text_wrap">
 					<h3>Are You Ready for Full Access to Every <span>Complete lesson?</span></h3>
 					<div class="button_wrap">
-						<a class="button yellow" href="/membership-account/membership-levels/">Start My Full Access Free Trial Now!</a>
+						<a class="button yellow" href="<?php echo home_url(); ?>/membership-account/membership-levels/">Start My Full Access Free Trial Now!</a>
 					</div>
 					
 					<?php get_template_part( 'content', 'social-media' ); ?>
@@ -96,10 +93,10 @@ get_header(); ?>
 		<?php //get_sidebar(); ?>
 
     <div id="members_only_video_pop">
-        <img src="<?php echo bloginfo('template_url'); ?>/images/logo.png"/>
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png"/>
         <h2>This Lesson Is For Members Only</h2>
         <div class="button_wrap">
-            <a class="button red" href="/membership-account/membership-levels/">Start My Free Trial For Full Access!</a>
+            <a class="button red" href="<?php echo home_url(); ?>/membership-account/membership-levels/">Start My Free Trial For Full Access!</a>
         </div>
     </div>
 

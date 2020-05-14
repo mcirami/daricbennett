@@ -26,7 +26,7 @@
 	
 	<section class="container">
 	
-		<div class="contruction_logo"><img src="<?php bloginfo('template_url'); ?>/images/logo.png" /></div>
+		<div class="contruction_logo"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" /></div>
 		<h1>Coming soon!</h1>
 		<div class="construction_login">
 			<?php 

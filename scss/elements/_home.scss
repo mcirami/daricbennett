@@ -1,6 +1,15 @@
 .home_section {
 	@include span-columns(12);
-	
+	position: relative;
+
+	form {
+		position: relative;
+
+		.mc4wp-form-fields {
+			position: relative;
+		}
+	}
+
 	.hero {
 		@include span-columns(12);
 		//background: url('../images/home-hero.jpg') no-repeat;
@@ -70,6 +79,7 @@
 		
 		.content_wrap {
 			display: inline-block;
+			position: relative;
 			width: 74%;
 			margin-top: 30px;
 			
@@ -435,6 +445,7 @@
 		}
 		
 		form {
+			position: relative;
 			width: 95%;
 			float: left;
 			padding-left: 10px;

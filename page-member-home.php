@@ -32,7 +32,7 @@
 				 	
 				 	<div class="member_home full_width">
 					    <div class="banner_wrap full_width">
-						    <a target="_blank" href="https://teespring.com/bassnationtshirt?pr=BASS25"><img src="<?php echo bloginfo( 'template_url' ); ?>/images/banner.jpg"/></a>
+						    <a target="_blank" href="https://teespring.com/bassnationtshirt?pr=BASS25"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/banner.jpg"/></a>
 					    </div>
 					 	<?php if ($current_user->user_firstname !== '') : ?>
 				 			<h2> Welcome To Daric Bennett's Bass Nation, <?php echo $current_user->user_firstname; ?>!</h2>
@@ -61,7 +61,7 @@
 						 		</div>
 						 		<div class="row full_width">
 							 		<div class="icon_wrap">
-								 		<img src="<?php echo bloginfo('template_url'); ?>/images/icon-profile.png" />
+								 		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/icon-profile.png" />
 							 		</div>
 							 		<div class="info_wrap account">
 								 		<h4>Account</h4>
@@ -71,7 +71,7 @@
 						 		</div>
 						 		<div class="row full_width">
 							 		<div class="icon_wrap">
-								 		<img src="<?php echo bloginfo('template_url'); ?>/images/icon-lessons.png" />
+								 		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/icon-lessons.png" />
 							 		</div>
 							 		<div class="info_wrap">
 								 		<h4>Instruction</h4>
@@ -81,7 +81,7 @@
 						 		</div>
 						 		<div class="row full_width">
 							 		<div class="icon_wrap forums">
-								 		<img src="<?php echo bloginfo('template_url'); ?>/images/icon-forums.png" />
+								 		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/icon-forums.png" />
 							 		</div>
 							 		<div class="info_wrap forums">
 								 		<h4>Forums</h4>

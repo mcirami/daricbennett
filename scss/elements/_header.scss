@@ -224,12 +224,14 @@
 			
 			ul {
 				float: left;
+				margin-top: 0;
 				
 				@include media($mobile){
 					@include span-columns(4);
 				}
 				
 				li {
+					position: relative;
 					width: auto;
 					float: left;
 					padding: 15px 20px 15px 15px;
@@ -378,6 +380,7 @@
 }
 
 .mobile_menu_icon {
+	position: relative;
 	display: none;
 	width: 30px;
 	height: 24px;
@@ -536,6 +539,7 @@
 }
 
 ul.member_menu {
+	position: relative;
 
 	> li {
 		padding: 15px 0 35px 0 !important;
@@ -604,7 +608,8 @@ ul.member_menu {
 		}
 		
 		&.menu-item-has-children > a {
-			
+			position: relative;
+
 			&:after {
 				
 				@include media($mobile){
@@ -629,6 +634,7 @@ ul.member_menu {
 			background: #000;
 			position: absolute;
 			left: -5px;
+			padding-left: 0;
 			white-space: nowrap;
 			top: 100%;
 			border-bottom-left-radius: 4px;
@@ -706,6 +712,7 @@ ul.member_menu {
                 }
 
                 a {
+					position: relative;
                     display: block;
                     padding: 15px 45px 20px;
                     text-transform: none;
@@ -889,6 +896,7 @@ ul.member_menu {
 		background: $yellow;
 		
 		form {
+			position: relative;
 			margin: 0 auto;
 			width: 90%;
 

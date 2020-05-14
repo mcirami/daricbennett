@@ -89,6 +89,7 @@
 		}
 		
 		.image_wrap {
+			position: relative;
 			width: 24.7%;
 			display: inline-block;
 			text-align: center;
@@ -132,7 +133,7 @@
 			}
 			
 			.text {
-				font-family: 'robotolight';
+				@include robotolight;
 				display: none;
 				position: absolute;
 				width: 100%;

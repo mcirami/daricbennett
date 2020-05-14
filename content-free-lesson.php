@@ -119,7 +119,7 @@
 
                             <?php } else { ?>
 
-                                <img class="screenshot" src="<?php echo bloginfo('template_url'); ?>/images/lessons-screenshot.jpg" />
+                                <img class="screenshot" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/lessons-screenshot.jpg" />
 
                             <?php } ?>
 
@@ -127,7 +127,7 @@
                     <?php endif; ?><!-- video thumbnail -->
 
                     <div class="button_wrap full_width">
-                        <img class="play_button" src="<?php echo bloginfo('template_url'); ?>/images/play-button.png" />
+                        <img class="play_button" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/play-button.png" />
                     </div>
 
                 <?php if ($videoOnly) { ?>
@@ -145,10 +145,10 @@
 
                 <div class="share_buttons full_width">
                     <div class="social_button_wrap">
-                        <a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo the_field('share_link'); ?>"><img src="<?php echo bloginfo('template_url'); ?>/images/icon-facebook-f.png" />Share</a>
+                        <a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_field('share_link'); ?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/icon-facebook-f.png" />Share</a>
                     </div>
                     <div class="social_button_wrap">
-                        <a class="email" href="mailto:?&subject=Awesome Bass Lesson!&body=Check%20out%20this%20bass%20lesson%20I%20found%20on%20http%3A//daricbennett.com...%0A%0A<?php echo the_field('share_link');?>"><img src="<?php echo bloginfo('template_url'); ?>/images/email-envelope.png" />Email</a>
+                        <a class="email" href="mailto:?&subject=Awesome Bass Lesson!&body=Check%20out%20this%20bass%20lesson%20I%20found%20on%20http%3A//daricbennett.com...%0A%0A<?php echo the_field('share_link');?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/email-envelope.png" />Email</a>
                     </div>
                     <div class="social_button_wrap">
                         <a target="_blank" class="page" href="<?php echo $lessonLink;?>">Lesson Page</a>

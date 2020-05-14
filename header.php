@@ -71,7 +71,7 @@ if (isset($_GET['clickid'])) {
 
         <?php else : ?>
 
-	        <meta property="og:image" content="<?php echo bloginfo( 'template_url' ); ?>/images/og-image-bass-nation.png" />
+	        <meta property="og:image" content="<?php echo esc_url( get_template_directory_uri() ); ?>/images/og-image-bass-nation.png" />
 	        <?php   if(is_single()) :
 
                 $str = get_field('free_lesson_link');
@@ -238,9 +238,9 @@ $username = $current_user->user_login;
 			<?php wp_reset_query(); ?>
 			<div class="container">
 				<?php if (is_user_logged_in()): ?>
-					<a href="/member-home"><h1 class="logo"><img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" /></h1></a>
+					<a href="/member-home"><h1 class="logo"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" /></h1></a>
 				<?php else : ?>
-					<a href="/"><h1 class="logo"><img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" /></h1></a>
+					<a href="/"><h1 class="logo"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" /></h1></a>
 				<?php endif; ?>
 
 				<a class="mobile_menu_icon" href="#">
@@ -271,7 +271,7 @@ $username = $current_user->user_login;
 
 	<?php if (!is_user_logged_in()) :?>
 		<div id="email_join">
-			<a href="/"><div class="logo"><img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" /></div></a>
+			<a href="/"><div class="logo"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" /></div></a>
 			<h2><?php echo the_field('heading_text', 'options'); ?></h2>
 			<p><?php echo the_field('form_text', 'options'); ?></p>
 			<!-- Begin MailChimp Signup Form-->

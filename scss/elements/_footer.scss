@@ -142,7 +142,8 @@
 						}
 						
 						a {
-							font-family: 'robotolight', sans-serif;
+							@include robotolight;
+							position: relative;
 							float: left;
 							color: $white;
 							
@@ -274,6 +275,7 @@
 		}
 		
 		p {
+			font-size: 14px;
 			margin-bottom: 0;
 		}
 		
@@ -281,6 +283,7 @@
 			text-align: center;
 			
 			li {
+				position: relative;
 				display: inline-block;
 				padding: 5px;
 				

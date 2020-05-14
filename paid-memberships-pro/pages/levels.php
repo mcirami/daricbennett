@@ -53,7 +53,7 @@ if($pmpro_msg)
 		<div class="full_width <?php if($count++ % 2 == 0) { ?>odd<?php } ?><?php if($current_level == $level) { ?> active<?php } ?>">
 			<?php if ($level->id == 4) : ?>
 				<div class="highlight">
-					<img src="<?php echo bloginfo('template_url'); ?>/images/bass-clef.png" /><p>Most Bass For Your Buck!</p>
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/bass-clef.png" /><p>Most Bass For Your Buck!</p>
 				</div>
 			<?php endif; ?>
 			<div class="column_heading full_width">

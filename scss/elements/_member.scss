@@ -13,7 +13,7 @@
 	}
 	
 	h3 {
-		font-family: 'robotomedium';
+		@include robotomed;
 		font-size: 30px;
 		text-transform: uppercase;
 		line-height: 1.2;
@@ -29,7 +29,7 @@
 	}
 	
 	p {
-		font-family: 'robotoregular';
+		@include robotoreg;
 		font-size: 16px;
 		
 		@include media($mobile){
@@ -130,7 +130,7 @@
 			}
 			
 			li {
-				font-family: 'robotoregular';
+				@include robotoreg;
 				margin: 5px 0;
 				
 				@include media($tablet){
@@ -632,6 +632,8 @@
 			text-align: left;
 			
 			li {
+				position: relative;
+
 				&:before {
 					content: '-';
 					position: absolute;
@@ -693,3 +695,24 @@
 	}
 }
 
+#password-lost-form-wrap {
+	@include robotoreg;
+	margin-top: 40px;
+
+	.som-password-sent-message {
+		text-align: center;
+		color: $black;
+	}
+
+	button {
+		background: $red;
+		color: $white;
+		width: 100%;
+		display: block;
+
+
+		&:hover {
+			background: $darkRed;
+		}
+	}
+}

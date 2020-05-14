@@ -42,7 +42,7 @@
             <div class="row_wrap">
                 <div class="row full_width">
                     <div class="image_wrap">
-                        <img src="<?php echo bloginfo('template_url'); ?>/images/icon-form-advanced-new.png" alt="">
+                        <img src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/icon-form-advanced-new.png" alt="">
                     </div>
                     <div class="copy">
                         <h3>NEW Advanced Lesson Every Week</h3>
@@ -51,7 +51,7 @@
                 </div><!-- row -->
                 <div class="row full_width">
                     <div class="image_wrap">
-                        <img src="<?php echo bloginfo('template_url'); ?>/images/icon-form-forum.png" alt="">
+                        <img src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/icon-form-forum.png" alt="">
                     </div>
                     <div class="copy">
                         <h3>BASS NATION FORUM ACCESS</h3>
@@ -62,7 +62,7 @@
             <div class="row_wrap">
                 <div class="row full_width">
                     <div class="image_wrap">
-                        <img class="throwdown" src="<?php echo bloginfo('template_url'); ?>/images/icon-form-throwdown.png" alt="">
+                        <img class="throwdown" src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/icon-form-throwdown.png" alt="">
                     </div>
                     <div class="copy">
                         <h3>Daric's Throwdown</h3>
@@ -71,7 +71,7 @@
                 </div><!-- row -->
                 <div class="row full_width">
                     <div class="image_wrap">
-                        <img src="<?php echo bloginfo('template_url'); ?>/images/icon-form-free.png" />
+                        <img src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/icon-form-free.png" />
                     </div>
                     <div class="copy">
                         <h3>Full Lessons By Level</h3>
@@ -82,7 +82,7 @@
             <div class="row_wrap">
                 <div class="row full_width">
                     <div class="image_wrap">
-                        <img class="advanced" src="<?php echo bloginfo('template_url'); ?>/images/icon-form-advanced.png" />
+                        <img class="advanced" src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/icon-form-advanced.png" />
                     </div>
                     <div class="copy">
                         <h3>Full Lessons By Date</h3>
@@ -91,7 +91,7 @@
                 </div><!-- row -->
                 <div class="row full_width">
                     <div class="image_wrap">
-                        <img class="library" src="<?php echo bloginfo('template_url'); ?>/images/icon-form-library.png" />
+                        <img class="library" src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/icon-form-library.png" />
                     </div>
                     <div class="copy">
                         <h3>Full Live Library</h3>
@@ -102,7 +102,7 @@
             <div class="row_wrap">
                 <div class="row full_width">
                     <div class="image_wrap">
-                        <img class="army" src="<?php echo bloginfo('template_url'); ?>/images/icon-form-throwdown-army.png" alt="">
+                        <img class="army" src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/icon-form-throwdown-army.png" alt="">
                     </div>
                     <div class="copy">
                         <h3>Bass Nation Throwdown</h3>
@@ -111,7 +111,7 @@
                 </div><!-- row -->
                 <div class="row full_width">
                     <div class="image_wrap">
-                        <img src="<?php echo bloginfo('template_url'); ?>/images/icon-form-advanced-live.png" alt="">
+                        <img src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/icon-form-advanced-live.png" alt="">
                     </div>
                     <div class="copy">
                         <h3>Live Advanced Lesson Review</h3>
@@ -122,7 +122,7 @@
             <div class="row_wrap">
                 <div class="row full_width">
                     <div class="image_wrap">
-                        <img src="<?php echo bloginfo('template_url'); ?>/images/icon-form-advanced-downloads.png" alt="">
+                        <img src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/icon-form-advanced-downloads.png" alt="">
                     </div>
                     <div class="copy">
                         <h3>Forum Video Uploads</h3>
@@ -155,7 +155,7 @@
             <div class="sig full_width">
                 <p>Daric Bennett, Bassist & Founder</p>
                 <div class="image_wrap">
-                    <img src="<?php echo bloginfo('template_url'); ?>/images/icon-form-daric.png" />
+                    <img src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/icon-form-daric.png" />
                 </div>
             </div>
         </div><!-- top_section -->

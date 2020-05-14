@@ -38,7 +38,7 @@
 	            </a>
 	        <?php else:  ?>
 	            <a href="<?php the_permalink(); ?>">
-	                <img class="default" src="<?php echo bloginfo('template_url'); ?>/images/no-video-placeholder.jpg" />
+	                <img class="default" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/no-video-placeholder.jpg" />
 	            </a>
 	        <?php endif; ?>
 
@@ -52,7 +52,7 @@
 				    </a>
 		        <?php } else { ?>
 				        <a href="<?php the_permalink(); ?>">
-			                <img class="default" src="<?php echo bloginfo('template_url'); ?>/images/lessons-screenshot.jpg" />
+			                <img class="default" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/lessons-screenshot.jpg" />
 			            </a>
 		        <?php } ?>
 

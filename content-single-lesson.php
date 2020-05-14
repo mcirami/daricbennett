@@ -70,14 +70,14 @@
 
                                 <?php } else { ?>
 
-                                    <img class="screenshot" src="<?php echo bloginfo('template_url'); ?>/images/lessons-screenshot.jpg" />
+                                    <img class="screenshot" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/lessons-screenshot.jpg" />
 
                                 <?php } ?>
 
                                 <?php endif; ?><!-- video thumbnail -->
 
                                 <div class="button_wrap full_width">
-                                    <img class="play_button" src="<?php echo bloginfo('template_url'); ?>/images/play-button.png" />
+                                    <img class="play_button" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/play-button.png" />
                                 </div>
                             </a>
                         <?php else : ?>
@@ -89,7 +89,7 @@
                     <?php if (get_field('lesson_description')) : ?>
 
                         <div class="quote_section full_width">
-                            <img src="<?php echo bloginfo('template_url'); ?>/images/icon-quote-left.png" />
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/icon-quote-left.png" />
 	                        <?php
 	                            $postId = get_the_ID();
 	                            if ($postId == 3699) : ?>
@@ -115,7 +115,7 @@
 					</div>
                     <?php if (get_field('lesson_description')) : ?>
                         <div class="quote_section full_width">
-                            <img src="<?php echo bloginfo('template_url'); ?>/images/icon-quote-left.png" />
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/icon-quote-left.png" />
                             <p><?php echo the_field('lesson_description'); ?></p>
                         </div>
                     <?php endif; ?>

@@ -21,7 +21,7 @@ get_header(); ?>
 				</div>
 				<div class="full_width">
 					<div class="content_wrap">
-						<img src="<?php echo bloginfo('template_url'); ?>/images/double-arrows.png" />
+						<img src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/double-arrows.png" />
 						<div class="text_wrap">
 							<h4>Enter Your Email for FREE Bass Lessons</h4>
 							<p><?php echo the_field('form_text'); ?></p>

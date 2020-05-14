@@ -61,10 +61,10 @@ get_header(); ?>
 		</div>
 	</section>
 	<div id="members_only_video_pop">
-		<img src="<?php echo bloginfo('template_url'); ?>/images/logo.png"/>
+		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" alt="Daric Bennett Logo"/>
 		<h2>You must be a member to listen<br> to the full version of the podcast audio</h2>
 		<div class="button_wrap">
-			<a class="button red" href="/membership-account/membership-levels/">Start My Free Trial For Full Access!</a>
+			<a class="button red" href="<?php echo home_url(); ?>/membership-account/membership-levels/">Start My Free Trial For Full Access!</a>
 		</div>
 	</div>
 <?php get_footer();

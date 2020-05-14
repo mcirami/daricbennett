@@ -187,6 +187,7 @@
 
             a {
                 text-transform: uppercase;
+                position: relative;
             }
 
             h1 {
@@ -296,6 +297,7 @@
             float: left;
 
             a {
+                position: relative;
 
                 &:before {
                     content: '';
@@ -334,6 +336,7 @@
             cursor: pointer;
 
             a {
+                position: relative;
 
                 &:after {
                     content: '';

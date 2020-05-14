@@ -1,9 +1,37 @@
 /*
 Theme Name: Daric Bennett
+Text Domain: daricbennett
 Theme URI: https://daricben.test
 Author: MSC Web Services
-Author URI: https://daricben.test
+Author URI: https://mscwebservices.net
 Description: Theme created by MSC Web Services.
 Version: 1.0
-Tags: Bourbon, Neat, Grunt, Livereload, h5bp, Font Aweseome
+Tags: Bourbon, Neat, Grunt, Livereload, Font Aweseome
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+
+.wp-caption {
+    color: #000000;
+}
+
+.wp-caption-text {
+    color: #000000;
+}
+
+.gallery-caption {
+    color: #000000;
+}
+.bypostauthor {
+    color: #000000;
+}
+.alignright {
+    text-align: right;
+}
+.alignleft {
+    text-align: left;
+}
+.aligncenter {
+    text-align: center;
+}
+

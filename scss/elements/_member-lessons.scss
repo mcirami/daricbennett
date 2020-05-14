@@ -21,6 +21,7 @@
 }
 
 .lessons_page {
+    position: relative;
 
     .top_content {
         padding: 20px;
@@ -65,6 +66,8 @@
         //overflow-y: scroll;
 
         .content_wrap {
+            position: relative;
+
             @include media($mobile) {
                 padding: 0 25px;
             }
@@ -188,16 +191,20 @@
                 padding: 10px;
             }
 
-            .vid_image_wrap .simplefavorite-button {
-                position: absolute !important;
-                right: 0;
-                bottom: 0;
+            .vid_image_wrap {
+                position: relative;
 
-                @include media($mobile) {
-                    position: relative !important;
-                    right: auto;
-                    bottom: auto;
-                    width: 100%;
+                .simplefavorite-button {
+                    position: absolute !important;
+                    right: 0;
+                    bottom: 0;
+
+                    @include media($mobile) {
+                        position: relative !important;
+                        right: auto;
+                        bottom: auto;
+                        width: 100%;
+                    }
                 }
             }
 
@@ -287,6 +294,7 @@
 
         .filters {
             @include span-columns(6);
+            position: relative;
             text-align: center;
             padding-left: 22px;
             border-left: 1px groove #2a2a2a;
@@ -395,6 +403,7 @@
 
             .button {
                 padding: 10px 50px 10px 20px;
+                position: relative;
 
                 &:before {
                     content: '';
@@ -422,6 +431,7 @@
 
 #comments {
     @include span-columns(12);
+    position: relative;
     padding: 30px 0;
     text-align: left;
 
@@ -476,6 +486,7 @@
 
     .comment-content {
         @include span-columns(11.2);
+        position: relative;
         background: $white;
         border: 1px solid $darkGray;
         text-align: center;
@@ -665,6 +676,7 @@
     float: left;
     display: none;
     margin-top: 20px;
+    position: relative;
 
     .cancel_comment {
         display: inline-block;
@@ -756,6 +768,7 @@
         width: 75%;
         height: 100%;
         margin: 0 auto;
+        position: relative;
 
         @include media($tablet) {
             width: 100%;
@@ -840,6 +853,7 @@
 
     .course_video_player {
         margin-top: 20px;
+        position: relative;
 
         @include media($mobile) {
             margin-top: 40px;

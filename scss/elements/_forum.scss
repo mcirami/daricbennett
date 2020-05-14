@@ -194,6 +194,7 @@
 		}
 		
 		ul.bbp-forums {
+			position: relative;
 			border: none;
 		}
 		
@@ -228,6 +229,7 @@
 			}
 			
 			li.bbp-forum-freshness {
+				position: relative;
 				width: 15%;
 				text-align: left;
 				
@@ -351,10 +353,11 @@
 		li.bbp-body {
 		
 			ul.forum {
+				position: relative;
 				font-size: 16px;
 				border-top: 1px solid $borderGray;
 				padding: 10px 0;
-				
+
 				@include media($tablet){
 					font-size: 14px;
 				}
@@ -365,6 +368,7 @@
 			}
 			
 			ul.topic {
+				position: relative;
 				padding-left: 0;
 				padding-right: 0;
 				border: none;
@@ -465,6 +469,7 @@
 			}
 			
 			li.bbp-forum-freshness {
+				position: relative;
 				width: 30%;
 
 				.bbp-topic-freshness-author {
@@ -485,6 +490,7 @@
 
 				a {
 					@include robotoreg;
+					position: relative;
 					float: left;
 					width: 60%;
 					text-align: left;
@@ -594,6 +600,7 @@
 			}
 			
 			li.bbp-topic-freshness {
+				position: relative;
 				width: 33%;
 				
 				.bbp-topic-freshness-author {
@@ -612,7 +619,8 @@
 				
 				a {
 					@include robotoreg;
-					display:inline-block;
+					position: relative;
+					display: inline-block;
 					text-align: left;
 					color: $black;
 					font-size: 12px;
@@ -736,6 +744,7 @@
 			
 			a {
 				@include robotomed;
+				position: relative;
 				
 				&:first-child {
 					position: absolute;
@@ -847,6 +856,7 @@
 		.bbp-body {
 		
 			div.bbp-reply-author {
+				position: relative;
 				float: left;
 				width: 50%;
 				text-align: left;

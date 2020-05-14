@@ -28,10 +28,10 @@ if (strpos($videoLink, "embed") !== false) {
 		        <?php if ($embedCode !== null) : ?>
 			        <img class="youtube_img" src="https://img.youtube.com/vi/<?php echo $embedCode; ?>/mqdefault.jpg" />
 		        <?php else:  ?>
-			        <img class="default" src="<?php echo bloginfo('template_url'); ?>/images/lessons-screenshot.jpg" />
+			        <img class="default" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/lessons-screenshot.jpg" />
 		        <?php endif; ?>
 		        <div class="button_wrap full_width">
-			        <img src="<?php echo bloginfo( 'template_url' ); ?>/images/play-button.png"/>
+			        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/play-button.png"/>
 		        </div>
 	        </a>
         </div>

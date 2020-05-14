@@ -33,8 +33,6 @@
             $display = 'no';
         }
 
-        $str = explode("scores/", $videoLink);
-        $str = explode("/embed", $str[1]);
         $embedCode = $videoLink . "?api=1&branding=2&fretboard=1&force_top_video=1&top_controls=" . $controls . "&scroll_type=2&narrow_video_height=48p&enable_waveform=0";
 
         if (get_field('display_keyboard_video')) {
@@ -153,7 +151,7 @@
 
                             <?php } else { ?>
 
-                                <img src="<?php echo bloginfo('template_url'); ?>/images/lessons-screenshot.jpg" />
+                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/lessons-screenshot.jpg" />
 
                             <?php } ?>
 

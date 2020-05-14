@@ -138,7 +138,7 @@ global $post;
 
                                     <div class="accordion right_column" id="<?php echo $hash ?>">
                                         <div class="watch" ><?php the_field('button_text'); ?></div>
-                                        <a href="#<?php echo $hash ?>" class="arrow"><img src="<?php echo bloginfo('template_url'); ?>/images/up-arrow.png" /></a>
+                                        <a href="#<?php echo $hash ?>" class="arrow"><img src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/up-arrow.png" /></a>
                                     </div>
 
                                     <?php get_template_part('content', 'free-lesson'); ?>
@@ -163,7 +163,7 @@ global $post;
     </div>
 
     <div id="members_only_video_pop">
-        <img src="<?php echo bloginfo('template_url'); ?>/images/logo.png"/>
+        <img src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/logo.png"/>
         <h2>This Lesson Is For Members Only</h2>
         <div class="button_wrap">
             <a class="button red" href="/membership-account/membership-levels/">Start My Free Trial For Full Access!</a>

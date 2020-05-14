@@ -100,7 +100,7 @@ if ($posts) : ?>
 
 						<?php } else { ?>
 
-							<img src="<?php echo bloginfo('template_url'); ?>/images/lessons-screenshot.jpg" />
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/lessons-screenshot.jpg" />
 
 						<?php } ?>
 

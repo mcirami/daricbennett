@@ -47,6 +47,7 @@
 		}
 		
 		form {
+			position: relative;
 			background: $lightGray;
 			width: 54%;
 			margin: 0 auto;
@@ -121,7 +122,6 @@
 				-webkit-border-radius: 4px;
 				-moz-border-radius: 4px;
 				border-radius: 4px;
-				border: none;
 				border: 1px solid $borderGray;
 				padding: 10px;
 				
@@ -162,7 +162,8 @@
 			}
 			
 			.submit_button {
-				
+				position: relative;
+
 				&:after {
 					content: '';
 					background: url('..images/arrow_white.png') no-repeat;

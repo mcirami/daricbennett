@@ -122,7 +122,8 @@
 			border-bottom: 1px ridge $orange;
 			
 			a {
-				
+				position: relative;
+
 				@include media($tablet){
 					font-size: 14px;
 				}

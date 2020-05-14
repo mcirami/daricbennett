@@ -24,7 +24,7 @@
 	if(isset($level->id) && !empty($level->id))
 	{
 	?>
-		<p><?php printf(__("Logged in as <strong>%s</strong>.", 'paid-memberships-pro' ), $current_user->user_login);?> <small><a href="<?php echo wp_logout_url(get_bloginfo("url") . "/membership-checkout/?level=" . $level->id);?>"><?php _e("logout", 'paid-memberships-pro' );?></a></small></p>
+		<p><?php printf(__("Logged in as <strong>%s</strong>.", 'paid-memberships-pro' ), $current_user->user_login);?> <small><a href="<?php echo wp_logout_url(home_url() . "/membership-checkout/?level=" . $level->id);?>"><?php _e("logout", 'paid-memberships-pro' );?></a></small></p>
 		<?php
 		 /**
 		 * pmpro_billing_message_top hook to add in general content to the billing page without using custom page templates.

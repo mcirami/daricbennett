@@ -36,16 +36,78 @@ function boiler_setup() {
 		'members' => __( 'Members Menu', 'boiler' ),
 	) );
 
+	// Set content-width.
+	global $content_width;
+	if ( ! isset( $content_width ) ) {
+		$content_width = 580;
+	}
+
 	/**
 	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
-	
-	
 
+
+	/**
+	 * Enable support for Title Tags
+	 */
+	add_theme_support( 'title-tag' );
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'script',
+			'style',
+		)
+	);
+
+	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	*/
+	load_theme_textdomain( 'daricbennett' );
+
+	/**
+	 * Enable support for image for header
+	 */
+	add_theme_support( 'custom-header');
+
+	/**
+	 * Enable support for using background images or solid colors for background
+	 */
+	add_theme_support( 'custom-background');
+
+	// Add support for responsive embeds.
+	//add_theme_support( 'responsive-embeds' );
+
+	/*
+	 * Adds `async` and `defer` support for scripts registered or enqueued
+	 * by the theme.
+	 */
+	$loader = new DaricBennett_Script_Loader();
+	add_filter( 'script_loader_tag', array( $loader, 'filter_script_loader_tag' ), 10, 2 );
+
+	/**
+	 * Enable support to make the editor content match the resulting post output in the theme, for a better user experience
+	 */
+	add_editor_style();
 }
 endif; // boiler_setup
 add_action( 'after_setup_theme', 'boiler_setup' );
+
+// Custom script loader class.
+require get_template_directory() . '/classes/class-daricbennett-script-loader.php';
+
+
 
 // add parent class to menu items 
 add_filter( 'wp_nav_menu_objects', 'add_menu_parent_class' );
@@ -96,7 +158,7 @@ add_filter('gallery_style', 'boiler_gallery_style');
 // add_image_size( 'thumb-400', 400, 400, true );
 
 if ( function_exists( 'add_image_size' ) ) {
-    //add_image_size('avatar-size', 300, 300, true);
+    add_image_size('avatar-size', 300, 300, true);
     add_image_size( 'video-thumb', 640, 360, true );
 }
 
@@ -156,7 +218,7 @@ function boiler_scripts_styles() {
 
     wp_enqueue_script( 'jquery_ui', get_template_directory_uri() . '/js/vendor/jquery-ui.min.js', array('jquery'), '', true );
 
-	if (is_page('lessons')){
+	if (is_page('lessons') && is_user_logged_in()){
 
         wp_enqueue_script('filterizr', get_template_directory_uri() . '/js/vendor/jquery.filterizr.min.js', array('jquery'), '', true);
 
@@ -797,7 +859,7 @@ function httpPost($url, $params) {
  * Fire Braintree Postback on free trial signup and every payment after.
  * Save click id, transaction id, and order email into db table a02_click_id
  */
-function fire_braintree_postback( $MemberOrder ) {
+/*function fire_braintree_postback( $MemberOrder ) {
 
 	$orderArray = json_encode($MemberOrder);
 
@@ -870,7 +932,7 @@ function fire_braintree_postback( $MemberOrder ) {
 		}
 	}
 }
-add_action( 'pmpro_added_order', 'fire_braintree_postback', 10, 1 );
+add_action( 'pmpro_added_order', 'fire_braintree_postback', 10, 1 );*/
 
 /*
  *
@@ -879,7 +941,7 @@ add_action( 'pmpro_added_order', 'fire_braintree_postback', 10, 1 );
  *
  * */
 
-function my_pmpro_after_checkout($user_id, $morder) {
+/*function my_pmpro_after_checkout($user_id, $morder) {
 
 	$orderArray = json_encode($morder);
 
@@ -938,7 +1000,7 @@ function my_pmpro_after_checkout($user_id, $morder) {
 	}
 }
 
-add_action('pmpro_after_checkout', 'my_pmpro_after_checkout', 10, 2);
+add_action('pmpro_after_checkout', 'my_pmpro_after_checkout', 10, 2);*/
 
 function send_email($gateway, $array, $level, $count, $post) {
 	$to = "mcirami@gmail.com";
@@ -949,7 +1011,7 @@ function send_email($gateway, $array, $level, $count, $post) {
 	wp_mail($to, $subject, $body, $headers);
 }
 
-
+/*
 function devplus_wpquery_where( $where ){
 	global $current_user;
 
@@ -964,7 +1026,7 @@ function devplus_wpquery_where( $where ){
 	return $where;
 }
 
-add_filter( 'posts_where', 'devplus_wpquery_where' );
+add_filter( 'posts_where', 'devplus_wpquery_where' );*/
 
 function get_lesson_comments() {
 
@@ -1098,20 +1160,8 @@ function video_embed($content){
 
 }
 
-/*function run_activate_plugin( $plugin ) {
-	$current = get_option( 'active_plugins' );
-	$plugin = plugin_basename( trim( $plugin ) );
-
-	if ( !in_array( $plugin, $current ) ) {
-		$current[] = $plugin;
-		sort( $current );
-		do_action( 'activate_plugin', trim( $plugin ) );
-		update_option( 'active_plugins', $current );
-		do_action( 'activate_' . trim( $plugin ) );
-		do_action( 'activated_plugin', trim( $plugin) );
-	}
-
-	return null;
+function give_permissions( $allcaps, $cap, $args ) {
+	$allcaps['upload_files'] = true;
+	return $allcaps;
 }
-
-run_activate_plugin( 'ultimate-member/ultimate-member.php' );*/
+add_filter( 'user_has_cap', 'give_permissions', 0, 3 );

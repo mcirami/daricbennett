@@ -28,7 +28,7 @@
 
             <?php else : ?>
 
-                <img src="<?php echo bloginfo('template_url'); ?>/images/no-video-placeholder.jpg"/>
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/no-video-placeholder.jpg"/>
 
             <?php endif; ?>
 

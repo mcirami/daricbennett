@@ -13,11 +13,11 @@
 				<div class="container">
 					<div class="content_wrap">
 						<div class="logo">
-							<a href="/"><img src="<?php echo bloginfo('template_url'); ?>/images/logo.png" /></a>
+							<a href="/"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" /></a>
 						</div>
 						<div class="columns_wrap">
 							<div class="column">
-								<h3><?php echo the_field('first_column_heading', 'options'); ?></h3>
+								<h3><?php the_field('first_column_heading', 'options'); ?></h3>
 								<div class="menu">
 									<nav role="navigation">
 											<?php if (is_user_logged_in()) : ?>
@@ -47,7 +47,7 @@
 												<?php if (have_rows('first_column_links', 'options')) : ?>
 													<ul>
 														<?php while (have_rows('first_column_links', 'options')) : the_row(); ?>
-															<li><a href="<?php echo the_sub_field('link', 'options'); ?>"><?php echo the_sub_field('link_text', 'options'); ?></a></li>
+															<li><a href="<?php the_sub_field('link', 'options'); ?>"><?php echo the_sub_field('link_text', 'options'); ?></a></li>
 														<?php endwhile; ?>
 													</ul>
 												<?php endif; ?>
@@ -58,7 +58,7 @@
 							</div>
 							<div class="column">
 								
-								<h3><?php echo the_field('second_column_heading', 'options'); ?></h3>
+								<h3><?php the_field('second_column_heading', 'options'); ?></h3>
 								
 								<?php if (is_user_logged_in()) : ?>
 									
@@ -83,13 +83,13 @@
 												
 												<?php if (get_sub_field('popup', 'options')) : ?>
 												
-														<li><a class="fancybox" href="#email_join"><?php echo the_sub_field('link_text','options'); ?></a></li>
-														<!--<li><a class="feather" data-featherlight="#email_join" href="#"><?php echo the_sub_field('link_text','options'); ?></a></li>-->
+														<li><a class="fancybox" href="#email_join"><?php the_sub_field('link_text','options'); ?></a></li>
+														<!--<li><a class="feather" data-featherlight="#email_join" href="#"><?php the_sub_field('link_text','options'); ?></a></li>-->
 														
 														
 												<?php else: ?>
 														
-														<li><a href="<?php echo the_sub_field('link', 'options'); ?>"><?php echo the_sub_field('link_text','options'); ?></a></li>
+														<li><a href="<?php the_sub_field('link', 'options'); ?>"><?php the_sub_field('link_text','options'); ?></a></li>
 														
 												<?php endif; ?>
 										
@@ -102,7 +102,7 @@
 								
 							</div>
 							<div class="column">
-								<h3><?php echo the_field('third_column_heading', 'options'); ?></h3>
+								<h3><?php the_field('third_column_heading', 'options'); ?></h3>
 								<!--<p class="white">E:<a href="mailto:daric@daricbennett.com">Daric@DaricBennett.com</a></p>-->
 								<div class="icon_wrap">
 									
@@ -116,11 +116,11 @@
 													  $socialText = strtolower(get_sub_field('social_text', 'options'));
 												?>
 
-												<a class="<?php if ( $socialText == "facebook"){echo "facebook";} elseif ($socialText == "instagram"){ echo "instagram";} elseif ($socialText == "youtube") {echo "youtube";}?>" target="_blank" href="<?php echo the_sub_field('social_link','options'); ?>">
+												<a class="<?php if ( $socialText == "facebook"){echo "facebook";} elseif ($socialText == "instagram"){ echo "instagram";} elseif ($socialText == "youtube") {echo "youtube";}?>" target="_blank" href="<?php the_sub_field('social_link','options'); ?>">
 													<?php if (!empty($socialIcon)) : ?>
 														<img src="<?php echo $socialIcon['url']; ?>" />
 													<?php endif; ?>
-														<h3><?php echo the_sub_field('social_text','options'); ?></h3>
+														<h3><?php the_sub_field('social_text','options'); ?></h3>
 												</a>
 												
 											</div>
@@ -140,9 +140,9 @@
 									<?php $link = get_sub_field('add_link', 'options');	
 										if($link) : 
 									?>
-										<li><a href="<?php echo the_sub_field('link', 'options'); ?>"><?php echo the_sub_field('text', 'options'); ?></a></li>
+										<li><a href="<?php the_sub_field('link', 'options'); ?>"><?php the_sub_field('text', 'options'); ?></a></li>
 									<?php else : ?>
-										<li><p><?php echo the_sub_field('text', 'options'); ?></p></li>
+										<li><p><?php the_sub_field('text', 'options'); ?></p></li>
 									<?php endif; ?>
 									
 								<?php endwhile; ?>
@@ -162,7 +162,7 @@
 				</div><!-- .container -->
 			</footer>
 
-			<?php wp_footer(); ?>
+
 		</div><!-- wrapper -->
 
 		<?php if (!pmpro_hasMembershipLevel() && !is_page(27) && !is_page(30) && !is_page(19)) : ?>
@@ -237,22 +237,7 @@
 			</script>
 			
 		<?php endif; ?>
-		<!--<div id="media_upload_wait">
-			<div class="text_wrap">
-				 <h2>Your Media is Uploading....</h2>
-				 <h3>The page will refresh when it's complete, please be patient!</h3>
-			 </div>
-		 </div>
 
-        <div class="keyboard_popup">
-            <div class="iframe_wrap">
-                <div class="close_button">
-                    <img src="<?php /*echo bloginfo('template_url'); */?>/images/close-button.png"/>
-                </div>
-                <iframe src="" frameborder="0"></iframe>
-            </div>
-
-        </div>-->
-
+	<?php wp_footer(); ?>
 	</body>
 </html>

@@ -1,10 +1,13 @@
 * {
-	position: relative;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+}
+
+.media-modal.wp-core-ui {
+	color: $black;
 }
 
 p {
@@ -21,6 +24,7 @@ html {
 	font-size: 62.5%;
 	background: none;
 }
+
 
 body {
 	font-size: 1.6rem;
@@ -62,6 +66,16 @@ body {
 	}
 }
 
+.video_container {
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
 .wrapper {
 	@include span-columns(12);
 	position: relative;
@@ -92,6 +106,7 @@ body {
 
 .full_width {
 	@include span-columns(12);
+	position: relative;
 }
 
 a {
@@ -271,6 +286,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 }
 
 .mc4wp-form {
+	position: relative;
 	display: inline-block;
 	width: 100%;
 	margin: 0 auto;
@@ -463,7 +479,8 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 		}
 		
 		h4 {
-			font-family: 'robotoregular', sans-serif;
+			@include robotoreg;
+			position: relative;
 			display: block;
 			background: $red;
 			color: $white;

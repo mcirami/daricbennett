@@ -140,6 +140,7 @@
 
 			.info_wrap {
 				@include span-columns(10);
+				position:relative;
 				padding: 10px 15px 20px;
 				text-align: left;
 				background: $white;
