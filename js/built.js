@@ -520,15 +520,20 @@ var loadReload = function() {
             for (x = 0; x < links.length; x++) {
 
                 var videoLink = $(links[x]).attr('href');
+                var embedLink;
+                var str;
 
                 if (videoLink.includes("embed")) {
-                    embedLink = videoLink;
+                    embedLink = videoLink + "/?rel=0&showinfo=0";
                 } else if (videoLink.includes("v=")) {
                     str = videoLink.split("v=");
-                    embedLink = "https://www.youtube.com/embed/" + str[1];
+                    embedLink = "https://www.youtube.com/embed/" + str[1] + "/?rel=0&showinfo=0";
                 } else if (videoLink.includes("youtu.be")) {
                     str = videoLink.split(".be/");
-                    embedLink = "https://www.youtube.com/embed/" + str[1];
+                    embedLink = "https://www.youtube.com/embed/" + str[1] + "/?rel=0&showinfo=0";
+                } else if(videoLink.includes("vimeo")) {
+                    str = videoLink.split("video/");
+                    embedLink = "https://player.vimeo.com/video/" + str[1];
                 } else {
                     embedLink = "";
                 }
@@ -537,7 +542,7 @@ var loadReload = function() {
 
                     $("<div class='video_embed'><div class='video_wrapper'><iframe frameborder='0' allowfullscreen src='" +
                         embedLink +
-                        "/?rel=0&showinfo=0'></iframe></div></div>").
+                        "'></iframe></div></div>").
                         insertAfter($(links[x]).parent());
 
                     links[x].replaceWith("");

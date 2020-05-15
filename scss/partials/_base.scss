@@ -67,6 +67,8 @@ body {
 }
 
 .video_container {
+	position: relative;
+
 	iframe {
 		position: absolute;
 		top: 0;

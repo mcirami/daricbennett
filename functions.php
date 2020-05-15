@@ -378,16 +378,16 @@ function allowed_types_init() {
 
 add_action('init','allowed_types_init',99);
 
-function redirect_wp_admin() {
 
-    if ( is_page('wp-admin') && !is_user_logged_in() ) {
-
-    wp_redirect( 'http://www.daricbennett.com/', 301 );
-        exit;
-    }
+function blockusers_init() {
+	if ( is_admin() && ! current_user_can( 'administrator' ) &&
+	     ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+		wp_redirect( home_url() );
+		exit;
+	}
 }
 
-add_action( 'template_redirect', 'redirect_wp_admin' );
+add_action( 'init', 'blockusers_init' );
 
 function create_lesson_post_type() {
     register_post_type( 'lessons',
@@ -650,7 +650,7 @@ function my_comment_form_edits($edit_fields) {
     if (get_post_type() == "videos") {
         $title_reply = 'REPLY TO THIS THREAD';
         $label_submit = 'Post Reply';
-        $title_reply_after = '<span>(you can also embed a video response in your reply, ex: https://www.youtube.com/embed/YTvideoCode )</span>';
+        $title_reply_after = '<span>(you may embed a YouTube or Vimeo video link in your reply)</span>';
     } else if (get_post_type() == "live-streams"){
         $title_reply = 'CHAT LIVE';
         $label_submit = 'Submit';
@@ -658,7 +658,7 @@ function my_comment_form_edits($edit_fields) {
     } else {
         $title_reply = 'Questions? Comments...get in touch!';
         $label_submit = 'Post Comment';
-        $title_reply_after =  '<br><span>(you may embed a YouTube video in your reply, ex: https://www.youtube.com/embed/YTvideoCode )</span>';
+        $title_reply_after =  '<br><span>(you may embed a YouTube or Vimeo video link in your reply)</span>';
     }
 
     $edit_fields = array(
@@ -1002,16 +1002,16 @@ add_action( 'pmpro_added_order', 'fire_braintree_postback', 10, 1 );*/
 
 add_action('pmpro_after_checkout', 'my_pmpro_after_checkout', 10, 2);*/
 
-function send_email($gateway, $array, $level, $count, $post) {
+/*function send_email($gateway, $array, $level, $count, $post) {
 	$to = "mcirami@gmail.com";
 	$headers = array('Content-Type: text/html; charset=UTF-8');
 	$subject = "Triggered function from functions.php";
 	$body = "Payment gateway:" . $gateway . "<br><br> The whole array is: <br>" . $array . "<br><br>The member level is: " . $level . "<br><br> transaction count: " . $count . "<br><br> postback url: " . $post;
 
 	wp_mail($to, $subject, $body, $headers);
-}
+}*/
 
-/*
+
 function devplus_wpquery_where( $where ){
 	global $current_user;
 
@@ -1026,7 +1026,7 @@ function devplus_wpquery_where( $where ){
 	return $where;
 }
 
-add_filter( 'posts_where', 'devplus_wpquery_where' );*/
+add_filter( 'posts_where', 'devplus_wpquery_where' );
 
 function get_lesson_comments() {
 

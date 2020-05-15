@@ -136,7 +136,7 @@
 
             </div><!-- video_wrapper -->
 
-            <?php if ((is_single() || is_page()) && is_user_logged_in()) { comments_template(); }?>
+            <?php if ((is_single()) && is_user_logged_in()) { comments_template(); }?>
 
             <?php if ($shareLink && is_page(7)) :
 
