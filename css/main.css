@@ -10856,6 +10856,8 @@ form.pmpro_form #other_discount_code.input {
   background-color: #fff !important; }
   .wcContainer .wcMessages .wcMessage {
     background-color: #fff !important; }
+    .wcContainer .wcMessages .wcMessage img.wcMessageAvatar {
+      width: 38px; }
     .wcContainer .wcMessages .wcMessage .wcMessageContent {
       background-color: rgba(241, 241, 241, 0.7) !important;
       border-radius: 50px !important;

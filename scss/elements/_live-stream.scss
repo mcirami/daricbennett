@@ -284,6 +284,10 @@
         .wcMessage {
             background-color: $white !important;
 
+            img.wcMessageAvatar {
+                width: 38px;
+            }
+
             .wcMessageContent {
                 background-color: rgba(241,241,241,.7) !important;
                 border-radius: 50px !important;

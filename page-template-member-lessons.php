@@ -21,14 +21,11 @@ if (pmpro_hasMembershipLevel()) {
 
     if ($title == "Lessons") {
 
-    	//$ourCurrentPage = get_query_var('pages');
-
         $args = array(
             'post_type' => 'lessons',
             'order_by' => 'post_date',
             'order' => 'DESC',
             'posts_per_page' => -1
-	        //'paged' => $ourCurrentPage
         );
 
 	    $catTerms = get_terms('category');
@@ -48,7 +45,7 @@ if (pmpro_hasMembershipLevel()) {
 
     $lessons = new WP_Query($args);
 
-    $actual_link = 'http://'.$_SERVER['HTTP_HOST'];
+    $actual_link = 'http://'. $_SERVER['HTTP_HOST'];
 }
 
 
@@ -58,7 +55,7 @@ if (pmpro_hasMembershipLevel()) {
 
     <header class="sub_header full_width">
         <div class="container">
-            <h1><?php echo $title; //the_field('page_header'); ?></h1>
+            <h1><?php echo $title; ?></h1>
         </div><!-- .container -->
     </header>
 
@@ -70,6 +67,8 @@ if (pmpro_hasMembershipLevel()) {
         </div>
 
         <div class="full_width">
+
+	        <iframe src="https://guitarsix.com/metronome/" height="600" width="350" frameborder="0"></iframe>
 
             <div class="container">
 
@@ -136,6 +135,7 @@ if (pmpro_hasMembershipLevel()) {
 
                         <?php else : ?>
 
+
                             <?php if ( $lessons->have_posts() ) : while( $lessons->have_posts() ) : $lessons->the_post();
 
                                     $hide = get_field('hide_lesson');
@@ -148,9 +148,6 @@ if (pmpro_hasMembershipLevel()) {
 
                                 <?php endwhile; //query loop
 
-
-                                    /*previous_posts_link();
-                                    next_posts_link('Next Page', $lessons->max_num_pages);*/
                                 else :
 
                                     echo 'no posts found';
