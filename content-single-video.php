@@ -5,15 +5,20 @@
             <?php $videoLink = get_field('video_link');
 
             if (strpos($videoLink, "embed") !== false) {
-                $embedLink = $videoLink;
+                $embedLink = $videoLink . "/?rel=0&showinfo=0";
             } elseif (strpos($videoLink, "v=") !== false) {
                 $str = explode("v=", $videoLink);
                 $embedCode = preg_replace('/\s+/', '', $str[1]);
-                $embedLink =  "https://www.youtube.com/embed/" . $embedCode;
+                $embedLink =  "https://www.youtube.com/embed/" . $embedCode . "/?rel=0&showinfo=0";
             } elseif (strpos($videoLink, "youtu.be") !== false) {
                 $str = explode(".be/", $videoLink);
                 $embedCode = preg_replace('/\s+/', '', $str[1]);
-                $embedLink =  "https://www.youtube.com/embed/" . $embedCode;
+                $embedLink = "https://www.youtube.com/embed/" . $embedCode . "/?rel=0&showinfo=0";
+            } elseif (strpos($videoLink, "vimeo") !== false) {
+                    $str = explode("video/", $videoLink);
+                    $embedCode = preg_replace('/\s+/', '',$str[1]);
+                    $embedLink = "https://player.vimeo.com/video/" . $embedCode . "/?autoplay=1";
+                    //$type = "vimeo";
             } else {
                 $embedLink = null;
             }
@@ -23,7 +28,7 @@
 
             ?>
                 <div class="video_wrapper">
-                    <iframe src="<?php echo $embedLink; ?>/?rel=0&showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                    <iframe src="<?php echo $embedLink; ?>" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                 </div>
 
             <?php else : ?>
