@@ -893,6 +893,30 @@ var loadReload = function() {
             }, 800);
         })
     }
+    if (currentPage.pageName === 'Lessons') {
+        window.onload = addListeners();
+    }
+
+    function addListeners(){
+        document.getElementById('metro_wrap').addEventListener('mousedown', mouseDown, false);
+        window.addEventListener('mouseup', mouseUp, false);
+    }
+
+    function mouseUp()
+    {
+        window.removeEventListener('mousemove', divMove, true);
+    }
+
+    function mouseDown(e){
+        window.addEventListener('mousemove', divMove, true);
+    }
+
+    function divMove(e){
+        var div = document.getElementById('metro_wrap');
+        div.style.position = 'absolute';
+        div.style.top = e.clientY + 'px';
+        div.style.left = e.clientX + 'px';
+    }
 });
 
 

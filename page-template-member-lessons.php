@@ -68,7 +68,9 @@ if (pmpro_hasMembershipLevel()) {
 
         <div class="full_width">
 
-	        <iframe src="https://guitarsix.com/metronome/" height="600" width="350" frameborder="0"></iframe>
+	        <div class="metro_wrap">
+		        <iframe src="https://guitarsix.com/metronome/" height="600" width="100%" frameborder="0"></iframe>
+	        </div>
 
             <div class="container">
 

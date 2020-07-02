@@ -376,7 +376,7 @@ function allowed_types_init() {
     $rtmedia->allowed_types['video']['extn'] = array('avi','mp4', 'mov','wmv');  
 }  
 
-add_action('init','allowed_types_init',99);
+//add_action('init','allowed_types_init',99);
 
 
 function blockusers_init() {
@@ -1133,8 +1133,8 @@ function add_media_button( $args ) {
 	return $args;
 }
 
-add_filter('bbp_get_topic_content', 'video_embed');
-add_filter('bbp_get_reply_content', 'video_embed');
+//add_filter('bbp_get_topic_content', 'video_embed');
+//add_filter('bbp_get_reply_content', 'video_embed');
 function video_embed($content){
 	$linkFinal = '';
 	$search = 'video';

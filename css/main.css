@@ -5390,6 +5390,10 @@ ul.member_menu {
       .learndash-wrapper .wpProQuiz_content .wpProQuiz_question_text p {
         font-size: 18px; } }
 
+.metro_wrap {
+  width: 500px;
+  height: 600px; }
+
 .passions h2 {
   font-family: 'robotomedium'; }
 .passions .top_section {
@@ -6362,9 +6366,10 @@ ul.member_menu {
 .forum_wrapper {
   padding: 40px 0;
   color: #131313;
-  font-family: 'robotoregular', sans-serif; }
-  .forum_wrapper .bbp-attachments-form {
-    display: none; }
+  font-family: 'robotoregular', sans-serif;
+  /*.bbp-attachments-form {
+  	display: none;
+  }*/ }
   .forum_wrapper .mejs-overlay {
     display: none; }
   .forum_wrapper .forums_home {
