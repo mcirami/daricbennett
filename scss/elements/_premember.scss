@@ -48,15 +48,16 @@
 }
 
 
-.pmpro_lost_password_wrap  .pmpro_actions_nav {
+.pmpro_lost_password_wrap .pmpro_actions_nav {
 	display: none;
 }
 
-#loginform, #lostpasswordform {
+
+#loginform, #password-lost-form-wrap {
 	float: none;
-    font-family: 'robotolight', sans-serif;
+	@include robotoreg;
     font-size: 15px;
-    margin: 30px auto;
+    margin: 100px auto;
     text-align: left;
     background: $lightGray;
     padding: 40px 40px 60px 40px;
@@ -66,6 +67,9 @@
     border: 1px solid $borderGray;
     color: $black;
 	max-width: 500px;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
 
     @include media($tablet){
         width: 425px;
@@ -81,27 +85,7 @@
         width: 100%;
     }
 
-	label {
-		@include robotolight;
-		color: $black;
-		line-height: 22px;
-		margin-bottom: 8px;
-	}
-
-    input {
-        height: 40px;
-        border: 1px solid $borderGray;
-        padding: 10px;
-		max-width: unset !important;
-		width: 100%;
-
-        @include media($mobile){
-            height: 35px;
-			width: 100% !important;
-        }
-    }
-
-	input[type="submit"] {
+	input[type="submit"], button {
 		font-family: 'robotoregular', sans-serif;
 		background: $black;
 		padding: 8px 24px 12px;
@@ -128,21 +112,56 @@
 		}
 	}
 
+	legend {
+		display: none;
+	}
+
+	fieldset {
+		border: none;
+	}
+
+	label {
+		@include robotolight;
+		color: $black;
+		line-height: 22px;
+		margin-bottom: 8px;
+	}
+
+    input {
+        height: 40px;
+        border: 1px solid $borderGray;
+        padding: 10px;
+		max-width: unset !important;
+		width: 100%;
+
+        @include media($mobile){
+            height: 35px;
+			width: 100% !important;
+        }
+    }
+
 	.login-remember {
 		input {
 			height: 16px;
 			width: 20px;
 		}
 	}
+
+	.som-password-sent-message {
+		text-align: center;
+		color: $black;
+	}
 }
 
-.pmpro_lost_password_wrap {
-	@include span-columns(12);
+#password-lost-form-wrap a {
+	color: $red;
+	font-size: 18px;
+	width: 100%;
+	float:left;
 }
 
-.pmpro_lost_password-instructions {
-	color: $black;
-	margin-top: 30px;
+#loginform {
+	margin: 30px auto 100px;
 }
 
 .confirmation_page {

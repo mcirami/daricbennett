@@ -50,6 +50,16 @@
 					    <!--<img class="og_img" src="<?php /*echo $ogImage[0];*/?>" />-->
                         <img src="<?php echo $image['url']; ?>" alt="">
 				    </a>
+
+		        <?php } elseif($image = get_field('og_image')) {
+			        $attachment_id = get_field('og_image');
+			        $size = "video-thumb";
+			        $ogImage = wp_get_attachment_image_src( $attachment_id, $size );
+			        ?>
+			        <a href="<?php the_permalink(); ?>">
+				        <img class="og_img" src="<?php echo $ogImage[0];?>" />
+			        </a>
+
 		        <?php } else { ?>
 				        <a href="<?php the_permalink(); ?>">
 			                <img class="default" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/lessons-screenshot.jpg" />

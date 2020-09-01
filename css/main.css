@@ -3645,11 +3645,12 @@ ul.member_menu {
 .pmpro_lost_password_wrap .pmpro_actions_nav {
   display: none; }
 
-#loginform, #lostpasswordform {
+#loginform, #password-lost-form-wrap {
   float: none;
-  font-family: 'robotolight', sans-serif;
+  font-family: 'robotoregular', sans-serif;
+  font-weight: 300;
   font-size: 15px;
-  margin: 30px auto;
+  margin: 100px auto;
   text-align: left;
   background: #f1f1f1;
   padding: 40px 40px 60px 40px;
@@ -3658,35 +3659,22 @@ ul.member_menu {
   box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
   border: 1px solid #c8c8c8;
   color: #131313;
-  max-width: 500px; }
+  max-width: 500px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px; }
   @media screen and (max-width: 1023px) {
-    #loginform, #lostpasswordform {
+    #loginform, #password-lost-form-wrap {
       width: 425px; } }
   @media screen and (max-width: 768px) {
-    #loginform, #lostpasswordform {
+    #loginform, #password-lost-form-wrap {
       width: 375px;
       padding: 25px;
       font-size: 14px; } }
   @media screen and (max-width: 550px) {
-    #loginform, #lostpasswordform {
+    #loginform, #password-lost-form-wrap {
       width: 100%; } }
-  #loginform label, #lostpasswordform label {
-    font-family: 'robotolight', sans-serif;
-    font-weight: 200;
-    color: #131313;
-    line-height: 22px;
-    margin-bottom: 8px; }
-  #loginform input, #lostpasswordform input {
-    height: 40px;
-    border: 1px solid #c8c8c8;
-    padding: 10px;
-    max-width: unset !important;
-    width: 100%; }
-    @media screen and (max-width: 768px) {
-      #loginform input, #lostpasswordform input {
-        height: 35px;
-        width: 100% !important; } }
-  #loginform input[type="submit"], #lostpasswordform input[type="submit"] {
+  #loginform input[type="submit"], #loginform button, #password-lost-form-wrap input[type="submit"], #password-lost-form-wrap button {
     font-family: 'robotoregular', sans-serif;
     background: #131313;
     padding: 8px 24px 12px;
@@ -3698,30 +3686,50 @@ ul.member_menu {
     height: 40px;
     border: none; }
     @media screen and (max-width: 1023px) {
-      #loginform input[type="submit"], #lostpasswordform input[type="submit"] {
+      #loginform input[type="submit"], #loginform button, #password-lost-form-wrap input[type="submit"], #password-lost-form-wrap button {
         font-size: 16px; } }
     @media screen and (max-width: 768px) {
-      #loginform input[type="submit"], #lostpasswordform input[type="submit"] {
+      #loginform input[type="submit"], #loginform button, #password-lost-form-wrap input[type="submit"], #password-lost-form-wrap button {
         font-size: 14px;
         height: 35px;
         padding: 0; } }
-    #loginform input[type="submit"]:hover, #lostpasswordform input[type="submit"]:hover {
+    #loginform input[type="submit"]:hover, #loginform button:hover, #password-lost-form-wrap input[type="submit"]:hover, #password-lost-form-wrap button:hover {
       background: #4D4D54 !important; }
-  #loginform .login-remember input, #lostpasswordform .login-remember input {
+  #loginform legend, #password-lost-form-wrap legend {
+    display: none; }
+  #loginform fieldset, #password-lost-form-wrap fieldset {
+    border: none; }
+  #loginform label, #password-lost-form-wrap label {
+    font-family: 'robotolight', sans-serif;
+    font-weight: 200;
+    color: #131313;
+    line-height: 22px;
+    margin-bottom: 8px; }
+  #loginform input, #password-lost-form-wrap input {
+    height: 40px;
+    border: 1px solid #c8c8c8;
+    padding: 10px;
+    max-width: unset !important;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      #loginform input, #password-lost-form-wrap input {
+        height: 35px;
+        width: 100% !important; } }
+  #loginform .login-remember input, #password-lost-form-wrap .login-remember input {
     height: 16px;
     width: 20px; }
+  #loginform .som-password-sent-message, #password-lost-form-wrap .som-password-sent-message {
+    text-align: center;
+    color: #131313; }
 
-.pmpro_lost_password_wrap {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 100%; }
-  .pmpro_lost_password_wrap:last-child {
-    margin-right: 0; }
+#password-lost-form-wrap a {
+  color: #f20f2b;
+  font-size: 18px;
+  width: 100%;
+  float: left; }
 
-.pmpro_lost_password-instructions {
-  color: #131313;
-  margin-top: 30px; }
+#loginform {
+  margin: 30px auto 100px; }
 
 .confirmation_page {
   margin: 100px 0;
@@ -6347,21 +6355,6 @@ ul.member_menu {
     #pmpro_cancel .content_wrap .yellow {
       background: #ddb72e !important;
       margin-top: 15px; }
-
-#password-lost-form-wrap {
-  font-family: 'robotoregular', sans-serif;
-  font-weight: 300;
-  margin-top: 40px; }
-  #password-lost-form-wrap .som-password-sent-message {
-    text-align: center;
-    color: #131313; }
-  #password-lost-form-wrap button {
-    background: #f20f2b;
-    color: #fff;
-    width: 100%;
-    display: block; }
-    #password-lost-form-wrap button:hover {
-      background: #880415; }
 
 .forum_wrapper {
   padding: 40px 0;
