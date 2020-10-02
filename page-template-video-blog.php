@@ -163,3 +163,4 @@ $posts = new WP_Query($args);
     </section>
 
 <?php get_footer(); ?>
+<form action=""></form>

@@ -15,7 +15,8 @@ jQuery(document).ready(function($) {
         if(fancybox.length) {
             fancybox.click(function(e) {
                 e.preventDefault();
-                $('#email_join').addClass('active');
+                $.fancybox.open( $('#email_join'));
+                //$('#email_join').addClass('active');
             });
 
             fancybox.fancybox({

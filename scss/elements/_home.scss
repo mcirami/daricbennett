@@ -86,8 +86,9 @@
 			@include media($smallMobile){
 				width: 100%;
 			}
+
 			
-			&:before {
+			/*&:before {
 				content: '';
 				position: absolute;
 				width: 103%;
@@ -111,7 +112,7 @@
 					width: 105%;
 					top: -18px;
 				}
-			}
+			}*/
 
 			img {
 				width: auto;
@@ -134,8 +135,9 @@
 			
 			.text_wrap {
 				float: left;
-				text-align: left;
+				text-align: center;
 				margin-left: 20px;
+				width: 100%;
 				
 				@include media($mobile){
 					margin-left: 10px;
@@ -426,6 +428,8 @@
 				&.bold {
 					font-family: 'robotomedium', sans-serif;
 					margin-top: 20px;
+					font-size: 20px;
+					text-align: center;
 					
 					&.mobile {
 						display: none;
@@ -444,7 +448,7 @@
 			}
 		}
 		
-		form {
+		/*form {
 			position: relative;
 			width: 95%;
 			float: left;
@@ -562,11 +566,25 @@
 				height: 35px;
 				top: -2px;
 			}
-		}
+		}*/
 	}
 }
 
 .mc4wp-response {
 	position: absolute !important;
 	width: 100% !important;
+}
+
+.page_content_home {
+
+	a.fancybox {
+		@include robotobold;
+		text-align: center;
+		display: inline-block;
+		text-transform: uppercase;
+		font-size: 28px;
+		width: 100%;
+		padding: 20px 15px;
+	}
+
 }

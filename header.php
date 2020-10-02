@@ -32,6 +32,8 @@ if (isset($_GET['clickid'])) {
 			gtag('config', 'UA-115393894-1');
 	</script>
 
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
 
@@ -270,25 +272,48 @@ $username = $current_user->user_login;
 <div class="wrapper">
 
 	<?php if (!is_user_logged_in()) :?>
-		<div id="email_join">
+		<div style="display: none;" id="email_join">
 			<a href="/"><div class="logo"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" /></div></a>
 			<h2><?php echo the_field('heading_text', 'options'); ?></h2>
 			<p><?php echo the_field('form_text', 'options'); ?></p>
-			<!-- Begin MailChimp Signup Form-->
+			<!-- Begin Mailchimp Signup Form -->
+
 			<div id="mc_embed_signup">
+				<form action="https://daricbennett.us14.list-manage.com/subscribe/post?u=31b2e6fbc1efe1874039014fd&amp;id=08854914fe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					<div id="mc_embed_signup_scroll">
+						<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+						<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+						<div id="mce-responses" class="clear">
+							<div class="response" id="mce-error-response" style="display:none"></div>
+							<div class="response" id="mce-success-response" style="display:none"></div>
+						</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+						<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_31b2e6fbc1efe1874039014fd_08854914fe" tabindex="-1" value=""></div>
+						<div class="g-recaptcha" data-sitekey="6Ld21OkUAAAAAKqhEA8IqH9d4Fj8SDZoKsFXj9dq"></div>
+					</div>
+				</form>
+			</div>
+			<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='PMPLEVELID';ftypes[3]='number';fnames[4]='PMPLEVEL';ftypes[4]='text';fnames[8]='TABLP';ftypes[8]='text';fnames[5]='TABDL';ftypes[5]='text';fnames[6]='PMPALLIDS';ftypes[6]='text';fnames[7]='FC6';ftypes[7]='text';fnames[9]='TABDL2';ftypes[9]='text';fnames[10]='TABDL3';ftypes[10]='text';fnames[1]='TABDL4';ftypes[1]='text';fnames[2]='TABDL5';ftypes[2]='text';fnames[11]='TABDL6';ftypes[11]='text';fnames[12]='TABDL7';ftypes[12]='text';fnames[13]='TABDL8';ftypes[13]='text';fnames[14]='TABDL9';ftypes[14]='text';fnames[15]='LIVESTRMLP';ftypes[15]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+			<!--End mc_embed_signup-->
+
+			<!--End mc_embed_signup-->
+
+
+
+			<!-- Begin MailChimp Signup Form-->
+			<!--<div id="mc_embed_signup">
 				<form action="https://daricbennett.us14.list-manage.com/subscribe/post-json?u=31b2e6fbc1efe1874039014fd&amp;id=08854914fe&c=?" method="get" id="subscribe-form" name="subscribe-form" class="validate" novalidate>
 				    <div id="mc_embed_signup_scroll">
 						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Address" required>
-					    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-					    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+					    real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    <!--<div style="position: absolute; left: -5000px;" aria-hidden="true">
 						    <input type="text" name="b_31b2e6fbc1efe1874039014fd_08854914fe" tabindex="-1" value="">
 						</div>
-						 <input type="submit" value="<?php echo the_field('button_text', 'options'); ?>" name="subscribe" id="mc-embedded-subscribe" class="button">
+						 <input type="submit" value="<?php //*echo the_field('button_text', 'options'); */*/?>" name="subscribe" id="mc-embedded-subscribe" class="button">
 				    </div>
 				</form>
 				<div id="subscribe-result">
 
 				</div>
-			</div>
+			</div>-->
 		</div>
 	<?php endif; ?>

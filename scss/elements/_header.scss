@@ -824,7 +824,6 @@ ul.member_menu {
 
 #email_join {
 	width:40%;
-	display: none;
 	text-align: center;
 	background: $yellow;
 	padding: 20px 5px 150px;
@@ -890,10 +889,30 @@ ul.member_menu {
 			font-size: 9px;
 		}
 	}
-	
 	#mc_embed_signup {
 		@include span-columns(12);
 		background: $yellow;
+		position: relative;
+
+		&:before {
+			content: '';
+			width: 92%;
+			height: 82px;
+			background: rgba(150,150,150,.4);
+			top: -12px;
+			left: 4%;
+			position: absolute;
+			border-radius: 4px;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+
+			@include media($mobile) {
+				width: 98%;
+				height: 60px;
+				left: 1%;
+				top: -10px;
+			}
+		}
 		
 		form {
 			position: relative;
@@ -904,28 +923,8 @@ ul.member_menu {
 				width: 100%;
 			}
 
-			&:before {
-				content: '';
-				width: 101%;
-				height: 138%;
-				background: rgba(150,150,150,.4);
-				bottom: -11px;
-				left: -3px;
-				position: absolute;
-				border-radius: 4px;
-				-webkit-border-radius: 4px;
-				-moz-border-radius: 4px;
-
-				 @include media($mobile){
-				 	width: 98%;
-				 	bottom: -8px;
-				 	left: 6px;
-				 }
-
-				 @include media($smallMobile){
-				 	width: 99%;
-				 	left: 2px;
-				 }
+			.g-recaptcha > div {
+				margin: 20px auto;
 			}
 		}
 

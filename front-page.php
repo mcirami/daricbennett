@@ -21,13 +21,14 @@ get_header(); ?>
 				</div>
 				<div class="full_width">
 					<div class="content_wrap">
-						<img src="<?php  echo esc_url( get_template_directory_uri() ); ?>/images/double-arrows.png" />
+						<!--<img src="<?php /* echo esc_url( get_template_directory_uri() ); */?>/images/double-arrows.png" />-->
 						<div class="text_wrap">
-							<h4>Enter Your Email for FREE Bass Lessons</h4>
-							<p><?php echo the_field('form_text'); ?></p>
+							<a class="button red fancybox" href="#email_join">Click To Join Email List for FREE Bass Lessons!</a>
+							<!--<h4>Enter Your Email for FREE Bass Lessons</h4>
+							<p><?php /*echo the_field('form_text'); */?></p>-->
 						</div>
 						<?php
-							echo the_field('email_form_shortcode'); 
+							//echo the_field('email_form_shortcode');
 						?>
 					</div>
 				</div>
@@ -93,7 +94,10 @@ get_header(); ?>
 					<p><?php echo the_field('about_text'); ?></p>
 					<p class="bold desktop"><?php echo the_field('about_form_text_desktop'); ?></p>
 					<p class="bold mobile"><?php echo the_field('about_form_text_mobile'); ?></p>
-					<?php echo the_field('email_form_shortcode'); ?>
+					<?php //echo the_field('email_form_shortcode'); ?>
+					<a class="button red fancybox" data-fancybox href="#" data-src="#email_join">
+						Click Here To Join!
+					</a>
 				</div>
 				<div class="column">
 					<div class="video_wrapper full_width">
