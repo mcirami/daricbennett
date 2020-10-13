@@ -418,10 +418,12 @@ var loadReload = function() {
 
         $('.mejs-overlay').html('<p>Your file is converting, please be patient!<p>');
     }
+/*
 
     if ($.browser.msie && $.browser.version === 10) {
         $('.home_section .hero input[type=submit]').addClass('ie10');
     }
+*/
 
     if ($('.rtm-bbp-container').length) {
         $('.rtm-bbp-container').parentsUntil('.odd').addClass('attach');
