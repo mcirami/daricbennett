@@ -1,0 +1,33 @@
+{
+  "name": "boiler",
+  "description": "a node / grunt powered boiler for WordPress",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ollo/boiler"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-compass": "~1.1.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.0",
+    "grunt-contrib-sass": "~1.0.0",
+    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-php": "~1.5.1",
+    "grunt-sass": "~2.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dateformat": "1.0.12",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "filterizr": "^2.2.4",
+    "has-binary2": "~1.0.2",
+    "mysql": "2.9.0",
+    "pusher": "^2.0.1",
+    "shufflejs": "^5.2.0",
+    "socket.io": "1.3.7"
+  }
+}
