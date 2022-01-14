@@ -32,8 +32,6 @@ if (isset($_GET['clickid'])) {
 			gtag('config', 'UA-115393894-1');
 	</script>
 
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
 
@@ -119,6 +117,8 @@ $username = $current_user->user_login;
 ?>
 
 <body <?php body_class(); ?>>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=980121096073585&autoLogAppEvents=1" nonce="d1vPKtS3"></script>
 <script>
     window.fbAsyncInit = function() {
         FB.init({
@@ -288,7 +288,6 @@ $username = $current_user->user_login;
 							<div class="response" id="mce-success-response" style="display:none"></div>
 						</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 						<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_31b2e6fbc1efe1874039014fd_08854914fe" tabindex="-1" value=""></div>
-						<div class="g-recaptcha" data-sitekey="6Ld21OkUAAAAAKqhEA8IqH9d4Fj8SDZoKsFXj9dq"></div>
 					</div>
 				</form>
 			</div>

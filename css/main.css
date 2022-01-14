@@ -1409,7 +1409,7 @@ body {
 .video_wrapper {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   padding-bottom: 56.25%;
   height: 0;
@@ -1447,7 +1447,7 @@ body {
 .wrapper {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   position: relative;
   background: #fff;
@@ -1475,7 +1475,7 @@ body {
 .full_width {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   position: relative; }
   .full_width:last-child {
@@ -1797,8 +1797,8 @@ img {
   .social_media_row .column {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%; }
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%; }
     .social_media_row .column:last-child {
       margin-right: 0; }
     .social_media_row .column .icon_wrap {
@@ -1822,7 +1822,7 @@ img {
     .social_media_row .column p {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .social_media_row .column p:last-child {
         margin-right: 0; }
@@ -1970,7 +1970,7 @@ h3, p {
 #global_header {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   -webkit-transition: .5s ease-in-out;
   -moz-transition: .5s ease-in-out;
@@ -1986,7 +1986,7 @@ h3, p {
   #global_header .header_top {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     background: #f20f2b;
     padding: 30px 0 20px;
@@ -2010,7 +2010,7 @@ h3, p {
     #global_header .header_top .content_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       text-align: center; }
       #global_header .header_top .content_wrap:last-child {
@@ -2050,7 +2050,7 @@ h3, p {
     #global_header .header_top .content_wrap_buttons {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       #global_header .header_top .content_wrap_buttons:last-child {
         margin-right: 0; }
@@ -2068,7 +2068,7 @@ h3, p {
           #global_header .header_top .content_wrap_buttons p {
             float: left;
             display: block;
-            margin-right: 3.57866%;
+            margin-right: 3.5786636068%;
             width: 100%;
             text-align: center; }
             #global_header .header_top .content_wrap_buttons p:last-child {
@@ -2097,7 +2097,7 @@ h3, p {
   #global_header .header_bottom {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     background: transparent;
     z-index: 1;
@@ -2153,7 +2153,7 @@ h3, p {
           #global_header .header_bottom .menu nav {
             float: left;
             display: block;
-            margin-right: 7.42297%;
+            margin-right: 7.4229703521%;
             width: 100%; }
             #global_header .header_bottom .menu nav:last-child {
               margin-right: 0; } }
@@ -2164,7 +2164,7 @@ h3, p {
           #global_header .header_bottom .menu ul {
             float: left;
             display: block;
-            margin-right: 7.42297%;
+            margin-right: 7.4229703521%;
             width: 100%; }
             #global_header .header_bottom .menu ul:last-child {
               margin-right: 0; } }
@@ -2359,14 +2359,14 @@ h3, p {
   .mobile_menu nav {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     .mobile_menu nav:last-child {
       margin-right: 0; }
   .mobile_menu ul {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     padding: 0;
     text-align: left; }
@@ -2375,7 +2375,7 @@ h3, p {
     .mobile_menu ul li {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       display: block;
       border-bottom: 1px outset #827d7d;
@@ -2613,7 +2613,7 @@ ul.member_menu {
   #email_join h2 {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     font-size: 34px;
     font-family: 'robotomedium', sans-serif;
@@ -2630,7 +2630,7 @@ ul.member_menu {
   #email_join p {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     margin-bottom: 20px; }
     #email_join p:last-child {
@@ -2645,7 +2645,7 @@ ul.member_menu {
   #email_join #mc_embed_signup {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     background: #ddb72e;
     position: relative; }
@@ -2743,8 +2743,8 @@ ul.member_menu {
 .sidebar {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 23.23176%;
+  margin-right: 2.3576515979%;
+  width: 23.2317613015%;
   padding-top: 90px; }
   .sidebar:last-child {
     margin-right: 0; }
@@ -2755,7 +2755,7 @@ ul.member_menu {
     .sidebar {
       float: left;
       display: block;
-      margin-right: 7.42297%;
+      margin-right: 7.4229703521%;
       width: 100%;
       padding-top: 0; }
       .sidebar:last-child {
@@ -2866,7 +2866,7 @@ ul.member_menu {
 #global_footer {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   padding: 40px 0 20px;
   background: url("../images/footer-background.jpg") no-repeat;
@@ -2881,15 +2881,15 @@ ul.member_menu {
   #global_footer .content_wrap {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     #global_footer .content_wrap:last-child {
       margin-right: 0; }
     #global_footer .content_wrap .logo {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 40.29137%;
+      margin-right: 2.3576515979%;
+      width: 40.2913699012%;
       padding-top: 38px; }
       #global_footer .content_wrap .logo:last-child {
         margin-right: 0; }
@@ -2897,8 +2897,8 @@ ul.member_menu {
         #global_footer .content_wrap .logo {
           float: left;
           display: block;
-          margin-right: 3.57866%;
-          width: 39.14754%;
+          margin-right: 3.5786636068%;
+          width: 39.147535131%;
           margin-right: 15px; }
           #global_footer .content_wrap .logo:last-child {
             margin-right: 0; } }
@@ -2906,7 +2906,7 @@ ul.member_menu {
         #global_footer .content_wrap .logo {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%;
           padding-top: 0;
           text-align: center; }
@@ -2924,23 +2924,23 @@ ul.member_menu {
     #global_footer .content_wrap .columns_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 57.35098%; }
+      margin-right: 2.3576515979%;
+      width: 57.3509785009%; }
       #global_footer .content_wrap .columns_wrap:last-child {
         margin-right: 0; }
       @media screen and (max-width: 1023px) {
         #global_footer .content_wrap .columns_wrap {
           float: left;
           display: block;
-          margin-right: 3.57866%;
-          width: 57.2738%; }
+          margin-right: 3.5786636068%;
+          width: 57.2738012622%; }
           #global_footer .content_wrap .columns_wrap:last-child {
             margin-right: 0; } }
       @media screen and (max-width: 768px) {
         #global_footer .content_wrap .columns_wrap {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%;
           text-align: center;
           padding-top: 20px; }
@@ -2962,15 +2962,15 @@ ul.member_menu {
       #global_footer .content_wrap .columns_wrap .column {
         float: left;
         display: block;
-        margin-right: 2.35765%;
-        width: 31.76157%; }
+        margin-right: 2.3576515979%;
+        width: 31.7615656014%; }
         #global_footer .content_wrap .columns_wrap .column:last-child {
           margin-right: 0; }
         @media screen and (max-width: 768px) {
           #global_footer .content_wrap .columns_wrap .column {
             float: left;
             display: block;
-            margin-right: 7.42297%;
+            margin-right: 7.4229703521%;
             width: 100%;
             margin-bottom: 20px; }
             #global_footer .content_wrap .columns_wrap .column:last-child {
@@ -3009,14 +3009,14 @@ ul.member_menu {
         #global_footer .content_wrap .columns_wrap .column .icon_wrap {
           float: left;
           display: block;
-          margin-right: 2.35765%;
+          margin-right: 2.3576515979%;
           width: 100%; }
           #global_footer .content_wrap .columns_wrap .column .icon_wrap:last-child {
             margin-right: 0; }
           #global_footer .content_wrap .columns_wrap .column .icon_wrap .row {
             float: left;
             display: block;
-            margin-right: 2.35765%;
+            margin-right: 2.3576515979%;
             width: 100%; }
             #global_footer .content_wrap .columns_wrap .column .icon_wrap .row:last-child {
               margin-right: 0; }
@@ -3097,7 +3097,7 @@ ul.member_menu {
   #global_footer .copy {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     text-align: center;
     color: #958c8c;
@@ -3144,7 +3144,7 @@ ul.member_menu {
 .home_section {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   position: relative; }
   .home_section:last-child {
@@ -3156,7 +3156,7 @@ ul.member_menu {
   .home_section .hero {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     background-size: 100% 100% !important;
     text-align: center;
@@ -3313,15 +3313,15 @@ ul.member_menu {
         .home_section .motto .content {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%; }
           .home_section .motto .content:last-child {
             margin-right: 0; } }
     .home_section .motto .content_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 57.35098%;
+      margin-right: 2.3576515979%;
+      width: 57.3509785009%;
       color: #131313;
       text-align: center;
       padding: 6% 0;
@@ -3346,7 +3346,7 @@ ul.member_menu {
         .home_section .motto .content_wrap {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%;
           padding: 19% 0;
           margin-bottom: 10px;
@@ -3371,8 +3371,8 @@ ul.member_menu {
     .home_section .motto .image_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 40.29137%;
+      margin-right: 2.3576515979%;
+      width: 40.2913699012%;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -3392,7 +3392,7 @@ ul.member_menu {
         .home_section .motto .image_wrap {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%; }
           .home_section .motto .image_wrap:last-child {
             margin-right: 0; } }
@@ -3582,15 +3582,15 @@ ul.member_menu {
     .home_section .video .column {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%; }
+      margin-right: 2.3576515979%;
+      width: 48.821174201%; }
       .home_section .video .column:last-child {
         margin-right: 0; }
       @media screen and (max-width: 768px) {
         .home_section .video .column {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%;
           margin-bottom: 20px; }
           .home_section .video .column:last-child {
@@ -3814,7 +3814,7 @@ ul.member_menu {
     .confirmation_page ul li {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       float: none;
       background: #fff;
@@ -4024,15 +4024,15 @@ ul.member_menu {
     .lessons_page .videos .video_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 57.35098%; }
+      margin-right: 2.3576515979%;
+      width: 57.3509785009%; }
       .lessons_page .videos .video_wrap:last-child {
         margin-right: 0; }
       @media screen and (max-width: 768px) {
         .lessons_page .videos .video_wrap {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%; }
           .lessons_page .videos .video_wrap:last-child {
             margin-right: 0; } }
@@ -4053,22 +4053,22 @@ ul.member_menu {
     .lessons_page .videos .social_media_column {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 40.29137%; }
+      margin-right: 2.3576515979%;
+      width: 40.2913699012%; }
       .lessons_page .videos .social_media_column:last-child {
         margin-right: 0; }
       @media screen and (max-width: 768px) {
         .lessons_page .videos .social_media_column {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%; }
           .lessons_page .videos .social_media_column:last-child {
             margin-right: 0; } }
       .lessons_page .videos .social_media_column .social_media_row {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%;
         margin-top: 0; }
         .lessons_page .videos .social_media_column .social_media_row:last-child {
@@ -4090,7 +4090,7 @@ ul.member_menu {
         .lessons_page .videos .social_media_column .social_media_row .content_box {
           float: left;
           display: block;
-          margin-right: 2.35765%;
+          margin-right: 2.3576515979%;
           width: 100%;
           max-width: none; }
           .lessons_page .videos .social_media_column .social_media_row .content_box:last-child {
@@ -4159,8 +4159,8 @@ ul.member_menu {
     .lessons_page .video_list .left_column {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 82.94039%;
+      margin-right: 2.3576515979%;
+      width: 82.9403914003%;
       text-align: center;
       background: #f20f2b;
       padding: 18px 20px;
@@ -4186,7 +4186,7 @@ ul.member_menu {
         .lessons_page .video_list .left_column {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%;
           padding: 5px 10px;
           border-bottom-left-radius: 0;
@@ -4227,8 +4227,8 @@ ul.member_menu {
     .lessons_page .video_list .right_column {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 14.70196%;
+      margin-right: 2.3576515979%;
+      width: 14.7019570017%;
       margin-right: 0; }
       .lessons_page .video_list .right_column:last-child {
         margin-right: 0; }
@@ -4236,7 +4236,7 @@ ul.member_menu {
         .lessons_page .video_list .right_column {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%; }
           .lessons_page .video_list .right_column:last-child {
             margin-right: 0; } }
@@ -4627,7 +4627,7 @@ ul.member_menu {
     .lessons_page #video_player .links_wrap, .lessons_page .course_video_player .links_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       text-align: center;
       padding-bottom: 10px; }
@@ -4649,8 +4649,8 @@ ul.member_menu {
     .lessons_page #video_player .video_iframe_wrap, .lessons_page .course_video_player .video_iframe_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 57.35098%;
+      margin-right: 2.3576515979%;
+      width: 57.3509785009%;
       padding-left: 2.5%;
       padding-bottom: 20px; }
       .lessons_page #video_player .video_iframe_wrap:last-child, .lessons_page .course_video_player .video_iframe_wrap:last-child {
@@ -4659,7 +4659,7 @@ ul.member_menu {
         .lessons_page #video_player .video_iframe_wrap, .lessons_page .course_video_player .video_iframe_wrap {
           float: left;
           display: block;
-          margin-right: 3.57866%;
+          margin-right: 3.5786636068%;
           width: 100%;
           padding-right: 2.5%;
           padding-bottom: 0; }
@@ -4668,8 +4668,8 @@ ul.member_menu {
     .lessons_page #video_player .video_content_wrap, .lessons_page .course_video_player .video_content_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 40.29137%;
+      margin-right: 2.3576515979%;
+      width: 40.2913699012%;
       padding-right: 2.5%;
       max-height: 800px;
       overflow-y: scroll;
@@ -4680,7 +4680,7 @@ ul.member_menu {
         .lessons_page #video_player .video_content_wrap, .lessons_page .course_video_player .video_content_wrap {
           float: left;
           display: block;
-          margin-right: 3.57866%;
+          margin-right: 3.5786636068%;
           width: 100%;
           padding-left: 2.5%; }
           .lessons_page #video_player .video_content_wrap:last-child, .lessons_page .course_video_player .video_content_wrap:last-child {
@@ -4740,7 +4740,7 @@ ul.member_menu {
       .lessons_page .filter_controls {
         float: left;
         display: block;
-        margin-right: 3.57866%;
+        margin-right: 3.5786636068%;
         width: 100%; }
         .lessons_page .filter_controls:last-child {
           margin-right: 0; } }
@@ -4751,8 +4751,8 @@ ul.member_menu {
     .lessons_page .filter_controls .search_box {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%;
+      margin-right: 2.3576515979%;
+      width: 48.821174201%;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -4764,7 +4764,7 @@ ul.member_menu {
         .lessons_page .filter_controls .search_box {
           float: left;
           display: block;
-          margin-right: 3.57866%;
+          margin-right: 3.5786636068%;
           width: 100%; }
           .lessons_page .filter_controls .search_box:last-child {
             margin-right: 0; } }
@@ -4788,8 +4788,8 @@ ul.member_menu {
     .lessons_page .filter_controls .filters {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%;
+      margin-right: 2.3576515979%;
+      width: 48.821174201%;
       position: relative;
       text-align: center;
       padding-left: 22px;
@@ -4801,7 +4801,7 @@ ul.member_menu {
         .lessons_page .filter_controls .filters {
           float: left;
           display: block;
-          margin-right: 3.57866%;
+          margin-right: 3.5786636068%;
           width: 100%;
           border-left: none;
           padding-top: 10px;
@@ -4894,7 +4894,7 @@ ul.member_menu {
 #comments {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   position: relative;
   padding: 30px 0;
@@ -4906,7 +4906,7 @@ ul.member_menu {
   #comments ol {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     list-style: none; }
     #comments ol:last-child {
@@ -4914,7 +4914,7 @@ ul.member_menu {
     #comments ol li {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       margin-bottom: 20px; }
       #comments ol li:last-child {
@@ -4922,7 +4922,7 @@ ul.member_menu {
       #comments ol li .children {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%;
         padding-left: 6.7%;
         margin-top: 5px; }
@@ -4933,8 +4933,8 @@ ul.member_menu {
   #comments .comment-meta {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 6.17215%;
+    margin-right: 2.3576515979%;
+    width: 6.1721527019%;
     background: #fff;
     padding: 5px;
     text-align: center;
@@ -4947,8 +4947,8 @@ ul.member_menu {
         #comments .comment-meta.mobile {
           float: left;
           display: block;
-          margin-right: 7.42297%;
-          width: 19.43277%;
+          margin-right: 7.4229703521%;
+          width: 19.432772236%;
           background: transparent;
           margin-right: 5px;
           max-width: 60px; }
@@ -4960,8 +4960,8 @@ ul.member_menu {
   #comments .comment-content {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 93.17616%;
+    margin-right: 2.3576515979%;
+    width: 93.1761565601%;
     position: relative;
     background: #fff;
     border: 1px solid #827d7d;
@@ -4972,7 +4972,7 @@ ul.member_menu {
       #comments .comment-content {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%; }
         #comments .comment-content:last-child {
           margin-right: 0; } }
@@ -4987,7 +4987,7 @@ ul.member_menu {
     #comments .comment-content > p {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       padding: 10px 20px;
       text-align: left; }
@@ -5013,8 +5013,8 @@ ul.member_menu {
         #comments .comment-content .comment-metadata {
           float: left;
           display: block;
-          margin-right: 7.42297%;
-          width: 73.14426%;
+          margin-right: 7.4229703521%;
+          width: 73.144257412%;
           padding-top: 20px;
           font-size: 10px; }
           #comments .comment-content .comment-metadata:last-child {
@@ -5041,7 +5041,7 @@ ul.member_menu {
   #comments .reply {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     float: right;
     padding: 20px;
@@ -5079,7 +5079,7 @@ ul.member_menu {
   #comments #respond {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     #comments #respond:last-child {
       margin-right: 0; }
@@ -5149,7 +5149,7 @@ ul.member_menu {
 .comment-respond form, .comment_reply_wrap form {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   text-align: left; }
   .comment-respond form:last-child, .comment_reply_wrap form:last-child {
@@ -5157,7 +5157,7 @@ ul.member_menu {
   .comment-respond form .comment-form-comment, .comment_reply_wrap form .comment-form-comment {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     .comment-respond form .comment-form-comment:last-child, .comment_reply_wrap form .comment-form-comment:last-child {
       margin-right: 0; }
@@ -5166,7 +5166,7 @@ ul.member_menu {
     .comment-respond form .comment-form-comment textarea, .comment_reply_wrap form .comment-form-comment textarea {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       height: 100px; }
       .comment-respond form .comment-form-comment textarea:last-child, .comment_reply_wrap form .comment-form-comment textarea:last-child {
@@ -5236,8 +5236,8 @@ ul.member_menu {
   .video_content_wrap #comments .comment-metadata {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 82.94039%;
+    margin-right: 2.3576515979%;
+    width: 82.9403914003%;
     padding-top: 10px;
     font-size: 10px; }
     .video_content_wrap #comments .comment-metadata:last-child {
@@ -5245,8 +5245,8 @@ ul.member_menu {
   .video_content_wrap #comments .comment-meta {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 14.70196%;
+    margin-right: 2.3576515979%;
+    width: 14.7019570017%;
     background: transparent;
     margin-right: 5px;
     max-width: 60px; }
@@ -5297,8 +5297,8 @@ ul.member_menu {
   .lessons_page.courses .row .column {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%;
     text-align: left; }
     .lessons_page.courses .row .column:last-child {
       margin-right: 0; }
@@ -5306,7 +5306,7 @@ ul.member_menu {
       .lessons_page.courses .row .column {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%;
         padding: 0; }
         .lessons_page.courses .row .column:last-child {
@@ -5349,7 +5349,7 @@ ul.member_menu {
         .lessons_page.courses .row .column .button_wrap {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%; }
           .lessons_page.courses .row .column .button_wrap:last-child {
             margin-right: 0; } }
@@ -5733,8 +5733,8 @@ ul.member_menu {
   .contact_us .bottom_section .column {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%;
     text-align: center; }
     .contact_us .bottom_section .column:last-child {
       margin-right: 0; }
@@ -5742,7 +5742,7 @@ ul.member_menu {
       .contact_us .bottom_section .column {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%;
         margin-bottom: 20px; }
         .contact_us .bottom_section .column:last-child {
@@ -5750,7 +5750,7 @@ ul.member_menu {
     .contact_us .bottom_section .column .icon_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       margin-bottom: 20px; }
       .contact_us .bottom_section .column .icon_wrap:last-child {
@@ -5761,7 +5761,7 @@ ul.member_menu {
     .contact_us .bottom_section .column .content_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       padding-left: 10px; }
       .contact_us .bottom_section .column .content_wrap:last-child {
@@ -5784,8 +5784,8 @@ ul.member_menu {
   .member .content {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 74.41059%;
+    margin-right: 2.3576515979%;
+    width: 74.4105871005%;
     padding: 60px 0;
     color: #131313;
     text-align: center; }
@@ -5795,7 +5795,7 @@ ul.member_menu {
       .member .content {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%; }
         .member .content:last-child {
           margin-right: 0; } }
@@ -5823,7 +5823,7 @@ ul.member_menu {
 #pmpro_account {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   text-align: center;
   margin: 100px 0; }
@@ -5845,8 +5845,8 @@ ul.member_menu {
   #pmpro_account .pmpro_box {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%;
     padding: 20px;
     background: #f1f1f1;
     text-align: left;
@@ -5867,7 +5867,7 @@ ul.member_menu {
       #pmpro_account .pmpro_box {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%; }
         #pmpro_account .pmpro_box:last-child {
           margin-right: 0; } }
@@ -5920,7 +5920,7 @@ ul.member_menu {
     #pmpro_account .pmpro_box td {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       #pmpro_account .pmpro_box td:last-child {
         margin-right: 0; }
@@ -5946,7 +5946,7 @@ ul.member_menu {
   #pmpro_account .pmpro_actionlinks {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     #pmpro_account .pmpro_actionlinks:last-child {
       margin-right: 0; }
@@ -5956,7 +5956,7 @@ ul.member_menu {
 .pmpro_member_directory_search.search-form {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%; }
   .pmpro_member_directory_search.search-form:last-child {
     margin-right: 0; }
@@ -6012,7 +6012,7 @@ ul.member_menu {
 .directory_wrapper {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   margin: 100px 0; }
   .directory_wrapper:last-child {
@@ -6023,7 +6023,7 @@ ul.member_menu {
   .directory_wrapper .pmpro_pagination {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     margin-top: 20px;
     margin-bottom: 0; }
@@ -6036,7 +6036,7 @@ ul.member_menu {
   .directory_wrapper .pmpro_member_directory {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     background: #f1f1f1;
     border-radius: 4px;
@@ -6054,7 +6054,7 @@ ul.member_menu {
     .directory_wrapper .pmpro_member_directory .row {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       background: #fff;
       margin: 0 0 30px 0;
@@ -6077,7 +6077,7 @@ ul.member_menu {
     .directory_wrapper .pmpro_member_directory .columns > div {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .directory_wrapper .pmpro_member_directory .columns > div:last-child {
         margin-right: 0; }
@@ -6085,7 +6085,7 @@ ul.member_menu {
       .directory_wrapper .pmpro_member_directory .columns {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%;
         padding-left: 10px;
         padding-right: 0; }
@@ -6094,8 +6094,8 @@ ul.member_menu {
     .directory_wrapper .pmpro_member_directory .pmpro_member_directory_avatar {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 14.70196%;
+      margin-right: 2.3576515979%;
+      width: 14.7019570017%;
       border-radius: 4px; }
       .directory_wrapper .pmpro_member_directory .pmpro_member_directory_avatar:last-child {
         margin-right: 0; }
@@ -6103,7 +6103,7 @@ ul.member_menu {
         .directory_wrapper .pmpro_member_directory .pmpro_member_directory_avatar {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%;
           text-align: center; }
           .directory_wrapper .pmpro_member_directory .pmpro_member_directory_avatar:last-child {
@@ -6122,8 +6122,8 @@ ul.member_menu {
     .directory_wrapper .pmpro_member_directory .content_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 82.94039%;
+      margin-right: 2.3576515979%;
+      width: 82.9403914003%;
       float: left;
       border-radius: 4px;
       -webkit-border-radius: 4px;
@@ -6139,15 +6139,15 @@ ul.member_menu {
         .directory_wrapper .pmpro_member_directory .content_wrap {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%; }
           .directory_wrapper .pmpro_member_directory .content_wrap:last-child {
             margin-right: 0; } }
       .directory_wrapper .pmpro_member_directory .content_wrap .column_wrap {
         float: left;
         display: block;
-        margin-right: 2.35765%;
-        width: 23.23176%; }
+        margin-right: 2.3576515979%;
+        width: 23.2317613015%; }
         .directory_wrapper .pmpro_member_directory .content_wrap .column_wrap:last-child {
           margin-right: 0; }
         @media screen and (max-width: 768px) {
@@ -6164,7 +6164,7 @@ ul.member_menu {
               margin-top: 0;
               float: left;
               display: block;
-              margin-right: 7.42297%;
+              margin-right: 7.4229703521%;
               width: 100%; }
               .directory_wrapper .pmpro_member_directory .content_wrap .column_wrap:last-child:last-child {
                 margin-right: 0; } }
@@ -6249,30 +6249,30 @@ ul.member_menu {
     .directory_profile_wrap .content_wrap .column {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 53.08608%; }
+      margin-right: 2.3576515979%;
+      width: 53.0860763509%; }
       .directory_profile_wrap .content_wrap .column:last-child {
         margin-right: 0; }
       @media screen and (max-width: 768px) {
         .directory_profile_wrap .content_wrap .column {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%; }
           .directory_profile_wrap .content_wrap .column:last-child {
             margin-right: 0; } }
       .directory_profile_wrap .content_wrap .column:first-child {
         float: left;
         display: block;
-        margin-right: 2.35765%;
-        width: 44.55627%; }
+        margin-right: 2.3576515979%;
+        width: 44.5562720511%; }
         .directory_profile_wrap .content_wrap .column:first-child:last-child {
           margin-right: 0; }
         @media screen and (max-width: 768px) {
           .directory_profile_wrap .content_wrap .column:first-child {
             float: left;
             display: block;
-            margin-right: 7.42297%;
+            margin-right: 7.4229703521%;
             width: 100%; }
             .directory_profile_wrap .content_wrap .column:first-child:last-child {
               margin-right: 0; } }
@@ -6429,15 +6429,15 @@ ul.member_menu {
   .forum_wrapper .forum_content {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 74.41059%; }
+    margin-right: 2.3576515979%;
+    width: 74.4105871005%; }
     .forum_wrapper .forum_content:last-child {
       margin-right: 0; }
     @media screen and (max-width: 768px) {
       .forum_wrapper .forum_content {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%;
         padding-bottom: 0; }
         .forum_wrapper .forum_content:last-child {
@@ -6459,21 +6459,21 @@ ul.member_menu {
   .forum_wrapper #new-post .bbp-the-content-wrapper {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     .forum_wrapper #new-post .bbp-the-content-wrapper:last-child {
       margin-right: 0; }
   .forum_wrapper #new-post p.adjust {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     .forum_wrapper #new-post p.adjust:last-child {
       margin-right: 0; }
   .forum_wrapper #new-post h4 {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     .forum_wrapper #new-post h4:last-child {
       margin-right: 0; }
@@ -6482,7 +6482,7 @@ ul.member_menu {
   .forum_wrapper #rtmedia_uploader_filelist {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     .forum_wrapper #rtmedia_uploader_filelist:last-child {
       margin-right: 0; }
@@ -6741,7 +6741,7 @@ ul.member_menu {
       .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness .bbp-topic-freshness-author {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%;
         padding-top: 25px; }
         .forum_wrapper #bbpress-forums li.bbp-body li.bbp-forum-freshness .bbp-topic-freshness-author:last-child {
@@ -6844,7 +6844,7 @@ ul.member_menu {
       .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness .bbp-topic-freshness-author {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%;
         padding-top: 30px; }
         .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness .bbp-topic-freshness-author:last-child {
@@ -6853,7 +6853,7 @@ ul.member_menu {
           .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness .bbp-topic-freshness-author {
             float: left;
             display: block;
-            margin-right: 3.57866%;
+            margin-right: 3.5786636068%;
             width: 100%; }
             .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness .bbp-topic-freshness-author:last-child {
               margin-right: 0; } }
@@ -6879,7 +6879,7 @@ ul.member_menu {
             .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:first-child {
               float: left;
               display: block;
-              margin-right: 3.57866%;
+              margin-right: 3.5786636068%;
               width: 100%;
               text-align: center; }
               .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:first-child:last-child {
@@ -6896,7 +6896,7 @@ ul.member_menu {
             .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:last-child {
               float: left;
               display: block;
-              margin-right: 3.57866%;
+              margin-right: 3.5786636068%;
               width: 100%;
               text-align: center;
               padding-top: 0; }
@@ -6909,7 +6909,7 @@ ul.member_menu {
           .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:last-child {
             float: left;
             display: block;
-            margin-right: 3.57866%;
+            margin-right: 3.5786636068%;
             width: 100%;
             text-align: center; }
             .forum_wrapper #bbpress-forums li.bbp-body li.bbp-topic-freshness a:last-child:last-child {
@@ -6941,7 +6941,7 @@ ul.member_menu {
     .forum_wrapper #bbpress-forums p.bbp-topic-meta {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .forum_wrapper #bbpress-forums p.bbp-topic-meta:last-child {
         margin-right: 0; }
@@ -7189,7 +7189,7 @@ ul.member_menu {
     .forum_wrapper #bbpress-forums #bbp-user-wrapper h2.entry-title {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .forum_wrapper #bbpress-forums #bbp-user-wrapper h2.entry-title:last-child {
         margin-right: 0; }
@@ -7199,14 +7199,14 @@ ul.member_menu {
     .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details:last-child {
         margin-right: 0; }
       .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details #bbp-user-profile {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%;
         margin-bottom: 15px; }
         .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details #bbp-user-profile:last-child {
@@ -7219,7 +7219,7 @@ ul.member_menu {
       .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details #bbp-user-navigation {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%;
         margin-bottom: 30px; }
         .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details #bbp-user-navigation:last-child {
@@ -7240,7 +7240,7 @@ ul.member_menu {
             .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details #bbp-user-navigation .user_mobile_nav {
               float: left;
               display: block;
-              margin-right: 7.42297%;
+              margin-right: 7.4229703521%;
               width: 100%; }
               .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details #bbp-user-navigation .user_mobile_nav:last-child {
                 margin-right: 0; } }
@@ -7259,7 +7259,7 @@ ul.member_menu {
         .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details #bbp-user-navigation .nav_wrap {
           float: left;
           display: block;
-          margin-right: 2.35765%;
+          margin-right: 2.3576515979%;
           width: 100%; }
           .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details #bbp-user-navigation .nav_wrap:last-child {
             margin-right: 0; }
@@ -7269,14 +7269,14 @@ ul.member_menu {
               .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details #bbp-user-navigation .nav_wrap.current_user li {
                 float: left;
                 display: block;
-                margin-right: 7.42297%;
+                margin-right: 7.4229703521%;
                 width: 100%; }
                 .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details #bbp-user-navigation .nav_wrap.current_user li:last-child {
                   margin-right: 0; } }
         .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details #bbp-user-navigation ul {
           float: left;
           display: block;
-          margin-right: 2.35765%;
+          margin-right: 2.3576515979%;
           width: 100%;
           border: 1px solid #c8c8c8;
           -webkit-transition: .5s ease-in-out;
@@ -7300,7 +7300,7 @@ ul.member_menu {
               .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-single-user-details #bbp-user-navigation ul li {
                 float: left;
                 display: block;
-                margin-right: 7.42297%;
+                margin-right: 7.4229703521%;
                 width: 100%;
                 border-right: none;
                 border-bottom: 1px solid #c8c8c8; }
@@ -7384,7 +7384,7 @@ ul.member_menu {
       .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-user-body .bbp-user-section, .forum_wrapper #bbpress-forums #bbp-user-wrapper .profile_content .bbp-user-section {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%;
         line-height: 1.4; }
         .forum_wrapper #bbpress-forums #bbp-user-wrapper #bbp-user-body .bbp-user-section:last-child, .forum_wrapper #bbpress-forums #bbp-user-wrapper .profile_content .bbp-user-section:last-child {
@@ -7435,7 +7435,7 @@ ul.member_menu {
 .navigation-paging {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%; }
   .navigation-paging:last-child {
     margin-right: 0; }
@@ -7458,7 +7458,7 @@ ul.member_menu {
 .rec_text {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   font-family: 'robotoitalic';
   text-align: left;
@@ -7479,7 +7479,7 @@ ul.member_menu {
 .rtm-bbp-container {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   margin: 0 !important; }
   .rtm-bbp-container:last-child {
@@ -7527,7 +7527,7 @@ ul.member_menu {
 .rtm-tabs-content {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   background: #fff;
   text-align: center;
@@ -7580,7 +7580,7 @@ ul.member_menu {
     .rtm-tabs-content .content .rtmedia-edit-title {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       margin-bottom: 20px; }
       .rtm-tabs-content .content .rtmedia-edit-title:last-child {
@@ -7597,7 +7597,7 @@ ul.member_menu {
     .rtm-tabs-content .content .rtmedia-editor-description {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .rtm-tabs-content .content .rtmedia-editor-description:last-child {
         margin-right: 0; }
@@ -7605,7 +7605,7 @@ ul.member_menu {
 .rtmedia-editor-buttons {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   margin-top: 40px; }
   .rtmedia-editor-buttons:last-child {
@@ -7622,7 +7622,7 @@ ul.member_menu {
 .bbp-attachments-form {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%; }
   .bbp-attachments-form:last-child {
     margin-right: 0; }
@@ -7774,8 +7774,8 @@ ul.member_menu {
       .form_wrapper .top_section p {
         float: left;
         display: block;
-        margin-right: 3.57866%;
-        width: 30.0844%;
+        margin-right: 3.5786636068%;
+        width: 30.0844020654%;
         font-size: 13px;
         line-height: 1.4; }
         .form_wrapper .top_section p:last-child {
@@ -7784,7 +7784,7 @@ ul.member_menu {
       .form_wrapper .top_section p {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%; }
         .form_wrapper .top_section p:last-child {
           margin-right: 0; } }
@@ -7890,8 +7890,8 @@ ul.member_menu {
   .form_wrapper .column {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%; }
+    margin-right: 2.3576515979%;
+    width: 48.821174201%; }
     .form_wrapper .column:last-child {
       margin-right: 0; }
     @media screen and (max-width: 1023px) {
@@ -7928,7 +7928,7 @@ ul.member_menu {
       .form_wrapper .column .column_content .row_wrap {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%; }
         .form_wrapper .column .column_content .row_wrap:last-child {
           margin-right: 0; }
@@ -7948,7 +7948,7 @@ ul.member_menu {
           .form_wrapper .column .column_content .row_wrap {
             float: left;
             display: block;
-            margin-right: 7.42297%;
+            margin-right: 7.4229703521%;
             width: 100%;
             border-bottom: none; }
             .form_wrapper .column .column_content .row_wrap:last-child {
@@ -7962,7 +7962,7 @@ ul.member_menu {
             .form_wrapper .column .column_content .row_wrap:last-child .row {
               float: left;
               display: block;
-              margin-right: 3.57866%;
+              margin-right: 3.5786636068%;
               width: 100%;
               border-right: none; }
               .form_wrapper .column .column_content .row_wrap:last-child .row:last-child {
@@ -7992,7 +7992,7 @@ ul.member_menu {
           .form_wrapper .column .column_content .row {
             float: left;
             display: block;
-            margin-right: 7.42297%;
+            margin-right: 7.4229703521%;
             width: 100%;
             border-bottom: 5px solid #f20f2b; }
             .form_wrapper .column .column_content .row:last-child {
@@ -8012,7 +8012,7 @@ ul.member_menu {
             .form_wrapper .column .column_content .row .image_wrap {
               float: left;
               display: block;
-              margin-right: 3.57866%;
+              margin-right: 3.5786636068%;
               width: 100%;
               padding-top: 0; }
               .form_wrapper .column .column_content .row .image_wrap:last-child {
@@ -8040,7 +8040,7 @@ ul.member_menu {
             .form_wrapper .column .column_content .row .copy {
               float: left;
               display: block;
-              margin-right: 3.57866%;
+              margin-right: 3.5786636068%;
               width: 100%; }
               .form_wrapper .column .column_content .row .copy:last-child {
                 margin-right: 0; } }
@@ -8065,7 +8065,7 @@ ul.member_menu {
     .form_wrapper .column .pmpro_submit {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       margin-top: 10px;
       margin-left: 0; }
@@ -8109,7 +8109,7 @@ ul.member_menu {
     .form_wrapper .column #pmpro_processing_message {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .form_wrapper .column #pmpro_processing_message:last-child {
         margin-right: 0; }
@@ -8182,7 +8182,7 @@ form.pmpro_form .pmpro_checkout-fields div {
 .pmpro_form {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   color: #000;
   background: #fff; }
@@ -8218,35 +8218,35 @@ form.pmpro_form .pmpro_checkout-fields div {
   .pmpro_form .pmpro_checkout {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     .pmpro_form .pmpro_checkout:last-child {
       margin-right: 0; }
     .pmpro_form .pmpro_checkout tbody {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .pmpro_form .pmpro_checkout tbody:last-child {
         margin-right: 0; }
       .pmpro_form .pmpro_checkout tbody tr {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%; }
         .pmpro_form .pmpro_checkout tbody tr:last-child {
           margin-right: 0; }
         .pmpro_form .pmpro_checkout tbody tr td {
           float: left;
           display: block;
-          margin-right: 2.35765%;
+          margin-right: 2.3576515979%;
           width: 100%; }
           .pmpro_form .pmpro_checkout tbody tr td:last-child {
             margin-right: 0; }
     .pmpro_form .pmpro_checkout label {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       text-align: left;
       font-size: 14px;
@@ -8257,7 +8257,7 @@ form.pmpro_form .pmpro_checkout-fields div {
     .pmpro_form .pmpro_checkout input {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       max-width: none;
       height: 40px;
@@ -8292,7 +8292,7 @@ form.pmpro_form .pmpro_checkout-fields div {
     .pmpro_form #pmpro_payment_method .pmpro_checkout-fields {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       font-size: 14px;
       line-height: 1; }
@@ -8301,7 +8301,7 @@ form.pmpro_form .pmpro_checkout-fields div {
       .pmpro_form #pmpro_payment_method .pmpro_checkout-fields .gateway_braintree {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%;
         margin-bottom: 20px; }
         .pmpro_form #pmpro_payment_method .pmpro_checkout-fields .gateway_braintree:last-child {
@@ -8309,7 +8309,7 @@ form.pmpro_form .pmpro_checkout-fields div {
       .pmpro_form #pmpro_payment_method .pmpro_checkout-fields .gateway_paypalexpress {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%; }
         .pmpro_form #pmpro_payment_method .pmpro_checkout-fields .gateway_paypalexpress:last-child {
           margin-right: 0; }
@@ -8367,7 +8367,7 @@ form.pmpro_form .pmpro_checkout-fields div {
   .pmpro_form #pmpro_payment_information_fields .pmpro_thead-name {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     text-align: left; }
     .pmpro_form #pmpro_payment_information_fields .pmpro_thead-name:last-child {
@@ -8375,7 +8375,7 @@ form.pmpro_form .pmpro_checkout-fields div {
   .pmpro_form #pmpro_payment_information_fields .pmpro_thead-msg {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     text-align: left; }
     .pmpro_form #pmpro_payment_information_fields .pmpro_thead-msg:last-child {
@@ -8472,7 +8472,7 @@ form.pmpro_form .pmpro_checkout-fields div {
   .billing_content .buttons {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     .billing_content .buttons:last-child {
       margin-right: 0; }
@@ -8486,8 +8486,8 @@ form.pmpro_form .pmpro_checkout-fields div {
   .billing_content input.three_col {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%; }
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%; }
     .billing_content input.three_col:last-child {
       margin-right: 0; }
     @media screen and (max-width: 768px) {
@@ -8506,15 +8506,17 @@ form.pmpro_form .pmpro_checkout-fields div {
   display: none; }
 
 form.pmpro_form #other_discount_code.input {
-  max-width: 75%; }
+  max-width: 75%;
+  margin-right: 1%; }
   @media screen and (max-width: 768px) {
     form.pmpro_form #other_discount_code.input {
-      max-width: unset; } }
+      max-width: unset;
+      margin-bottom: 10px; } }
 
 .discount_form {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   padding: 20px 10px;
   text-align: center;
@@ -8522,8 +8524,14 @@ form.pmpro_form #other_discount_code.input {
   .discount_form:last-child {
     margin-right: 0; }
   .discount_form input[type="button"] {
-    width: 22%;
-    float: left; }
+    width: 24%;
+    float: left;
+    background: #f20f2b !important;
+    color: #fff !important;
+    margin-left: 0 !important;
+    text-decoration: none !important; }
+    .discount_form input[type="button"]:hover {
+      background: #880415 !important; }
     @media screen and (max-width: 768px) {
       .discount_form input[type="button"] {
         margin-top: 20px; } }
@@ -8533,7 +8541,7 @@ form.pmpro_form #other_discount_code.input {
 #other_discount_code_p {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   font-size: 16px;
   border: none;
@@ -8550,7 +8558,7 @@ form.pmpro_form #other_discount_code.input {
 #pmpro_message {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   background: #f8e59f;
   color: #f20f2b;
@@ -8570,9 +8578,14 @@ form.pmpro_form #other_discount_code.input {
       #pmpro_message h4 {
         font-size: 14px; } }
 
+#pmpro_user_fields h3 {
+  display: none; }
+
 #pmpro_pricing_fields {
   padding: 0;
   text-align: left; }
+  #pmpro_pricing_fields .pmpro_checkout-fields, #pmpro_pricing_fields .pmpro_checkout-h3-msg a {
+    display: none; }
   #pmpro_pricing_fields #other_discount_code_tr label {
     font-family: 'robotolight';
     width: 100%;
@@ -8617,7 +8630,7 @@ form.pmpro_form #other_discount_code.input {
   .member_home h2 {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     font-size: 30px;
     font-family: 'robotoregular', sans-serif; }
@@ -8633,7 +8646,7 @@ form.pmpro_form #other_discount_code.input {
   .member_home .content_wrap {
     background: #f1f1f1;
     padding: 30px;
-    margin: 40px 0;
+    margin: 0 0 40px !important;
     -webkit-box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
     -moz-box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
     box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
@@ -8651,15 +8664,15 @@ form.pmpro_form #other_discount_code.input {
     .member_home .content_wrap .column {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%; }
+      margin-right: 2.3576515979%;
+      width: 48.821174201%; }
       .member_home .content_wrap .column:last-child {
         margin-right: 0; }
       @media screen and (max-width: 768px) {
         .member_home .content_wrap .column {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%; }
           .member_home .content_wrap .column:last-child {
             margin-right: 0; } }
@@ -8698,8 +8711,8 @@ form.pmpro_form #other_discount_code.input {
       .member_home .content_wrap .row .icon_wrap {
         float: left;
         display: block;
-        margin-right: 2.35765%;
-        width: 14.70196%;
+        margin-right: 2.3576515979%;
+        width: 14.7019570017%;
         padding: 5% 10px 0;
         text-align: right; }
         .member_home .content_wrap .row .icon_wrap:last-child {
@@ -8727,8 +8740,8 @@ form.pmpro_form #other_discount_code.input {
       .member_home .content_wrap .row .info_wrap {
         float: left;
         display: block;
-        margin-right: 2.35765%;
-        width: 82.94039%;
+        margin-right: 2.3576515979%;
+        width: 82.9403914003%;
         position: relative;
         padding: 10px 15px 20px;
         text-align: left;
@@ -8800,8 +8813,8 @@ form.pmpro_form #other_discount_code.input {
               font-size: 16px; } }
 
 .banner_wrap {
-  padding: 0 20%;
-  margin-bottom: 40px; }
+  margin: 40px 0 20px !important;
+  padding: 0 !important; }
   @media screen and (max-width: 768px) {
     .banner_wrap {
       padding: 0 10%; } }
@@ -8812,7 +8825,7 @@ form.pmpro_form #other_discount_code.input {
 .profile_wrap {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   position: relative;
   border-radius: 4px;
@@ -8861,15 +8874,15 @@ form.pmpro_form #other_discount_code.input {
   .profile_wrap .pmpro_member_profile_edit_wrap {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     .profile_wrap .pmpro_member_profile_edit_wrap:last-child {
       margin-right: 0; }
   .profile_wrap .image_wrap {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%;
     background: #fff;
     padding: 20px;
     -webkit-box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
@@ -8885,7 +8898,7 @@ form.pmpro_form #other_discount_code.input {
       .profile_wrap .image_wrap {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%;
         line-height: 1.4; }
         .profile_wrap .image_wrap:last-child {
@@ -8912,7 +8925,7 @@ form.pmpro_form #other_discount_code.input {
     .profile_wrap .image_wrap .description {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       font-size: 13px; }
       .profile_wrap .image_wrap .description:last-child {
@@ -8923,7 +8936,7 @@ form.pmpro_form #other_discount_code.input {
   .profile_wrap form {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     background-color: #f1f1f1;
     -webkit-box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.14);
@@ -8944,14 +8957,14 @@ form.pmpro_form #other_discount_code.input {
     .profile_wrap form .pmpro_checkout-field {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .profile_wrap form .pmpro_checkout-field:last-child {
         margin-right: 0; }
     .profile_wrap form input[type="text"], .profile_wrap form input[type="email"], .profile_wrap form select, .profile_wrap form textarea {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       max-width: unset !important;
       border: 1px solid #c8c8c8; }
@@ -8970,15 +8983,15 @@ form.pmpro_form #other_discount_code.input {
     .profile_wrap form .pmpro_checkout_box-user, .profile_wrap form .pmpro_checkout_box-just_profile {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%; }
+      margin-right: 2.3576515979%;
+      width: 48.821174201%; }
       .profile_wrap form .pmpro_checkout_box-user:last-child, .profile_wrap form .pmpro_checkout_box-just_profile:last-child {
         margin-right: 0; }
       @media screen and (max-width: 768px) {
         .profile_wrap form .pmpro_checkout_box-user, .profile_wrap form .pmpro_checkout_box-just_profile {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%; }
           .profile_wrap form .pmpro_checkout_box-user:last-child, .profile_wrap form .pmpro_checkout_box-just_profile:last-child {
             margin-right: 0; } }
@@ -8993,7 +9006,7 @@ form.pmpro_form #other_discount_code.input {
     .profile_wrap form .pmpro_submit {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .profile_wrap form .pmpro_submit:last-child {
         margin-right: 0; }
@@ -9027,7 +9040,7 @@ form.pmpro_form #other_discount_code.input {
   .profile_wrap .wpua-edit-container {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     .profile_wrap .wpua-edit-container:last-child {
       margin-right: 0; }
@@ -9044,7 +9057,7 @@ form.pmpro_form #other_discount_code.input {
         .profile_wrap .wpua-edit-container input {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%; }
           .profile_wrap .wpua-edit-container input:last-child {
             margin-right: 0; } }
@@ -9068,7 +9081,7 @@ form.pmpro_form #other_discount_code.input {
   .profile_wrap .password {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     margin-bottom: 20px; }
     .profile_wrap .password:last-child {
@@ -9076,14 +9089,14 @@ form.pmpro_form #other_discount_code.input {
     .profile_wrap .password tbody {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .profile_wrap .password tbody:last-child {
         margin-right: 0; }
       .profile_wrap .password tbody tr {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%; }
         .profile_wrap .password tbody tr:last-child {
           margin-right: 0; }
@@ -9138,7 +9151,7 @@ form.pmpro_form #other_discount_code.input {
 #wpua-edit-103 p.submit {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%; }
   #wpua-edit-103 p.submit:last-child {
     margin-right: 0; }
@@ -9154,7 +9167,7 @@ form.pmpro_form #other_discount_code.input {
 .entry-meta {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%; }
   .entry-meta:last-child {
     margin-right: 0; }
@@ -9162,7 +9175,7 @@ form.pmpro_form #other_discount_code.input {
 .standard {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   padding: 40px;
   margin: 80px 0;
@@ -9181,7 +9194,7 @@ form.pmpro_form #other_discount_code.input {
   .standard h3 {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     font-size: 18px;
     text-decoration: underline;
@@ -9198,7 +9211,7 @@ form.pmpro_form #other_discount_code.input {
   .standard p {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     margin: 5px 0; }
     .standard p:last-child {
@@ -9214,7 +9227,7 @@ form.pmpro_form #other_discount_code.input {
   .standard ul {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     list-style-type: lower-roman;
     padding-left: 40px; }
@@ -9234,7 +9247,7 @@ form.pmpro_form #other_discount_code.input {
   .standard .address {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     font-family: 'robotoregular', sans-serif;
     padding-left: 40px;
@@ -9247,7 +9260,7 @@ form.pmpro_form #other_discount_code.input {
     .standard .address .row {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       text-align: left; }
       .standard .address .row:last-child {
@@ -9303,15 +9316,15 @@ form.pmpro_form #other_discount_code.input {
       .not_member .content_wrap {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%; }
         .not_member .content_wrap:last-child {
           margin-right: 0; } }
   .not_member .column {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -9331,7 +9344,7 @@ form.pmpro_form #other_discount_code.input {
       .not_member .column {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%; }
         .not_member .column:last-child {
           margin-right: 0; } }
@@ -9399,7 +9412,7 @@ form.pmpro_form #other_discount_code.input {
     .not_member .top_section h4 {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       font-family: 'robotolight', sans-serif;
       font-size: 20px;
@@ -9410,7 +9423,7 @@ form.pmpro_form #other_discount_code.input {
     .not_member .top_section p {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%;
       font-size: 16px; }
       .not_member .top_section p:last-child {
@@ -9487,7 +9500,7 @@ form.pmpro_form #other_discount_code.input {
   #fep-wrapper #fep_upload {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     #fep-wrapper #fep_upload:last-child {
       margin-right: 0; }
@@ -9503,7 +9516,7 @@ form.pmpro_form #other_discount_code.input {
   #fep-wrapper #fep-attachment-note {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     #fep-wrapper #fep-attachment-note:last-child {
       margin-right: 0; }
@@ -9526,7 +9539,7 @@ form.pmpro_form #other_discount_code.input {
       #fep-wrapper .fep-bulk-action {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%; }
         #fep-wrapper .fep-bulk-action:last-child {
           margin-right: 0; } }
@@ -9542,7 +9555,7 @@ form.pmpro_form #other_discount_code.input {
     #fep-wrapper .fep-loading-gif-div {
       float: left;
       display: block;
-      margin-right: 7.42297%;
+      margin-right: 7.4229703521%;
       width: 100%; }
       #fep-wrapper .fep-loading-gif-div:last-child {
         margin-right: 0; } }
@@ -9550,7 +9563,7 @@ form.pmpro_form #other_discount_code.input {
     #fep-wrapper .fep-filter {
       float: left;
       display: block;
-      margin-right: 7.42297%;
+      margin-right: 7.4229703521%;
       width: 100%; }
       #fep-wrapper .fep-filter:last-child {
         margin-right: 0; } }
@@ -9840,7 +9853,7 @@ form.pmpro_form #other_discount_code.input {
     .single_lesson .form_section #email_join_single_lesson {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .single_lesson .form_section #email_join_single_lesson:last-child {
         margin-right: 0; }
@@ -9912,15 +9925,15 @@ form.pmpro_form #other_discount_code.input {
       .single_lesson .social_media_section {
         float: left;
         display: block;
-        margin-right: 3.57866%;
+        margin-right: 3.5786636068%;
         width: 100%; }
         .single_lesson .social_media_section:last-child {
           margin-right: 0; } }
     .single_lesson .social_media_section .image_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 36.02647%;
+      margin-right: 2.3576515979%;
+      width: 36.0264677513%;
       background: url("../images/daric-single-lesson.jpg") no-repeat;
       background-size: cover;
       padding: 14% 0;
@@ -9941,8 +9954,8 @@ form.pmpro_form #other_discount_code.input {
     .single_lesson .social_media_section .text_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 61.61588%;
+      margin-right: 2.3576515979%;
+      width: 61.6158806508%;
       text-align: center;
       padding: 0 5% 20px 0;
       display: -webkit-box;
@@ -9961,7 +9974,7 @@ form.pmpro_form #other_discount_code.input {
         .single_lesson .social_media_section .text_wrap {
           float: left;
           display: block;
-          margin-right: 3.57866%;
+          margin-right: 3.5786636068%;
           width: 100%;
           padding: 20px; }
           .single_lesson .social_media_section .text_wrap:last-child {
@@ -9969,7 +9982,7 @@ form.pmpro_form #other_discount_code.input {
       .single_lesson .social_media_section .text_wrap h3 {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%;
         font-family: 'robotolight', sans-serif;
         font-size: 30px;
@@ -10107,8 +10120,8 @@ form.pmpro_form #other_discount_code.input {
     .single_lesson .bottom_section .column:first-child {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 44.55627%;
+      margin-right: 2.3576515979%;
+      width: 44.5562720511%;
       text-align: left; }
       .single_lesson .bottom_section .column:first-child:last-child {
         margin-right: 0; }
@@ -10116,7 +10129,7 @@ form.pmpro_form #other_discount_code.input {
         .single_lesson .bottom_section .column:first-child {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%;
           text-align: center; }
           .single_lesson .bottom_section .column:first-child:last-child {
@@ -10124,15 +10137,15 @@ form.pmpro_form #other_discount_code.input {
     .single_lesson .bottom_section .column:last-child {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 53.08608%; }
+      margin-right: 2.3576515979%;
+      width: 53.0860763509%; }
       .single_lesson .bottom_section .column:last-child:last-child {
         margin-right: 0; }
       @media screen and (max-width: 768px) {
         .single_lesson .bottom_section .column:last-child {
           float: left;
           display: block;
-          margin-right: 7.42297%;
+          margin-right: 7.4229703521%;
           width: 100%; }
           .single_lesson .bottom_section .column:last-child:last-child {
             margin-right: 0; } }
@@ -10264,7 +10277,7 @@ form.pmpro_form #other_discount_code.input {
     .testimonials .row .column_two .text_wrap {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .testimonials .row .column_two .text_wrap:last-child {
         margin-right: 0; }
@@ -10311,7 +10324,7 @@ form.pmpro_form #other_discount_code.input {
 .testimonials .button_wrap {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   text-align: center;
   margin: 30px 0 50px; }
@@ -10460,8 +10473,8 @@ form.pmpro_form #other_discount_code.input {
   .video_submit .row .column {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%;
     text-align: left; }
     .video_submit .row .column:last-child {
       margin-right: 0; }
@@ -10469,7 +10482,7 @@ form.pmpro_form #other_discount_code.input {
       .video_submit .row .column {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%; }
         .video_submit .row .column:last-child {
           margin-right: 0; } }
@@ -10543,7 +10556,7 @@ form.pmpro_form #other_discount_code.input {
   .single_video .navigation {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%;
     margin-bottom: 40px; }
     .single_video .navigation:last-child {
@@ -10553,7 +10566,7 @@ form.pmpro_form #other_discount_code.input {
     .single_video .navigation .nav-links {
       float: left;
       display: block;
-      margin-right: 2.35765%;
+      margin-right: 2.3576515979%;
       width: 100%; }
       .single_video .navigation .nav-links:last-child {
         margin-right: 0; }
@@ -10609,15 +10622,15 @@ form.pmpro_form #other_discount_code.input {
   .single_video .column {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%; }
+    margin-right: 2.3576515979%;
+    width: 48.821174201%; }
     .single_video .column:last-child {
       margin-right: 0; }
     @media screen and (max-width: 768px) {
       .single_video .column {
         float: left;
         display: block;
-        margin-right: 7.42297%;
+        margin-right: 7.4229703521%;
         width: 100%;
         margin-bottom: 20px; }
         .single_video .column:last-child {
@@ -10653,7 +10666,7 @@ form.pmpro_form #other_discount_code.input {
 #reply-title span {
   float: left;
   display: block;
-  margin-right: 2.35765%;
+  margin-right: 2.3576515979%;
   width: 100%;
   font-family: 'robotoregular', sans-serif;
   font-size: 14px;
@@ -10670,7 +10683,7 @@ form.pmpro_form #other_discount_code.input {
   .live_stream .title {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 2.3576515979%;
     width: 100%; }
     .live_stream .title:last-child {
       margin-right: 0; }
@@ -10703,7 +10716,7 @@ form.pmpro_form #other_discount_code.input {
       .live_stream .columns_wrap {
         float: left;
         display: block;
-        margin-right: 3.57866%;
+        margin-right: 3.5786636068%;
         width: 100%; }
         .live_stream .columns_wrap:last-child {
           margin-right: 0; } }
@@ -10722,7 +10735,7 @@ form.pmpro_form #other_discount_code.input {
       .live_stream .column {
         float: left;
         display: block;
-        margin-right: 3.57866%;
+        margin-right: 3.5786636068%;
         width: 100%; }
         .live_stream .column:last-child {
           margin-right: 0; } }
@@ -10755,7 +10768,7 @@ form.pmpro_form #other_discount_code.input {
       .live_stream .column.two .live_chat {
         float: left;
         display: block;
-        margin-right: 2.35765%;
+        margin-right: 2.3576515979%;
         width: 100%;
         height: 100%; }
         .live_stream .column.two .live_chat:last-child {

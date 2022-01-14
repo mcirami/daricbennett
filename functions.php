@@ -199,8 +199,10 @@ add_action( 'wp_head', 'boiler_javascript_detection', 0 );
  * Enqueue scripts and styles
  */
 function boiler_scripts_styles() {
+
 	// style.css just initializes the theme. This is compiled from /sass
-	wp_enqueue_style( 'main-style',  get_template_directory_uri() . '/css/main.min.css');
+	wp_enqueue_style( 'main-style',  get_template_directory_uri() . '/css/main.min.css', array(), 5.0, 'all');
+/*	wp_enqueue_style( 'override-css',  get_template_directory_uri() . '/css/override.css');*/
 	
 	wp_enqueue_style( 'fancybox', get_template_directory_uri() . '/js/vendor/fancybox/jquery.fancybox.min.css');
 	
@@ -223,6 +225,7 @@ function boiler_scripts_styles() {
         wp_enqueue_script('filterizr', get_template_directory_uri() . '/js/vendor/jquery.filterizr.min.js', array('jquery'), '', true);
 
     }
+
 
 	if(is_user_logged_in()) {
 		wp_localize_script( 'main_js', 'myAjaxurl', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );

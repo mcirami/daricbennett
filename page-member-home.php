@@ -31,9 +31,6 @@
 			 	<div class="container">
 				 	
 				 	<div class="member_home full_width">
-					    <div class="banner_wrap full_width">
-						    <a target="_blank" href="https://teespring.com/bassnationtshirt?pr=BASS25"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/banner.jpg"/></a>
-					    </div>
 					 	<?php if ($current_user->user_firstname !== '') : ?>
 				 			<h2> Welcome To Daric Bennett's Bass Nation, <?php echo $current_user->user_firstname; ?>!</h2>
 				 		<?php else : ?>
@@ -43,6 +40,10 @@
 				 		<?php if ($username === "admin" || $username === "mat@77jef@79") : ?>
 				 			<a style="text-align: center;" class="full_width" href="/wp-admin">Admin</a>
 				 		<?php endif; ?>
+					    <!--<div class="banner_wrap full_width">
+						    <a target="_blank" href="https://teespring.com/bassnationtshirt?pr=BASS25"><img src="<?php /*echo esc_url( get_template_directory_uri() ); */?>/images/banner.jpg"/></a>
+					    </div>-->
+					    <div class="fb-group" style="margin: 20px 0;" data-href="https://www.facebook.com/groups/3889857837810354/" data-width="500" data-show-social-context="false" data-show-metadata="true"><blockquote cite="https://www.facebook.com/groups/3889857837810354/" class="fb-xfbml-parse-ignore">Bass Nation Fanatics</blockquote></div>
 				 		<div class="content_wrap full_width">
 					 		<div class="column">
 						 		<div class="heading full_width">

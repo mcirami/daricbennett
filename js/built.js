@@ -418,11 +418,11 @@ var loadReload = function() {
 
         $('.mejs-overlay').html('<p>Your file is converting, please be patient!<p>');
     }
-
+/*
     if ($.browser.msie && $.browser.version === 10) {
         $('.home_section .hero input[type=submit]').addClass('ie10');
     }
-
+*/
     if ($('.rtm-bbp-container').length) {
         $('.rtm-bbp-container').parentsUntil('.odd').addClass('attach');
         $('.rtm-bbp-container').parentsUntil('.even').addClass('attach');
@@ -685,11 +685,13 @@ var loadReload = function() {
 
 
     if (currentPage.pageName === 'Lessons') {
-        var filterizr = $('.filtr-container');
-
-        filterizr.filterizr('setOptions', {
-            layout: 'sameSize',
+        var filterizrContainer = $('.filtr-container').filterizr({
+            layout: 'sameSize'
         });
+
+        /*filterizrContainer.filterizr('setOptions', {
+            layout: 'sameSize',
+        });*/
     }
 
     $('.filter_list li').click(function () {
@@ -894,14 +896,17 @@ var loadReload = function() {
             }, 800);
         })
     }
-    if (currentPage.pageName === 'Lessons') {
-        window.onload = addListeners();
-    }
+    /*
+		if (currentPage.pageName === 'Lessons') {
+			window.onload = addListeners();
+		}
 
-    function addListeners(){
-        document.getElementById('metro_wrap').addEventListener('mousedown', mouseDown, false);
-        window.addEventListener('mouseup', mouseUp, false);
-    }
+
+		function addListeners(){
+			document.getElementById('metro_wrap').addEventListener('mousedown', mouseDown, false);
+			window.addEventListener('mouseup', mouseUp, false);
+		}
+
 
     function mouseUp()
     {
@@ -918,6 +923,7 @@ var loadReload = function() {
         div.style.top = e.clientY + 'px';
         div.style.left = e.clientX + 'px';
     }
+    */
 });
 
 

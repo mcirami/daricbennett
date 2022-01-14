@@ -228,25 +228,25 @@
                             </h3>-->
                             <h3>Complete The Form To Start Your Free Trial!</h3>
 	                        <!-- DISCOUNT CODE FORM-->
-	                        <!--<div class="discount_form">
-		                        <?php /*if($pmpro_show_discount_code) { */?>
-			                        <?php /*if($discount_code && !$pmpro_review) { */?>
-				                        <p id="other_discount_code_p" class="pmpro_small"><a id="other_discount_code_a" href="#discount_code"><?php /*_e('Click here to change your discount code.', 'paid-memberships-pro' );*/?></a></p>
-			                        <?php /*} elseif(!$pmpro_review) { */?>
-				                        <p id="other_discount_code_p" class="pmpro_small"><?php /*_e('Do you have a discount code?', 'paid-memberships-pro' );*/?> <a id="other_discount_code_a" href="#discount_code"><?php /*_e('Click here to enter your discount code', 'paid-memberships-pro' );*/?></a>.</p>
-			                        <?php /*} elseif($pmpro_review && $discount_code) { */?>
-				                        <p><strong><?php /*_e('Discount Code', 'paid-memberships-pro' );*/?>:</strong> <?php /*echo $discount_code*/?></p>
-			                        <?php /*} */?>
-		                        <?php /*} */?>
+	                        <div class="discount_form">
+		                        <?php if($pmpro_show_discount_code) { ?>
+			                        <?php if($discount_code && !$pmpro_review) { ?>
+				                        <p id="other_discount_code_p" class="pmpro_small"><a id="other_discount_code_a" href="#discount_code"><?php _e('Click here to change your discount code.', 'paid-memberships-pro' );?></a></p>
+			                        <?php } elseif(!$pmpro_review) { ?>
+				                        <p id="other_discount_code_p" class="pmpro_small"><?php _e('Do you have a discount code?', 'paid-memberships-pro' );?> <a id="other_discount_code_a" href="#discount_code"><?php _e('Click here to enter your discount code', 'paid-memberships-pro' );?></a>.</p>
+			                        <?php } elseif($pmpro_review && $discount_code) { ?>
+				                        <p><strong><?php _e('Discount Code', 'paid-memberships-pro' );?>:</strong> <?php echo $discount_code?></p>
+			                        <?php } ?>
+		                        <?php } ?>
 
-		                        <?php /*if($pmpro_show_discount_code) { */?>
+		                        <?php if($pmpro_show_discount_code) { ?>
 			                        <div id="other_discount_code_tr" style="display: none;">
-				                        <label for="other_discount_code"><?php /*_e('Discount Code', 'paid-memberships-pro' );*/?></label>
-				                        <input id="other_discount_code" name="other_discount_code" type="text" class="input <?php /*echo pmpro_getClassForField("other_discount_code");*/?>" size="20" value="<?php /*echo esc_attr($discount_code); */?>" />
-				                        <input class="button yellow" type="button" name="other_discount_code_button" id="other_discount_code_button" value="<?php /*_e('Apply', 'paid-memberships-pro' );*/?>" />
+				                        <label for="other_discount_code"><?php _e('Discount Code', 'paid-memberships-pro' );?></label>
+				                        <input id="other_discount_code" name="other_discount_code" type="text" class="input <?php echo pmpro_getClassForField("other_discount_code");?>" size="20" value="<?php echo esc_attr($discount_code); ?>" />
+				                        <input class="button red" type="button" name="other_discount_code_button" id="other_discount_code_button" value="<?php _e('Apply', 'paid-memberships-pro' );?>" />
 			                        </div>
-		                        <?php /*} */?>
-	                        </div>-->
+		                        <?php } ?>
+	                        </div>
 
 	                        <?php if($pmpro_show_discount_code) { ?>
 		                        <script>
@@ -765,6 +765,7 @@
 						    ?>
 						    <span id="pmpro_submit_span">
                                 <input type="hidden" name="submit-checkout" value="1" />
+                                <!--<span class="g-recaptcha" data-sitekey="6LdoYZsUAAAAAC4WslQ2b7cScgzpvixYhRk_QoLF"></span>-->
                                 <input type="submit" class="pmpro_btn pmpro_btn-submit-checkout button red" value="<?php if($pmpro_requirebilling) { _e('Submit and Check Out', 'paid-memberships-pro' ); } else { _e('Submit and Confirm', 'paid-memberships-pro' );}?>" />
                             </span>
                     <p class="terms">By clicking "Start Your Free Trial Today!" you agree to our <a target="_blank" href="<?php echo $webroot; ?>privacy">Privacy Policy</a>, <a target="_blank" href="<?php echo $webroot?>terms-of-use">Terms of Service</a> and <a target="_blank" href="<?php echo $webroot?>terms-of-use/#refund">Refund Policy</a>.

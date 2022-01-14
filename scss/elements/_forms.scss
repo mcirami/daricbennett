@@ -957,9 +957,11 @@ form.pmpro_form .pmpro_checkout-fields div {
 
 form.pmpro_form #other_discount_code.input {
     max-width: 75%;
+	margin-right: 1%;
 
     @include media($mobile) {
         max-width: unset;
+		margin-bottom: 10px;
     }
 }
 
@@ -970,8 +972,16 @@ form.pmpro_form #other_discount_code.input {
     border-bottom: 4px solid red;
 
     input[type="button"] {
-        width: 22%;
+        width: 24%;
         float: left;
+		background: $red !important;
+		color: $white !important;
+		margin-left: 0 !important;
+		text-decoration: none !important;
+
+		&:hover {
+			background: $darkRed !important;
+		}
 
         @include media($mobile) {
             margin-top: 20px;
@@ -1022,9 +1032,17 @@ form.pmpro_form #other_discount_code.input {
 	}
 }
 
+#pmpro_user_fields h3 {
+	display: none;
+}
+
 #pmpro_pricing_fields {
 	padding: 0;
 	text-align: left;
+
+	.pmpro_checkout-fields, .pmpro_checkout-h3-msg a{
+		display:none;
+	}
 	
 	#other_discount_code_tr {
 		
