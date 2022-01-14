@@ -6404,10 +6404,7 @@ ul.member_menu {
 .forum_wrapper {
   padding: 40px 0;
   color: #131313;
-  font-family: 'robotoregular', sans-serif;
-  /*.bbp-attachments-form {
-  	display: none;
-  }*/ }
+  font-family: 'robotoregular', sans-serif; }
   .forum_wrapper .mejs-overlay {
     display: none; }
   .forum_wrapper .forums_home {

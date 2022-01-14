@@ -419,10 +419,18 @@ var loadReload = function() {
         $('.mejs-overlay').html('<p>Your file is converting, please be patient!<p>');
     }
 /*
+<<<<<<< HEAD
+=======
+
+>>>>>>> ecb0972941610e33c66aec8ee6b3cf68c4480a61
     if ($.browser.msie && $.browser.version === 10) {
         $('.home_section .hero input[type=submit]').addClass('ie10');
     }
 */
+<<<<<<< HEAD
+=======
+
+>>>>>>> ecb0972941610e33c66aec8ee6b3cf68c4480a61
     if ($('.rtm-bbp-container').length) {
         $('.rtm-bbp-container').parentsUntil('.odd').addClass('attach');
         $('.rtm-bbp-container').parentsUntil('.even').addClass('attach');
