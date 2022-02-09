@@ -8181,8 +8181,7 @@ form.pmpro_form .pmpro_checkout-fields div {
   display: block;
   margin-right: 2.3576515979%;
   width: 100%;
-  color: #000;
-  background: #fff; }
+  color: #000; }
   .pmpro_form:last-child {
     margin-right: 0; }
   .pmpro_form.checkout_page {
@@ -8340,7 +8339,7 @@ form.pmpro_form .pmpro_checkout-fields div {
     .pmpro_form #pmpro_billing_address_fields label {
       margin-top: 10px; }
     .pmpro_form #pmpro_billing_address_fields .half_width {
-      width: 40%;
+      width: 48%;
       float: left; }
       @media screen and (max-width: 768px) {
         .pmpro_form #pmpro_billing_address_fields .half_width {
@@ -8378,14 +8377,14 @@ form.pmpro_form .pmpro_checkout-fields div {
     .pmpro_form #pmpro_payment_information_fields .pmpro_thead-msg:last-child {
       margin-right: 0; }
   .pmpro_form #pmpro_payment_information_fields .half_width {
-    width: 40%;
+    width: 48%;
     float: left; }
     .pmpro_form #pmpro_payment_information_fields .half_width.right {
       float: right; }
   .pmpro_form #pmpro_payment_information_fields .pmpro_thead-msg {
     font-size: 13px; }
   .pmpro_form #pmpro_payment_information_fields .pmpro_payment-card-type {
-    width: 40%;
+    width: 48%;
     float: left;
     margin: 0 0 5px; }
     @media screen and (max-width: 768px) {
@@ -8394,7 +8393,7 @@ form.pmpro_form .pmpro_checkout-fields div {
     .pmpro_form #pmpro_payment_information_fields .pmpro_payment-card-type select {
       width: 100%; }
   .pmpro_form #pmpro_payment_information_fields .pmpro_payment-account-number {
-    width: 40%;
+    width: 48%;
     float: right;
     margin: 0 0 5px; }
     @media screen and (max-width: 768px) {
@@ -8405,21 +8404,15 @@ form.pmpro_form .pmpro_checkout-fields div {
     float: left;
     margin: 0 0 5px; }
     .pmpro_form #pmpro_payment_information_fields .pmpro_payment-expiration select {
-      width: 40%; }
-      @media screen and (max-width: 768px) {
-        .pmpro_form #pmpro_payment_information_fields .pmpro_payment-expiration select {
-          width: 48%; } }
+      width: 48%; }
       .pmpro_form #pmpro_payment_information_fields .pmpro_payment-expiration select#ExpirationMonth {
         float: left; }
       .pmpro_form #pmpro_payment_information_fields .pmpro_payment-expiration select#ExpirationYear {
         float: right; }
   .pmpro_form #pmpro_payment_information_fields .pmpro_payment-cvv {
-    width: 40%;
+    width: 48%;
     float: left;
     margin: 0 0 5px; }
-    @media screen and (max-width: 768px) {
-      .pmpro_form #pmpro_payment_information_fields .pmpro_payment-cvv {
-        width: 48%; } }
   .pmpro_form #pmpro_payment_information_fields .pmpro_sslseal a {
     float: right; }
   .pmpro_form #pmpro_payment_information_fields .pmpro_sslseal img {
@@ -8581,7 +8574,7 @@ form.pmpro_form #other_discount_code.input {
 #pmpro_pricing_fields {
   padding: 0;
   text-align: left; }
-  #pmpro_pricing_fields .pmpro_checkout-fields, #pmpro_pricing_fields .pmpro_checkout-h3-msg a {
+  #pmpro_pricing_fields h3, #pmpro_pricing_fields #pmpro_level_cost, #pmpro_pricing_fields .no_show {
     display: none; }
   #pmpro_pricing_fields #other_discount_code_tr label {
     font-family: 'robotolight';
@@ -8592,9 +8585,8 @@ form.pmpro_form #other_discount_code.input {
   #pmpro_pricing_fields #other_discount_code_tr td {
     padding: 0; }
   #pmpro_pricing_fields #other_discount_code_tr #other_discount_code {
-    width: 82%;
     float: left;
-    height: 35px;
+    height: 40px;
     margin-right: 1.2%;
     padding: 0 10px; }
     @media screen and (max-width: 1023px) {
@@ -8604,7 +8596,7 @@ form.pmpro_form #other_discount_code.input {
       #pmpro_pricing_fields #other_discount_code_tr #other_discount_code {
         height: 25px; } }
   #pmpro_pricing_fields #other_discount_code_tr #other_discount_code_button {
-    width: 16.8%;
+    width: 23.8%;
     float: left;
     border: none; }
 

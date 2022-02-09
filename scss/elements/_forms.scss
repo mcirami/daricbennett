@@ -548,7 +548,6 @@ form.pmpro_form .pmpro_checkout-fields div {
 .pmpro_form {
 	@include span-columns(12);
 	color: #000;
-	background: $white;
 	
 	&.checkout_page {
 		background: transparent;
@@ -719,7 +718,7 @@ form.pmpro_form .pmpro_checkout-fields div {
 		}
 		
 		.half_width {
-			width: 40%;
+			width: 48%;
 			float: left;
 			
 			@include media($mobile){
@@ -766,7 +765,7 @@ form.pmpro_form .pmpro_checkout-fields div {
 		}
 		
 		.half_width {
-			width: 40%;
+			width: 48%;
 			float: left;
 			
 			&.right {
@@ -779,7 +778,7 @@ form.pmpro_form .pmpro_checkout-fields div {
 		}
 		
 		.pmpro_payment-card-type {
-			width: 40%;
+			width: 48%;
 			float: left;
 			margin: 0 0 5px;
 			
@@ -793,7 +792,7 @@ form.pmpro_form .pmpro_checkout-fields div {
 		}
 		
 		.pmpro_payment-account-number {
-			width: 40%;
+			width: 48%;
 			float: right;
 			margin: 0 0 5px;
 			
@@ -808,11 +807,7 @@ form.pmpro_form .pmpro_checkout-fields div {
 			margin: 0 0 5px;
 			
 			select {
-				width: 40%;
-				
-				@include media($mobile){
-					width: 48%;
-				}
+				width: 48%;
 				
 				&#ExpirationMonth  {
 					float: left;
@@ -825,13 +820,9 @@ form.pmpro_form .pmpro_checkout-fields div {
 		}
 
 		.pmpro_payment-cvv {
-			width: 40%;
+			width: 48%;
 			float: left;
 			margin: 0 0 5px;
-			
-			@include media($mobile){
-				width: 48%;
-			}
 		}
 		
 		.pmpro_sslseal {
@@ -1040,7 +1031,7 @@ form.pmpro_form #other_discount_code.input {
 	padding: 0;
 	text-align: left;
 
-	.pmpro_checkout-fields, .pmpro_checkout-h3-msg a{
+	h3, #pmpro_level_cost, .no_show {
 		display:none;
 	}
 	
@@ -1059,9 +1050,8 @@ form.pmpro_form #other_discount_code.input {
 		}
 		
 		#other_discount_code {
-			width: 82%;
 			float: left;
-			height: 35px;
+			height: 40px;
 			margin-right: 1.2%;
 			padding: 0 10px;
 			
@@ -1075,7 +1065,7 @@ form.pmpro_form #other_discount_code.input {
 		}
 		
 		#other_discount_code_button {
-			width: 16.8%;
+			width: 23.8%;
 			float: left;
 			border: none;
 		}
