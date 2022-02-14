@@ -696,8 +696,14 @@ jQuery(document).ready(function($) {
 	    var videoTitle = $(this).data('title');
 	    var notation = $(this).data('notation');
 	    var postID = $(this).data('postid');
+	    var desc = $(this).data('desc');
 	    var favoriteButton = '';
 	    var ajaxURL = myAjaxurl.ajaxurl;
+        var videoDesc = "";
+
+	    if (desc) {
+	        videoDesc = '<div class="full_width description"><p>' + desc +'</p></div>'
+        }
 
 	    if (currentPage.postType !== "courses") {
 		    videoPlayer = $('#video_player').empty();
@@ -751,6 +757,7 @@ jQuery(document).ready(function($) {
 	        var html = '<div class="full_width lesson_title">' +
 		        '<h3>' + videoTitle + '</h3>' +
 		        '</div>' +
+                videoDesc +
 		        '<div class="content_wrap full_width">' +
 		        '<div class="video_iframe_wrap">' + favoriteButton + replaceVideo;
 

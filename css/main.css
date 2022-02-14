@@ -4609,6 +4609,10 @@ ul.member_menu {
         @media screen and (max-width: 768px) {
           .lessons_page #video_player .lesson_title h3, .lessons_page .course_video_player .lesson_title h3 {
             font-size: 21px; } }
+    .lessons_page #video_player .description, .lessons_page .course_video_player .description {
+      padding: 20px 40px; }
+      .lessons_page #video_player .description p, .lessons_page .course_video_player .description p {
+        color: #fff; }
     .lessons_page #video_player .replace_link, .lessons_page .course_video_player .replace_link {
       padding: 10px 0;
       text-align: center;

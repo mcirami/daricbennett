@@ -11,6 +11,7 @@
     $type = null;
     $videoLink = get_field('member_lesson_link');
     $id = get_the_ID();
+	$desc = get_field('lesson_description');
 
     if (strpos($videoLink, "youtube") !== false) {
         $str = explode("embed/", $videoLink);
@@ -98,22 +99,37 @@
 
             <?php if ($type == 'youtube') : ?>
 
-                    <a id="<?php echo $hash; ?>" class="play_video" data-type="<?php echo "youtube";?>" data-src="<?php echo $videoLink; ?>/?rel=0&showinfo=0&autoplay=1" data-title="<?php echo the_title();?>" data-postid="<?php echo $id; ?>" href="#<?php echo $hash;?>">
+                    <a id="<?php echo $hash; ?>" class="play_video"
+                       href="#<?php echo $hash;?>"
+                       data-type="<?php echo "youtube";?>"
+                       data-src="<?php echo $videoLink; ?>/?rel=0&showinfo=0&autoplay=1"
+                       data-title="<?php echo the_title();?>" data-postid="<?php echo $id; ?>"
+                       data-desc="<?php echo $desc ?>"
+                    >
 
             <?php elseif ($type == 'vimeo') : ?>
 
-                    <a id="<?php echo $hash; ?>" class="play_video" data-type="<?php echo "vimeo";?>" data-src="<?php echo $videoLink; ?>/?autoplay=1" data-title="<?php echo the_title();?>" data-postid="<?php echo $id; ?>" href="#<?php echo $hash;?>">
+                    <a id="<?php echo $hash; ?>" class="play_video"
+                       href="#<?php echo $hash;?>"
+                       data-type="<?php echo "vimeo";?>"
+                       data-src="<?php echo $videoLink; ?>/?autoplay=1"
+                       data-title="<?php echo the_title();?>"
+                       data-postid="<?php echo $id; ?>"
+                       data-desc="<?php echo $desc ?>"
+                    >
 
             <?php elseif ($type == 'soundslice') : ?>
 
                     <a id="<?php echo $hash; ?>" class="play_video"
+                       href="#<?php echo $hash;?>"
                        data-replace="<?php the_field('vimeo_link'); ?>"
                        data-type="<?php echo "soundslice_video";?>"
                        data-src="<?php echo $embedCode; ?>"
                        data-title="<?php echo the_title();?>"
                        data-notation="<?php echo $display; ?>"
                        data-postid="<?php echo $id; ?>"
-                       href="#<?php echo $hash;?>">
+                       data-desc="<?php echo $desc ?>"
+                    >
 
             <?php endif; ?><!-- type -->
 

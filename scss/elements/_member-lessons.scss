@@ -99,6 +99,14 @@
             }
         }
 
+        .description {
+            padding: 20px 40px;
+
+            p {
+                color: $white;
+            }
+        }
+
         .replace_link {
             padding: 10px 0;
             text-align: center;
