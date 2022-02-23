@@ -40,15 +40,6 @@ body {
 	position: relative;
 	cursor: pointer;
 
-	@include media($mobile) {
-		padding-bottom: 70.25%
-	}
-
-	@include media($smallMobile) {
-		padding-bottom: 90.25%;
-	}
-
-	
 	iframe {
 		position: absolute;
 		top: 0;

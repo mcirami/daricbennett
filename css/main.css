@@ -1417,12 +1417,6 @@ body {
   cursor: pointer; }
   .video_wrapper:last-child {
     margin-right: 0; }
-  @media screen and (max-width: 768px) {
-    .video_wrapper {
-      padding-bottom: 70.25%; } }
-  @media screen and (max-width: 550px) {
-    .video_wrapper {
-      padding-bottom: 90.25%; } }
   .video_wrapper iframe {
     position: absolute;
     top: 0;
@@ -4591,14 +4585,6 @@ ul.member_menu {
       @media screen and (max-width: 768px) {
         .lessons_page #video_player .content_wrap, .lessons_page .course_video_player .content_wrap {
           padding: 0 25px; } }
-      .lessons_page #video_player .content_wrap .simplefavorite-button, .lessons_page .course_video_player .content_wrap .simplefavorite-button {
-        float: left;
-        margin-top: 10px;
-        z-index: 1;
-        position: absolute; }
-        @media screen and (max-width: 550px) {
-          .lessons_page #video_player .content_wrap .simplefavorite-button, .lessons_page .course_video_player .content_wrap .simplefavorite-button {
-            position: relative; } }
     .lessons_page #video_player .lesson_title, .lessons_page .course_video_player .lesson_title {
       text-align: center;
       color: #fff;
@@ -4610,9 +4596,17 @@ ul.member_menu {
           .lessons_page #video_player .lesson_title h3, .lessons_page .course_video_player .lesson_title h3 {
             font-size: 21px; } }
     .lessons_page #video_player .description, .lessons_page .course_video_player .description {
-      padding: 20px 40px; }
+      padding: 20px 40px 0; }
       .lessons_page #video_player .description p, .lessons_page .course_video_player .description p {
+        font-size: 20px;
+        line-height: 1.6;
         color: #fff; }
+        @media screen and (max-width: 1023px) {
+          .lessons_page #video_player .description p, .lessons_page .course_video_player .description p {
+            font-size: 18px; } }
+        @media screen and (max-width: 768px) {
+          .lessons_page #video_player .description p, .lessons_page .course_video_player .description p {
+            font-size: 16px; } }
     .lessons_page #video_player .replace_link, .lessons_page .course_video_player .replace_link {
       padding: 10px 0;
       text-align: center;
@@ -4646,8 +4640,6 @@ ul.member_menu {
             font-size: 14px; } }
         .lessons_page #video_player .links_wrap a:hover, .lessons_page .course_video_player .links_wrap a:hover {
           color: #ddb72e; }
-        .lessons_page #video_player .links_wrap a:first-child, .lessons_page .course_video_player .links_wrap a:first-child {
-          margin-right: 20px; }
         .lessons_page #video_player .links_wrap a.keyboard_link, .lessons_page .course_video_player .links_wrap a.keyboard_link {
           margin-right: 0; }
     .lessons_page #video_player .video_iframe_wrap, .lessons_page .course_video_player .video_iframe_wrap {
@@ -4669,6 +4661,26 @@ ul.member_menu {
           padding-bottom: 0; }
           .lessons_page #video_player .video_iframe_wrap:last-child, .lessons_page .course_video_player .video_iframe_wrap:last-child {
             margin-right: 0; } }
+      .lessons_page #video_player .video_iframe_wrap .top_row, .lessons_page .course_video_player .video_iframe_wrap .top_row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        align-items: center;
+        -webkit-align-items: center;
+        padding: 20px 0; }
+        .lessons_page #video_player .video_iframe_wrap .top_row .button_wrap, .lessons_page .course_video_player .video_iframe_wrap .top_row .button_wrap {
+          width: 50%; }
+        .lessons_page #video_player .video_iframe_wrap .top_row .links_wrap, .lessons_page .course_video_player .video_iframe_wrap .top_row .links_wrap {
+          width: 50%;
+          text-align: right; }
     .lessons_page #video_player .video_content_wrap, .lessons_page .course_video_player .video_content_wrap {
       float: left;
       display: block;
@@ -5326,7 +5338,8 @@ ul.member_menu {
     .lessons_page.courses .row .column h1 {
       margin-top: 0;
       font-size: 28px;
-      margin-bottom: 5px; }
+      margin-bottom: 5px;
+      line-height: 1.2; }
       @media screen and (max-width: 1023px) {
         .lessons_page.courses .row .column h1 {
           font-size: 26px; } }

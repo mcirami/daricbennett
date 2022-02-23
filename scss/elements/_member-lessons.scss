@@ -71,17 +71,6 @@
             @include media($mobile) {
                 padding: 0 25px;
             }
-
-            .simplefavorite-button {
-                float: left;
-                margin-top: 10px;
-                z-index: 1;
-                position: absolute;
-
-                @include media($smallMobile) {
-                    position: relative;
-                }
-            }
         }
 
         .lesson_title {
@@ -100,10 +89,20 @@
         }
 
         .description {
-            padding: 20px 40px;
+            padding: 20px 40px 0;
 
             p {
+                font-size: 20px;
+                line-height: 1.6;
                 color: $white;
+
+                @include media($tablet) {
+                    font-size: 18px;
+                }
+
+                @include media($mobile) {
+                    font-size: 16px;
+                }
             }
         }
 
@@ -146,10 +145,6 @@
                     color: $yellow;
                 }
 
-                &:first-child {
-                    margin-right: 20px;
-                }
-
                 &.keyboard_link {
                     margin-right: 0;
                 }
@@ -165,6 +160,32 @@
                 @include span-columns(8);
                 padding-right: 2.5%;
                 padding-bottom: 0;
+            }
+
+            .top_row {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                -webkit-justify-content: space-between;
+                align-items: center;
+                -webkit-align-items: center;
+                padding: 20px 0;
+
+                .button_wrap {
+                    width: 50%;
+                }
+
+                .links_wrap {
+                    width: 50%;
+                    text-align: right;
+                }
             }
         }
 
@@ -920,6 +941,7 @@
                 margin-top: 0;
                 font-size: 28px;
                 margin-bottom: 5px;
+                line-height: 1.2;
 
                 @include media($tablet) {
                     font-size: 26px;

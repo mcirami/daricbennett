@@ -786,7 +786,7 @@ var loadReload = function() {
 	        if (videoType === "soundslice_video") {
 
 		        var replaceVideo =
-			        '<p class="replace_link">Video trouble? <a class="replace_video" href="#" data-replace="' + replaceVideoLink + '">Use this LINK!</a></p>';
+			        '<div class="link_wrap"><p class="replace_link">Video trouble? <a class="replace_video" href="#" data-replace="' + replaceVideoLink + '">Use this LINK!</a></p></div>';
 
 	        } else {
 		        replaceVideo = "";
@@ -798,13 +798,20 @@ var loadReload = function() {
 		        '</div>' +
                 videoDesc +
 		        '<div class="content_wrap full_width">' +
-		        '<div class="video_iframe_wrap">' + favoriteButton + replaceVideo;
+		            '<div class="video_iframe_wrap">' +
+                        '<div class="top_row">' +
+                            '<div class="button_wrap">' +
+                                favoriteButton +
+                            '</div>';
 
 	        if (fileElements) {
-		        html +=  '<div class="links_wrap">' +
-			        fileElements +
+		        html +=
+                    '<div class="links_wrap">' +
+			            fileElements +
 			        '</div>';
 	        }
+
+            html += replaceVideo + '</div>';
 
 	        if (notation === 'yes') {
 		        html += '<div class="video_wrapper video_notation">';
