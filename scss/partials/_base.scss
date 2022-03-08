@@ -243,7 +243,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 }
 
 .page_content {
-	padding-top: 180px;
+	padding-top: 200px;
 	
 	@include media($tablet){
 		padding-top: 168px;
@@ -266,14 +266,14 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 	}
 	
 	&.member {
-		padding-top: 98px;
+		padding-top: 115px;
 
 		@include media($tablet) {
-			padding-top: 90px;
+			padding-top: 107px;
 		}
 		
 		@include media($mobile){
-			padding-top: 76px;
+			padding-top: 90px;
 		}
 	}
 }

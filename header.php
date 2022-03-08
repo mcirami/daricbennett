@@ -170,66 +170,65 @@ $username = $current_user->user_login;
 			<div class="header_top">
 				<div class="container">
 					
-						<?php if (have_rows('top_header', 'options')) : ?>
-						
-							<?php while (have_rows('top_header', 'options')) : the_row(); ?>
-						
-								<?php if (get_row_layout() == 'without_buttons'): ?>
-								
-									<div class="content_wrap">
-										
-										<p class="desktop"><?php echo the_sub_field('header_text_desktop', 'options'); ?>
-										
-											<?php if (get_sub_field('header_popup', 'options')) : ?>
-											
-												<a class="fancybox" href="#email_join"><?php echo the_sub_field('link_text', 'options'); ?></a>
-												
-											<?php else: ?>
-											
-												<a  href="<?php echo the_sub_field('link', 'options'); ?>"><?php echo the_sub_field('link_text', 'options'); ?></a>
-												
-											<?php endif; ?>
-										</p>
-										
-										<p class="mobile"><?php echo the_sub_field('header_text_mobile', 'options'); ?><br>
-										
-											<?php if (get_sub_field('header_popup', 'options')) : ?>
-											
-												<a class="fancybox" href="#email_join"><?php echo the_sub_field('link_text', 'options'); ?></a>
-												
-											<?php else: ?>
-											
-												<a  href="<?php echo the_sub_field('link', 'options'); ?>"><?php echo the_sub_field('link_text', 'options'); ?></a>
-												
-											<?php endif; ?>
-										
-										</p>
-										
-									</div>
-								<?php elseif( get_row_layout() == 'with_buttons'): ?>
-								
-										<div class="content_wrap_buttons">
-											<p class="desktop"><?php echo the_sub_field('header_text_desktop', 'options'); ?><a href="<?php echo the_sub_field('link', 'options'); ?>"><?php echo the_sub_field('text_link', 'options'); ?></a></p>
-											<p class="mobile"><?php echo the_sub_field('header_text_mobile', 'options'); ?><a href="<?php echo the_sub_field('link', 'options'); ?>"><?php echo the_sub_field('text_link', 'options'); ?></a></p>
-											
-											<div class="buttons">
-												<div class="button_wrap">
-													<a class="button white" href="<?php echo the_sub_field('white_button_link', 'options'); ?>"><?php echo the_sub_field('white_button_text', 'options'); ?></a>
-												</div>
-												<div class="button_wrap">
-													<a class="button dark_red" href="<?php echo the_sub_field('red_button_link','options'); ?>"><?php echo the_sub_field('red_button_text', 'options')?></a>
-												</div>
+					<?php if (have_rows('top_header', 'options')) : ?>
+
+						<?php while (have_rows('top_header', 'options')) : the_row(); ?>
+
+							<?php if (get_row_layout() == 'without_buttons'): ?>
+
+								<div class="content_wrap">
+
+									<p class="desktop"><?php echo the_sub_field('header_text_desktop', 'options'); ?>
+
+										<?php if (get_sub_field('header_popup', 'options')) : ?>
+
+											<a class="fancybox" href="#email_join"><?php echo the_sub_field('link_text', 'options'); ?></a>
+
+										<?php else: ?>
+
+											<a  href="<?php echo the_sub_field('link', 'options'); ?>"><?php echo the_sub_field('link_text', 'options'); ?></a>
+
+										<?php endif; ?>
+									</p>
+
+									<p class="mobile"><?php echo the_sub_field('header_text_mobile', 'options'); ?><br>
+
+										<?php if (get_sub_field('header_popup', 'options')) : ?>
+
+											<a class="fancybox" href="#email_join"><?php echo the_sub_field('link_text', 'options'); ?></a>
+
+										<?php else: ?>
+
+											<a  href="<?php echo the_sub_field('link', 'options'); ?>"><?php echo the_sub_field('link_text', 'options'); ?></a>
+
+										<?php endif; ?>
+
+									</p>
+
+								</div>
+							<?php elseif( get_row_layout() == 'with_buttons'): ?>
+
+									<div class="content_wrap_buttons">
+										<p class="desktop"><?php echo the_sub_field('header_text_desktop', 'options'); ?><a href="<?php echo the_sub_field('link', 'options'); ?>"><?php echo the_sub_field('text_link', 'options'); ?></a></p>
+										<p class="mobile"><?php echo the_sub_field('header_text_mobile', 'options'); ?><a href="<?php echo the_sub_field('link', 'options'); ?>"><?php echo the_sub_field('text_link', 'options'); ?></a></p>
+
+										<div class="buttons">
+											<div class="button_wrap">
+												<a class="button white" href="<?php echo the_sub_field('white_button_link', 'options'); ?>"><?php echo the_sub_field('white_button_text', 'options'); ?></a>
+											</div>
+											<div class="button_wrap">
+												<a class="button dark_red" href="<?php echo the_sub_field('red_button_link','options'); ?>"><?php echo the_sub_field('red_button_text', 'options')?></a>
 											</div>
 										</div>
-							    <?php endif;
-						
-						    endwhile;
-						
-						else : ?>
+									</div>
+						    <?php endif;
 
-							// no layouts found
-						<?php endif; ?>
-						
+					    endwhile;
+
+					else : ?>
+
+						// no layouts found
+					<?php endif; ?>
 					
 				</div><!-- container -->
 			</div><!-- header top -->
@@ -239,32 +238,34 @@ $username = $current_user->user_login;
 		<div class="header_bottom <?php if(!is_front_page() && !is_page(5)){ echo "background"; } ?>">
 			<?php wp_reset_query(); ?>
 			<div class="container">
-				<?php if (is_user_logged_in()): ?>
-					<a href="/member-home"><h1 class="logo"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" /></h1></a>
-				<?php else : ?>
-					<a href="/"><h1 class="logo"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" /></h1></a>
-				<?php endif; ?>
+				<div class="content_wrap">
+					<?php if (is_user_logged_in()): ?>
+						<a href="/member-home"><h1 class="logo"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" /></h1></a>
+					<?php else : ?>
+						<a href="/"><h1 class="logo"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" /></h1></a>
+					<?php endif; ?>
 
-				<a class="mobile_menu_icon" href="#">
-					<span></span>
-					<span></span>
-					<span></span>
-				</a>
-				<div class="menu">
+					<a class="mobile_menu_icon" href="#">
+						<span></span>
+						<span></span>
+						<span></span>
+					</a>
+					<div class="menu">
 
-						<nav role="navigation">
+							<nav role="navigation">
 
-							<?php if (is_user_logged_in()): ?>
-							
-									<?php wp_nav_menu( array( 'theme_location' => 'members', 'container' => false, 'menu_class' => 'member_menu' ) ); // remember to assign a menu in the admin to remove the container div ?
-									
-							else : ?>
-							
-								<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'header_menu' ) ); // remember to assign a menu in the admin to remove the container div ?>
-								
-							<?php endif; ?>
-							
-						</nav>
+								<?php if (is_user_logged_in()): ?>
+
+										<?php wp_nav_menu( array( 'theme_location' => 'members', 'container' => false, 'menu_class' => 'member_menu' ) ); // remember to assign a menu in the admin to remove the container div ?
+
+								else : ?>
+
+									<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'header_menu' ) ); // remember to assign a menu in the admin to remove the container div ?>
+
+								<?php endif; ?>
+
+							</nav>
+					</div>
 				</div>
 			</div>
 		</div>

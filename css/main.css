@@ -1583,7 +1583,7 @@ img {
       padding-top: 70px; } }
 
 .page_content {
-  padding-top: 180px; }
+  padding-top: 200px; }
   @media screen and (max-width: 1023px) {
     .page_content {
       padding-top: 168px; } }
@@ -1598,13 +1598,13 @@ img {
     .page_content .wrap header {
       display: none; }
   .page_content.member {
-    padding-top: 98px; }
+    padding-top: 115px; }
     @media screen and (max-width: 1023px) {
       .page_content.member {
-        padding-top: 90px; } }
+        padding-top: 107px; } }
     @media screen and (max-width: 768px) {
       .page_content.member {
-        padding-top: 76px; } }
+        padding-top: 90px; } }
 
 .mc4wp-form {
   position: relative;
@@ -1906,7 +1906,7 @@ h3, p {
   font-weight: 200; }
 
 .container {
-  max-width: 80.2em;
+  max-width: 98.2em;
   margin-left: auto;
   margin-right: auto;
   padding: 0 20px; }
@@ -2104,9 +2104,23 @@ h3, p {
       position: relative; }
     #global_header .header_bottom.home_background {
       background: #000; }
+    #global_header .header_bottom .content_wrap {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      -webkit-justify-content: space-between;
+      align-items: center;
+      -webkit-align-items: center; }
     #global_header .header_bottom .logo {
       float: left;
-      width: 300px;
+      width: 275px;
       -webkit-transition: .5s ease-in-out;
       -moz-transition: .5s ease-in-out;
       -o-transition: .5s ease-in-out;
@@ -2127,17 +2141,10 @@ h3, p {
             width: 150px;
             margin: 10px 0; } }
     #global_header .header_bottom .menu {
-      float: right;
-      padding-top: 24px;
       -webkit-transition: .5s ease-in-out;
       -moz-transition: .5s ease-in-out;
       -o-transition: .5s ease-in-out;
       transition: .5s ease-in-out; }
-      #global_header .header_bottom .menu.scroll {
-        padding-top: 8px; }
-      @media screen and (max-width: 1023px) {
-        #global_header .header_bottom .menu {
-          padding-top: 14px; } }
       @media screen and (max-width: 768px) {
         #global_header .header_bottom .menu {
           display: none; } }
@@ -2272,7 +2279,6 @@ h3, p {
   width: 30px;
   height: 24px;
   float: right;
-  margin-top: 25px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -2282,9 +2288,6 @@ h3, p {
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer; }
-  @media screen and (max-width: 768px) {
-    .mobile_menu_icon.scroll {
-      margin-top: 15px; } }
   .mobile_menu_icon span {
     position: absolute;
     height: 5px;
@@ -2403,7 +2406,7 @@ h3, p {
 ul.member_menu {
   position: relative; }
   ul.member_menu > li {
-    padding: 15px 0 35px 0 !important;
+    padding: 15px 0 15px 0 !important;
     position: relative; }
     @media screen and (max-width: 768px) {
       ul.member_menu > li {
@@ -2427,8 +2430,6 @@ ul.member_menu {
       color: #ddb72e; }
     ul.member_menu > li.current-menu-parent ul li.current_page_item a:hover {
       color: #fff; }
-    ul.member_menu > li.scroll {
-      padding: 15px 0 21px 0 !important; }
     ul.member_menu > li a {
       padding: 0 18px; }
       @media screen and (max-width: 1280px) {
@@ -2907,7 +2908,7 @@ ul.member_menu {
           #global_footer .content_wrap .logo:last-child {
             margin-right: 0; } }
       #global_footer .content_wrap .logo img {
-        width: auto; }
+        width: 350px; }
         @media screen and (max-width: 1023px) {
           #global_footer .content_wrap .logo img {
             width: 280px; } }
@@ -8827,6 +8828,12 @@ form.pmpro_form #other_discount_code.input {
   @media screen and (max-width: 550px) {
     .banner_wrap {
       padding: 0 2%; } }
+
+.fb_iframe_widget > span {
+  max-width: 100%; }
+  .fb_iframe_widget > span iframe {
+    max-width: 100%;
+    width: 100% !important; }
 
 .profile_wrap {
   float: left;

@@ -163,10 +163,26 @@
 		&.home_background {
 			background: #000;
 		}
+
+		.content_wrap {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: horizontal;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: row;
+			flex-direction: row;
+			-ms-flex-wrap: nowrap;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			-webkit-justify-content: space-between;
+			align-items: center;
+			-webkit-align-items: center;
+		}
 		
 		.logo {
 			float: left;
-			width: 300px;
+			width: 275px;
 			-webkit-transition: .5s ease-in-out;
 			-moz-transition: .5s ease-in-out;
 			-o-transition: .5s ease-in-out;
@@ -195,20 +211,10 @@
 		}
 		
 		.menu {
-			float: right;
-			padding-top: 24px;
 			-webkit-transition: .5s ease-in-out;
 			-moz-transition: .5s ease-in-out;
 			-o-transition: .5s ease-in-out;
 			transition: .5s ease-in-out;
-			
-			&.scroll {
-				padding-top: 8px;
-			}
-			
-			@include media($tablet){
-				padding-top: 14px;
-			}
 			
 			@include media($mobile){
 				display: none;
@@ -385,7 +391,6 @@
 	width: 30px;
 	height: 24px;
 	float: right;
-	margin-top: 25px;
 	-webkit-transform: rotate(0deg);
 	-moz-transform: rotate(0deg);
 	-o-transform: rotate(0deg);
@@ -395,12 +400,6 @@
 	-o-transition: .5s ease-in-out;
 	transition: .5s ease-in-out;
 	cursor: pointer;
-	
-	&.scroll {
-		@include media($mobile){
-			margin-top: 15px;
-		}
-	}
 	
 	span {
 		position: absolute;
@@ -542,7 +541,7 @@ ul.member_menu {
 	position: relative;
 
 	> li {
-		padding: 15px 0 35px 0 !important;
+		padding: 15px 0 15px 0 !important;
 		position: relative;
 		
 		@include media($mobile){
@@ -588,10 +587,6 @@ ul.member_menu {
 				color: $white;
 			}
 
-		}
-		
-		&.scroll {
-			padding: 15px 0 21px 0 !important;
 		}
 		
 		a {
