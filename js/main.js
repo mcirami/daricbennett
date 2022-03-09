@@ -867,34 +867,23 @@ jQuery(document).ready(function($) {
             }, 800);
         })
     }
-    /*
-		if (currentPage.pageName === 'Lessons') {
-			window.onload = addListeners();
-		}
 
+    const fbGroup = document.querySelector('.fb-group');
+    if (fbGroup) {
 
-		function addListeners(){
-			document.getElementById('metro_wrap').addEventListener('mousedown', mouseDown, false);
-			window.addEventListener('mouseup', mouseUp, false);
-		}
+        if ($(window).width() < 500) {
+            fbGroup.dataset.width = 350;
+        }
 
+        $(window).on('resize', function () {
 
-    function mouseUp()
-    {
-        window.removeEventListener('mousemove', divMove, true);
+            if ($(window).width() < 500) {
+                fbGroup.dataset.width = 350;
+            } else {
+                fbGroup.dataset.width = 500;
+            }
+        });
     }
-
-    function mouseDown(e){
-        window.addEventListener('mousemove', divMove, true);
-    }
-
-    function divMove(e){
-        var div = document.getElementById('metro_wrap');
-        div.style.position = 'absolute';
-        div.style.top = e.clientY + 'px';
-        div.style.left = e.clientX + 'px';
-    }
-    */
 });
 
 

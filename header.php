@@ -234,13 +234,28 @@ $username = $current_user->user_login;
 			</div><!-- header top -->
 			
 		<?php endif; ?>
-		
+
+		<?php if (is_user_logged_in()) : ?>
+			<div class="header_top member">
+				<div class="container">
+					<a href="/schedule-a-meeting">Schedule A Meeting</a>
+					<a href="/contact-us">Contact Us</a>
+				</div>
+			</div>
+		<?php endif; ?>
+
 		<div class="header_bottom <?php if(!is_front_page() && !is_page(5)){ echo "background"; } ?>">
 			<?php wp_reset_query(); ?>
 			<div class="container">
 				<div class="content_wrap">
 					<?php if (is_user_logged_in()): ?>
-						<a href="/member-home"><h1 class="logo"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" /></h1></a>
+						<div class="logo_wrap">
+							<a href="/member-home">
+								<h1 class="logo">
+									<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" />
+								</h1>
+							</a>
+						</div>
 					<?php else : ?>
 						<a href="/"><h1 class="logo"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.png" /></h1></a>
 					<?php endif; ?>

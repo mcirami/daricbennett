@@ -1598,13 +1598,13 @@ img {
     .page_content .wrap header {
       display: none; }
   .page_content.member {
-    padding-top: 115px; }
+    padding-top: 150px; }
     @media screen and (max-width: 1023px) {
       .page_content.member {
-        padding-top: 107px; } }
+        padding-top: 190px; } }
     @media screen and (max-width: 768px) {
       .page_content.member {
-        padding-top: 90px; } }
+        padding-top: 115px; } }
 
 .mc4wp-form {
   position: relative;
@@ -1990,17 +1990,17 @@ h3, p {
     transition: .5s ease-in-out; }
     #global_header .header_top:last-child {
       margin-right: 0; }
-    #global_header .header_top.scroll {
-      padding: 12px 0 2px; }
-      @media screen and (max-width: 1023px) {
-        #global_header .header_top.scroll {
-          padding: 5px 0 10px; } }
     @media screen and (max-width: 1023px) {
       #global_header .header_top {
         padding: 10px 0 20px; } }
     @media screen and (max-width: 768px) {
       #global_header .header_top {
         padding: 5px 0 15px; } }
+    #global_header .header_top.scroll {
+      padding: 12px 0 2px; }
+      @media screen and (max-width: 1023px) {
+        #global_header .header_top.scroll {
+          padding: 5px 0 10px; } }
     #global_header .header_top .content_wrap {
       float: left;
       display: block;
@@ -2088,6 +2088,25 @@ h3, p {
           @media screen and (max-width: 1023px) {
             #global_header .header_top .buttons .button_wrap:first-child {
               margin-right: 5px; } }
+    #global_header .header_top.member {
+      background: #000;
+      padding: 5px 0;
+      text-align: right;
+      border-bottom: .01em solid;
+      border-color: rgba(155, 155, 155, 0.5); }
+      @media screen and (max-width: 1023px) {
+        #global_header .header_top.member {
+          text-align: center; } }
+      #global_header .header_top.member a {
+        color: #958c8c;
+        text-transform: uppercase; }
+        #global_header .header_top.member a:hover {
+          color: #fff; }
+        #global_header .header_top.member a:first-child {
+          margin-right: 20px; }
+        @media screen and (max-width: 768px) {
+          #global_header .header_top.member a {
+            font-size: 14px; } }
   #global_header .header_bottom {
     float: left;
     display: block;
@@ -2118,6 +2137,19 @@ h3, p {
       -webkit-justify-content: space-between;
       align-items: center;
       -webkit-align-items: center; }
+      @media screen and (max-width: 1023px) {
+        #global_header .header_bottom .content_wrap {
+          flex-wrap: wrap;
+          -ms-flex-wrap: wrap; } }
+    @media screen and (max-width: 1023px) {
+      #global_header .header_bottom .logo_wrap {
+        width: 100%;
+        text-align: center; } }
+    @media screen and (max-width: 768px) {
+      #global_header .header_bottom .logo_wrap {
+        width: auto; } }
+    #global_header .header_bottom .logo_wrap a {
+      display: inline-block; }
     #global_header .header_bottom .logo {
       float: left;
       width: 275px;
@@ -2130,26 +2162,37 @@ h3, p {
           width: 280px; } }
       @media screen and (max-width: 1023px) {
         #global_header .header_bottom .logo {
-          width: 180px; } }
+          width: 225px;
+          margin-bottom: 0; } }
       @media screen and (max-width: 768px) {
         #global_header .header_bottom .logo {
           width: 185px; } }
       #global_header .header_bottom .logo.scroll {
         width: 170px; }
+        @media screen and (max-width: 1023px) {
+          #global_header .header_bottom .logo.scroll {
+            width: 150px; } }
         @media screen and (max-width: 768px) {
           #global_header .header_bottom .logo.scroll {
-            width: 150px;
             margin: 10px 0; } }
     #global_header .header_bottom .menu {
       -webkit-transition: .5s ease-in-out;
       -moz-transition: .5s ease-in-out;
       -o-transition: .5s ease-in-out;
       transition: .5s ease-in-out; }
+      @media screen and (max-width: 1023px) {
+        #global_header .header_bottom .menu {
+          width: 100%;
+          text-align: center; } }
       @media screen and (max-width: 768px) {
         #global_header .header_bottom .menu {
           display: none; } }
       #global_header .header_bottom .menu nav {
         float: left; }
+        @media screen and (max-width: 1023px) {
+          #global_header .header_bottom .menu nav {
+            float: none;
+            display: inline-block; } }
         @media screen and (max-width: 768px) {
           #global_header .header_bottom .menu nav {
             float: left;
@@ -2173,10 +2216,10 @@ h3, p {
           position: relative;
           width: auto;
           float: left;
-          padding: 15px 20px 15px 15px; }
-          @media screen and (max-width: 1023px) {
-            #global_header .header_bottom .menu ul li {
-              padding: 15px 15px 15px 10px; } }
+          padding: 15px 20px 15px 15px;
+          /*@include media($tablet){
+          	padding: 15px 15px 15px 10px;
+          }*/ }
           @media screen and (max-width: 768px) {
             #global_header .header_bottom .menu ul li {
               text-align: left;
@@ -2209,15 +2252,15 @@ h3, p {
             font-family: 'robotoregular', sans-serif;
             color: #fff;
             text-transform: uppercase;
-            font-size: 18px; }
+            font-size: 18px;
+            /*@include media($tablet){
+            	font-size: 15px;
+            }*/ }
             @media screen and (max-width: 1280px) {
               #global_header .header_bottom .menu ul li a {
                 font-size: 16px; } }
             #global_header .header_bottom .menu ul li a:hover {
               color: #ddb72e; }
-            @media screen and (max-width: 1023px) {
-              #global_header .header_bottom .menu ul li a {
-                font-size: 15px; } }
         #global_header .header_bottom .menu ul.sub-menu li:hover a {
           color: #131313; }
         #global_header .header_bottom .menu ul.sub-menu li:hover .sub-menu li a {
@@ -2233,6 +2276,10 @@ h3, p {
             left: 46px;
             top: 21px;
             background-size: 100%; }
+      #global_header .header_bottom .menu.scroll li {
+        padding: 0 !important; }
+        #global_header .header_bottom .menu.scroll li:after {
+          top: 1px; }
 
 .sub_header {
   font-family: 'robotomedium', sans-serif;
@@ -2404,7 +2451,8 @@ h3, p {
           color: #ddb72e; }
 
 ul.member_menu {
-  position: relative; }
+  position: relative;
+  text-align: left; }
   ul.member_menu > li {
     padding: 15px 0 15px 0 !important;
     position: relative; }
@@ -2431,14 +2479,14 @@ ul.member_menu {
     ul.member_menu > li.current-menu-parent ul li.current_page_item a:hover {
       color: #fff; }
     ul.member_menu > li a {
-      padding: 0 18px; }
+      padding: 0 18px;
+      /*@include media($tablet){
+      	padding: 0 8px;
+      	font-size: 12px !important;
+      }*/ }
       @media screen and (max-width: 1280px) {
         ul.member_menu > li a {
           padding: 0 10px; } }
-      @media screen and (max-width: 1023px) {
-        ul.member_menu > li a {
-          padding: 0 8px;
-          font-size: 12px !important; } }
     ul.member_menu > li.menu-item-has-children > a {
       position: relative; }
       @media screen and (max-width: 768px) {
