@@ -265,7 +265,7 @@ $username = $current_user->user_login;
 						<span></span>
 						<span></span>
 					</a>
-					<div class="menu">
+					<div class="menu <?php if(!is_user_logged_in()) { echo "guest"; } ?>">
 
 							<nav role="navigation">
 

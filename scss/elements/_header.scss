@@ -395,12 +395,26 @@
                 }
 			}
 
-			&.scroll {
+			&.guest {
+				@include media($tablet) {
+					width: auto;
+				}
+
 				li {
-					padding: 0 !important;
+					@include media($tablet) {
+						padding: 20px 10px 0 10px;
+					}
 
 					&:after {
-						top: 1px;
+						@include media($tablet) {
+							top: 20px;
+						}
+					}
+
+					a {
+						@include media($tablet) {
+							font-size: 14px;
+						}
 					}
 				}
 			}
