@@ -1219,3 +1219,10 @@ function pmpro_require_location_match_IP($continue)
 }
 
 add_filter('pmpro_registration_checks', 'pmpro_require_location_match_IP');
+
+
+// Remove comment-reply.min.js from footer
+function crunchify_clean_header_hook(){
+	wp_deregister_script( 'comment-reply' );
+}
+add_action('init','crunchify_clean_header_hook');
