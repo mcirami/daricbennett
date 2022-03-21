@@ -625,7 +625,7 @@ var loadReload = function() {
 
             if(currentPage.pageName === "Lessons" || currentPage.postType === "courses") {
 
-	            var postID = $(this).closest('.video_content_wrap').prev('.video_iframe_wrap').children('button').data('postid');
+	            var postID = $(this).data('postid');
 
 	            var ajaxURL = myAjaxurl.ajaxurl;
 	            var commentForm = $.ajax({
@@ -634,14 +634,14 @@ var loadReload = function() {
 		            data: {action: 'get_comment_form', id: postID},
 		            url: ajaxURL,
 		            global: false,
-		            async:false,
+		            async: false,
 		            success: function (response) {
 			            //alert ("Email Sent");
 			            return response;
 		            },
 		            error: function (xhRequest, errorThrown, resp) {
-			            console.log(errorThrown);
-			            console.log(JSON.stringify(resp));
+			            console.error(errorThrown);
+			            console.error(JSON.stringify(resp));
 		            }
 
 	            }).responseText;
@@ -669,7 +669,7 @@ var loadReload = function() {
                 commentReplyURL = null;
                 replyToUser = null;
                 //commentSubmitButton.next('.loading_gif').html('');
-                var link = $(this).closest('.reply').children('.reply_button').css('display', 'block');
+                $(this).closest('.reply').children('.reply_button').css('display', 'block');
 
                 if(currentPage.pageName === "Lessons" || currentPage.postType === "courses") {
                     $(this).parent().parent().children('#respond').remove();
