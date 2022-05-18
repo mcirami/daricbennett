@@ -772,7 +772,7 @@ var loadReload = function() {
 		    var fileElements = "";
 
 		    for (var i = 0; i < files.length; i++) {
-			    fileElements += '<a target="_blank" download href="' + files[i].dataset.file + '">' + files[i].dataset.text + '</a>';
+			    fileElements += '<a target="_blank" href="' + files[i].dataset.file + '">' + files[i].dataset.text + '</a>';
 		    }
 	    } else {
 		    fileElements = "";
