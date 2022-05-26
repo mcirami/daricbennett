@@ -7,7 +7,7 @@
     "url": "https://github.com/Ollo/boiler"
   },
   "devDependencies": {
-    "grunt": "^1.4.1",
+    "grunt": "^1.5.3",
     "grunt-contrib-compass": "^0.8.0",
     "grunt-contrib-concat": "^2.0.0",
     "grunt-contrib-cssmin": "^4.0.0",
