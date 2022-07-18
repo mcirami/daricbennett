@@ -859,6 +859,11 @@ ul.member_menu {
                     top: 54px;
                     white-space: initial;
 
+					@media screen and (min-width: 769px) {
+						max-height: 40vh;
+						overflow: hidden scroll;
+					}
+
                     @include media($mobile) {
                         top:0;
                         margin-top: 0;

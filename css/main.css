@@ -2604,6 +2604,10 @@ ul.member_menu {
           left: 0;
           top: 54px;
           white-space: initial; }
+          @media screen and (min-width: 769px) {
+            ul.member_menu > li ul.sub-menu li .sub-menu {
+              max-height: 40vh;
+              overflow: hidden scroll; } }
           @media screen and (max-width: 768px) {
             ul.member_menu > li ul.sub-menu li .sub-menu {
               top: 0;
