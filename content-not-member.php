@@ -41,13 +41,14 @@
 	</div>
 </div>
 
+<?php
+	setcookie("postedArticle", true, time() + (60 * 20)); // 60 seconds ( 1 minute) * 20 = 20 minutes
+?>
 <script>
 
-	let redirectURL = window.location.href;
+	const redirectURL = window.location.href;
 
 	createCookie("login_redirect", redirectURL, 5);
-
-	setcookie("postedArticle", true, time() + (60 * 20)); // 60 seconds ( 1 minute) * 20 = 20 minutes
 
 	function createCookie(name, value, minutes) {
 

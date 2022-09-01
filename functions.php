@@ -1226,3 +1226,53 @@ function crunchify_clean_header_hook(){
 	wp_deregister_script( 'comment-reply' );
 }
 add_action('init','crunchify_clean_header_hook');
+
+
+/*if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}*/
+/*
+function is_login_page() {
+	return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
+}
+
+add_action( 'wp', 'sc_capture_before_login_page_url' );
+function sc_capture_before_login_page_url(){
+	if( !is_user_logged_in() && !is_login_page()):
+		$_SESSION['referer_url'] = get_the_permalink();
+	endif;
+}
+
+/*@ After login redirection */
+if( !function_exists('sc_after_login_redirection') ):
+	function sc_after_login_redirection($redirect_to, $request, $user) {
+
+		if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+			if ( isset($_COOKIE['login_redirect']) ):
+				$redirect_to  = $_COOKIE['login_redirect'];
+				unset( $_COOKIE['login_redirect'] );
+			endif;
+
+			if (session_status() === PHP_SESSION_NONE) {
+				session_write_close();
+			}
+		}
+
+		return $redirect_to;
+	}
+	add_filter('login_redirect', 'sc_after_login_redirection', 10, 3);
+endif;
+
+
+function my_acf_load_field( $field ) {
+
+	global $post;
+	$postTitle = $post->post_name;
+	$url = get_site_url();
+
+	$field['value'] = $url . "/lessons/#" . $postTitle;
+	return $field;
+
+}
+
+add_filter('acf/load_field/name=lesson_page_url', 'my_acf_load_field');

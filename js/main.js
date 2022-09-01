@@ -1,5 +1,7 @@
 jQuery(document).ready(function($) {
 
+    console.log("hello");
+
     var navIcon = $('.user_mobile_nav p span');
 
     $('.bbp-topic-freshness-author').each(function () {
