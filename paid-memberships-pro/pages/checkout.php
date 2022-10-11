@@ -223,22 +223,38 @@ $webroot = $protocol . $_SERVER['HTTP_HOST'] . '/';
 								 * @param string $description The level description.
 								 * @param object $pmpro_level The PMPro Level object.
 								 */
-								?>
-								<div class="no_show">
-									<?php
 								$level_description = apply_filters('pmpro_level_description', $pmpro_level->description, $pmpro_level);
-								if(!empty($level_description))
-									echo $level_description;
+								if ( ! empty( $level_description ) ) { ?>
+									<div class="<?php echo pmpro_get_element_class( 'pmpro_level_description_text' );?>">
+										<?php echo $level_description; ?>
+									</div>
+									<?php
+								}
 								?>
-								</div>
+
 
 								<div id="pmpro_level_cost">
 									<?php if($discount_code && pmpro_checkDiscountCode($discount_code)) { ?>
 										<?php printf(__('<p class="' . pmpro_get_element_class( 'pmpro_level_discount_applied' ) . '">The <strong>%s</strong> code has been applied to your order.</p>', 'paid-memberships-pro' ), $discount_code);?>
 									<?php } ?>
-									<?php echo wpautop(pmpro_getLevelCost($pmpro_level)); ?>
-									<?php echo wpautop(pmpro_getLevelExpiration($pmpro_level)); ?>
-								</div>
+									<?php
+									$level_cost_text = pmpro_getLevelCost( $pmpro_level );
+									if ( ! empty( $level_cost_text ) ) { ?>
+										<div class="<?php echo pmpro_get_element_class( 'pmpro_level_cost_text' );?>">
+											<?php echo wpautop( $level_cost_text ); ?>
+										</div>
+									<?php }
+									?>
+
+									<?php
+									$level_expiration_text = pmpro_getLevelExpiration( $pmpro_level );
+									if ( ! empty( $level_expiration_text ) ) { ?>
+										<div class="<?php echo pmpro_get_element_class( 'pmpro_level_expiration_text' );?>">
+											<?php echo wpautop( $level_expiration_text ); ?>
+										</div>
+									<?php }
+									?>
+								</div> <!-- end #pmpro_level_cost -->
 
 								<?php do_action("pmpro_checkout_after_level_cost"); ?>
 
@@ -264,7 +280,7 @@ $webroot = $protocol . $_SERVER['HTTP_HOST'] . '/';
 									</div>
 
 									<?php } ?>
-								</div>
+								</div><!-- end discount_form -->
 							</div> <!-- end pmpro_checkout-fields -->
 						</div> <!-- end pmpro_pricing_fields -->
 						<?php
@@ -463,7 +479,9 @@ $webroot = $protocol . $_SERVER['HTTP_HOST'] . '/';
 										<input id="bzipcode" name="bzipcode" type="text" class="<?php echo pmpro_get_element_class( 'input', 'bzipcode' ); ?>" size="5" value="<?php echo esc_attr($bzipcode); ?>" />
 									</div> <!-- end pmpro_checkout-field-bcity_state_zip -->
 								<?php } ?>
-
+								<div class="half_width right">
+									<div id="country_drop"></div>
+								</div>
 								<?php
 								$show_country = apply_filters("pmpro_international_addresses", true);
 								if($show_country) { ?>
@@ -645,7 +663,19 @@ $webroot = $protocol . $_SERVER['HTTP_HOST'] . '/';
 									$tos = "";
 								}
 								?>
-								<input type="checkbox" name="tos" value="1" id="tos" <?php checked( 1, $tos ); ?> /> <label class="<?php echo pmpro_get_element_class( 'pmpro_label-inline pmpro_clickable', 'tos' ); ?>" for="tos"><?php printf(__('I agree to the %s', 'paid-memberships-pro' ), $tospage->post_title);?></label>
+								<label class="<?php echo pmpro_get_element_class( 'pmpro_label-inline pmpro_clickable', 'tos' ); ?>" for="tos">
+									<input type="checkbox" name="tos" value="1" id="tos" <?php checked( 1, $tos ); ?> />
+									<?php printf(__('I agree to the %s', 'paid-memberships-pro' ), $tospage->post_title);?>
+								</label>
+								<?php
+								/**
+								 * Allow adding text or more checkboxes after the Tos checkbox
+								 * This is NOT intended to support multiple Tos checkboxes
+								 *
+								 * @since 2.8
+								 */
+								do_action( "pmpro_checkout_after_tos" );
+								?>
 							</div> <!-- end pmpro_checkout-fields -->
 						</div> <!-- end pmpro_tos_fields -->
 						<?php
@@ -696,10 +726,10 @@ $webroot = $protocol . $_SERVER['HTTP_HOST'] . '/';
 						{
 							?>
 							<span id="pmpro_submit_span">
-							<input type="hidden" name="submit-checkout" value="1" />
-							<input type="submit"  id="pmpro_btn-submit" class="<?php echo pmpro_get_element_class(  'pmpro_btn pmpro_btn-submit-checkout', 'pmpro_btn-submit-checkout' ); ?> button red" value="<?php if($pmpro_requirebilling) { _e('Submit and Check Out', 'paid-memberships-pro' ); } else { _e('Submit and Confirm', 'paid-memberships-pro' );}?>" />
-						</span>
-					<p class="terms">By clicking "Start Your Free Trial Today!" you agree to our <a target="_blank" href="<?php echo $webroot; ?>privacy">Privacy Policy</a>, <a target="_blank" href="<?php echo $webroot?>terms-of-use">Terms of Service</a> and <a target="_blank" href="<?php echo $webroot?>terms-of-use/#refund">Refund Policy</a>.
+								<input type="hidden" name="submit-checkout" value="1" />
+								<input type="submit"  id="pmpro_btn-submit" class="<?php echo pmpro_get_element_class(  'pmpro_btn pmpro_btn-submit-checkout', 'pmpro_btn-submit-checkout' ); ?> button red" value="<?php if($pmpro_requirebilling) { _e('Submit and Check Out', 'paid-memberships-pro' ); } else { _e('Submit and Confirm', 'paid-memberships-pro' );}?>" />
+							</span>
+							<p class="terms">By clicking "Start Your Free Trial Today!" you agree to our <a target="_blank" href="<?php echo $webroot; ?>privacy">Privacy Policy</a>, <a target="_blank" href="<?php echo $webroot?>terms-of-use">Terms of Service</a> and <a target="_blank" href="<?php echo $webroot?>terms-of-use/#refund">Refund Policy</a>.
 							<?php
 						}
 						?>

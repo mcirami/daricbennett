@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd43090e45ddcb5c226ad41f11b2dbc40130b923a',
+        'reference' => '5adea616ae9563062c8a301d81bd96c6afb855f8',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd43090e45ddcb5c226ad41f11b2dbc40130b923a',
+            'reference' => '5adea616ae9563062c8a301d81bd96c6afb855f8',
             'dev_requirement' => false,
         ),
         'paypal/rest-api-sdk-php' => array(

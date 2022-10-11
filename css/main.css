@@ -2635,7 +2635,8 @@ ul.member_menu {
       height: 300px !important; } }
 
 .fancybox-slide {
-  padding: 0 20px !important; }
+  padding: 0 20px !important;
+  overflow: hidden !important; }
 
 #email_join {
   width: 40%;
@@ -2656,15 +2657,13 @@ ul.member_menu {
   #email_join a {
     display: inline-block; }
   #email_join .logo {
-    width: 100%;
-    float: left;
+    max-width: 400px;
     text-align: center; }
+    @media screen and (max-width: 768px) {
+      #email_join .logo {
+        max-width: 250px; } }
     #email_join .logo img {
-      width: auto;
       margin: 0 auto; }
-      @media screen and (max-width: 768px) {
-        #email_join .logo img {
-          width: 250px; } }
   #email_join h2 {
     float: left;
     display: block;
@@ -8221,7 +8220,7 @@ form.pmpro_form .pmpro_checkout-fields div {
       display: block;
       margin-right: 2.3576515979%;
       width: 100%;
-      max-width: none;
+      max-width: unset !important;
       height: 40px;
       border: 1px solid #c8c8c8;
       border-radius: 4px;
@@ -8574,6 +8573,12 @@ form.pmpro_form #other_discount_code.input {
   @media screen and (max-width: 768px) {
     .pmpro_captcha .g-recaptcha {
       margin: auto; } }
+
+.pmpro_level_description_text {
+  text-align: center;
+  padding-top: 10px; }
+  .pmpro_level_description_text p {
+    margin: 0; }
 
 .member_home {
   font-family: 'robotoregular', sans-serif;

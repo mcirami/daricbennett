@@ -5,6 +5,11 @@
  * @package boiler
  */
 
+if ( ! defined( '_S_VERSION' ) ) {
+	// Replace the version number of the theme on each release.
+	define( '_S_VERSION', '7.5.3' );
+}
+
 if ( ! function_exists( 'boiler_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -201,7 +206,7 @@ add_action( 'wp_head', 'boiler_javascript_detection', 0 );
 function boiler_scripts_styles() {
 
 	// style.css just initializes the theme. This is compiled from /sass
-	wp_enqueue_style( 'main-style',  get_template_directory_uri() . '/css/main.min.css', array(), 6.5, 'all');
+	wp_enqueue_style( 'main-style',  get_template_directory_uri() . '/css/main.min.css', array(), _S_VERSION, 'all');
 /*	wp_enqueue_style( 'override-css',  get_template_directory_uri() . '/css/override.css');*/
 	
 	wp_enqueue_style( 'fancybox', get_template_directory_uri() . '/js/vendor/fancybox/jquery.fancybox.min.css');
@@ -215,15 +220,13 @@ function boiler_scripts_styles() {
     }
 	
 	wp_enqueue_script( 'fancybox_js', get_template_directory_uri() . '/js/vendor/fancybox/jquery.fancybox.min.js', array('jquery'), '', true );
-	wp_enqueue_script( 'main_js', get_template_directory_uri() . '/js/built.min.js', array('jquery'), '6.0', true );
+	wp_enqueue_script( 'main_js', get_template_directory_uri() . '/js/built.min.js', array('jquery'), _S_VERSION, true );
 	wp_enqueue_script( 'vimeo', get_template_directory_uri() . '/js/vendor/vimeothumb/jquery-vimeothumb.min.js', array('jquery'), '', true );
 	wp_enqueue_script( 'calendly', 'https://assets.calendly.com/assets/external/widget.js', array('jquery'), '1', true );
     //wp_enqueue_script( 'jquery_ui', get_template_directory_uri() . '/js/vendor/jquery-ui.min.js', array('jquery'), '', true );
 
 	if (is_page('lessons') && is_user_logged_in()){
-
         wp_enqueue_script('filterizr', get_template_directory_uri() . '/js/vendor/jquery.filterizr.min.js', array('jquery'), '2.2.4', true);
-
     }
 
 
@@ -232,7 +235,6 @@ function boiler_scripts_styles() {
 	}
 
 	wp_localize_script( 'main_js', 'currentPage', array(
-
 		'pageName' => get_the_title(),
 		'postType' => get_post_type(),
 		'postSlug' => get_permalink(),
@@ -1176,7 +1178,7 @@ add_filter( 'user_has_cap', 'give_permissions', 0, 3 );
  * Please install and activate the following plugin - https://wordpress.org/plugins/geoip-detect/
  */
 
-function pmpro_require_location_match_IP($continue)
+/*function pmpro_require_location_match_IP($continue)
 {
 
     global $pmpro_requirebilling;
@@ -1218,7 +1220,7 @@ function pmpro_require_location_match_IP($continue)
     return $okay;
 }
 
-add_filter('pmpro_registration_checks', 'pmpro_require_location_match_IP');
+add_filter('pmpro_registration_checks', 'pmpro_require_location_match_IP');*/
 
 
 // Remove comment-reply.min.js from footer

@@ -618,7 +618,7 @@ form.pmpro_form .pmpro_checkout-fields div {
 		
 		input {
 			@include span-columns(12);
-			max-width: none;
+			max-width: unset !important;
 			height: 40px;
 			border: 1px solid $borderGray;
 			border-radius: 4px;
@@ -1083,5 +1083,14 @@ form.pmpro_form #other_discount_code.input {
 		@include media($mobile) {
 			margin: auto;
 		}
+	}
+}
+
+.pmpro_level_description_text {
+	text-align: center;
+	padding-top: 10px;
+
+	p {
+		margin: 0;
 	}
 }

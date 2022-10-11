@@ -46,10 +46,10 @@ var loadReload = function() {
         $this.html($this.html().replace(/&nbsp;/g, ''));
     });
 
+    var fancybox = $(".fancybox");
     fancyboxInit();
 
     function fancyboxInit() {
-        var fancybox = $(".fancybox");
 
         if(fancybox.length) {
             fancybox.click(function(e) {
@@ -923,6 +923,10 @@ var loadReload = function() {
             }
         });
     }
+
+    var bcountryDiv = jQuery('label[for="bcountry"]').closest('div');
+    bcountryDiv.insertAfter(jQuery('#country_drop').closest('div'));
+
 });
 
 
