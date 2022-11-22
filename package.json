@@ -26,6 +26,6 @@
     "mysql": "^2.18.1",
     "pusher": "^5.0.1",
     "shufflejs": "^6.0.0",
-    "socket.io": "^4.4.1"
+    "socket.io": "^4.5.3"
   }
 }
