@@ -7,7 +7,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '7.5.3' );
+	define( '_S_VERSION', '7.6.0' );
 }
 
 if ( ! function_exists( 'boiler_setup' ) ) :

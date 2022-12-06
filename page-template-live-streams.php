@@ -11,7 +11,7 @@
 
 get_header();
 
-
+/*
 global $post;
 
 $args = array(
@@ -22,7 +22,7 @@ $args = array(
     //'paged' => $ourCurrentPage
 );
 
-$streams = new WP_Query($args);
+$streams = new WP_Query($args);*/
 
 
 
@@ -35,34 +35,36 @@ $streams = new WP_Query($args);
 		</div><!-- .container -->
 	</header>
 
-	<div class="full_width live_stream blog">
+	<div class="full_width live_stream">
 		<div class="container">
 
             <?php if (pmpro_hasMembershipLevel()) : ?>
 
-                    <article class="full_width">
+                    <section class="full_width gallery">
 
-                        <?php if ( $streams->have_posts() ) : ?>
+	                    <?php the_content(); ?>
 
-                            <?php while ( $streams->have_posts() ) : $streams->the_post(); ?>
+                        <?php /*if ( $streams->have_posts() ) : */?><!--
+
+                            <?php /*while ( $streams->have_posts() ) : $streams->the_post(); */?>
 
                                 <?php
-                                /* Include the Post-Format-specific template for the content.
+/*                                /* Include the Post-Format-specific template for the content.
                                  * If you want to overload this in a child theme then include a file
                                  * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                                  */
-                                get_template_part( 'content-live-streams', get_post_format() );
+                                //get_template_part( 'content-live-streams', get_post_format() );
                                 ?>
 
-                            <?php endwhile; ?>
+                            <?php /*endwhile; */?>
 
 
-                        <?php else : ?>
+                        <?php /*else : */?>
 
                                 <h3>No Streams Yet</h3>
 
-                        <?php endif; ?>
-                    </article>
+                        --><?php /*endif; */?>
+                    </section>
 
             <?php else :
 

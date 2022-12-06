@@ -6,18 +6,10 @@
     "type": "git",
     "url": "https://github.com/Ollo/boiler"
   },
-  "devDependencies": {
-    "grunt": "^1.4.1",
-    "grunt-contrib-compass": "^0.8.0",
-    "grunt-contrib-concat": "^2.0.0",
-    "grunt-contrib-cssmin": "^4.0.0",
-    "grunt-contrib-sass": "^2.0.0",
-    "grunt-contrib-uglify": "^5.0.1",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-sass": "^3.1.0"
-  },
   "dependencies": {
+    "autoprefixer": "^10.4.13",
     "body-parser": "^1.19.2",
+    "core-js": "^3.26.1",
     "dateformat": "^5.0.3",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
@@ -27,5 +19,27 @@
     "pusher": "^5.0.1",
     "shufflejs": "^6.0.0",
     "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "@popperjs/core": "^2.11.6",
+    "babel-loader": "^9.1.0",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "jquery": "^3.6.1",
+    "laravel-mix": "^6.0.49",
+    "laravel-mix-polyfill": "^3.0.1",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0",
+    "webpack": "^5.75.0"
+  },
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
   }
 }

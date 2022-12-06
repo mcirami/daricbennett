@@ -1,29 +1,153 @@
 .live_stream {
     padding: 60px 0;
 
-    .title {
-        @include span-columns(12);
+    .epyt-gallery {
+        padding: 0 10%;
+    }
 
-        h3 {
-            font-family: 'robotobold', sans-serif;
-            font-size: 30px;
-            text-align: left;
-            margin: 0 0 40px;
-            line-height: 1.2;
-            text-transform: none;
+    .columns_wrap {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-align-items: stretch;
+        align-items: stretch;
+        gap: 20px;
+        column-gap: 20px;
+        -moz-column-gap: 20px;
+        -webkit-column-gap: 20px;
 
-            @include media($tablet){
-                font-size: 28px;
+        .video_column, .epyt-video-wrapper {
+            display: -webkit-inline-flex;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            justify-content: center;
+            -webkit-justify-content: center;
+            align-items: center;
+            -webkit-align-items: center;
+            //flex-grow: 3;
+            width: 65%;
+            position: relative;
+
+            @include media($tablet) {
+                width: 100%;
             }
 
-            @include media($mobile){
-                font-size: 26px;
-                margin: 0 0 20px;
+            p {
+                position: absolute;
+                color: $white;
+                font-size: 3em;
+                margin: 0;
+
+                @include media($tablet) {
+                    font-size: 4vw;
+                }
             }
         }
     }
 
-    .columns_wrap {
+    .gallery .epyt-video-wrapper, .epyt-video-wrapper > div {
+        width: 100%;
+    }
+
+    .epyt-facade {
+        width: 100%;
+    }
+
+    .wcContainer {
+        width: 32% !important;
+        //flex-grow: 1;
+
+        @include media($tablet) {
+            width: 100% !important;
+        }
+    }
+
+    .epyt-gallery-list {
+        padding-top: 40px;
+    }
+
+    .epyt-pagination {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        align-items: center;
+        -webkit-align-items: center;
+
+        &:first-child {
+            display: none;
+        }
+
+        .epyt-pagebutton {
+            @include robotoreg;
+            font-size: 16px;
+            padding: 7px 15px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            background: $red;
+            color: $white;
+
+            &:hover {
+                background: $darkRed;
+            }
+        }
+
+        .epyt-loader {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+
+            img {
+                width: auto;
+                padding: 10px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .button_row {
+        margin-top: 40px;
+        text-align: right;
+    }
+
+    /*.title {
+        @include span-columns(12);
+
+        h3 {
+            font-family: 'robotobold', sans-serif;
+            font-size: 1em;
+            text-align: left;
+            line-height: 1.2;
+            text-transform: none;
+        }
+    }*/
+
+    /*.columns_wrap {
         width: 100%;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -38,19 +162,39 @@
         @include media($tablet) {
             @include span-columns(8);
         }
-    }
+    }*/
 
-    .column {
+    /*.image_wrap {
+        @include span-columns(12);
         position: relative;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+
+        a {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            justify-content: center;
+            -webkit-justify-content: center;
+            align-items: center;
+            -webkit-align-items: center;
+            width: 100%;
+        }
+
+        .button_wrap {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+
+            img {
+                width: 75px;
+                margin: 0 auto;
+            }
+        }
 
         @include media($tablet) {
             @include span-columns(8);
@@ -64,22 +208,7 @@
                 width: 100%;
             }
 
-            a {
-                display: block;
-            }
 
-            .button_wrap {
-                position: absolute;
-                width: 100%;
-                text-align: center;
-                top: 0;
-                padding-top: 20%;
-
-                img {
-                    width: auto;
-                    margin: 0 auto;
-                }
-            }
         }
 
         &.two {
@@ -143,20 +272,23 @@
                 margin-top: 0;
             }
 
-            .title {
+        }
+    }*/
 
-                a {
-                    color: $black;
-                    display: inline-block;
+    /*&.grid {
+        .title {
 
-                    &:hover {
-                        color: $red;
-                    }
+            a {
+                color: $black;
+                display: inline-block;
 
+                &:hover {
+                    color: $red;
                 }
+
             }
         }
-    }
+    }*/
 }
 
 

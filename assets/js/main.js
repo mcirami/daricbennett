@@ -888,6 +888,18 @@ jQuery(document).ready(function($) {
     var bcountryDiv = jQuery('label[for="bcountry"]').closest('div');
     bcountryDiv.insertAfter(jQuery('#country_drop').closest('div'));
 
+    if ($(window).width() > 768) {
+        document.querySelector('.live_stream .columns_wrap .epyt-facade-play').
+            addEventListener('click', () => {
+                setTimeout(() => {
+
+                    const streamVideo = document.querySelector(
+                        '.live_stream .columns_wrap .epyt-video-wrapper');
+                    streamVideo.style.paddingTop = '36.206897%';
+
+                }, 500)
+            });
+    }
 });
 
 
