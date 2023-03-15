@@ -31,7 +31,7 @@
     "laravel-mix-polyfill": "^3.0.1",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
-    "webpack": "^5.75.0"
+    "webpack": "^5.76.0"
   },
   "scripts": {
     "dev": "npm run development",
