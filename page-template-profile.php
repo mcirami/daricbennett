@@ -25,7 +25,8 @@ get_header();?>
 				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/home-bass.jpg" alt="playing bass"/>
 			</div>
 			<div class="avatar_wrap full_width">
-				<?php echo do_shortcode('[avatar]'); ?>
+				<?php //echo do_shortcode('[avatar]');
+				echo get_avatar( get_current_user_id(), 96 );  ?>
 			</div>
 			<div class="form_wrap full_width">
 				<?php echo do_shortcode('[pmpro_member_profile_edit]');?>

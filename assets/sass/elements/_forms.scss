@@ -189,13 +189,46 @@
 	                @include media($tablet){
 	                	right: 32.1%;
 	                }
-            }
+           	 	}
 			}
 		}
-		
-		
 	}
-	
+
+	&.billing {
+		@include span-columns(12);
+
+		.pmpro_submit {
+			width: 100%;
+			float: left;
+			margin-top: 20px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: horizontal;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: row;
+			flex-direction: row;
+			-ms-flex-wrap: nowrap;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			-webkit-justify-content: space-between;
+
+			input[type=submit] {
+				max-width: 100px;
+			}
+
+			.button.yellow {
+				max-width: 100px;
+				width: 100%;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: none;
+					color: $black;
+				}
+			}
+		}
+	}
 
 	.column {
 		@include span-columns(6);

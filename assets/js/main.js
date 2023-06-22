@@ -387,7 +387,7 @@ jQuery(document).ready(function($) {
 
     var youtube = document.querySelectorAll(".youtube_video");
 
-    if (youtube.length) {
+    if (youtube) {
 
         for (var a = 0; a < youtube.length; a++) {
 
@@ -889,7 +889,7 @@ jQuery(document).ready(function($) {
     bcountryDiv.insertAfter(jQuery('#country_drop').closest('div'));
 
     if ($(window).width() > 768) {
-        document.querySelector('.live_stream .columns_wrap .epyt-facade-play').
+        document.querySelector('.live_stream .columns_wrap .epyt-facade-play')?.
             addEventListener('click', () => {
                 setTimeout(() => {
 

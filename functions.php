@@ -7,7 +7,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '7.6.0' );
+	define( '_S_VERSION', '7.8.0' );
 }
 
 if ( ! function_exists( 'boiler_setup' ) ) :
@@ -228,7 +228,6 @@ function boiler_scripts_styles() {
 	if (is_page('lessons') && is_user_logged_in()){
         wp_enqueue_script('filterizr', get_template_directory_uri() . '/js/vendor/jquery.filterizr.min.js', array('jquery'), '2.2.4', true);
     }
-
 
 	if(is_user_logged_in()) {
 		wp_localize_script( 'main_js', 'myAjaxurl', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
@@ -1278,3 +1277,10 @@ function my_acf_load_field( $field ) {
 }
 
 add_filter('acf/load_field/name=lesson_page_url', 'my_acf_load_field');
+
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+	if (!current_user_can('administrator') && !is_admin()) {
+		show_admin_bar(false);
+	}
+}

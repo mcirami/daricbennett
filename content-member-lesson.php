@@ -103,8 +103,9 @@
                        href="#<?php echo $hash;?>"
                        data-type="<?php echo "youtube";?>"
                        data-src="<?php echo $videoLink; ?>/?rel=0&showinfo=0&autoplay=1"
-                       data-title="<?php echo the_title();?>" data-postid="<?php echo $id; ?>"
-                       data-desc="<?php echo $desc ?>"
+                       data-title="<?php echo the_title();?>"
+                       data-postid="<?php echo $id; ?>"
+                       data-desc="<?php echo $desc; ?>"
                     >
 
             <?php elseif ($type == 'vimeo') : ?>
@@ -115,7 +116,7 @@
                        data-src="<?php echo $videoLink; ?>/?autoplay=1"
                        data-title="<?php echo the_title();?>"
                        data-postid="<?php echo $id; ?>"
-                       data-desc="<?php echo $desc ?>"
+                       data-desc="<?php echo $desc; ?>"
                     >
 
             <?php elseif ($type == 'soundslice') : ?>
@@ -128,7 +129,7 @@
                        data-title="<?php echo the_title();?>"
                        data-notation="<?php echo $display; ?>"
                        data-postid="<?php echo $id; ?>"
-                       data-desc="<?php echo $desc ?>"
+                       data-desc="<?php echo $desc; ?>"
                     >
 
             <?php endif; ?><!-- type -->
