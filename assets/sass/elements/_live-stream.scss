@@ -18,14 +18,17 @@
         flex-wrap: nowrap;
         -webkit-justify-content: space-around;
         justify-content: space-around;
-        -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
         -webkit-align-items: stretch;
         align-items: stretch;
         gap: 20px;
         column-gap: 20px;
         -moz-column-gap: 20px;
         -webkit-column-gap: 20px;
+
+        @include media($tablet) {
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+        }
 
         .video_column, .epyt-video-wrapper {
             display: -webkit-inline-flex;
@@ -68,15 +71,6 @@
 
     .epyt-facade {
         width: 100%;
-    }
-
-    .wcContainer {
-        width: 32% !important;
-        //flex-grow: 1;
-
-        @include media($tablet) {
-            width: 100% !important;
-        }
     }
 
     .epyt-gallery-list {
@@ -134,161 +128,6 @@
         margin-top: 40px;
         text-align: right;
     }
-
-    /*.title {
-        @include span-columns(12);
-
-        h3 {
-            font-family: 'robotobold', sans-serif;
-            font-size: 1em;
-            text-align: left;
-            line-height: 1.2;
-            text-transform: none;
-        }
-    }*/
-
-    /*.columns_wrap {
-        width: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-
-        @include media($tablet) {
-            @include span-columns(8);
-        }
-    }*/
-
-    /*.image_wrap {
-        @include span-columns(12);
-        position: relative;
-
-        a {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            -ms-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-            justify-content: center;
-            -webkit-justify-content: center;
-            align-items: center;
-            -webkit-align-items: center;
-            width: 100%;
-        }
-
-        .button_wrap {
-            position: absolute;
-            width: 100%;
-            text-align: center;
-
-            img {
-                width: 75px;
-                margin: 0 auto;
-            }
-        }
-
-        @include media($tablet) {
-            @include span-columns(8);
-        }
-
-        &.one {
-            width: 60%;
-            float: left;
-
-            @include media($tablet) {
-                width: 100%;
-            }
-
-
-        }
-
-        &.two {
-            width: 40%;
-            float: left;
-            padding-left: 2%;
-
-            @include media($tablet) {
-                width: 100%;
-                padding-left: 0;
-                margin-top: 20px;
-            }
-
-            .live_chat {
-                @include span-columns(12);
-                height: 100%;
-            }
-
-            iframe {
-                float: left;
-                width: 100% !important;
-
-                @include media($tablet) {
-                    position: relative;
-                    width: 100%;
-                    height: 300px;
-                    max-height: 300px;
-                }
-
-                @include media($mobile) {
-                    height: 360px;
-                    max-height: 360px;
-                    margin-top: 20px;
-                }
-            }
-        }
-
-        #status {
-            top: -30px;
-            width: 100%;
-            float: left;
-
-            @include media($mobile) {
-                top: 10px;
-                text-align: center;
-            }
-
-        }
-
-    }
-
-    &.blog {
-
-        .row {
-            padding: 20px 0;
-            border-top: 1px solid $darkGray;
-            margin-top: 20px;
-
-            &:first-child {
-                border-top: none;
-                margin-top: 0;
-            }
-
-        }
-    }*/
-
-    /*&.grid {
-        .title {
-
-            a {
-                color: $black;
-                display: inline-block;
-
-                &:hover {
-                    color: $red;
-                }
-
-            }
-        }
-    }*/
 }
 
 
@@ -331,39 +170,6 @@
     margin-top: 10px;
 }
 
-.rumbletalk-embed {
-    min-height: 100%;
-}
-
-.rumbletalk-archive {
-    max-height: 400px;
-    overflow: scroll;
-}
-
-.rumbletalk-archive .image {
-    max-width: 35px;
-    max-height: 35px;
-}
-
-.rumbletalk-archive .user-message {
-    border: 1px solid #EEE;
-    padding: 5px;
-    margin: 3px;
-}
-.rumbletalk-archive .name {
-    vertical-align: top;
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.rumbletalk-archive .time {
-    float: right;
-}
-
-.rumbletalk-archive .text {
-    vertical-align: top;
-}
-
 .wcWindowTitle {
     background-color: #f1f1f1 !important;
     color: #f1f1f1 !important;
@@ -378,6 +184,12 @@
 }
 
 .wcContainer {
+    width: 33% !important;
+
+    @include media($tablet) {
+        width: 100% !important;
+    }
+
     input.wcInput {
         background: $white !important;
         border-radius: 50px;

@@ -7,7 +7,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '7.9.0' );
+	define( '_S_VERSION', '8.4.0' );
 }
 
 if ( ! function_exists( 'boiler_setup' ) ) :
@@ -210,8 +210,6 @@ function boiler_scripts_styles() {
 /*	wp_enqueue_style( 'override-css',  get_template_directory_uri() . '/css/override.css');*/
 	
 	wp_enqueue_style( 'fancybox', get_template_directory_uri() . '/js/vendor/fancybox/jquery.fancybox.min.css');
-	
-	wp_enqueue_script( 'jquery' , array(), '', true );
 
 	wp_enqueue_script( 'boiler-plugins', get_template_directory_uri() . '/js/plugins.js', array(), '20120206', true );
 
@@ -1177,7 +1175,7 @@ add_filter( 'user_has_cap', 'give_permissions', 0, 3 );
  * Please install and activate the following plugin - https://wordpress.org/plugins/geoip-detect/
  */
 
-/*function pmpro_require_location_match_IP($continue)
+function pmpro_require_location_match_IP($continue)
 {
 
     global $pmpro_requirebilling;
@@ -1219,7 +1217,7 @@ add_filter( 'user_has_cap', 'give_permissions', 0, 3 );
     return $okay;
 }
 
-add_filter('pmpro_registration_checks', 'pmpro_require_location_match_IP');*/
+add_filter('pmpro_registration_checks', 'pmpro_require_location_match_IP');
 
 
 // Remove comment-reply.min.js from footer

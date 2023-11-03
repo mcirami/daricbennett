@@ -889,16 +889,18 @@ jQuery(document).ready(function($) {
     bcountryDiv.insertAfter(jQuery('#country_drop').closest('div'));
 
     if ($(window).width() > 768) {
-        document.querySelector('.live_stream .columns_wrap .epyt-facade-play')?.
-            addEventListener('click', () => {
-                setTimeout(() => {
-
-                    const streamVideo = document.querySelector(
-                        '.live_stream .columns_wrap .epyt-video-wrapper');
-                    streamVideo.style.paddingTop = '36.206897%';
-
-                }, 500)
-            });
+        const facadePlay = document.querySelector('.live_stream .columns_wrap .epyt-facade-play');
+        if (facadePlay) {
+            facadePlay.addEventListener('click', () => {
+                    setTimeout(() => {
+                        const streamVideo = document.querySelector(
+                            '.live_stream .columns_wrap .epyt-video-wrapper');
+                        if (streamVideo) {
+                            streamVideo.style.paddingTop = '36.206897%';
+                        }
+                    }, 500)
+                });
+        }
     }
 });
 
